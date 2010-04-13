@@ -8,5 +8,5 @@ content telasocial 			telasocial/content/telasocial/
 locale  telasocial en-US 		telasocial/locale/en-US/telasocial/
 
 
-overlay chrome://telasocial/content/telasocial/telasocial.xul chrome://tagvisor/content/overlay-xulrunner.xul
+overlay chrome://telasocial/content/telasocial.xul chrome://tagvisor/content/overlay-xulrunner.xul
 
