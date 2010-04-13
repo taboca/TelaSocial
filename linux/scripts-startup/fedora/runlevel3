@@ -1,0 +1,9 @@
+in the /etc/inittab
+id:3:initdefault:
+
+
+Ref: 
+
+http://fedorasolved.org/post-install-solutions/runlevel
+
+
