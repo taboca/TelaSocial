@@ -1,5 +1,5 @@
-pref('extensions.tagvisor.installed', false);
-pref('extensions.tagvisor.auto', false);
+pref('extensions.tagvisor.installed', true);
+pref('extensions.tagvisor.auto', true);
 pref('browser.sessionstore.resume_from_crash', false);
 pref('browser.startup.homepage','about:blank');
 
