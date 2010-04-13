@@ -1,1 +1,2 @@
-#!/usr/bin/sh
+zip -r telasocial.xulapp ./base/*
+
