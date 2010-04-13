@@ -7,8 +7,10 @@ xulrunner --register-global
 Install app 
 
 xulrunner --install-app ./base
-Exec call app 
+
+Execute the app
 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial
 
+Change the rule scripts in the chrome tagvisor content visor ./rules-static 
 
