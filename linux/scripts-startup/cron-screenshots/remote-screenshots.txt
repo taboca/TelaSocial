@@ -1,0 +1,6 @@
+export DISPLAY=:0
+  543  xwd
+  544  xwd -root -out xwdss.xwd
+  545  ls *.xwd
+  546  convert xwdss.xwd test.png
+

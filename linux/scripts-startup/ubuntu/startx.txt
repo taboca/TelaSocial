@@ -1,0 +1,5 @@
+/etc/init.d/gdm stop
+startx /usr/local/firefox/firefox http://www.telasocial.com/proto/taboca-telasocial-tagvisor/telalight/index.html -- -dpi 100 -depth 16
+
+
+

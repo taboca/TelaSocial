@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE tagvisorwindow [
+  <!ENTITY % tagvisorDTD SYSTEM "chrome://tagvisor/locale/tagvisor.dtd" >
+  %tagvisorDTD;
+]>
+
+<?xml-stylesheet href="chrome://tagvisor/skin/tagvisor.css" type="text/css"?>
+
+<overlay id="tagvisortasksOverlay"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://tagvisor/content/tagvisor.js"/>
+
+<statusbar id="status-bar">
+  <toolbarbutton tooltiptext="&tagvisor.buttonguide.tooltip;" id="tagvisormenu" insertbefore="status-bar" onclick="com.taboca.tagvisor.openVisor()" />
+</statusbar>
+
+<popupset id="mainPopupSet">
+
+<panel id="tagvisorpanel" noautohide="true" noautofocus="true" onpopuphidden="com.taboca.tagvisor.tagvisor_bringBack()"  onclick="com.taboca.tagvisor.tagvisor_backToVideo()" >
+    <html:canvas id="tagvisorcanvas" width="120" height="99" style="border:3px solid black;" />
+</panel>
+
+</popupset>
+
+   <!-- toolbar overlay -->
+
+   <toolbarpalette id="BrowserToolbarPalette">
+
+     <toolbarbutton id="tagvisor-button-up" tooltiptext="Up"  
+                  style="list-style-image:url(chrome://tagvisor/skin/icon_video.png) ! important" onclick="com.taboca.tagvisor.tagvisor_launchPanel()"  
+                    label="Up">
+     </toolbarbutton>
+
+   </toolbarpalette>
+  
+</overlay>
