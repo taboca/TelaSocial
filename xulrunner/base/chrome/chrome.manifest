@@ -1,0 +1,8 @@
+
+
+content tagvisor 			tagvisor/content/
+locale	tagvisor en-US 			tagvisor/locale/en-US/
+skin    tagvisor classic/1.0  		tagvisor/skin/
+
+content telasocial 			telasocial/content/telasocial/
+locale  telasocial en-US 		telasocial/locale/en-US/telasocial/

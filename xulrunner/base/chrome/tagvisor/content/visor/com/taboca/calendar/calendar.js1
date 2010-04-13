@@ -1,0 +1,38 @@
+
+c = require("choreographer");
+t = require("timer");
+
+var calendar_Widget =  {
+
+	name   : __appName,
+        target : __targetName,
+
+	start : function () { 
+
+	        this._raiseEvent(".container", "start");
+                this._raiseEvent(".container.clock", "start");
+                this._raiseEvent(".container.twitter", "start");
+                this._raiseEvent(".container.grade", "start");
+                this._raiseEvent(".container.ticker", "start");
+
+/*
+                this._raiseEvent(".container.flickr", "start");
+
+*/
+		selff = this;
+		t.setTimeout( function() { selff.kickMore() } , 5000); 
+		
+	} ,
+
+	init : function () {
+		
+
+	},
+        kickMore: function () { 
+//                this._raiseEvent(".container.clock", "kill");
+ 	} 
+
+
+}
+
+c.register(calendar_Widget);

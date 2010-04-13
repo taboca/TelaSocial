@@ -1,0 +1,1 @@
+These files are from different projects. For additional information about jQuery and their licensing terms use http://en.wikipedia.org/wiki/JQuery and the official jQuery web site - http://jquery.com/
