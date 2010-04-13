@@ -7,6 +7,7 @@
   id     = "telasocial"
   title  = "&telasocial.title;"
   width  = "800"
+  windowtype   = "navigator:browser"
   height = "600"
   xmlns  = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <script src="telasocial.js"/>

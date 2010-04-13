@@ -111,6 +111,7 @@ WebProgressListener.prototype = {
   }
 };
 var listener;
+gBrowserContentWindow = null;  // This is used by the overlay tagvisor app 
 
 function go() {
   var urlbar = document.getElementById("urlbar");
@@ -118,6 +119,14 @@ function go() {
 
   browser.loadURI(urlbar.value, null, null);
 }
+
+function gBrowserLoad(url) { 
+  var browser = document.getElementById("browser");
+  browser.loadURI(url, null, null);
+  gBrowserContentWindow = document.getElementById("browser").contentWindow;
+} 
+
+
 
 function back() {
   var browser = document.getElementById("browser");
@@ -148,7 +157,7 @@ function showConsole() {
 
 function onload() {
   var urlbar = document.getElementById("urlbar");
-  urlbar.value = "chrome://tagvisor/content/visor/index.html";
+  urlbar.value = "about:blank";
 
   listener = new WebProgressListener();
 
