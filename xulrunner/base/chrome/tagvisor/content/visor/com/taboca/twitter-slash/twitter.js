@@ -2,8 +2,10 @@ c     = require("choreographer");
 timer = require("timer");
 
 var twitter =  {
-	name   : __appName,
+ name   : __appName,
         target : __targetName,
+        targetId : __targetId,
+
 
 	crop    : "50",
 	title   : "Twitter 10",
