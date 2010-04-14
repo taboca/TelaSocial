@@ -6,9 +6,12 @@ var flickr =  {
         target : __targetName,
         targetId : __targetId,
 
+	feedURL : 'http://api.flickr.com/services/feeds/photos_public.gne?tags=mozchile09',
+
 	start : function () { 
 
-		this.feed = new google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=mozchile09');
+                this.feed = new this._service_google.feeds.Feed(this.feedURL);
+
 		this.feed.setNumEntries(20);
 
 		this.element = this._coreDoc.createElement('div');
@@ -72,8 +75,8 @@ var flickr =  {
 		}
 
 
-			this.feed = new google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=mozchile09');
-			this.feed.setNumEntries(20);
+			//this.feed = new google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=mozchile09');
+			//this.feed.setNumEntries(20);
 
 	}
 
