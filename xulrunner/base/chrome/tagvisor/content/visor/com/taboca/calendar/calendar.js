@@ -12,10 +12,9 @@ var calendar_Widget =  {
 	        this._raiseEvent(".container", "start");
                 this._raiseEvent(".container.clock", "start");
                 this._raiseEvent(".container.twitter", "start");
-                this._raiseEvent(".container.slashdot", "start");
+                this._raiseEvent(".container.flickr", "start");
 
 		selff = this;
-//		t.setTimeout( function() { selff.kickMore() } , 15000); 
 		
 	} ,
 

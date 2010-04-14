@@ -5,7 +5,7 @@
 
 		com.taboca.upvisor.registerWidget( ".container" , "com/taboca/clock/clock.js","clock", "area_topright");
                 com.taboca.upvisor.registerWidget( ".container" , "com/taboca/twitter-eventos/twitter.js","twitter", "area_midleft");
-                com.taboca.upvisor.registerWidget( ".container" , "com/taboca/twitter-g2/twitter.js","slashdot", "area_midright");
+                com.taboca.upvisor.registerWidget( ".container" , "com/taboca/flickr/flickr.js","flickr", "area_midright");
 
 
 		com.taboca.upvisor.startEngine( function () { com.taboca.upvisor.raiseEvent(".calendar", "start"); } ); 
