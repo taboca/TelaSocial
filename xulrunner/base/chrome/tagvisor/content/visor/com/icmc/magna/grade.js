@@ -117,7 +117,7 @@ this.local["14"] = "Auditório Prof. Luiz Antonio Favaro ";
 
 evento : { 
 
-"22": [ 
+"14": [ 
 
 { inicio: "14:00 ", fim: "14:30 ", descricao: " Apresentação do Prof. Dr. Marco Antonio Zago, Pró-Reitor de Pesquisa da Universidade de São Paulo", sigla: "- ",local: "Auditório ICMC  ",apresentador: ""},
 { inicio: "14:30 ", fim: "15:00 ", descricao: " Homenagem aos alunos com melhor desempenho acadêmico, formados no ICMC no ano de 2009", sigla: "- ",local: "Auditório ICMC ",apresentador: ""},
