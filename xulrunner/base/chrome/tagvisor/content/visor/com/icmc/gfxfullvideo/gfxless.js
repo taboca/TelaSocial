@@ -38,8 +38,8 @@ var gfx =  {
 		margin-right:1em;
 		font-size:30px; 
 	
-		width:1200px;	
 		width:100%;
+		width:1200px;	
 		color:black;
 		font-weight:bold;
 		-moz-border-radius:45px 15px; 
