@@ -1,0 +1,77 @@
+
+function gfxless_Widget() {
+
+
+
+	this.style =" html { margin:0; padding:0; font-family: arial; } body { background-image: -moz-linear-gradient(-45deg, #84A4D4 , #fff); width:1920px; margin:0; height:100%; padding:0; overflow:hidden; } #frame { margin:auto; width:1920px; padding-left:2em; height:1000px; } .tab { position:relative; -moz-border-radius:95px 0px 0px 55px;; background-image: -moz-linear-gradient(top, rgba(132,164,212,1), rgba(0,0,0,.1)); color:yellow; -moz-box-shadow:black 0 10px 55px; font-size:30px; padding:1em; } .tab-tab { position:absolute; background-color:#ddd;		top:-60px; -moz-border-radius:35px 35px 0 0; padding:15px; padding-left:40px; font-size:60px; color:white; width:700px; right:0px; background-color:rgb(132,164,212); } .orange { background-image: -moz-linear-gradient(-60deg, #246, #469, #000); ;  margin-right:1em; font-size:50px; font-weight:bold; -moz-border-radius:55px 95px; } .green { font-family: arial; background-image: -moz-linear-gradient(-60deg, #030,  #070, #000); font-size:30px; padding:1em; font-weight:bold; ;; height:500px; color:white;  } .green a { color:white}  h1 { font-family:georgia; font-weight:bold; font-size:60px; } ";
+
+	this.start = function () { 
+
+		var importedElement = document.createElement("div");
+
+		importedElement.innerHTML =  <>
+
+
+<div id='frame'>
+
+<div id='topleft'>
+</div>
+ 
+<div class='tab' style='margin-top:1em'>
+<div class='tab-tab'>
+ICMC / USP
+</div>
+
+<table><tr>
+<td>
+<div class='tab orange' style='margin-top:0em; '  id='middle'>
+</div>
+</td>
+<td>
+<div class='tab orange' style='margin-top:0em;' id='toparea'>
+</div>
+</td>
+</tr>
+</table>
+
+<div class='tab green' style='margin-top:1em' id='bottom'>
+</div>
+
+</div>
+</div>
+
+		</>;
+
+		document.getElementById(this._getId()).appendChild(importedElement);
+		var cc = 0;
+		for ( key in this._childList ) { 
+			if (cc==0) { 
+				this._childList[key] = "topleft"
+			} 
+			if (cc==1) { 
+				this._childList[key] = "middle"
+			} 
+			if (cc==2) { 
+				this._childList[key] = "bottom"; 
+			} 
+			if (cc==3) { 
+				this._childList[key] = "toparea"; 
+			} 
+			cc++;
+		} 
+	} 
+
+	this.init = function () {
+		
+	try { 
+
+		$(document.createElementNS("http://www.w3.org/1999/xhtml", "style")).appendTo(jQuery("head",document)).append( this.style);
+	} catch(i) { alert(i) } 
+
+
+	}
+
+	return this;
+
+}
+
