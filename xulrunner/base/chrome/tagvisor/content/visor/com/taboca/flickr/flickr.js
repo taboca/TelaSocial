@@ -1,32 +1,37 @@
-function flickr_Widget() {
+c     = require("choreographer");
+timer = require("timer");
 
-	this.start = function () { 
+var flickr =  {
+        name   : __appName,
+        target : __targetName,
+        targetId : __targetId,
 
-//		this.feed = new google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?id=98393462@N00&tags=mozfisl10&lang=en-us&format=rss_200');
+	start : function () { 
+
 		this.feed = new google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=mozchile09');
 		this.feed.setNumEntries(20);
 
-		this.element = document.createElement('div');
+		this.element = this._coreDoc.createElement('div');
 		this.picQueue = new Array();
 
-		document.getElementById(this._getId()).appendChild(this.element);
+		this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 
-		this.refElement = document.createElement("div");
+		this.refElement = this._coreDoc.createElement("div");
 		this.element.appendChild(this.refElement);
 
-		//this.__mycontainer.appendChild(this.element);
-		
-		window.setInterval( (function(){this.updateFeed()}).bind(this),10000);
 
-	} 
+                var self = this;
+                timer.setTimeout( function(){self.updateFeed()},1000);
 
-	this.init = function() {
-	}
+	} ,
 
-	this.popPic = function() {
+	init : function() {
+	},
+
+	popPic : function() {
 		if (this.picQueue.length == 0) return false;
 
-		var k = document.createElement('div');
+		var k = this._coreDoc.createElement('div');
 		k.className = 'photo';
 		var t = this.picQueue.pop();
 
@@ -41,16 +46,18 @@ function flickr_Widget() {
 		this.element.insertBefore(k, this.element.firstChild);
 
 		return true;
-	}
+	},
 
 
-	this.updateFeed = function() {
+	updateFeed : function() {
 		if (! this.popPic()) {
 			this.feed.load(this.__feedUpdated.bind(this));
 		}
-	}
+		var self = this;
+		timer.setTimeout( function(){self.updateFeed()},10000);
+	},
 
-	this.__feedUpdated = function(result) {
+	__feedUpdated : function(result) {
 
 		if (result.error || result.feed.entries < 1) {
 			return;
@@ -65,11 +72,11 @@ function flickr_Widget() {
 		}
 
 
-	this.feed = new google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=mozchile09');
-	this.feed.setNumEntries(20);
+			this.feed = new google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=mozchile09');
+			this.feed.setNumEntries(20);
 
 	}
 
-	return this;
 }
 
+c.register(flickr);
