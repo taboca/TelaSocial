@@ -12,7 +12,7 @@ var calendar_Widget =  {
 	        this._raiseEvent(".container", "start");
                 this._raiseEvent(".container.clock", "start");
                 this._raiseEvent(".container.twitter", "start");
-                this._raiseEvent(".container.twitterg1", "start");
+                this._raiseEvent(".container.slashdot", "start");
 
 		selff = this;
 //		t.setTimeout( function() { selff.kickMore() } , 15000); 
