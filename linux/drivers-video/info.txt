@@ -1,0 +1,8 @@
+Info background on Drivers and Video with Ubuntu / Marcio and Patricia at ICMC 
+===
+
+lsmod to list drivers
+lspci to display info on pci 
+rmmod to remove drivers
+
+
