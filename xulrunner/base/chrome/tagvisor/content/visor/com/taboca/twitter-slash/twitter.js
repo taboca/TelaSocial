@@ -8,8 +8,8 @@ var twitter =  {
 	crop    : "50",
 	title   : "Twitter 10",
 	feedURL : "http://search.twitter.com/search.atom?q=%23sxsw",
-	feedURL : "http://rss.slashdot.org/Slashdot/slashdot",
 	feedURL : "http://g1.globo.com/Rss2/0,,AS0-6174,00.xml",
+	feedURL : "http://rss.slashdot.org/Slashdot/slashdot",
 	feed    : null, 
 
 	style : <><![CDATA[
