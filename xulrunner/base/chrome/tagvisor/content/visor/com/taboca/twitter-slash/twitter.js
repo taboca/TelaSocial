@@ -41,7 +41,7 @@ var twitter =  {
 
 		this.element = this._coreDoc.createElement('div');
 		this.element.className="twitterPanel";
-		 this.element.setAttribute("style","width:600px;height:100%;padding-top:1em;");
+		 this.element.setAttribute("style","width:550px;height:100%;padding-top:1em;");
 		this.element.id = Math.random();
 		this.tweetQueue = new Array();
 
