@@ -5,7 +5,8 @@
 
 		com.taboca.upvisor.registerWidget( ".container" , "com/taboca/clock/clock.js","clock", "area_topright");
                 com.taboca.upvisor.registerWidget( ".container" , "com/icmc/magna/grade.js","grade", "area_midleft");
-                com.taboca.upvisor.registerWidget( ".container" , "com/taboca/twitter-eventos/twitter.js","twitter", "area_midright");
+                //com.taboca.upvisor.registerWidget( ".container" , "com/taboca/twitter-eventos/twitter.js","twitter", "area_midright");
+                com.taboca.upvisor.registerWidget( ".container" , "com/taboca/flickr/flickr.js","twitter", "area_midright");
 
 
 		com.taboca.upvisor.startEngine( function () { com.taboca.upvisor.raiseEvent(".calendar", "start"); } ); 
