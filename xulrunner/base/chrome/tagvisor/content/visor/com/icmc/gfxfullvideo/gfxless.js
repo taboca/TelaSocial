@@ -37,7 +37,8 @@ var gfx =  {
 	#area_topleft { 
 		margin-right:1em;
 		font-size:30px; 
-		
+	
+		width:1200px;	
 		width:100%;
 		color:black;
 		font-weight:bold;
