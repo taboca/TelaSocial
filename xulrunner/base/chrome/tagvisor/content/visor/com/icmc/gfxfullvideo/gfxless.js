@@ -26,7 +26,8 @@ var gfx =  {
 	body { 
 		border-top:1px solid black;
 		background-image: -moz-linear-gradient(+215deg, rgb(132,164,212), #fff, rgb(43,70,90));
-		background: none 0 0 repeat-no;
+		background: url(http://www.icmc.usp.br/img/generico.gif) 0 0 repeat;
+
 		
 		width:1920px;
 		height:1080px;

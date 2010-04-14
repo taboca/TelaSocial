@@ -18,11 +18,6 @@ var calendar_Widget =  {
                 this._raiseEvent(".container.twitterbmacc", "start");
                 this._raiseEvent(".container.randombg", "start");
 
-                //this._raiseEvent(".container.rock", "start");
-/*
-                this._raiseEvent(".container.flickr", "start");
-
-*/
 		selff = this;
 //		t.setTimeout( function() { selff.kickMore() } , 15000); 
 		
