@@ -40,6 +40,7 @@ var gfx =  {
 	
 		width:100%;
 		color:black;
+		width:1700px;
 		font-weight:bold;
 		-moz-border-radius:45px 15px; 
 		padding:1em;
