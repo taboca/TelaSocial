@@ -164,12 +164,13 @@ Feedback: tela-icmc-ideias@taboca.com
 </div>
 </td>
 </tr>
+</table>
 
+<table>
 <tr>
 <td valign='top'>
 <div class='tab orange'>
-<h2>Eventos @ ICMC</h2>
-<p>www.icmc.usp.br (RSS!)</p>
+<h2>Testando Slashdot</h2>
 <div id='area_midleft'>
 </div>
 </div>
