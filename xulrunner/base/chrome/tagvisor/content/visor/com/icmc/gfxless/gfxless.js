@@ -2,6 +2,8 @@
 c = require("choreographer");
 t = require("timer");
 
+		//background-image: -moz-linear-gradient(-45deg, rgb(250,200,40) , #fff);
+// background-image: -moz-linear-gradient(top, rgba(132,164,212,1), rgba(255,255,255,1));
 var gfx =  {
 
         name   : __appName,
@@ -19,7 +21,7 @@ var gfx =  {
 	}
 
 	body { 
-		background-image: -moz-linear-gradient(-45deg, rgb(250,200,40) , #fff);
+		background: rgb(250,200,40);
 		
 		width:1920px;
 		margin:0;
@@ -39,7 +41,7 @@ var gfx =  {
 	.tab { 
 		position:relative;
 		-moz-border-radius:95px 0px 0px 55px;;
-		background-image: -moz-linear-gradient(top, rgba(132,164,212,1), rgba(255,255,255,1));
+		background-color:rgb(132,164,212);
 		color:black;
 		-moz-box-shadow:black 0 10px 55px; 
 		-moz-box-shadow:white 0 10px 55px; 
