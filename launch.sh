@@ -3,21 +3,39 @@
 #/usr/bin/startx /usr/local/firefox-telasocial/firefox -depth 16 
 /etc/init.d/gdm stop
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 /usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
+/usr/bin/startx /usr/lib/taboca/telasocial/telasocial depth 16
+sleep 10 
 
 
 
