@@ -10,11 +10,9 @@ var calendar_Widget =  {
 	start : function () { 
 
 	        this._raiseEvent(".container", "start");
-//                this._raiseEvent(".container.video", "start");
                 this._raiseEvent(".container.clock", "start");
                 this._raiseEvent(".container.twitter", "start");
                 this._raiseEvent(".container.twitteroutros", "start");
-//                this._raiseEvent(".container.ticker", "start");
                 this._raiseEvent(".container.twitterslash", "start");
 
 		selff = this;
@@ -28,17 +26,6 @@ var calendar_Widget =  {
 	kickState : false, 
 
         kickMore: function () { 
-/*
-		if(this.kickState) { 
-               	 	this._raiseEvent(".container.twitter", "kill");
-              		this._raiseEvent(".container.twitter", "init");
-
-			this.kickState=false; 
-		} else { 
-			this.kickState=true;
-
-		} 
-*/
  	} 
 
 
