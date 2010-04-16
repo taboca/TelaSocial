@@ -4,9 +4,12 @@ t = require("timer");
 
 var gfx =  {
 
-	name   : __appName,
+        name   : __appName,
         target : __targetName,
-  	_coreDoc: null, 
+        targetId : __targetId,
+        _coreDoc: null,
+
+
 
 	style : <><![CDATA[
 
@@ -119,7 +122,10 @@ var gfx =  {
 
 <div id='frame'>
 
-<div id='topleft'>
+<span id="area_topleft">
+</span>
+
+<div id='area_topright'>
 </div>
  
 <div class='tab' style='margin-top:1em'>
@@ -129,17 +135,17 @@ ICMC / USP
 
 <table><tr>
 <td>
-<div class='tab orange' style='margin-top:0em; '  id='middle'>
+<div class='tab orange' style='margin-top:0em; '  id='area_midleft'>
 </div>
 </td>
 <td>
-<div class='tab orange2' style='margin-top:0em;' id='toparea'>
+<div class='tab orange2' style='margin-top:0em;' id='area_midright'>
 </div>
 </td>
 </tr>
 </table>
 
-<div class='tab green' style='margin-top:1em' id='bottom'>
+<div class='tab green' style='margin-top:1em' id='area_bottomleft'>
 </div>
 
 </div>
@@ -148,7 +154,9 @@ ICMC / USP
 		</>;
 
 		this._coreDoc.getElementById(this._getId()).appendChild(importedElement);
-		var cc = 0;
+
+
+/*		var cc = 0;
 		for ( key in this._childList ) { 
 			if (cc==0) { 
 				this._childList[key] = "topleft"
@@ -164,6 +172,7 @@ ICMC / USP
 			} 
 			cc++;
 		} 
+*/
 
 // marcio
 	} ,
