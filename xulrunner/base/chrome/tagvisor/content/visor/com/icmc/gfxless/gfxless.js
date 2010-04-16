@@ -46,7 +46,7 @@ var gfx =  {
 		-moz-box-shadow:black 0 10px 55px; 
 		-moz-box-shadow:white 0 10px 55px; 
 		font-size:30px;
-		padding:1em;
+		padding:.5em;
 	} 
 
 	.tab-tab { 
@@ -65,8 +65,8 @@ var gfx =  {
 
 	.orange { 
 		background-image: -moz-linear-gradient(-60deg, #ddd, #fff, #eee);
-		height:550px;
-		padding:.5em;
+		height:1200px;
+		padding:.2em;
 		width:1100px;
 		margin-right:1em;
 		font-size:50px;
@@ -77,8 +77,8 @@ var gfx =  {
 
   .orange2 {
                 background-image: -moz-linear-gradient(-60deg, #ddd, #fff, #eee);
-                height:570px;
-                padding:.5em;
+                height:1200px;
+                padding:.2em;
                 width:650px;
                 margin-right:1em;
                 font-size:30px;
