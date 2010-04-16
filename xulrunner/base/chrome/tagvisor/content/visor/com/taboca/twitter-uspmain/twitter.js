@@ -85,7 +85,7 @@ var twitter =  {
 			this.feed.load( function (e) {  self.__feedUpdated(e) } );
 		}
 		var self = this;
-		timer.setTimeout( function(){self.updateFeed()},10000);
+		timer.setTimeout( function(){self.updateFeed()},60000);
 	},
 
 	__feedUpdated : function(result) {
