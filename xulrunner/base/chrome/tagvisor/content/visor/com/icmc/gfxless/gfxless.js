@@ -136,11 +136,11 @@ ICMC / USP
 </div>
 
 <table><tr>
-<td>
+<td valign='top'>
 <div class='tab orange' style='margin-top:0em; '  id='area_midleft'>
 </div>
 </td>
-<td>
+<td valign='top'>
 <div class='tab orange2' style='margin-top:0em;' id='area_midright'>
 </div>
 </td>
