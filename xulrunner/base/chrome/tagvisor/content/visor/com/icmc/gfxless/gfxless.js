@@ -132,7 +132,7 @@ var gfx =  {
  
 <div class='tab' style='margin-top:.4em'>
 <div class='tab-tab'>
-ICMC / USP
+<img src='http://www.icmc.usp.br/favicon.ico' align='middle' />ICMC-USP
 </div>
 
 <table><tr>
