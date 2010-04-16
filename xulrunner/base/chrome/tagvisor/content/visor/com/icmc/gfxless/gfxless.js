@@ -52,7 +52,7 @@ var gfx =  {
 	.tab-tab { 
 		position:absolute;
 		background-color:#ddd;		
-		top:-60px;
+		top:-100px;
 		-moz-border-radius:35px 35px 0 0; 
 		padding:15px;
 		padding-left:40px;
@@ -130,7 +130,7 @@ var gfx =  {
 <div id='area_topright'>
 </div>
  
-<div class='tab' style='margin-top:1em'>
+<div class='tab' style='margin-top:.4em'>
 <div class='tab-tab'>
 ICMC / USP
 </div>
