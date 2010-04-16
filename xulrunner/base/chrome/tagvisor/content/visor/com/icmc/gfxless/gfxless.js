@@ -137,12 +137,12 @@ var gfx =  {
 
 <table><tr>
 <td valign='top'>
-Breve com datas ( informe-se com Marília/Eventos )
+<span style='color:white'>&nbsp;&nbsp;Breve com datas ( informe-se com Marília/Eventos )</span>
 <div class='tab orange' style='margin-top:0em; '  id='area_midleft'>
 </div>
 </td>
 <td valign='top'>
-USP.br RSS site: 
+<span style='color:white' >USP.br RSS site: </span>
 <div class='tab orange2' style='margin-top:0em;' id='area_midright'>
 </div>
 </td>
