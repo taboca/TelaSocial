@@ -137,7 +137,7 @@ var gfx =  {
 
 <table><tr>
 <td valign='top'>
-<span style='color:white'>&nbsp;&nbsp;Breve com datas ( informe-se com Marília/Eventos )</span>
+<span style='color:white;margin-left:1em' >Breve com datas ( informe-se com Marília/Eventos )</span>
 <div class='tab orange' style='margin-top:0em; '  id='area_midleft'>
 </div>
 </td>
