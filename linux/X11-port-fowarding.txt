@@ -1,0 +1,1 @@
+http://tldp.org/HOWTO/XDMCP-HOWTO/ssh.html
