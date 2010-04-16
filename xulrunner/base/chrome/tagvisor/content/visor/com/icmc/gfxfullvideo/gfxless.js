@@ -169,7 +169,6 @@ Feedback: tela-icmc-ideias@taboca.com
 <tr>
 <td valign='top'>
 <div class='tab orange'>
-<h2>Testando Slashdot</h2>
 <div id='area_midleft'>
 </div>
 </div>
