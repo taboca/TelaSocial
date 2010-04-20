@@ -1,0 +1,23 @@
+Feedback Collection 
+
+One student, anonymous from ICMC-USP, wrote a post-it next to the TV as a response to our feedback collection gathering. It stated "my dear, welcome to the XXI century. We are not anymore in the age of information but in the age of criteria. do your part as I am trying to do mine". This note has inspired me to think a bit more about the purpose of the panel beyond information display and explore ways the presented information can help the institute. In the previous events we have successfuly executed some cases allowing users to interact throught the panel. One of the cases we had was a visual programming layout that displayed two twitter channel areas which caused many participants to interact. One channel was primarily used by alumni students while the other was a general comments channel. Activity was noticed in the panel to a point that a few students decided to use the alumni channel. Notice that the concept of channel here is associated with a search in twitter using a tag as the query so there is not really a way to prevent users from writing information to any tag unless an evaluation criteria is in place or some sort of filter. 
+
+This week, while reading a paper related to learning styles, I reached a section of the work that highlighted important components related to data collection models in research work. One highlighted component is reliability and other is validity. I found that these aspects can be good inspiration and push the project to initiate some level of data collection. At this moment the project collects basic information about the system usage that is only used to monitor the system activity. Improved data collection can be used in the system and help out future interactions based on current use. 
+
+Validity is another aspect once we have data beying collected. The aspects of validity can be broken in content, criterion, and construct [Evaluating Learning Style Personalization in Adaptive Systems: Quantitative Methods and Approaches]. Content validity refers to how much a measured content is part of an specific domain - if it fits in the expected data domain, so let's say if we want to know how much of the input from a given channel is in fact generated from the local participants. There are also other types of validity involed such as Criterion and Construct.  In Criterion validity component, the interest is the examination of the connection between given scores of a scale and a given standard. While the first case can allow unseen exploration ( more close to simply collecting data ) the criterion involves a direct explanation that can be highlighted maybe even from the live use of the system. And then there is Construct validity which tests the scale against theoretically derived hypothesis which relates to a variable under examination. 
+
+Ideas 
+
+Hyphotesis to test. Gather the communication and notes from the department and check the data against the trending topics in popular social networking web sites. Can a trending topic be considered a standard thus can this test of data in the locality against gllobal popular trending be a criterion validity. 
+
+Note about Surveys
+
+In order to better assess the potential and use of the system we want to conduct surveys in the local community. The preparation of questionnaires is important but it needs to be done in a way that benefits the project. It is important to validate the wording of questions, avoid ambiguity or complex wording or to cause emotional intepretation. In general questionnaries should include options like "I dont know" or " not applicable ". (( Step by Step Guide to Data Analysis. ))
+
+Note about Data Collection and Privacy
+
+We aso should need a policy for data collection so that it is clear in the project site that the data collected is communicated with the participants that are actively interacting with the social kiosk. 
+
+
+
+

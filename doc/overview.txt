@@ -1,0 +1,39 @@
+TelaSocial - Mozilla-powered Open Source Dashboard 
+by Marcio Galli
+TelaSocial Project Founder 
+
+TelaSocial is an open-source Web dashboard application sometimes refered as the social-aware browser kiosk. The name TelaSocial is trademark of Marcio S. Galli / Taboca.com in Brazil and other countries. This project is being sponsored by Taboca and also receives significant support from the ICMC-USP community where we have a pilot experimentation project in place. At ICMC-USP there are currently two display panels in use. For additional information about the pilot case of TelaSocial usage please visit the project information page. General information and updates about the project can be visited at the blog.telasocial.com web site. 
+
+TelaSocial application is now available as a XULRunner application and at the same time as a Firefox extension. This is designed to work seamlessly over Firefox or XULRunner. We also moved the old architecture widgets ( all hardcoded ) to a sandbox-based architecture which uses a Mozilla work refered as Cuddlefish. Now, with Cuddlefish, the application creates a main visual layout area, a placeholder XHTML document, and it loads the main rule file via XHR. In the scope of the project sometimes this rule file is refered to as choreography rules. When the rule is loaded, the core starts to load widgets derived from the file, each in a sandbox. Each widget receives a handler to the main DOM document area so they can do their DOM operations in markup along with sibbling widgets so presentation results are then shown in the screen. There is no security rules at this point - it's totally unsafe now. One widget can remove the others if it really wants.  
+* Memory Leaks ( XUL Core Layer )
+===
+looks like I know the fix. I think the core-ographer component is growing objects in memory as it loads widgets. The system runs fine for about 4-6 hours and kills the machine; This is probably related to the way we implemented the chrome app and how it talks with the content-based layer. 
+
+* Layouts Challenges ( Widgets Layer )
+===
+the general layout is also a JavaScript-based widget. People do not like the actual options we have displayed. It needs to be better I am thinking in a design challenge could also be good. So far feedback is that if a given screen is in a location that can be seen by many, then the interest is to have large fonts or a sort of typing words experience and not many statments of visual sections. This opinion varies depending on how and where the screen is located. 
+
+* Programming/Choreography ( JS Core layer )
+===
+while it has the sandbox which is good, it does not yet kills objects in client time. This is not a lot of work to get the first case running - maybe 4-6 hours. So then it will be possible to "flip the page" effect like, from noon to 2PM run another layout with other widgets. From 2PM+ change to other and so on; This also brings the topic of better ways to improve choreography for events and widget creation/deletion/effects in runtime. For example, you could program the Twitter widget to feed values creating a local context of information. Then when a given condition is reached ( more than 20 twitts let's say ) the widget receives a CSS transition or zoom in effect. This is the goal for me - the social composition cases - not a lot of work to get a case going, but maybe a lot of work to make the case really easy to use and effective in the real world;
+
+* Some more work to linux/watchdog monitor scripts ( OS Core Layer )
+===
+there are other components in the project as importat as the app/chrome/xulrunner/firefox stuff. In order to have it working 24x7 there is a linux-scripts directory checked in. With some OS it needs to put the OS in runlevel 3 ( no UI ) the scripts varies by OS distribution. At ICMC-USP we are using Ubuntu, at the coworking office I have fedora. Also there are scripts to launch the XULRunner app directly in the X11. In this mode we kill the gdm ( or equivalent window manager infra-structure in the Linux ). I am also documenting a bit information on how to send the X11 display bits over the wire over SSH so that the renderer computer can be far from the client-display computer; There are also scripts that are cron-based and are used to take screenshots from time to time - this is how I was able to come up with the timelapse view - http://blog.telasocial.com/timelapse-18-horas-de-telasocial-no-icmc-usp-0
+
+* App Management in the Chrome Level  ( XUL Core Layer )
+===
+It's important to intercept some function in the browser such as when a JavaScript is slow we have that alert popup. I think Minimo and/or Fennec has some infra on that. I am also looking starting to study the memory management layer in the Jetpack SDK to see if I can keep monitoring the widgets in runtime. This is key because we never now the system could get some JS that may cause trouble. So the system needs to be smart enough to keep profiling things in the 24x7 world. It's like it's a living community of widgets and sometimes we have to pause or kill a widget. In the same context, but maybe outside the XUL, it needs also to signal the above component so that when the XUL layer really gets totally frozen the other layer knows and kills the app with a restart, which brings also the last next section.
+
+* Store Session Management ( XUL/Chrome Layer )
+===
+When the app gets rebooted today the whole thing comes up again.Which causes a real programming reflow. This is an option but we need to reach the case that the app comes back at the previous stage.  Part of the investigation here is to look the session management in FF, but also also believe in the XUL Core Layer to take care of that by just proxying things ( RSS data and states ) keeping the local SQL store or HTML 5 store. In this mode, it is possible to keep all the RSS data and the a history of execution states so when the app comes back things are normal. This is where the API grows I think. It is a point where a widget developer would possibly stop using a direct call to an RSS with XHR, and use a local API RSS loader proxy that does this check from the local data-store. This can also be good for possible power outages - the offline aspect has to work in this 24x7 condition.
+
+Other project-wise
+===
+
+It's important to realized that right now, with cuddlefish in the code, this seems to be going to be a Jetpack-based SDK app for XULrunner and Firefox. Now the focus is to make the app nicier, cover the interest cases based on local feedback / customer requests, and play well with the SDK.
+
+The project needs more documentation and more easy instructions on how to install. We are now fixing lots of obvious problems with the XUL layer and also the Linux-based scripts. I am hoping that in about 10 days will be okay for a developer to do a fresh install and in fact have some reasonable experience. Aside from that there is a big roadmap that needs to be organized to align with the most important areas. To define a pririty I am now organizing feedback information from the local community at ICMC-USP and also running on April 21th, 2010 a brainstorming session in the department. The goal is to come up with a simple list of things to do. 
+
+Note from marcio on April, 19th, 2010
