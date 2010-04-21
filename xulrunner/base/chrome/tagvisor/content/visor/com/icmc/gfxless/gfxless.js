@@ -142,7 +142,7 @@ var gfx =  {
 </div>
 </td>
 <td valign='top'>
-<span style='color:white' >USP.br RSS site: </span>
+<span style='color:white' >Twitter #icmcoutros: </span>
 <div class='tab orange2' style='margin-top:0em;' id='area_midright'>
 </div>
 </td>
