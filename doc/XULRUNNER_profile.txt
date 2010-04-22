@@ -1,0 +1,17 @@
+/root/.taboca/telasocial
+
+From Mozilla Documentation 
+
+ User Profiles
+
+An application running on top of the XULRunner has a fully "managed" profile directory for storing user specific data. XULRunner sets up the profile directory for applications automatically, and it uses the same profile locking mechanism used by existing applications like Firefox and Thunderbird.
+
+The profile directory for an application is created under vendor/appname in the appropriate place on the user's system. For example, under Windows this would be:
+
+$USERPROFILE\Application Data\$vendor\$appname\Profiles\$random.default
+
+And under Unix systems it would be:
+
+$HOME/.$vendor/$appname/Profiles/$random.default
+
+
