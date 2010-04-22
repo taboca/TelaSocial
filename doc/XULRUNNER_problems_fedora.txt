@@ -1,0 +1,5 @@
+In fedora 10 some problems with new XULRunner, the app is crashing - it's working calling the old XULrunner
+
+/usr/bin/startx ./xulrunner ../../TelaSocial/xulrunner/base/application.ini 
+
+

@@ -1,3 +1,23 @@
 http://github.com/taboca/TelaSocial/issues#issue/3
 
  In order to implement this we need to implement a data connection and feed proxy module and make this available to the widgets codes as part of the choreographer API. Today widget modules are responsible for loading and managing the information - they directly interact with Web content. This can be done today via using Google AJAX RSS feed API or the widget component can make a call using XHR. The new proposal is to have a proxy component in the middle which is responsible for loading RSS information, maintaining a data store and events coordination system so that widgets can receive nodes of information. With this approach a widget should be able to collect feed items from various pre-registered feed channels thus the effect of a rotating RSS ticker for various RSS data-sources will be possible.
+
+jQuery jFeed plugin 
+
+http://www.hovinne.com/blog/index.php/2007/07/15/132-jfeed-jquery-rss-atom-feed-parser-plugin
+
+Architecture 
+===
+
+Register Feed 
+Networking Cycles 
+Context Store
+Observers Registration
+Events Dispatch 
+
+
+References
+===
+
+* https://developer.mozilla.org/en/DOM/Storage
+* 
