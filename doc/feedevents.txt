@@ -28,6 +28,59 @@ var mDBConn = storageService.openDatabase(file); // Will also create the file if
 
 Profile in XULRUnner is /root/.taboca/telasocial 
 
+Store Pool 
+===
+* We want to Load the items and break them in flat nodes; Whicih is to separate the items from the channel other info and refer back to the channel from the items. Timestamp the time snapshot moment capture to each item
+
+ FeedItem channelnsinfo, timecaptured, checkstate, pubDate and other keys exported to this upper level 
+ 
+   Item Data 
+   * item.title
+   * item.link
+   * item.description
+   * item.updated
+   * item.id
+
+When RSS is loaded again, we check format all the items in prep work to put in the store and we try to put in the store if it is not there. So there it's a put insert if it is a diff = new elements only. 
+
+Once we have the elements in the store we need to create documents that are aggregation points to contextualization. These docuemnts are representations in DOM so that we will be able to use selctors to get some collections and generate contextual events. A contextual event is a key to the selection for a given document. 
+
+feeditem | event [domain="www.slashdot.com"] { 
+-context-event: Artigo; 
+} 
+
+We also need this system to work as a queue and allow processing states over the nodes. We do not want to have a document that is a huge mix of the many items from the many feeds to live forever growing. While the data-base information may grow for a longer time, the document space is a temporary representation that can be result of certin type queries. One possible example is a query that gives you all the elements - probably whay we do not want. But a case we are intested can be feed items that are not yet associated with any stored/processed state/flag/context. For example picture that the data stored received 10 items from slashdot and also 10 items from cnn.com. Now we have a collection of 20 items in the store. We can then do a query looking for all the items that have a context = fresh. This context = fresh can be a key variable that is stored in the item at the time it first comes from the network and was inserted in the DB. So if all items in the first place get a property = context = fresh this means they are all fresh so the app will end up making a contextual yet temporary document results of a query context = fresh = 20 items. 
+
+a possible rule for this can be 
+
+feeditem | event [domain="*"] [space.context="*.fresh"]
+  -context-event: New_Article; 
+} 
+
+So new_article should be dispatched against watchers of that. A watcher is an observer that will receive a document with the elements in it. So the query was already performed and the watcher ( possible a widget module ) will simply get a hook to the document that is the collection of ann new fresh items. Now a question is when to mark the items as non-fresh. One case to exercise is the case where a given visual module wants to display news from the both ( mashed ) feeds. So imagine a layout divided in two areas like this 
+
+-----------------
+|       |       |
+|   a   |   b   |
+|       |       |
+-----------------
+
+Both a and b are widgets that can display news. They both want to display the news. While widget a wants to show from top to the bottom, widget b wants to display from bottom to top. So if both are looking gor New_Article they will from time to time ( everytime a new item enters in the store / system ) get a call and a document. The call will be somrthing like A.doSomething(Document) where Document has a number of items. If we had an internal function marking the items as non fresh a possible problem would be b never receiving the elements. So one option here is to have the contextual document to create a snapshot of the elements in the store and keep that reference at the moment of the contextualization intact for the lifetime of operations performed by all possible watchers/consumers. So then then observer A is called and if A marks the elements as non fresh, the actuall store elements are marked as non fresh only for A, as if all the elements needed to receive an attribute that it is A.fresh=false. 
+
+New_Article: * { 
+ 
+   -event-observer: WidgetA;
+   -action-rule: this.fresh=false; 
+
+} 
+
+
+So while A receiveds the element the action rule is fresh false for A scope. So this New_Article will never happen next time. 
+
+
+
+
+
 
 References
 ===
