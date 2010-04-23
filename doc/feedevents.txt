@@ -53,9 +53,23 @@ We also need this system to work as a queue and allow processing states over the
 
 a possible rule for this can be 
 
-feeditem | event [domain="*"] [space.context="*.fresh"]
+feeditem | event [domain="www.slashdot.org"] [space.context="*.fresh"]
   -context-event: New_Article; 
 } 
+
+feeditem | event [domain="www.othermysite.org"] [space.context="*.fresh"]
+  -context-event: New_Article; 
+} 
+
+An initial processing queue executes the checks and creates contextual events. We need to keep both items in the store and also contextual events - the indexes to the queries. This will allow us to quickly search for New_Article again if we want. But a question here is why we would want to access the New_Articles again if we have the event that is created as the data comes in. 
+
+One importat need to keep a contextual event in the store is the fact that we want to annotate the ones we already have processed. So for an incoming list A,B,C that happens in t=0 we may end up with D,E,F in a t=1 state. So for the A,B,C a queue was created, the rule is true to all these let's say, so a contextual key event is created let's say: 
+
+K0 = A,B,C
+and also total store = A,B,C
+
+When in t=1 the RSS feed brought B,C,D,E,F and then theoreticaly all these would end up generating a contextual event in the chain. So we need to avoid B,C,D to be in this match. For this reason we may want to check the if the items area already placed in the store or if they are placed in some recent contextual event. Checking a new item against a huge store is an option. 
+
 
 So new_article should be dispatched against watchers of that. A watcher is an observer that will receive a document with the elements in it. So the query was already performed and the watcher ( possible a widget module ) will simply get a hook to the document that is the collection of ann new fresh items. Now a question is when to mark the items as non-fresh. One case to exercise is the case where a given visual module wants to display news from the both ( mashed ) feeds. So imagine a layout divided in two areas like this 
 
@@ -75,7 +89,9 @@ New_Article: * {
 } 
 
 
-So while A receiveds the element the action rule is fresh false for A scope. So this New_Article will never happen next time. 
+So while A receiveds the element the action rule is fresh false for A-scope fresh variable. So this New_Article will never happen next time for A but it may happen for B. Eventually some further advanced mixing can occur if you let A see B scope etc. 
+
+One thing is to consider is the storage of the events and the document states for each - the queries and the operations performed. So let's say that when a rule query is done, a document is created which is a link to each node. 
 
 
 
