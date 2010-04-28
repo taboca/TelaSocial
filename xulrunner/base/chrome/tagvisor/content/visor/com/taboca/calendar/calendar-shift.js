@@ -14,7 +14,7 @@ var calendar_Widget =  {
                 this._raiseEvent(".container.twitter", "start");
 
                 var self = this;
-                timer.setTimeout( function(){self.kickMore()},10000);
+                timer.setTimeout( function(){self.kickMore()},50000);
 
 		
 	} ,
@@ -34,7 +34,7 @@ var calendar_Widget =  {
 			this.kickState=true;
 		} 
               	var self = this;
-             	timer.setTimeout( function(){self.kickMore()},10000);
+             	timer.setTimeout( function(){self.kickMore()},50000);
  	} 
 
 

@@ -129,10 +129,10 @@ var gfx =  {
 	shiftmove: function () { 
                 var self = this;
 		if(this.moveleft) { 
-			this.movepos-=30;
+			this.movepos-=100;
 		}
 		else { 
-			this.movepos+=30;
+			this.movepos+=100;
 		} 
 		this._coreDoc.getElementById("moveframe").style.left=this.movepos+"px";
 		if(this.moveleft) { 
