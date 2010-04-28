@@ -67,7 +67,7 @@ var gfx =  {
 		background-image: -moz-linear-gradient(-60deg, #ddd, #fff, #eee);
 		height:1200px;
 		padding:.2em;
-		width:1100px;
+		width:1920px;
 		margin-right:1em;
 		font-size:50px;
 		font-weight:bold;
