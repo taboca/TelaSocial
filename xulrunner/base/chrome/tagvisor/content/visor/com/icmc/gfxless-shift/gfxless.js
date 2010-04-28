@@ -79,17 +79,13 @@ var gfx =  {
                 background-image: -moz-linear-gradient(-60deg, #ddd, #fff, #eee);
                 height:1200px;
                 padding:.2em;
-                width:650px;
+                width:1920px;
                 margin-right:1em;
                 font-size:30px;
                 font-weight:bold;
                 -moz-border-radius:55px 95px;
 		overflow:hidden;
-		-moz-border-radius-topright:0px; 
-		-moz-border-radius-bottomleft:35px; 
-
 		padding-left:1em;
-		
 
         }
 

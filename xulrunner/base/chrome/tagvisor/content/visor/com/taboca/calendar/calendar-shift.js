@@ -12,9 +12,10 @@ var calendar_Widget =  {
 	        this._raiseEvent(".container", "start");
                 this._raiseEvent(".container.clock", "start");
                 this._raiseEvent(".container.twitter", "start");
+                this._raiseEvent(".container.twitterslash", "start");
 
                 var self = this;
-                timer.setTimeout( function(){self.kickMore()},50000);
+                timer.setTimeout( function(){self.kickMore()},10000);
 
 		
 	} ,
@@ -34,7 +35,7 @@ var calendar_Widget =  {
 			this.kickState=true;
 		} 
               	var self = this;
-             	timer.setTimeout( function(){self.kickMore()},50000);
+             	timer.setTimeout( function(){self.kickMore()},30000);
  	} 
 
 
