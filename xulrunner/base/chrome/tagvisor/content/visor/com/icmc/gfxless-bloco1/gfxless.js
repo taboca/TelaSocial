@@ -177,7 +177,7 @@ var gfx =  {
 </td><td valign='top'>
 
 <div id='right' style='width:1920px'>
-<span style='color:black;font-size:30px;font-weight:bold;' >Twitter: #bloco4icmc</span>
+<span style='color:black;font-size:30px;font-weight:bold;' >Twitter: #bloco1icmc</span>
 <div class='orange2' style='margin-top:0em;' id='area_midright'>
 </div>
 </div>
