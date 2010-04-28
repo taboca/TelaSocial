@@ -162,7 +162,7 @@ var gfx =  {
 
 <table><tr>
 <td valign='top'>
-<span style='color:white;margin-left:1em' >Breve com datas ( informe-se com Marília/Eventos )</span>
+<span style='color:white;margin-left:1em' >http://www.icmc.usp.br/eventos/feed/</span>
 <div class='orange' style='margin-top:0em; '  id='area_midleft'>
 </div>
 </td>
@@ -180,7 +180,7 @@ var gfx =  {
 </td><td valign='top'>
 
 <div id='right' style='width:1920px'>
-<span style='color:black;font-wize:80px' >USP.br RSS</span>
+<span style='color:black;font-size:30px;font-weight:bold;' >http://www4.usp.br/index.php/noticias?format=feed&type=rss</span>
 <div class='orange2' style='margin-top:0em;' id='area_midright'>
 </div>
 </div>

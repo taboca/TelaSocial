@@ -95,7 +95,7 @@ var twitter =  {
 		var i;
 		for (i = 0; i < result.feed.entries.length; i++) {
 			if (result.feed.entries[i]) {
-				this.tweetQueue.push(result.feed.entries[i].title + ' <span class="tweetauthor"> (by G1)</span>');
+				this.tweetQueue.push(result.feed.entries[i].title + ' <span class="tweetauthor"> (por USP.br RSS)</span>');
 			}
 		}
 
