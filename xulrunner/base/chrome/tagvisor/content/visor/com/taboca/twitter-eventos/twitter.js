@@ -22,7 +22,7 @@ var twitter =  {
 			color:#333;
 			background-color:#fff;
 			border-top:13px solid orange;
-			font-size:26px;
+			font-size:46px;
 			font-weight:bold;
 			-moz-border-radius:12px;
 			-moz-box-shadow: white 0 0 10px; 
