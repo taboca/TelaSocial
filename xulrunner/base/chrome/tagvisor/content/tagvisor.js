@@ -8,6 +8,22 @@ addEventListener("unload", function () { com.taboca.tagvisor.kill_services() } ,
 
 com.taboca.tagvisor = { 
 
+
+  store_create: function () { 
+
+	var file = Components.classes["@mozilla.org/file/directory_service;1"]
+                     .getService(Components.interfaces.nsIProperties)
+                     .get("ProfD", Components.interfaces.nsIFile);
+	file.append("my_db_file_name.sqlite");
+
+	var storageService = Components.classes["@mozilla.org/storage/service;1"]
+                        .getService(Components.interfaces.mozIStorageService);
+	var mDBConn = storageService.openDatabase(file); // Will also create the file if it does not exist
+
+  },
+
+
+
   visor  : null, 
   makeURI: function(stringURI) {
       var ios = Components.classes["@mozilla.org/network/io-service;1"].getService(Components.interfaces.nsIIOService);
