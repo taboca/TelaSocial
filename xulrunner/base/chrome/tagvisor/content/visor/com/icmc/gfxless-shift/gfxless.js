@@ -154,7 +154,7 @@ var gfx =  {
 
 <div id='frame'>
 
-<table id='moveframe' ><tr><td valign='top' align='left'>
+<table id='moveframe' style='position:absolute' ><tr><td valign='top' align='left'>
 
 <div id='left' style='width:1920px;'>
 
