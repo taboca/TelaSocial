@@ -180,7 +180,7 @@ var gfx =  {
 </td><td valign='top'>
 
 <div id='right' style='width:1920px'>
-<span style='color:black;font-size:30px;font-weight:bold;' >http:\/\/www4.usp.br\/index.php\/noticias?format=feed&type=rss</span>
+<span style='color:black;font-size:30px;font-weight:bold;' >http:\/\/www4.usp.br\/index.php\/noticias?format=feed&amp;type=rss</span>
 <div class='orange2' style='margin-top:0em;' id='area_midright'>
 </div>
 </div>
