@@ -79,7 +79,7 @@ var gfx =  {
                 background-image: -moz-linear-gradient(-60deg, #ddd, #fff, #eee);
                 height:1200px;
                 padding:.2em;
-                width:1900px;
+                width:1850px;
 		margin-top:1em;
                 margin-right:1em;
                 font-size:30px;
@@ -181,7 +181,7 @@ var gfx =  {
 </td><td valign='top'>
 
 <div id='right' style='width:1920px'>
-<span style='color:white' >USP.br RSS</span>
+<span style='color:black;font-wize:80px' >USP.br RSS</span>
 <div class='tab orange2' style='margin-top:0em;' id='area_midright'>
 </div>
 </div>
