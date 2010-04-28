@@ -34,7 +34,6 @@ var gfx =  {
 	#frame { 
 		margin:auto;
 		width:1920px;
-		padding-left:2em;
 		height:1000px;
 	} 
 
@@ -67,11 +66,9 @@ var gfx =  {
 		height:1200px;
 		padding:.1em;
 		width:1900px;
-		margin-right:1em;
 		font-size:50px;
 		font-weight:bold;
 		-moz-border-radius:55px 95px;
-
 	} 
 
   .orange2 {
