@@ -134,15 +134,10 @@ var gfx =  {
 		else { 
 			this.movepos+=100;
 		} 
-		this._coreDoc.getElementById("moveframe").style.left=this.movepos+"px";
 		if(this.moveleft) { 
-			if(this.movepos>-1920) { 
-       	        	 	t.setTimeout( function(){self.shiftmove()},50);
-			} 
+			this._coreDoc.getElementById("moveframe").style.left="-1920px";
 		} else { 
-			if(this.movepos<0) { 
-       	        	 	t.setTimeout( function(){self.shiftmove()},50);
-			} 
+			this._coreDoc.getElementById("moveframe").style.left="0px";
 		} 
   	},
 
