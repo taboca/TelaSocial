@@ -80,6 +80,7 @@ var gfx =  {
                 height:1200px;
                 padding:.2em;
                 width:1900px;
+		margin-top:1em;
                 margin-right:1em;
                 font-size:30px;
                 font-weight:bold;
