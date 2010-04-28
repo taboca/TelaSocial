@@ -1,6 +1,6 @@
 
 c = require("choreographer");
-t = require("timer");
+timer = require("timer");
 
 var calendar_Widget =  {
 
