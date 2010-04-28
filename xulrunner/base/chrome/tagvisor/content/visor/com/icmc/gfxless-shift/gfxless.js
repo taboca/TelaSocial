@@ -64,7 +64,6 @@ var gfx =  {
 	} 
 
 	.orange { 
-		background-image: -moz-linear-gradient(-60deg, #ddd, #fff, #eee);
 		height:1200px;
 		padding:.2em;
 		width:1920px;
@@ -164,7 +163,7 @@ var gfx =  {
 <table><tr>
 <td valign='top'>
 <span style='color:white;margin-left:1em' >Breve com datas ( informe-se com Marília/Eventos )</span>
-<div class='tab orange' style='margin-top:0em; '  id='area_midleft'>
+<div class='orange' style='margin-top:0em; '  id='area_midleft'>
 </div>
 </td>
 <td valign='top'>
@@ -182,7 +181,7 @@ var gfx =  {
 
 <div id='right' style='width:1920px'>
 <span style='color:black;font-wize:80px' >USP.br RSS</span>
-<div class='tab orange2' style='margin-top:0em;' id='area_midright'>
+<div class='orange2' style='margin-top:0em;' id='area_midright'>
 </div>
 </div>
 
