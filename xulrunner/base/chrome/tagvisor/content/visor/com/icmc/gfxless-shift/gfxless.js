@@ -65,8 +65,8 @@ var gfx =  {
 
 	.orange { 
 		height:1200px;
-		padding:.2em;
-		width:1920px;
+		padding:.1em;
+		width:1900px;
 		margin-right:1em;
 		font-size:50px;
 		font-weight:bold;
