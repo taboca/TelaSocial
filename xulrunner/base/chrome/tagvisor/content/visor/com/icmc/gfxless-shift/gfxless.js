@@ -130,6 +130,7 @@ var gfx =  {
                 var self = this;
 		if(this.moveleft) { 
 			this.movepos--;
+		}
 		else { 
 			this.movepos++;
 		} 
@@ -151,9 +152,7 @@ var gfx =  {
 
 		importedElement.innerHTML =  <>
 
-
 <div id='frame'>
-
 
 <table id='moveframe' ><tr><td valign='top' align='left'>
 
