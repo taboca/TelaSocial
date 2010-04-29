@@ -8,7 +8,7 @@ var twitter =  {
 
 	crop    : "50",
 	title   : "Twitter 10",
-	feedURL : "http://search.twitter.com/search.atom?q=%23bloco1icmc",
+	feedURL : "http://search.twitter.com/search.rss?q=%23bloco1icmc",
 	feed    : null, 
 
 	style : <><![CDATA[
@@ -109,11 +109,12 @@ var twitter =  {
       var titleElement = items[i].getElementsByTagName("title")[0];
       var title = titleElement.firstChild.nodeValue;
 
-      var authorElement = items[i].getElementsByTagName("name")[0];
+      var authorElement = items[i].getElementsByTagName("author")[0];
       var author = authorElement.firstChild.nodeValue;
 
-      var imgElement = items[i].getElementsByTagName("link")[1];
-      var img = imgElement.getAttribute("href");
+      //var imgElement = items[i].getElementsByTagName("link")[1];
+      //var img = imgElement.getAttribute("href");
+	var img ="http://a3.twimg.com/profile_images/720337149/marcio_normal.png";
 
 			//if (result.feed.entries[i]) {
 				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
