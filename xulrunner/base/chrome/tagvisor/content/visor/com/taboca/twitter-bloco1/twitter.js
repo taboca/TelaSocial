@@ -8,7 +8,7 @@ var twitter =  {
 
 	crop    : "50",
 	title   : "Twitter 10",
-	feedURL : "http://search.twitter.com/search.atom?q=%23bloco1icmc",
+	feedURL : "http://search.twitter.com/search.rss?q=%23bloco1icmc",
 	feed    : null, 
 
 	style : <><![CDATA[
@@ -18,16 +18,20 @@ var twitter =  {
 
 			color:gray; 
 		} 
-		.tweetpublic { 
-			color:#333;
-			background-color:#eee;
-			font-size:46px;
-			font-weight:bold;
-			-moz-border-radius:12px;
-			-moz-box-shadow: white 0 0 10px; 
-			padding:10px;
-			margin-top:5px;
-		} 
+
+			.tp2 {                        color:black;                        display:inline-block;
+                        background-color:#eee;
+                        font-size:26px;
+                        max-width:300px;
+                        min-height:200px;
+                        font-weight:bold;                        -moz-box-shadow: black 10px 10px 10px;
+                        padding:10px;
+                        margin:1em;
+                        width:300px;
+                        height:200px;
+                }
+
+
 		.twitterPanel { 
 			padding:.5em;
 		} 
@@ -72,8 +76,8 @@ var twitter =  {
 			return;
 		}
 		this.tweetRepeated[t] = true;
-		var k = this._coreDoc.createElement('div');
-		k.className = 'tweetpublic';
+		var k = this._coreDoc.createElement('span');
+		k.className = 'tp2';
 		k.innerHTML = t;
 		this.element.insertBefore(k, this.element.firstChild);
 		return true;
@@ -95,7 +99,7 @@ var twitter =  {
 		var i;
 		for (i = 0; i < result.feed.entries.length; i++) {
 			if (result.feed.entries[i]) {
-				this.tweetQueue.push( '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+result.feed.entries[i].link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />' +   result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
+				this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
 			}
 		}
 
