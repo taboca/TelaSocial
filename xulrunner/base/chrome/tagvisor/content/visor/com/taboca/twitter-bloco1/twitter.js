@@ -67,9 +67,9 @@ var twitter =  {
 		style.innerHTML=this.style; 
 
 		this.feed = new this._service_google.feeds.Feed(this.feedURL);
+		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
 		this.feed.setNumEntries(10);
 
-		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
 
 
 	} ,
@@ -117,7 +117,7 @@ var twitter =  {
 
 			//if (result.feed.entries[i]) {
 				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-				this.tweetQueue.push( '<img src="'+img+'" ><span class="tweetauthor">(@ ' + author.replace(/ \(.*$/,'') + ')</span>' + title);
+				this.tweetQueue.push( '<img src="'+img+'" /><span class="tweetauthor">(@ ' + author.replace(/ \(.*$/,'') + ')</span>' + title);
 			//}
 		//}
 		}
