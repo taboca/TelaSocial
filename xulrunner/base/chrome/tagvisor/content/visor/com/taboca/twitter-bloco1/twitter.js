@@ -117,7 +117,7 @@ var twitter =  {
 
 			//if (result.feed.entries[i]) {
 				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-				this.tweetQueue.push( '<img src="'+img+'" /><span class="tweetauthor">(' + author.replace(/ \(.*$/,'') + ')</span>' + title);
+				this.tweetQueue.push( '<img align="top" src="'+img+'" /><span class="tweetauthor">(' + author.replace(/ \(.*$/,'') + ')</span> ' + title);
 			//}
 		//}
 		}
