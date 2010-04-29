@@ -26,10 +26,10 @@ var twitter =  {
                         min-height:200px;
                         font-weight:bold;                        
 			-moz-box-shadow: black 10px 10px 10px;
-                        padding:10px;
                         margin:1em;
-                        width:300px;
-                        height:200px;
+                        padding:1em;
+                        width:350px;
+                        height:250px;
                 }
 
 
