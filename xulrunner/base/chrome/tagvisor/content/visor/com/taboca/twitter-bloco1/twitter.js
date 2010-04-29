@@ -14,12 +14,12 @@ var twitter =  {
 	style : <><![CDATA[
 		
 
-		.tweetauthor { 
-
+		.tweetauthor2 { 
 			color:gray; 
+			font-size:70%;
 		} 
 
-			.tp2 {                        color:black;                        display:inline-block;
+		.tp2 {                        color:black;                        display:inline-block;
                         background-color:#eee;
                         font-size:26px;
                         max-width:300px;
@@ -116,8 +116,8 @@ var twitter =  {
       var img = imgElement.getAttribute("url");
 
 			//if (result.feed.entries[i]) {
-				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-				this.tweetQueue.push( '<img align="top" src="'+img+'" /><span class="tweetauthor">(' + author.replace(/ \(.*$/,'') + ')</span> ' + title);
+				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor2">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
+				this.tweetQueue.push( '<img align="top" src="'+img+'" /><span class="tweetauthor2">(' + author.replace(/ \(.*$/,'') + ')</span> ' + title);
 			//}
 		//}
 		}
