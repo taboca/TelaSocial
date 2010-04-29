@@ -112,9 +112,8 @@ var twitter =  {
       var authorElement = items[i].getElementsByTagName("author")[0];
       var author = authorElement.firstChild.nodeValue;
 
-      //var imgElement = items[i].getElementsByTagName("link")[1];
-      //var img = imgElement.getAttribute("href");
-	var img ="http://a3.twimg.com/profile_images/720337149/marcio_normal.png";
+      var imgElement = items[i].getElementsByTagNameNS("media","content")[0];
+      var img = imgElement.firstChild.nodeValue;
 
 			//if (result.feed.entries[i]) {
 				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
