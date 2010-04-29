@@ -113,7 +113,7 @@ var twitter =  {
       var author = authorElement.firstChild.nodeValue;
 
       var imgElement = items[i].getElementsByTagNameNS("media","content")[0];
-      var img = imgElement.firstChild.nodeValue;
+      var img = imgElement.getAttribute("url");
 
 			//if (result.feed.entries[i]) {
 				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
