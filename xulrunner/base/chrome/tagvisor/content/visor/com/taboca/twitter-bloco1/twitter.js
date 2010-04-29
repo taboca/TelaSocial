@@ -97,10 +97,10 @@ var twitter =  {
 	},
 
 	__feedUpdated : function(result) {
-		if (result.error || result.feed.entries < 1) {
+		var i;
+		if (result.error) {
 			return;
 		}
-		var i;
 		var items = result.xmlDocument.getElementsByTagName("item");
 
                 for (var i = 0; i < items.length; i++) {
@@ -112,9 +112,12 @@ var twitter =  {
       var authorElement = items[i].getElementsByTagName("name")[0];
       var author = authorElement.firstChild.nodeValue;
 
+      var imgElement = items[i].getElementsByTagName("link")[1];
+      var img = imgElement.getAttribute("href");
+
 			//if (result.feed.entries[i]) {
 				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-				this.tweetQueue.push(  title + ' <span class="tweetauthor">(by @ ' + author.replace(/ \(.*$/,'') + ')</span>');
+				this.tweetQueue.push( '<img src="'+img+'" ><span class="tweetauthor">(@ ' + author.replace(/ \(.*$/,'') + ')</span>' + title);
 			//}
 		//}
 		}
