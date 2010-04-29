@@ -112,7 +112,7 @@ var twitter =  {
       var authorElement = items[i].getElementsByTagName("author")[0];
       var author = authorElement.firstChild.nodeValue;
 
-      var imgElement = items[i].getElementsByTagName("media:content")[0];
+      var imgElement = items[i].getElementsByTagNameNS("http://search.yahoo.com/mrss/","content")[0];
       var img = imgElement.getAttribute("url");
 
 			//if (result.feed.entries[i]) {
