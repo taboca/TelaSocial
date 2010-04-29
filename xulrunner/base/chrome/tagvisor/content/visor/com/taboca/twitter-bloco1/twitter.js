@@ -24,7 +24,8 @@ var twitter =  {
                         font-size:26px;
                         max-width:300px;
                         min-height:200px;
-                        font-weight:bold;                        -moz-box-shadow: black 10px 10px 10px;
+                        font-weight:bold;                        
+			-moz-box-shadow: black 10px 10px 10px;
                         padding:10px;
                         margin:1em;
                         width:300px;
@@ -68,6 +69,9 @@ var twitter =  {
 		this.feed = new this._service_google.feeds.Feed(this.feedURL);
 		this.feed.setNumEntries(10);
 
+		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
+
+
 	} ,
 	popTweet : function() {
 		if (this.tweetQueue.length == 0) return false;
@@ -97,15 +101,27 @@ var twitter =  {
 			return;
 		}
 		var i;
-		for (i = 0; i < result.feed.entries.length; i++) {
-			if (result.feed.entries[i]) {
-				this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-			}
+		var items = result.xmlDocument.getElementsByTagName("item");
+
+                for (var i = 0; i < items.length; i++) {
+
+		//for (i = 0; i < result.feed.entries.length; i++) {
+      var titleElement = items[i].getElementsByTagName("title")[0];
+      var title = titleElement.firstChild.nodeValue;
+
+      var authorElement = items[i].getElementsByTagName("name")[0];
+      var author = authorElement.firstChild.nodeValue;
+
+			//if (result.feed.entries[i]) {
+				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
+				this.tweetQueue.push(  title + ' <span class="tweetauthor">(by @ ' + author.replace(/ \(.*$/,'') + ')</span>');
+			//}
+		//}
 		}
 
-		this.lastid = result.feed.entries[i-1].link.match(/\d+$/);
-		this.feed = new this._service_google.feeds.Feed(this.feedURL + '&since_id=' + this.lastid);
-		this.feed.setNumEntries(10);
+		//this.lastid = result.feed.entries[i-1].link.match(/\d+$/);
+		//this.feed = new this._service_google.feeds.Feed(this.feedURL + '&since_id=' + this.lastid);
+		//this.feed.setNumEntries(10);
 	}
 
 }
