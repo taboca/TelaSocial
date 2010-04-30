@@ -11,10 +11,10 @@ var gfx =  {
 
 	style : <><![CDATA[
 
-  html { padding:0; margin:0 } 
+	html { padding:0; margin:0 } 
 
 	body {
-		background-color:orange; margin:0; padding:0
+		background-color:orange; margin:0; padding:0;
 	}
 
 	table {
@@ -62,7 +62,7 @@ var gfx =  {
 		visibility:hidden; 
 	} 
 
-	]]></>,
+]]></>,
 
 
         movepos : 0,
@@ -135,7 +135,7 @@ Eventos
 </tr>
 </div>
 
-		</>;
+</>;
 
 		this._coreDoc.getElementById(this._getId()).appendChild(importedElement);
 
