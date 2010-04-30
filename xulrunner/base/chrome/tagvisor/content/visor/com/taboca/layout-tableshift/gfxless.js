@@ -68,11 +68,11 @@ var gfx =  {
         movepos : 0,
         moveleft: true,
 
-        shiftleft: function () {
+        panel1: function () {
                 this.moveleft = true;
                 this.shiftmove();
         },
-        shiftright: function () {
+        panel2: function () {
                 this.moveleft = false;
                 this.shiftmove();
         },
