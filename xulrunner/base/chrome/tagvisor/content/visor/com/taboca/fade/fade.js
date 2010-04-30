@@ -1,38 +1,44 @@
-function fade_Widget() {
+c     = require("choreographer");
+timer = require("timer");
 
-	this.start = function () { 
+var fade_Widget =  {
 
-//		this.feed = new google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?id=98393462@N00&tags=mozfisl10&lang=en-us&format=rss_200');
+        name   : __appName,
+        target : __targetName,
+        targetId : __targetId,
+	zIndex=10,
+	imageNumber =0,
+	oldChild:null,
+	lastInserted : null,
+	fadeCycle : 0,
+
+	start : function () { 
+
 		this.feed = new google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=flowers');
 		this.feed.setNumEntries(20);
 		this.feed.setResultFormat(google.feeds.Feed.XML_FORMAT);
 
-		this.element = document.createElement('div');
+		this.element = this._coreDoc.createElement('div');
 		this.picQueue = new Array();
 
-		document.getElementById(this._getId()).appendChild(this.element);
+		this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 
-		this.refElement = document.createElement("div");
+		this.refElement = this._coreDoc.createElement("div");
 		this.element.appendChild(this.refElement);
 
-		//this.__mycontainer.appendChild(this.element);
-		
 		this.popPic();
-	} 
+	} ,
 
-	this.init = function() {
-	}
+	init : function() {
+	},
 
 
-	this.zIndex=10;
-
-	this.imageNumber =0;
-	this.popPic = function() {
+	popPic: function() {
 		if (this.picQueue.length == 0) { 
 			this.feed.load(this.__feedUpdated.bind(this));
 		} else { 
 
-		var k = document.createElement('div');
+		var k = this._coreDoc.createElement('div');
 
 		k.style.opacity=0.01;
 
@@ -65,53 +71,49 @@ function fade_Widget() {
 		} 
 
 		these = this;
-		document.getElementById("fadeimage"+this.imageNumber).onload = function () { these.imageLoaded() };
+		this._coreDoc.getElementById("fadeimage"+this.imageNumber).onload = function () { these.imageLoaded() };
 
 
 		return true;
 
 		} 
-	}
-	this.oldChild=null;
-	this.imageLoaded = function() { 
+	},
+	imageLoaded : function() { 
 
-		var currImage =  document.getElementById("fadeimage"+this.imageNumber);
+		var currImage =  this._coreDoc.getElementById("fadeimage"+this.imageNumber);
 		var x= parseInt(currImage.width); 
 		var y= parseInt(currImage.height); 
 			currImage.width=1680;
 		this.imageNumber++;
 		this.kickFadeIn();
 
-	} 
+	} ,
 
 
-	this.lastInserted = null;
-
-	this.fadeCycle = 0; 
-
-	this.kickFadeIn = function () { 
+	kickFadeIn : function () { 
 
 		if(this.fadeCycle<=1) { 
 			this.fadeCycle+=0.5;
 			this.lastInserted.style.opacity= this.fadeCycle;
-			var these=this;
-			setTimeout( function () { these.kickFadeIn() }, 500);
+			var scopedThis = this;
+                	timer.setTimeout( function () { scopedThis.kickFadeIn() }, 500);
+
 		} else { 
 
 			
 			this.fadeCycle=0;
-			these = this;
-		  	setTimeout( function () { these.popPic(); } ,15000);
+			var scopedThis = this;
+                	timer.setTimeout( function () { scopedThis.popPic() }, 500);
 		} 
-	} 
+	} ,
 
 
-	this.updateFeed = function() {
+	updateFeed : function() {
 		if (! this.popPic()) {
 		}
-	}
+	},
 
-	this.__feedUpdated = function(result) {
+	__feedUpdated : function(result) {
 
 		if (result.error ) {
 			return;
@@ -130,15 +132,9 @@ function fade_Widget() {
 			} 
 		}
 
+		this.popPic();
 
-	this.feed = new google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=flowers');
-	this.feed.setNumEntries(20);
-	this.feed.setResultFormat(google.feeds.Feed.XML_FORMAT);
-
-			this.popPic();
-
-	}
-
-	return this;
+	},
 }
 
+c.register(fade_Widget);
