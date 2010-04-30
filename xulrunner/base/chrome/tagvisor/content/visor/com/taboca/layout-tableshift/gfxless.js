@@ -11,7 +11,7 @@ var gfx =  {
 
 	style : <><![CDATA[
 
-	html { padding:0; margin:0 } 
+	html { padding:0; margin:0; overflow:hidden } 
 
 	body {
 		background-color:orange; margin:0; padding:0;
