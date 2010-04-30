@@ -70,34 +70,31 @@ var gfx =  {
 
         movepos : 0,
         moveleft: true,
-
-        panel1: function () {
-                this.moveleft = true;
-                this.shiftmove();
-        },
-        panel2: function () {
-                this.moveleft = false;
-                this.shiftmove();
-        },
-        shiftmove: function () {
-                var self = this;
-                if(this.moveleft) {
-                        this.movepos-=100;
-                }
-                else {
-                        this.movepos+=100;
-                }
-                if(this.moveleft) {
+	
+        kick: function () {
+		this.movepos+=20;
+                this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
+		if(this.movepos > 0 ) { 
                         this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
-                } else {
+		} 
+		if(this.movepos > 266 ) { 
                         this._coreDoc.getElementById("area_panel2").style.display="block";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
-                }
-        },
+		} 
+		if(this.movepos > 532 ) { 
+                        this._coreDoc.getElementById("area_panel3").style.display="block";
+                        this._coreDoc.getElementById("area_panel2").style.display="none";
+                        this._coreDoc.getElementById("area_panel1").style.display="none";
+		} 
+		if(this.movepos > 800 ) { 
 
+			this.movepos = 0
+
+		} 
+        },
 
 	start : function () { 
 

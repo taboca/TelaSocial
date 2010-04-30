@@ -15,7 +15,7 @@ var calendar_Widget =  {
                 this._raiseEvent(".container.twitterslash", "start");
 
                 var self = this;
-                timer.setTimeout( function(){self.kickMore()},10000);
+                timer.setTimeout( function(){self.kickMore()},1000);
 
 		
 	} ,
@@ -27,13 +27,7 @@ var calendar_Widget =  {
 	kickState : false, 
 
         kickMore: function () { 
-		if(this.kickState) { 
-	        	this._raiseEvent(".container", "panel1");
-			this.kickState=false; 
-		} else { 
-	        	this._raiseEvent(".container", "panel2");
-			this.kickState=true;
-		} 
+	       	this._raiseEvent(".container", "kick");
               	var self = this;
              	timer.setTimeout( function(){self.kickMore()},30000);
  	} 
