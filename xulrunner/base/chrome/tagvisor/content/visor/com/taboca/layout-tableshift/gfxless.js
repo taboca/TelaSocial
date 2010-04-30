@@ -25,7 +25,7 @@ var gfx =  {
 	}
 
 	table td {
-		border:10px solid white;
+		border:10px solid black;
 	}
 
 	.panel {
@@ -46,7 +46,7 @@ var gfx =  {
                 width:40px;
                 -moz-border-radius:20px;
                 height:100px;
-                background-color:white;
+                background-color:black;
                 z-index:1;
                 position:absolute;
                 top:0px;
