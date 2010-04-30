@@ -38,8 +38,8 @@ var gfx =  {
         }
 
         .orange { background-color:orange; }
-        .green  { background-color:green; }
-        .blue   { background-color:blue; }
+        .green  { background-color:lightgreen; }
+        .blue   { background-color:lightblue; }
         .transp { background-color:transparent; }
 
         #pointer {
@@ -75,16 +75,28 @@ var gfx =  {
 		this.movepos+=20;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		if(this.movepos > 0 ) { 
+                        this._coreDoc.getElementById("tab1").className="transp";
+                        this._coreDoc.getElementById("tab2").className="green";
+                        this._coreDoc.getElementById("tab3").className="blue";
+			this._coreDoc.body.backgroundColor="orange";
                         this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
 		} 
 		if(this.movepos > 266 ) { 
+                        this._coreDoc.getElementById("tab1").className="orange";
+                        this._coreDoc.getElementById("tab2").className="transp";
+                        this._coreDoc.getElementById("tab3").className="blue";
+			this._coreDoc.body.backgroundColor="lightgreen";
                         this._coreDoc.getElementById("area_panel2").style.display="block";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
 		} 
 		if(this.movepos > 532 ) { 
+                        this._coreDoc.getElementById("tab1").className="orange";
+                        this._coreDoc.getElementById("tab2").className="green";
+                        this._coreDoc.getElementById("tab3").className="transp";
+			this._coreDoc.body.backgroundColor="lightblue";
                         this._coreDoc.getElementById("area_panel3").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
@@ -107,17 +119,17 @@ var gfx =  {
 </div>
 <table cellpadding="10" cellspacing="0" height="100%">
 <tr style="height:50px">
-<td class='orange transp'>
+<td class='orange' id='tab1'>
 <div class='tab'>
 Eventos
 </div>
 </td>
-<td class='green'>
+<td class='green' id='tab2'>
 <div class='tab'>
 Eventos
 </div>
 </td>
-<td class='blue'>
+<td class='blue' id='tab3'>
 <div class='tab'>
 Eventos
 </div>
