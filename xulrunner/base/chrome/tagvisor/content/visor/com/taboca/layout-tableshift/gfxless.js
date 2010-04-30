@@ -72,7 +72,7 @@ var gfx =  {
         moveleft: true,
 	
         kick: function () {
-		this.movepos+=20;
+		this.movepos+=5;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		if(this.movepos > 0 ) { 
                         this._coreDoc.getElementById("tab1").className="transp";
