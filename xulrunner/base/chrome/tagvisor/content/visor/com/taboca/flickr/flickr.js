@@ -7,6 +7,7 @@ var flickr =  {
         targetId : __targetId,
 
 	feedURL : 'http://api.flickr.com/services/feeds/photos_public.gne?tags=mozchile09',
+	feedURL : 'http://api.flickr.com/services/feeds/photos_public.gne?id=49750626@N07&lang=en-us&format=rss_200',
 
 	start : function () { 
 
