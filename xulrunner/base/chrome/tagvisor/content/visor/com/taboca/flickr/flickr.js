@@ -42,7 +42,7 @@ var flickr =  {
 		t = t.match(/<img[^>]+>/);
 		t = t.toString();
 		
-		t = t.replace(/width="\d+"/, 'style="width:700px"');
+		t = t.replace(/width="\d+"/, 'style="width:300px"');
 		t = t.replace(/height="\d+"/, '');
 		
 		k.innerHTML = t;
