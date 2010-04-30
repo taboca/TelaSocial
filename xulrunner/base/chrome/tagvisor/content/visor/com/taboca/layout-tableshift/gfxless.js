@@ -59,7 +59,10 @@ var gfx =  {
 	}
 
 	.panel { 
-		visibility:hidden; 
+		display:none;
+		height:500px;
+		overflow:hidden;
+		width:750px;
 	} 
 
 ]]></>,
