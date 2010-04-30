@@ -133,6 +133,9 @@ Eventos
 </div>
 </td>
 </tr>
+
+</table>
+
 </div>
 
 </>;
