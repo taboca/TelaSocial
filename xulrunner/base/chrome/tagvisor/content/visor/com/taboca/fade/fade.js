@@ -5,12 +5,12 @@ var fade_Widget =  {
 
         name   : __appName,
         target : __targetName,
-        targetId : __targetId,
-	zIndex=10,
-	imageNumber =0,
-	oldChild:null,
+        targetId    : __targetId,
+	zIndex      :10,
+	imageNumber :0,
+	oldChild    :null,
 	lastInserted : null,
-	fadeCycle : 0,
+	fadeCycle    : 0,
 
 	start : function () { 
 
