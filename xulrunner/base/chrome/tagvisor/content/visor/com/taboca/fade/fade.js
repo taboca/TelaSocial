@@ -7,6 +7,8 @@ var fade_Widget =  {
         target : __targetName,
         targetId    : __targetId,
 	zIndex      :10,
+	refElement: null, 
+
 	imageNumber :0,
 	oldChild    :null,
 	lastInserted : null,
@@ -134,7 +136,8 @@ var fade_Widget =  {
 
 		this.popPic();
 
-	},
+	}
 }
 
 c.register(fade_Widget);
+
