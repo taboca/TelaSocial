@@ -64,6 +64,38 @@ var gfx =  {
 
 	]]></>,
 
+
+        movepos : 0,
+        moveleft: true,
+
+        shiftleft: function () {
+                this.moveleft = true;
+                this.shiftmove();
+        },
+        shiftright: function () {
+                this.moveleft = false;
+                this.shiftmove();
+        },
+        shiftmove: function () {
+                var self = this;
+                if(this.moveleft) {
+                        this.movepos-=100;
+                }
+                else {
+                        this.movepos+=100;
+                }
+                if(this.moveleft) {
+                        this._coreDoc.getElementById("area_panel1").style.display="block";
+                        this._coreDoc.getElementById("area_panel2").style.display="none";
+                        this._coreDoc.getElementById("area_panel3").style.display="none";
+                } else {
+                        this._coreDoc.getElementById("area_panel2").style.display="block";
+                        this._coreDoc.getElementById("area_panel1").style.display="none";
+                        this._coreDoc.getElementById("area_panel3").style.display="none";
+                }
+        },
+
+
 	start : function () { 
 
 		var importedElement = this._coreDoc.createElement("div");
