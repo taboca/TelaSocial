@@ -131,7 +131,7 @@ com.taboca.tagvisor = {
 
 }; // end of com taboca tagvisor
 
-com.taboca.tagvisor.observerService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-com.taboca.tagvisor.observerService.addObserver(com.taboca.tagvisor.httpscanner,"http-on-examine-response",false);
+//com.taboca.tagvisor.observerService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+//com.taboca.tagvisor.observerService.addObserver(com.taboca.tagvisor.httpscanner,"http-on-examine-response",false);
 
 
