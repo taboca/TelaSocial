@@ -16,7 +16,7 @@ var twitter =  {
 
 		.tweetauthor2 { 
 			color:gray; 
-			font-size:70%;
+			font-size:15px;
 		} 
 
 		.tp2 {                        color:black;                        display:inline-block;
