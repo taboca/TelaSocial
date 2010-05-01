@@ -77,7 +77,7 @@ function initLoader(scriptcode,name, targetName, targetId) {
   try {
     scriptcode = "var __appName = '"+name+"'; __targetName = '"+targetName+"'; var  __targetId = '"+targetId+"'; "+ scriptcode; 
     if (scriptcode) aLoader.runScript(scriptcode);
-  } catch (e) { alert(e);   aLoader.console.exception(e); }
+  } catch (e) {  aLoader.console.exception(e); }
 
 } 
 
