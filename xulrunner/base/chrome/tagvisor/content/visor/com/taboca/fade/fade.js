@@ -3,19 +3,20 @@ timer = require("timer");
 
 var fade_Widget =  {
 
-        name   : __appName,
-        target : __targetName,
+        name        : __appName,
+        feed    : null,
+
+        target      : __targetName,
         targetId    : __targetId,
-
 	zIndex      :10,
-	refElement: null, 
-
+	refElement  : null, 
 	imageNumber :0,
+	element     : null,
 	oldChild    :null,
 	lastInserted : null,
 	fadeCycle    : 0,
 
-	start : function () { 
+	start:function () { 
 		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=flowers');
 		this.feed.setNumEntries(20);
 		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
@@ -29,7 +30,6 @@ var fade_Widget =  {
 
 	init : function() {
 	},
-
 
 	popPic: function() {
 		if (this.picQueue.length == 0) { 
@@ -64,7 +64,7 @@ var fade_Widget =  {
 		var currImage =  this._coreDoc.getElementById("fadeimage"+this.imageNumber);
 		var x= parseInt(currImage.width); 
 		var y= parseInt(currImage.height); 
-			currImage.width=300;
+		currImage.width=300;
 		this.imageNumber++;
 		this.kickFadeIn();
 	},
