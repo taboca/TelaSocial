@@ -43,7 +43,7 @@ var gfx =  {
         .transp { background-color:transparent; }
 
         #pointer {
-                width:40px;
+                width:50px;
                 -moz-border-radius:20px;
                 height:100px;
                 background-color:black;
