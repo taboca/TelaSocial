@@ -126,12 +126,12 @@ Clock widget
 </td>
 <td class='green' id='tab2'>
 <div class='tab'>
-#DrumbeatSC
+#Drumbeat
 </div>
 </td>
 <td class='blue' id='tab3'>
 <div class='tab'>
-Drumbeat RSS
+Slash
 </div>
 </td>
 </tr>
