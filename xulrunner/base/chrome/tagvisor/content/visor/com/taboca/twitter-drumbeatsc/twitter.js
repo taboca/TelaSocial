@@ -8,7 +8,7 @@ var twitter =  {
 
 	crop    : "50",
 	title   : "Twitter 10",
-	feedURL : "https://www.drumbeat.org/latest-beats/rss",
+	feedURL : "http://search.twitter.com/search.rss?q=%23drumbeatsc",
 	feed    : null, 
 
 	style : <><![CDATA[
