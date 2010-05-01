@@ -17,7 +17,7 @@ var fade_Widget =  {
 	fadeCycle    : 0,
 
 	start:function () { 
-		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=flowers');
+		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?id=49750626@N07&lang=en-us&format=rss_200');
 		this.feed.setNumEntries(20);
 		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
 		this.element = this._coreDoc.createElement('div');
