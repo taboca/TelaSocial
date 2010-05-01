@@ -64,11 +64,10 @@ var fade_Widget =  {
 		var currImage =  this._coreDoc.getElementById("fadeimage"+this.imageNumber);
 		var x= parseInt(currImage.width); 
 		var y= parseInt(currImage.height); 
-			currImage.width=1680;
+			currImage.width=300;
 		this.imageNumber++;
 		this.kickFadeIn();
-
-	} ,
+	},
 
 	kickFadeIn : function () { 
 		if(this.fadeCycle<=1) { 
@@ -82,7 +81,7 @@ var fade_Widget =  {
 			var scopedThis = this;
                 	timer.setTimeout( function () { scopedThis.popPic() }, 500);
 		} 
-	} ,
+	},
 
 	updateFeed : function() {
 		if (! this.popPic()) {
@@ -106,6 +105,4 @@ var fade_Widget =  {
 		this.popPic();
 	}
 }
-
 c.register(fade_Widget);
-
