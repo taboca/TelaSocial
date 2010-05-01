@@ -121,17 +121,17 @@ var gfx =  {
 <tr style="height:50px">
 <td class='orange' id='tab1'>
 <div class='tab'>
-Eventos
+Clock widget
 </div>
 </td>
 <td class='green' id='tab2'>
 <div class='tab'>
-Eventos
+#DrumbeatSC
 </div>
 </td>
 <td class='blue' id='tab3'>
 <div class='tab'>
-Eventos
+Drumbeat RSS
 </div>
 </td>
 </tr>

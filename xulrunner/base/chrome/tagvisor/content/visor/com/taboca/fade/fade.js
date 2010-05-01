@@ -105,4 +105,5 @@ var fade_Widget =  {
 		this.popPic();
 	}
 }
+
 c.register(fade_Widget);
