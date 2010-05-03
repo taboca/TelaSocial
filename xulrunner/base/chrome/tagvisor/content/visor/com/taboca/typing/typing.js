@@ -71,7 +71,7 @@ var typing =  {
 
 		this.cycleArray[this.cycleTotal++]= { content: t };
 
-		if(cycleArray.length>0 && !this.reading) { 
+		if(this.cycleArray.length>0 && !this.reading) { 
 			this.readLine();
 			this.reading = true; 
 		} 
