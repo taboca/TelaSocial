@@ -12,8 +12,6 @@ var typing =  {
 	feed    : null, 
 
 	style : <><![CDATA[
-		
-
 		.tweetauthor { 
 
 			color:gray; 
@@ -111,6 +109,7 @@ var typing =  {
 		if(this.readIndex>words.length) { 
 			var self = this;
 			this.readIndex=0;
+			this.cycleIndex++;
 			timer.setTimeout( function(){self.readLine()},1000);
 		} 
 		else { 
