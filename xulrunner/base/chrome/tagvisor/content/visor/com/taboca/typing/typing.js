@@ -108,7 +108,7 @@ var typing =  {
 		
 		this.readIndex++;
 	
-		if(this.readIndex>worlds.length) { 
+		if(this.readIndex>words.length) { 
 			var self = this;
 			this.readIndex=0;
 			timer.setTimeout( function(){self.readLine()},1000);
