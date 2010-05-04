@@ -118,6 +118,10 @@ var gfx =  {
 <div id='pointer'>
 </div>
 <table cellpadding="10" cellspacing="0" height="100%">
+<tr>
+<td colspan='3' id='area_top' >
+</td>
+</tr>
 <tr style="height:50px">
 <td class='orange' id='tab1'>
 <div class='tab'>
