@@ -126,7 +126,9 @@ var typing =  {
 		for (i = 0; i < result.feed.entries.length; i++) {
 			if (result.feed.entries[i]) {
 				//this.tweetQueue.push( '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+result.feed.entries[i].link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />'+ result.feed.entries[i].title + ' <span class="tweetauthor">(' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-				this.tweetQueue.push( result.feed.entries[i].title );
+				var a= this._coreDoc.createElement("div");
+                                a.innerHTML=result.feed.entries[i].content;
+                                this.tweetQueue.push( a.textContent );
 			}
 		}
 
