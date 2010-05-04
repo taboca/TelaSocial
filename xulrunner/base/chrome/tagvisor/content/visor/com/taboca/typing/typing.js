@@ -62,18 +62,11 @@ var typing =  {
 			return;
 		}
 		this.tweetRepeated[t] = true;
-		//var k = this._coreDoc.createElement('div');
-		//k.className = 'tweetpublic';
-		//k.innerHTML = t;
-		//this.element.insertBefore(k, this.element.firstChild);
-
 		this.cycleArray[this.cycleTotal++]= { content: t };
-
 		if(this.cycleArray.length>0 && !this.reading) { 
 			this.readLine();
 			this.reading = true; 
 		} 
-		
 		return true;
 	},
 
@@ -86,27 +79,23 @@ var typing =  {
 
 	// this.element is the reference
 	readLine: function () { 
-		if(this.cycleIndex>this.cycleArray.length) { 
+		if(this.cycleIndex>=this.cycleArray.length) { 
 			this.cycleIndex=0;
 		} 
-		
 		var self = this;
 		timer.setTimeout( function(){self.readStep()},1000);
 	}, 
 	
 	readStep: function () { 
-
 		var elCurr = this.cycleArray[this.cycleIndex];
 		var words = elCurr.content.split(" ");
 		var sum = "";
 		for(var i=0;i<this.readIndex;i++) { 
-			sum+=words[this.readIndex]+" ";
+			sum+=words[i]+" ";
 		} 
 		this._coreDoc.getElementById("firsttyping").innerHTML=sum;
-		
 		this.readIndex++;
-
-		if(this.readIndex>words.length) { 
+		if(this.readIndex>=words.length) { 
 			var self = this;
 			this.readIndex=0;
 			this.cycleIndex++;
