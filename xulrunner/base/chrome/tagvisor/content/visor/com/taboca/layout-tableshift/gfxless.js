@@ -60,7 +60,7 @@ var gfx =  {
 
 	.panel { 
 		display:none;
-		height:500px;
+		height:350px;
 		overflow:hidden;
 		width:750px;
 	} 
@@ -118,10 +118,6 @@ var gfx =  {
 <div id='pointer'>
 </div>
 <table cellpadding="10" cellspacing="0" height="100%">
-<tr>
-<td colspan='3' id='area_top' >
-</td>
-</tr>
 <tr style="height:50px">
 <td class='orange' id='tab1'>
 <div class='tab'>
@@ -140,7 +136,7 @@ Clock widget
 </td>
 </tr>
 <tr>
-<td colspan="3">
+<td colspan="3" class='panelcontainer'>
 <div class="panel" id='area_panel1'>
 </div>
 <div class="panel" id='area_panel2'>
@@ -149,7 +145,10 @@ Clock widget
 </div>
 </td>
 </tr>
-
+<tr>
+<td colspan='3' id='area_bottom' >
+</td>
+</tr>
 </table>
 
 </div>
