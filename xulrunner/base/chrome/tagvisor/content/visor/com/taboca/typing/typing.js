@@ -12,24 +12,14 @@ var typing =  {
 	feed    : null, 
 
 	style : <><![CDATA[
-		.tweetauthor { 
 
-			color:gray; 
-		} 
-		.tweetpublic { 
-			color:#333;
-			background-color:#fff;
-			border-top:13px solid orange;
-			font-size:26px;
-			font-weight:bold;
-			-moz-border-radius:12px;
-			-moz-box-shadow: white 0 0 10px; 
-			padding:10px;
-			margin-top:5px;
-		} 
 		.typingPanel { 
-			padding:.5em;
+			font-size:25px; 
+			font-weight:bold;
+			color:white;
 		} 
+
+
 	]]></>, 
 
 	start : function() {
