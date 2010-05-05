@@ -65,6 +65,16 @@ var gfx =  {
 		width:750px;
 	} 
 
+	#area_bottom {
+                height:250px;
+                backgrond-color:darkblue;
+		color:white;
+		font-weight:bold;
+        }
+
+
+	
+
 ]]></>,
 
 
@@ -146,7 +156,7 @@ Clock widget
 </td>
 </tr>
 <tr>
-<td colspan='3' id='area_bottom' >
+<td colspan='3' id='area_bottom' valign='top' >
 </td>
 </tr>
 </table>
