@@ -80,6 +80,8 @@ var typing =  {
 		var elCurr = this.cycleArray[this.cycleIndex];
 		var words = elCurr.content.split(" ");
 		var sum = "";
+		//sum += '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
+
 		for(var i=0;i<this.readIndex;i++) { 
 			sum+=words[i]+" ";
 		} 
