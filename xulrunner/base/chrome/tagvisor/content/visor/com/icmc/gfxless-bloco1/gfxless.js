@@ -66,6 +66,7 @@ var gfx =  {
 		height:700px;
 		padding:.1em;
 		width:1850px;
+		overflow:hidden;
 		font-size:50px;
 		font-weight:bold;
 		-moz-border-radius:55px 95px;
