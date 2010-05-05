@@ -63,7 +63,7 @@ var gfx =  {
 	} 
 
 	.orange { 
-		height:1200px;
+		height:700px;
 		padding:.1em;
 		width:1850px;
 		font-size:50px;
