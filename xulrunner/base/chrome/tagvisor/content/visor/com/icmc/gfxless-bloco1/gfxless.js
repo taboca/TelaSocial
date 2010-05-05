@@ -80,8 +80,8 @@ var gfx =  {
 
   .orange2 {
                 background-image: -moz-linear-gradient(-60deg, #ddd, #fff, #eee);
-                height:1200px;
                 padding:.2em;
+		height:700px;
                 width:1850px;
 		margin-top:1em;
                 margin-right:1em;
@@ -163,7 +163,7 @@ var gfx =  {
 <td valign='top'>
 
 <div id='panel1'>
-<span style='color:white;margin-left:1em' >http://www.icmc.usp.br/eventos/feed/ em breve com datas no RSS do site. Códigos QR code para leitura pelo celular. </span>
+<span style='color:white;margin-left:1em' >http://www.icmc.usp.br/eventos/feed/ breve modelo de calendário para palestras. Códigos QR code para leitura pelo celular. </span>
 <div class='orange' style='margin-top:0em; '  id='area_midleft'>
 </div>
 </div>
