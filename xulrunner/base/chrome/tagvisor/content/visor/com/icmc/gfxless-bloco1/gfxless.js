@@ -31,6 +31,12 @@ var gfx =  {
 	}
 
 
+
+	.panel1, .panel2 { 
+		display:none;
+		width:1900px;
+	} 
+
 	#frame { 
 		margin:auto;
 		width:1920px;
@@ -122,15 +128,11 @@ var gfx =  {
 	shiftmove: function () { 
                 var self = this;
 		if(this.moveleft) { 
-			this.movepos-=100;
-		}
-		else { 
-			this.movepos+=100;
-		} 
-		if(this.moveleft) { 
-			this._coreDoc.getElementById("moveframe").style.left="-1920px";
+			this._coreDoc.getElementById("panel1").style.display="none";
+			this._coreDoc.getElementById("panel2").style.display="block";
 		} else { 
-			this._coreDoc.getElementById("moveframe").style.left="0px";
+			this._coreDoc.getElementById("panel1").style.display="block";
+			this._coreDoc.getElementById("panel2").style.display="none";
 		} 
   	},
 
@@ -159,9 +161,20 @@ var gfx =  {
 
 <table><tr>
 <td valign='top'>
+
+<div id='panel1'>
 <span style='color:white;margin-left:1em' >http://www.icmc.usp.br/eventos/feed/ em breve com datas no RSS do site. Códigos QR code para leitura pelo celular. </span>
 <div class='orange' style='margin-top:0em; '  id='area_midleft'>
 </div>
+</div>
+
+<div id='panel2'>
+<span style='color:black;font-size:30px;font-weight:bold;' >Twitter: #bloco1icmc</span>
+<div class='orange2' style='margin-top:0em;' id='area_midright'>
+</div>
+</div>
+
+
 </td>
 <td valign='top'>
 </td>
@@ -174,14 +187,6 @@ var gfx =  {
 </div>
 
 </div>
-</td><td valign='top'>
-
-<div id='right' style='width:1920px'>
-<span style='color:black;font-size:30px;font-weight:bold;' >Twitter: #bloco1icmc</span>
-<div class='orange2' style='margin-top:0em;' id='area_midright'>
-</div>
-</div>
-
 </td>
 </tr>
 </table>
