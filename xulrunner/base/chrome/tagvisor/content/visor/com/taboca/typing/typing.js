@@ -85,7 +85,7 @@ var typing =  {
 		} 
 		this._coreDoc.getElementById("firsttyping").innerHTML=sum;
 		this.readIndex++;
-		if(this.readIndex>=words.length) { 
+		if(this.readIndex>words.length) { 
 			var self = this;
 			this.readIndex=0;
 			this.cycleIndex++;
