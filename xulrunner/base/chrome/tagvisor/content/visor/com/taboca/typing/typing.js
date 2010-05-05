@@ -14,7 +14,7 @@ var typing =  {
 	style : <><![CDATA[
 
 		.typingPanel { 
-			font-size:25px; 
+			font-size:35px; 
 			font-weight:bold;
 			color:white;
 		} 
@@ -89,7 +89,7 @@ var typing =  {
 			var self = this;
 			this.readIndex=0;
 			this.cycleIndex++;
-			timer.setTimeout( function(){self.readLine()},1000);
+			timer.setTimeout( function(){self.readLine()},3000);
 		} 
 		else { 
 			var self = this;

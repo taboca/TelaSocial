@@ -90,8 +90,7 @@ var gfx =  {
 
 	.green { 
 		font-family: arial; 
-		background-image: -moz-linear-gradient(-60deg, #030,  #070, #000);
-		background-image: -moz-linear-gradient(-60deg, #003,  #007, #000);
+		background-color:rgb(30,50,120);
 		font-size:30px;
 		padding:1em;
 		-moz-border-radius-bottomleft: 0;
