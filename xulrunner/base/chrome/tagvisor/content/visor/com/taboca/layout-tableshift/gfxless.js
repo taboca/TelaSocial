@@ -33,7 +33,7 @@ var gfx =  {
 	}
 
 	.tab {
-                font-size:30px;
+                font-size:20px;
                 font-weight:bold;
         }
 
@@ -60,14 +60,14 @@ var gfx =  {
 
 	.panel { 
 		display:none;
-		height:350px;
 		overflow:hidden;
 		width:750px;
+		height:350px;
 	} 
 
 	#area_bottom {
                 height:250px;
-                backgrond-color:darkblue;
+                background-color:darkblue;
 		color:white;
 		font-weight:bold;
         }
