@@ -62,8 +62,6 @@ var gfx =  {
 	.panel { 
 		display:none;
 		overflow:hidden;
-		width:750px;
-		height:350px;
 	} 
 
 	#area_bottom {
