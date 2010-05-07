@@ -34,12 +34,13 @@ var gfx =  {
 
 	.tab {
                 font-size:20px;
+		width:620px;
                 font-weight:bold;
         }
 
-        .orange { background-color:rgb(253,181,37);; }
-        .green  { background-color:rgb(100,197,210); }
-        .blue   { background-color:rgb(14,148,171);; }
+        .cor_orange { background-color:rgb(253,181,37);; }
+        .cor_darkblue  { background-color:rgb(100,197,210); }
+        .cor_darkblue   { background-color:rgb(14,148,171);; }
         .transp { background-color:transparent; }
 
         #pointer {
@@ -67,7 +68,7 @@ var gfx =  {
 
 	#area_bottom {
                 height:250px;
-                background-color:darkblue;
+                background-color:darkcor_darkblue;
 		color:white;
 		font-weight:bold;
         }
@@ -84,25 +85,25 @@ var gfx =  {
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		if(this.movepos > 0 ) { 
                         this._coreDoc.getElementById("tab1").className="transp";
-                        this._coreDoc.getElementById("tab2").className="green";
-                        this._coreDoc.getElementById("tab3").className="blue";
+                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
+                        this._coreDoc.getElementById("tab3").className="cor_darkblue";
 			this._coreDoc.body.style.backgroundColor="rgb(253,181,37);";
                         this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
 		} 
-		if(this.movepos > 266 ) { 
-                        this._coreDoc.getElementById("tab1").className="orange";
+		if(this.movepos > 630 ) { 
+                        this._coreDoc.getElementById("tab1").className="cor_orange";
                         this._coreDoc.getElementById("tab2").className="transp";
-                        this._coreDoc.getElementById("tab3").className="blue";
+                        this._coreDoc.getElementById("tab3").className="cor_darkblue";
 			this._coreDoc.body.style.backgroundColor="rgb(100,197,210);";
                         this._coreDoc.getElementById("area_panel2").style.display="block";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
 		} 
-		if(this.movepos > 532 ) { 
-                        this._coreDoc.getElementById("tab1").className="orange";
-                        this._coreDoc.getElementById("tab2").className="green";
+		if(this.movepos > 1260 ) { 
+                        this._coreDoc.getElementById("tab1").className="cor_orange";
+                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
                         this._coreDoc.getElementById("tab3").className="transp";
 			this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
                         this._coreDoc.getElementById("area_panel3").style.display="block";
@@ -127,17 +128,17 @@ var gfx =  {
 </div>
 <table cellpadding="10" cellspacing="0" height="100%">
 <tr style="height:50px">
-<td class='orange' id='tab1'>
+<td class='cor_orange' id='tab1'>
 <div class='tab'>
 São Carlos
 </div>
 </td>
-<td class='green' id='tab2'>
+<td class='cor_darkblue' id='tab2'>
 <div class='tab'>
 Palestras ICMC
 </div>
 </td>
-<td class='blue' id='tab3'>
+<td class='cor_darkblue' id='tab3'>
 <div class='tab'>
 #bloco1icmc (twitter)
 </div>
