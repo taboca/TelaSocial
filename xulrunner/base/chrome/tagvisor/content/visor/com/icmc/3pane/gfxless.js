@@ -39,7 +39,7 @@ var gfx =  {
         }
 
         .cor_orange { background-color:rgb(253,181,37);; }
-        .cor_darkblue  { background-color:rgb(100,197,210); }
+        .cor_lightblue  { background-color:rgb(100,197,210); }
         .cor_darkblue   { background-color:rgb(14,148,171);; }
         .transp { background-color:transparent; }
 
@@ -110,7 +110,7 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
 		} 
-		if(this.movepos > 800 ) { 
+		if(this.movepos > 1950 ) { 
 
 			this.movepos = 0
 
