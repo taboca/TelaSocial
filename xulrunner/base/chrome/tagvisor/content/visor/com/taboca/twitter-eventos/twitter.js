@@ -15,9 +15,12 @@ var twitter =  {
 		
 
 		.tweetdate { 
-			color:black;
+			color:white;
 			font-weight:bold;
 			font-size:32px;
+			margin-right:.5em;
+			border-right:6px solid white;
+			padding-right:.5em
 		}
 
 		.tweetauthor { 
