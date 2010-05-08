@@ -155,7 +155,7 @@ var gfx =  {
 <tr style="height:50px">
 <td class='cor_orange' id='tab1'>
 <div class='tab'>
-Atualizações Tela
+Telas ICMC (0.2)
 </div>
 </td>
 <td class='cor_lightblue' id='tab2'>
@@ -172,7 +172,7 @@ Palestras ICMC
 <tr>
 <td colspan="3" >
 <div class="panel" id='area_panel1'>
-Atualizações Tela ( este painel vai sumir em breve ) 
+<h2>Versão 0.2 - alpha - 7 Maio 2010</h2>
 <ul>
 <li>Layout novo tipo Abas - feedback via #bloco1icmc ou mgalli em taboca ponto com </li>
 <li>Linha do tempo nas Abas - ponteiro acima para passar percepção das mudanças e saber qdo vem o próximo painel</li>
@@ -183,6 +183,18 @@ Atualizações Tela ( este painel vai sumir em breve )
 <li>Feedback? blog.telasocial.com ou mgalli em taboca ponto com ou #bloco1icmc</li>
 <li>Ideias?: Módulo-widget do bandejão? .. #bloco1icmc</li>
 </ul>
+<h2>Version 0.2 - alpha - 7th, May, 2010</h2>
+<ul>
+<li>New Layout with Tabs</li>
+<li>Timeline perception - at the top little moving black dot. The use case is based on the NOT case of the bus terminal s
+creens at the São Paulo bus station 'When you are about to see your bus time, the ads shows and you miss your bus'.</li>
+<li>New typing widget in the fixed area at the bottom - using USP.br RSS source for now - soon the RSS multiplexer will g
+et in so we should be able to get news from many sources all together ( pipeline effect );</li>
+<li>ICMC presentation events Tab now has dates ; soon will have a better calendar view; </li>
+<li>Other: USP colors</li>
+<li>ideas? #bloco1icmc at twitter or mgalli at taboca dot com </li>
+</ul>
+
 
 </div>
 <div class="panel" id='area_panel2'>
