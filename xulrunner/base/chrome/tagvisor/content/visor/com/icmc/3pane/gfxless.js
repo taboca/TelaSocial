@@ -179,6 +179,7 @@ Palestras ICMC
 </div>
 </td>
 </tr>
+<tr>
 <td colspan='2' id='area_bottom' valign='top' style='background: url(/com/icmc/3pane/usp-logo/trademark.jpg) 0 0 ;margin-left:120px;'>
 </td>
 <td id='area_bottomright' valign="middle">
