@@ -29,7 +29,6 @@ var gfx =  {
 	}
 
 	.panel {
-        	margin-top:30px;
 	}
 
 	.tab {
