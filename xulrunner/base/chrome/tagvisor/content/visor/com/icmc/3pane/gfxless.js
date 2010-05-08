@@ -54,11 +54,11 @@ var gfx =  {
         #pointer {
                 width:50px;
                 -moz-border-radius:20px;
-                height:100px;
+                height:50px;
                 background-color:black;
                 z-index:1;
                 position:absolute;
-                top:0px;
+                top:44px;
                 left:0px;
         }
 
