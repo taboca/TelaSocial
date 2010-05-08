@@ -38,7 +38,6 @@ var gfx =  {
         }
 
 	#tab1, #tab2, #tab3 { 
-
 		z-index:1000;
 	}
 
