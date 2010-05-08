@@ -40,6 +40,7 @@ var gfx =  {
 
 
 	#area_bottomright { 
+		text-align:center;
 		background-color:rgb(90,90,90);	
 	} 
 
@@ -161,7 +162,7 @@ Palestras ICMC
 <tr>
 <td colspan='2' id='area_bottom' valign='top' >
 </td>
-<td id='area_bottomright'>
+<td id='area_bottomright' valign="middle">
 </td>
 
 </tr>
