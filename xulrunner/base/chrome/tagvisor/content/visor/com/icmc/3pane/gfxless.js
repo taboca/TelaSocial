@@ -11,7 +11,7 @@ var gfx =  {
 
 	style : <><![CDATA[
 
-	html { padding:0; margin:0; overflow:hidden } 
+	html { padding:0; margin:0; overflow:hidden; font-family: verdana, arial, sans-serif } 
 
 	body {
 		background-color:rgb(253,181,37); margin:0; padding:0;
