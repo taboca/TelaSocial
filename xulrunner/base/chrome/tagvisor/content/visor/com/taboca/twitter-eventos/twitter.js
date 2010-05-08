@@ -19,13 +19,12 @@ var twitter =  {
 			color:gray; 
 		} 
 		.tweetpublic { 
-			color:#333;
-			background-color:#fff;
-			border-top:13px solid orange;
-			font-size:46px;
+			color:white;
+			font-size:40px;
 			font-weight:bold;
 			-moz-border-radius:12px;
-			-moz-box-shadow: white 0 0 10px; 
+			background-color: rgba(255,255,255,.5);
+			-moz-box-shadow: rgba(255,255,255,.5) 0 0 10px; 
 			padding:10px;
 			margin-top:5px;
 		} 
