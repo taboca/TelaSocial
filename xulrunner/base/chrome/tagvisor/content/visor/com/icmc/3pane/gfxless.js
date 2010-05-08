@@ -82,14 +82,14 @@ var gfx =  {
         kick: function () {
 		this.movepos+=5;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
-		if(this.movepos > 0 ) { 
-                        this._coreDoc.getElementById("tab1").className="transp";
+		if(this.movepos > 1260 ) { 
+                        this._coreDoc.getElementById("tab1").className="cor_orange";
                         this._coreDoc.getElementById("tab2").className="cor_lightblue";
-                        this._coreDoc.getElementById("tab3").className="cor_darkblue";
-			this._coreDoc.body.style.backgroundColor="rgb(253,181,37);";
-                        this._coreDoc.getElementById("area_panel1").style.display="block";
+                        this._coreDoc.getElementById("tab3").className="transp";
+			this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
+                        this._coreDoc.getElementById("area_panel3").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
-                        this._coreDoc.getElementById("area_panel3").style.display="none";
+                        this._coreDoc.getElementById("area_panel1").style.display="none";
 		} 
 		if(this.movepos > 630 ) { 
                         this._coreDoc.getElementById("tab1").className="cor_orange";
@@ -100,14 +100,14 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel1").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
 		} 
-		if(this.movepos > 1260 ) { 
-                        this._coreDoc.getElementById("tab1").className="cor_orange";
+		if(this.movepos > 0 ) { 
+                        this._coreDoc.getElementById("tab1").className="transp";
                         this._coreDoc.getElementById("tab2").className="cor_lightblue";
-                        this._coreDoc.getElementById("tab3").className="transp";
-			this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
-                        this._coreDoc.getElementById("area_panel3").style.display="block";
+                        this._coreDoc.getElementById("tab3").className="cor_darkblue";
+			this._coreDoc.body.style.backgroundColor="rgb(253,181,37);";
+                        this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
-                        this._coreDoc.getElementById("area_panel1").style.display="none";
+                        this._coreDoc.getElementById("area_panel3").style.display="none";
 		} 
 		if(this.movepos > 1950 ) { 
 
