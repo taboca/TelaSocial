@@ -29,7 +29,7 @@ var twitter =  {
 			margin-top:5px;
 		} 
 		.twitterPanel { 
-			width:1900px;
+			width:1850px;
 		} 
 	]]></>, 
 
