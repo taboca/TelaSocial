@@ -19,7 +19,7 @@ var twitter =  {
 			color:gray; 
 		} 
 		.tweetpublic { 
-			color:white;
+			color:black;
 			font-size:40px;
 			font-weight:bold;
 			-moz-border-radius:12px;
