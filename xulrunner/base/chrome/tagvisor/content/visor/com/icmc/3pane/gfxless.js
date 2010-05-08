@@ -43,12 +43,16 @@ var gfx =  {
 
 	#area_bottomright { 
 		text-align:center;
-		background-color:rgb(14,148,171);	
+		background-color:rgb(70,70,70);	
 	} 
 
         .cor_orange { background-color:rgb(253,181,37);; }
         .cor_lightblue  { background-color:rgb(100,197,210); }
-        .cor_tab3   { background-color:rgb(255,255,255);; }
+        .cor_tab3   {
+		background-color:rgb(14,148,171);	
+	}
+
+
         .transp { background-color:transparent; }
 
         #pointer {
@@ -88,7 +92,7 @@ var gfx =  {
 
 	#area_bottom {
                 height:230px;
-                background-color:rgb(0,48,80);
+                background-color:rgb(30,30,30);
     		font-family:Kaffeesatz,Verdana, Arial, Helvetica, sans-serif;
 		color:white;
 		font-weight:bold;
@@ -108,7 +112,7 @@ var gfx =  {
                         this._coreDoc.getElementById("tab1").className="cor_orange";
                         this._coreDoc.getElementById("tab2").className="cor_lightblue";
                         this._coreDoc.getElementById("tab3").className="transp";
-			this._coreDoc.body.style.backgroundColor="rgb(255,255,255)";
+			this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
                         this._coreDoc.getElementById("area_panel3").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
