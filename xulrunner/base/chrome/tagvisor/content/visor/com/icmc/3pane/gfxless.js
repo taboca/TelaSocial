@@ -38,6 +38,11 @@ var gfx =  {
                 font-weight:bold;
         }
 
+
+	#area_bottomright { 
+		background-color:rgb(90,90,90);	
+	} 
+
         .cor_orange { background-color:rgb(253,181,37);; }
         .cor_lightblue  { background-color:rgb(100,197,210); }
         .cor_darkblue   { background-color:rgb(14,148,171);; }
@@ -67,7 +72,7 @@ var gfx =  {
 
 	#area_bottom {
                 height:250px;
-                background-color:rgb(14,148,171);
+                background-color:rgb(4,78,111);
 		color:white;
 		font-weight:bold;
         }
