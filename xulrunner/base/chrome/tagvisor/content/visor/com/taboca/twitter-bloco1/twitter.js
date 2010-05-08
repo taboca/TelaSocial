@@ -19,23 +19,20 @@ var twitter =  {
 			font-size:15px;
 		} 
 
-		.tp2 {                        color:black;                        display:inline-block;
-                        background-color:#eee;
-                        font-size:26px;
-                        max-width:300px;
-                        min-height:200px;
+		.postitpanel {                        
+			color:black;                        
+			display:inline-block;
+                        background-color:#ff5;
+                        font-size:22px;
+			overflow:hidden;
                         font-weight:bold;                        
+                        margin:15px;
+                        padding:15px;
+                        width:300px;
+                        height:220px;
 			-moz-box-shadow: black 10px 10px 10px;
-                        margin:1em;
-                        padding:1em;
-                        width:350px;
-                        height:250px;
                 }
 
-
-		.twitterPanel { 
-			padding:.5em;
-		} 
 	]]></>, 
 
 
@@ -81,7 +78,7 @@ var twitter =  {
 		}
 		this.tweetRepeated[t] = true;
 		var k = this._coreDoc.createElement('span');
-		k.className = 'tp2';
+		k.className = 'postitpanel';
 		k.innerHTML = t;
 		this.element.insertBefore(k, this.element.firstChild);
 		return true;
