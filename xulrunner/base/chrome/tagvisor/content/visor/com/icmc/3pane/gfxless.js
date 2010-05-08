@@ -73,9 +73,16 @@ var gfx =  {
 
 	@font-face {     
 		font-family: Kaffeesatz;
-		src: url(com/icmc/3pane/YanoneKaffeesatz-Regular.otf) format("opentype");
+		src: url(/com/icmc/3pane/YanoneKaffeesatz-Regular.otf) format("opentype");
 		font-weight:bold;
 	}
+
+
+@font-face {
+	font-family: Vollkorn;
+	src: url(/com/icmc/3pane/vollkorn.otf) format("opentype");
+
+}
 
 	#area_bottom {
                 height:250px;
