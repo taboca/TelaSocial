@@ -155,7 +155,7 @@ var gfx =  {
 <tr style="height:50px">
 <td class='cor_orange' id='tab1'>
 <div class='tab'>
-São Carlos
+Atualizações Tela
 </div>
 </td>
 <td class='cor_lightblue' id='tab2'>
@@ -172,6 +172,18 @@ Palestras ICMC
 <tr>
 <td colspan="3" >
 <div class="panel" id='area_panel1'>
+Atualizações Tela ( este painel vai sumir em breve ) 
+<ul>
+<li>Layout novo tipo Abas - feedback via #bloco1icmc ou mgalli em taboca ponto com </li>
+<li>Linha do tempo nas Abas - ponteiro acima para passar percepção das mudanças e saber qdo vem o próximo painel</li>
+<li>Módulo-widget ( typing): Painel fixo com notícias - abaixo com RSS Usp.br. Em breve com multiplexador de RSS ( noticias de várias fontes )</li>
+<li>Aba de Eventos - com datas - irá mudar para uma visão ~ calendário</li>
+<li>Outros: Cores USP</li>
+<li>Outros: Relógio foi pro canto</li>
+<li>Feedback? blog.telasocial.com ou mgalli em taboca ponto com ou #bloco1icmc</li>
+<li>Ideias?: Módulo-widget do bandejão? .. #bloco1icmc</li>
+</ul>
+
 </div>
 <div class="panel" id='area_panel2'>
 </div>
