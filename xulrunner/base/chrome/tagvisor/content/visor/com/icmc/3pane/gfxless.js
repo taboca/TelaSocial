@@ -71,9 +71,16 @@ var gfx =  {
 		overflow:hidden;
 	} 
 
+	@font-face {     
+		font-family: Kaffeesatz;
+		src: url(com/icmc/3pane/YanoneKaffeesatz-Regular.otf) format("opentype");
+		font-weight:bold;
+	}
+
 	#area_bottom {
                 height:250px;
                 background-color:rgb(4,78,111);
+    		font-family:Kaffeesatz,Verdana, Arial, Helvetica, sans-serif;
 		color:white;
 		font-weight:bold;
         }
