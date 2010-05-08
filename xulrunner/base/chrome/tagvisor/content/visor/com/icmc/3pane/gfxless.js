@@ -43,7 +43,7 @@ var gfx =  {
 
 	#area_bottomright { 
 		text-align:center;
-		background-color:rgb(90,90,90);	
+		background-color:rgb(14,148,171);	
 	} 
 
         .cor_orange { background-color:rgb(253,181,37);; }
@@ -88,7 +88,7 @@ var gfx =  {
 
 	#area_bottom {
                 height:230px;
-                background-color:rgb(4,78,111);
+                background-color:rgb(0,48,80);
     		font-family:Kaffeesatz,Verdana, Arial, Helvetica, sans-serif;
 		color:white;
 		font-weight:bold;
