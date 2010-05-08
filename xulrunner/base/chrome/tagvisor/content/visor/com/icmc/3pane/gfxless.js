@@ -46,7 +46,7 @@ var gfx =  {
 
         .cor_orange { background-color:rgb(253,181,37);; }
         .cor_lightblue  { background-color:rgb(100,197,210); }
-        .cor_darkblue   { background-color:rgb(14,148,171);; }
+        .cor_tab3   { background-color:rgb(255,255,255);; }
         .transp { background-color:transparent; }
 
         #pointer {
@@ -106,7 +106,7 @@ var gfx =  {
                         this._coreDoc.getElementById("tab1").className="cor_orange";
                         this._coreDoc.getElementById("tab2").className="cor_lightblue";
                         this._coreDoc.getElementById("tab3").className="transp";
-			this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
+			this._coreDoc.body.style.backgroundColor="rgb(255,255,255)";
                         this._coreDoc.getElementById("area_panel3").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
@@ -114,7 +114,7 @@ var gfx =  {
 		if(this.movepos > 630 && this.movepos < 1260) { 
                         this._coreDoc.getElementById("tab1").className="cor_orange";
                         this._coreDoc.getElementById("tab2").className="transp";
-                        this._coreDoc.getElementById("tab3").className="cor_darkblue";
+                        this._coreDoc.getElementById("tab3").className="cor_tab3";
 			this._coreDoc.body.style.backgroundColor="rgb(100,197,210)";
                         this._coreDoc.getElementById("area_panel2").style.display="block";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
@@ -123,7 +123,7 @@ var gfx =  {
 		if(this.movepos > 0  && this.movepos < 630) { 
                         this._coreDoc.getElementById("tab1").className="transp";
                         this._coreDoc.getElementById("tab2").className="cor_lightblue";
-                        this._coreDoc.getElementById("tab3").className="cor_darkblue";
+                        this._coreDoc.getElementById("tab3").className="cor_tab3";
 			this._coreDoc.body.style.backgroundColor="rgb(253,181,37)";
                         this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
@@ -152,12 +152,12 @@ var gfx =  {
 São Carlos
 </div>
 </td>
-<td class='cor_darkblue' id='tab2'>
+<td class='cor_lightblue' id='tab2'>
 <div class='tab'>
 Palestras ICMC
 </div>
 </td>
-<td class='cor_darkblue' id='tab3'>
+<td class='cor_tab3' id='tab3'>
 <div class='tab'>
 #bloco1icmc (twitter)
 </div>
