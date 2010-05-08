@@ -34,6 +34,7 @@ var gfx =  {
 	.tab {
                 font-size:20px;
 		width:620px;
+		z-index:2;
                 font-weight:bold;
         }
 
@@ -66,7 +67,7 @@ var gfx =  {
 
 	.panel { 
 		display:none;
-		height:600px;
+		height:700px;
 		overflow:hidden;
 	} 
 
