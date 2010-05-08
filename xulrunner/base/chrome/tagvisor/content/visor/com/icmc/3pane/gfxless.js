@@ -61,12 +61,13 @@ var gfx =  {
 
 	.panel { 
 		display:none;
+		height:600px;
 		overflow:hidden;
 	} 
 
 	#area_bottom {
                 height:250px;
-                background-color:darkcor_darkblue;
+                background-color:rgb(14,148,171);
 		color:white;
 		font-weight:bold;
         }
@@ -143,7 +144,7 @@ Palestras ICMC
 </td>
 </tr>
 <tr>
-<td colspan="3" class='panelcontainer'>
+<td colspan="3" >
 <div class="panel" id='area_panel1'>
 </div>
 <div class="panel" id='area_panel2'>
@@ -153,8 +154,11 @@ Palestras ICMC
 </td>
 </tr>
 <tr>
-<td colspan='3' id='area_bottom' valign='top' >
+<td colspan='2' id='area_bottom' valign='top' >
 </td>
+<td id='area_bottomright'>
+</td>
+
 </tr>
 </table>
 
