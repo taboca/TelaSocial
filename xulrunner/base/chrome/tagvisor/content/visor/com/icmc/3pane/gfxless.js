@@ -82,7 +82,7 @@ var gfx =  {
         kick: function () {
 		this.movepos+=5;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
-		if(this.movepos > 1260 ) { 
+		if(this.movepos > 1260 && this.movepos < 1950 ) { 
                         this._coreDoc.getElementById("tab1").className="cor_orange";
                         this._coreDoc.getElementById("tab2").className="cor_lightblue";
                         this._coreDoc.getElementById("tab3").className="transp";
@@ -91,7 +91,7 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
 		} 
-		if(this.movepos > 630 ) { 
+		if(this.movepos > 630 && this.movepos < 1260) { 
                         this._coreDoc.getElementById("tab1").className="cor_orange";
                         this._coreDoc.getElementById("tab2").className="transp";
                         this._coreDoc.getElementById("tab3").className="cor_darkblue";
@@ -100,7 +100,7 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel1").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
 		} 
-		if(this.movepos > 0 ) { 
+		if(this.movepos > 0  && this.movepos < 630) { 
                         this._coreDoc.getElementById("tab1").className="transp";
                         this._coreDoc.getElementById("tab2").className="cor_lightblue";
                         this._coreDoc.getElementById("tab3").className="cor_darkblue";
