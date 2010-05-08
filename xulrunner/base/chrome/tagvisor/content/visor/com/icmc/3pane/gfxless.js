@@ -34,10 +34,13 @@ var gfx =  {
 	.tab {
                 font-size:20px;
 		width:620px;
-		z-index:2;
                 font-weight:bold;
         }
 
+	#tab1, #tab2, #tab3 { 
+
+		z-index:1000;
+	}
 
 	#area_bottomright { 
 		text-align:center;
