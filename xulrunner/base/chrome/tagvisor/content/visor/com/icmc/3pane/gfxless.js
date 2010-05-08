@@ -52,9 +52,9 @@ var gfx =  {
         .transp { background-color:transparent; }
 
         #pointer {
-                width:50px;
-                -moz-border-radius:20px;
-                height:50px;
+                width:45px;
+                -moz-border-radius:25px;
+                height:45px;
                 background-color:black;
                 z-index:1;
                 position:absolute;
