@@ -33,6 +33,20 @@ var twitter =  {
 			-moz-box-shadow: black 10px 10px 10px;
                 }
 
+		.command {
+                        color:black;
+                        display:inline-block;
+                        background-color:white;
+			opacity:.5;
+                        font-size:22px;
+                        overflow:hidden;
+                        font-weight:bold;
+                        margin:15px;
+                        padding:15px;
+                        width:300px;
+                        height:220px;
+                        -moz-box-shadow: black 10px 10px 10px;
+                }
 	]]></>, 
 
 
@@ -72,13 +86,19 @@ var twitter =  {
 	} ,
 	popTweet : function() {
 		if (this.tweetQueue.length == 0) return false;
-		var t = this.tweetQueue.pop();
+		var obj = this.tweetQueue.pop();
+		var t = obj.content; 
+		var c = obj.command; 
+		
 		if (t in this.tweetRepeated) {
 			return;
 		}
 		this.tweetRepeated[t] = true;
 		var k = this._coreDoc.createElement('span');
 		k.className = 'postitpanel';
+		if(c=="command") { 
+			k.className = 'command';
+		} 
 		k.innerHTML = t;
 		this.element.insertBefore(k, this.element.firstChild);
 		return true;
@@ -112,9 +132,14 @@ var twitter =  {
       var imgElement = items[i].getElementsByTagNameNS("http://search.yahoo.com/mrss/","content")[0];
       var img = imgElement.getAttribute("url");
 
+	var cmd ='';
+	if(title.indexOf("reason:")>-1) { 
+		cmd='command';
+	} 
+
 			//if (result.feed.entries[i]) {
 				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor2">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-				this.tweetQueue.push( '<img align="top" src="'+img+'" /><span class="tweetauthor2">(' + author.replace(/ \(.*$/,'') + ')</span> ' + title);
+				this.tweetQueue.push( { content: '<img align="top" src="'+img+'" /><span class="tweetauthor2">(' + author.replace(/ \(.*$/,'') + ')</span> ' + title, command: cmd } );
 			//}
 		//}
 		}
