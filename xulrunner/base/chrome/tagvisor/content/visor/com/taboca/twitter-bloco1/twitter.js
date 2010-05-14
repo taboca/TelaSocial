@@ -126,20 +126,17 @@ var twitter =  {
       var titleElement = items[i].getElementsByTagName("title")[0];
       var title = titleElement.firstChild.nodeValue;
 
-      var authorElement = items[i].getElementsByTagName("author")[0];
-      var author = authorElement.firstChild.nodeValue;
+      //var authorElement = items[i].getElementsByTagName("author")[0];
+      //var author = authorElement.firstChild.nodeValue;
 
-      var imgElement = items[i].getElementsByTagNameNS("http://search.yahoo.com/mrss/","content")[0];
-      var img = imgElement.getAttribute("url");
+      //var imgElement = items[i].getElementsByTagNameNS("http://search.yahoo.com/mrss/","content")[0];
+     // var img = imgElement.getAttribute("url");
 
 	var cmd ='';
-	if(title.indexOf("reason:")>-1) { 
-		cmd='command';
-	} 
 
 			//if (result.feed.entries[i]) {
 				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor2">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-				this.tweetQueue.push( { content: '<img align="top" src="'+img+'" /><span class="tweetauthor2">(' + author.replace(/ \(.*$/,'') + ')</span> ' + title, command: cmd } );
+				this.tweetQueue.push( { content: '<span class="tweetauthor2">BibliotecaICMC</span> ' + title, command: cmd } );
 			//}
 		//}
 		}
