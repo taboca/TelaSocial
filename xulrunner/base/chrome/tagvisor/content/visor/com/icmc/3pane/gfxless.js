@@ -15,6 +15,8 @@ var gfx =  {
 
 	body {
 		background-color:rgb(253,181,37); margin:0; padding:0;
+		-moz-background-size: 100% 100%; 
+		background-image:url(http://a1.twimg.com/profile_background_images/43617138/fotobiblio2.JPG);
 	}
 
 	table {
@@ -38,9 +40,7 @@ var gfx =  {
         }
 
 	#area_panel1 { 
-		-moz-background-size: 100% 100%; 
-		background-image:url(http://a1.twimg.com/profile_background_images/43617138/fotobiblio2.JPG);
-	} 
+	}
 
 	#tab1, #tab2, #tab3 { 
 		z-index:1000;
@@ -52,6 +52,7 @@ var gfx =  {
 	} 
 
         .cor_orange { background-color:rgb(253,181,37);; }
+        .cor_orange { background-color:transparent;; }
         .cor_lightblue  { background-color:rgb(100,197,210); }
         .cor_tab3   {
 		background-color:rgb(14,148,171);	
