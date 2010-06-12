@@ -37,6 +37,11 @@ var gfx =  {
                 font-weight:bold;
         }
 
+	#area_panel1 { 
+		-moz-background-size: 100% 100%; 
+		background-image:url(http://a1.twimg.com/profile_background_images/43617138/fotobiblio2.JPG);
+	} 
+
 	#tab1, #tab2, #tab3 { 
 		z-index:1000;
 	}
@@ -155,7 +160,7 @@ var gfx =  {
 <tr style="height:50px">
 <td class='cor_orange' id='tab1'>
 <div class='tab'>
-Telas ICMC (0.2)
+Telão ICMC - v 0.3
 </div>
 </td>
 <td class='cor_lightblue' id='tab2'>
@@ -172,27 +177,16 @@ Palestras ICMC
 <tr>
 <td colspan="3" >
 <div class="panel" id='area_panel1'>
-<h2>Versão 0.2 - alpha - 7 Maio 2010</h2>
+<h2>Version 0.3 - June </h2>
 <ul>
-<li>Layout novo tipo Abas - feedback via #bloco1icmc ou mgalli em taboca ponto com </li>
-<li>Linha do tempo nas Abas - ponteiro acima para passar percepção das mudanças e saber qdo vem o próximo painel</li>
-<li>Módulo-widget ( typing): Painel fixo com notícias - abaixo com RSS Usp.br. Em breve com multiplexador de RSS ( noticias de várias fontes )</li>
-<li>Aba de Eventos - com datas - irá mudar para uma visão ~ calendário</li>
-<li>Outros: Cores USP</li>
-<li>Outros: Relógio foi pro canto</li>
-<li>Feedback? blog.telasocial.com ou mgalli em taboca ponto com ou #bloco1icmc</li>
-<li>Ideias?: Módulo-widget do bandejão? .. #bloco1icmc</li>
-</ul>
-<h2>Version 0.2 - alpha - 7th, May, 2010</h2>
-<ul>
-<li>New Layout with Tabs</li>
-<li>Timeline perception - at the top little moving black dot. The use case is based on the NOT case of the bus terminal s
-creens at the São Paulo bus station 'When you are about to see your bus time, the ads shows and you miss your bus'.</li>
-<li>New typing widget in the fixed area at the bottom - using USP.br RSS source for now - soon the RSS multiplexer will g
-et in so we should be able to get news from many sources all together ( pipeline effect );</li>
-<li>ICMC presentation events Tab now has dates ; soon will have a better calendar view; </li>
-<li>Other: USP colors</li>
-<li>ideas? #bloco1icmc at twitter or mgalli at taboca dot com </li>
+<li>Estamos coletando todos os departamentos internos que utilizam canais de comunicação baseados em padrões abertos - informe Neylor@icmc...</li>
+<li>Imagem da Semana - espaço aberto de arte inspirado no caso de amostras de arte na biblioteca</li>
+<li>Calendário de Palestras v 2 - em Junho</li>
+
+<li>Novos módulos: Evento do Dia</li>
+<li>Novos módulos: Rotatividade dos Canais de notícias ( abaixo  )</li>
+<li>Novos módulos: Relógio com Tempo</li>
+
 </ul>
 
 
