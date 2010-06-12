@@ -179,7 +179,7 @@ Rede Social ICMC
 <tr>
 <td colspan="3" id='td_panel'>
 <div class="panel" id='area_panel1'>
-<h2>Arte Semana: Enviada por ICMC</h2>
+<h2>Arte Semana: Ilustração Biblioteca ICMC </h2>
 </div>
 <div class="panel" id='area_panel2'>
 </div>
