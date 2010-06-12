@@ -117,17 +117,17 @@ var gfx =  {
 		if(this.movepos > 1260 && this.movepos < 1950 ) { 
                         this._coreDoc.getElementById("tab1").className="cor_orange";
                         this._coreDoc.getElementById("tab2").className="cor_lightblue";
-                        this._coreDoc.getElementById("tab3").className="transp";
-			this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
+                        this._coreDoc.getElementById("tab3").className="cor_tab3";
+			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(14,148,171)";
                         this._coreDoc.getElementById("area_panel3").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
 		} 
 		if(this.movepos > 630 && this.movepos < 1260) { 
                         this._coreDoc.getElementById("tab1").className="cor_orange";
-                        this._coreDoc.getElementById("tab2").className="transp";
+                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
-			this._coreDoc.body.style.backgroundColor="rgb(100,197,210)";
+			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(100,197,210)";
                         this._coreDoc.getElementById("area_panel2").style.display="block";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
@@ -136,7 +136,8 @@ var gfx =  {
                         this._coreDoc.getElementById("tab1").className="transp";
                         this._coreDoc.getElementById("tab2").className="cor_lightblue";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
-			this._coreDoc.body.style.backgroundColor="rgb(253,181,37)";
+			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(253,181,37)";
+			this._coreDoc.getElementById("td_panel").style.backgroundColor="transparent";
                         this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
@@ -171,26 +172,14 @@ Palestras ICMC
 </td>
 <td class='cor_tab3' id='tab3'>
 <div class='tab'>
-#bloco1icmc (twitter)
+Rede Social ICMC
 </div>
 </td>
 </tr>
 <tr>
-<td colspan="3" >
+<td colspan="3" id='td_panel'>
 <div class="panel" id='area_panel1'>
-<h2>Version 0.3 - June </h2>
-<ul>
-<li>Estamos coletando todos os departamentos internos que utilizam canais de comunicação baseados em padrões abertos - informe Neylor@icmc...</li>
-<li>Imagem da Semana - espaço aberto de arte inspirado no caso de amostras de arte na biblioteca</li>
-<li>Calendário de Palestras v 2 - em Junho</li>
-
-<li>Novos módulos: Evento do Dia</li>
-<li>Novos módulos: Rotatividade dos Canais de notícias ( abaixo  )</li>
-<li>Novos módulos: Relógio com Tempo</li>
-
-</ul>
-
-
+<h2>Arte Semana: Enviada por ICMC</h2>
 </div>
 <div class="panel" id='area_panel2'>
 </div>
