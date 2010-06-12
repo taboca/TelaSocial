@@ -66,7 +66,7 @@ var gfx =  {
                 -moz-border-radius:25px;
                 height:45px;
                 background-color:black;
-                z-index:1;
+                z-index:10000;
                 position:absolute;
                 top:44px;
                 left:0px;
