@@ -17,6 +17,7 @@ var gfx =  {
 		background-color:rgb(253,181,37); margin:0; padding:0;
 		-moz-background-size: 100% 100%; 
 		background-image:url(http://a1.twimg.com/profile_background_images/43617138/fotobiblio2.JPG);
+		background-image:url(http://www.telasocial.com/images/temp/icmc-silvio.jpg);
 	}
 
 	table {
@@ -179,7 +180,8 @@ Rede Social ICMC
 <tr>
 <td colspan="3" id='td_panel'>
 <div class="panel" id='area_panel1'>
-<h2>Arte Semana: Ilustração Biblioteca ICMC </h2>
+<h2>Foto com manipulação digital</h2>
+<h2>por : Silvio Pomin STI-ICMC</h2>
 </div>
 <div class="panel" id='area_panel2'>
 </div>
