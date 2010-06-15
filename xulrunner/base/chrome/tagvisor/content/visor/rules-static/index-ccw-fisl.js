@@ -1,4 +1,4 @@
-org.fisl.upvisor.registerWidget( null , "org/fisl/layout/gfxless.js","container");
+org.fisl.upvisor.registerWidget( null , "org/fisl/layout-vertical/gfxless.js","container");
 org.fisl.upvisor.registerWidget( null , "org/fisl/calendar/calendar-fisl.js","calendar");
 org.fisl.upvisor.registerWidget( ".container" , "com/taboca/clock/clock.js","clock", "area_bottomright");
 org.fisl.upvisor.registerWidget( ".container" , "org/fisl/twitter-eventos/twitter.js","twitter", "area_panel2");
