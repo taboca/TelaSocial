@@ -174,6 +174,7 @@ com.taboca.upvisor = {
         //widgetObject._coreWin = Processing;
 	// testing exposure of service at the variable level 
 	widgetObject._service_google = google;
+        widgetObject._service_jquery = $;
 	
         widgetObject._getId = function () {
                 if( this._parentName == "" ) {  
