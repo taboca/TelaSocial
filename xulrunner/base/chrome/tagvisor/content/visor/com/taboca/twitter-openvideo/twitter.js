@@ -32,10 +32,11 @@ var twitter =  {
 			font-size:40px;
 			font-weight:bold;
 			-moz-border-radius:12px;
-			background-color: rgba(255,255,255,.5);
-			-moz-box-shadow: rgba(255,255,255,.5) 0 0 10px; 
 			padding:10px;
-			margin-top:5px;
+			margin-left:30px;
+			margin-top:10px;
+			text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em white;
+
 		} 
 		.twitterPanel { 
 			width:1000px;
