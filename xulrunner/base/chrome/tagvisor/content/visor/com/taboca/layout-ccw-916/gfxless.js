@@ -38,10 +38,6 @@ var gfx =  {
 		background-color:rgba(255,255,255,.5);
 	}
 
-	.topright { 
-		font-size:40px;
-		color:white;
-	} 
 
 	#bg { position:absolute; top:0px; left:0px; z-index:1 ; margin:0; padding:0} 
 	#area_background { margin:0; padding:0;  position:absolute;top:0;left:0} 
@@ -55,69 +51,17 @@ var gfx =  {
 		height:1920px;
 	} 
 
-	.tab { 
-		position:relative;
-		color:black;
-		font-size:30px;
-	} 
 
-/*
-		padding:1em;
-*/
-
-	.tab-tab { 
-		position:absolute;
-		background-color:#ddd;		
-		top:-60px;
-		padding:15px;
-		padding-left:40px;
-		font-size:60px;
-		color:white;
-		width:700px;
-		right:0px;
-	} 
-
-	.orange { 
-		
-		-moz-border-radius:40px; 
-		background-color:rgba(255,255,255,0.3);
-		height:900px;
-		padding:.5em;
-		margin-right:.5em;
-                font-size:30px;
-		font-weight:bold;
+	#area_middle { 
+		width:1000px;
+		height:1100px; 
 		overflow:hidden;
-
 	} 
-
-	.orange2 {
-		-moz-border-radius:40px; 
-		background-color:rgba(255,255,255,0.3);
-                height:900px;
-                padding:.5em;
-                margin-right:1em;
-                font-size:30px;
-                font-weight:bold;
-		overflow:hidden;
-        }
+	
 
 
-	.green { 
-		background-image: -moz-linear-gradient(-60deg, #030,  #070, #000);
-		background-image: -moz-linear-gradient(-60deg, #003,  #007, #000);
-		font-size:30px;
-		padding:1em;
-		-moz-border-radius-bottomleft: 0;
-		font-weight:bold;
-		height:200px;
-		color:white;
-	} 
- 	.green a { color:gray } 
 
-	h1 { 
-		font-weight:bold;
-		font-size:60px;
-	} 
+
 ]]></>,
 
 	start : function () { 
