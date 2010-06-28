@@ -26,7 +26,7 @@ var gfx =  {
 		position:absolute;
 	}
 
-	table td {
+	table.main td {
 		border:10px solid rgba(0,0,0,.7);
 	}
 
@@ -158,7 +158,7 @@ var gfx =  {
 <div id="frame">
 <div id='pointer'>
 </div>
-<table cellpadding="10" cellspacing="0" height="100%">
+<table class='main' cellpadding="10" cellspacing="0" height="100%">
 <tr style="height:50px">
 <td class='cor_orange' id='tab1'>
 <div class='tab'>
