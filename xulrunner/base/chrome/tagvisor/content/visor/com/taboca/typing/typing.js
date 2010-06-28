@@ -27,7 +27,7 @@ var typing =  {
 		this.elementTable = this._coreDoc.createElement("table");
 		this.elementTable.setAttribute("border","0");
 		this.elementTable.style.border="0px";
-		this.elementTable.style.width="1500px";
+		this.elementTable.style.width="1400px";
 		this.elementTable.innerHTML="<tr><td id='qrcode'></td><td class='typingPanel' id='typingcontainer'></td></tr></table>";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.elementTable);
@@ -87,8 +87,6 @@ var typing =  {
 			this.cycleIndex=0;
 		} 
 
-                var elCurr = this.cycleArray[this.cycleIndex];
-		this._coreDoc.getElementById("qrcode").innerHTML= '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
 
 		var self = this;
 		timer.setTimeout( function(){self.readStep()},1000);
@@ -109,6 +107,8 @@ var typing =  {
 			var self = this;
 			this.readIndex=0;
 			this.cycleIndex++;
+                	var elCurr = this.cycleArray[this.cycleIndex];
+			this._coreDoc.getElementById("qrcode").innerHTML= '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
 			timer.setTimeout( function(){self.readLine()},3000);
 		} 
 		else { 
