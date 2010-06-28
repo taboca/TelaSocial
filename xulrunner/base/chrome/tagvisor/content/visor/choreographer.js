@@ -11,7 +11,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is Jetpack.
+ * The Original Code is TelaSocial
  *
  * The Initial Developer of the Original Code is Taboca TelaSocial.
  * Portions created by the Initial Developer are Copyright (C) 2010 
