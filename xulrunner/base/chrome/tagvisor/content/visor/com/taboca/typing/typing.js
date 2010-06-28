@@ -19,12 +19,17 @@ var typing =  {
 			color:white;
 		} 
 
+		table.typing td { 
+			border:0px;
+		} 
+
 
 	]]></>, 
 
 	start : function() {
 
 		this.elementTable = this._coreDoc.createElement("table");
+		this.elementTable.setAttribute("class","typing");
 		this.elementTable.setAttribute("border","0");
 		this.elementTable.setAttribute("cellpadding","0");
 		this.elementTable.setAttribute("cellmargin","0");
