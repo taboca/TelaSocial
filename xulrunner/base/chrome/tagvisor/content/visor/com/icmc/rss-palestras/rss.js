@@ -11,7 +11,7 @@ var twitter =  {
 	feed    : null, 
 	style : <><![CDATA[
 		.tweetdate { 
-			color:white;
+			color:blue;
 			font-weight:bold;
 			font-size:32px;
 			margin-right:.5em;
@@ -94,7 +94,7 @@ var twitter =  {
 			var title   = self.feed(this).find('title').text();
 			var link    = self.feed(this).find('link').text();
 	
-			self.tweetQueue.push( '<img width="44" src="http://go.bath.ac.uk/qr/download?DATA='+link+'" style="margin-right:15px; margin-bottom:10px; " align="left" /><span class="tweetdate">' + pubDate + '</span>' + title + ' <span class="tweetauthor">(Eventos ICMC)</span>');
+			self.tweetQueue.push( '<span class="tweetdate">' + pubDate + '</span>' + title + ' <span class="tweetauthor">(Eventos ICMC)</span>');
 
 		});
 
