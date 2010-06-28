@@ -107,8 +107,9 @@ var typing =  {
 			var self = this;
 			this.readIndex=0;
 			this.cycleIndex++;
-                	var elCurr = this.cycleArray[this.cycleIndex];
-			this._coreDoc.getElementById("qrcode").innerHTML= '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
+                	var elCurr2 = this.cycleArray[this.cycleIndex];
+			this._coreDoc.getElementById("qrcode").innerHTML= '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr2.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
+
 			timer.setTimeout( function(){self.readLine()},3000);
 		} 
 		else { 
