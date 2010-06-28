@@ -49,6 +49,7 @@ com.taboca.upvisor = {
    events: new Array(),
 
    rulesLoad: function () { 
+                        //url: "http://www.icmc.usp.br/~comunica/telaicmc/events.js",
 	  $.ajax({
                         url: "./rules-static/events.js",
                         cache: false,
@@ -58,6 +59,7 @@ com.taboca.upvisor = {
                 });
 
 
+			// url:"http://www.icmc.usp.br/~comunica/telaicmc/regras-layout.js",
 	$.ajax({
                         url: "./rules-static/index.js",
                         cache: false,
