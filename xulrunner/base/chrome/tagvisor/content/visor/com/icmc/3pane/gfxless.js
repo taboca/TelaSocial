@@ -25,7 +25,7 @@ var gfx =  {
 	}
 
 	table td {
-		border:10px solid black;
+		border:10px solid rgba(0,0,0,.7);
 	}
 
 	.panel {
@@ -96,7 +96,7 @@ var gfx =  {
 
 	#area_bottom {
                 height:230px;
-                background-color:rgb(30,30,30);
+                background-color:rgba(0,0,0,.7);
     		font-family:Kaffeesatz,Verdana, Arial, Helvetica, sans-serif;
 		color:white;
 		font-weight:bold;
@@ -212,7 +212,7 @@ Rede Social ICMC
 		style.innerHTML=this.style; 
 
 		var bgValue = this._service_jquery(".3pane .background").text();
-		styleBackground.innerHTML="body { background-image: url("+bgValue+") 50% 50% }";
+		styleBackground.innerHTML="body { background-image: url('"+bgValue+"') }";
  
 
 		console.log(this._coreDoc);
