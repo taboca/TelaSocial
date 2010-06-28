@@ -49,6 +49,14 @@ com.taboca.upvisor = {
    events: new Array(),
 
    rulesLoad: function () { 
+	  $.ajax({
+                        url: "./rules-static/events.js",
+                        cache: false,
+                        success: function(data){
+                                eval(data);
+                        }
+                });
+
 
 	$.ajax({
                         url: "./rules-static/index.js",
@@ -57,6 +65,8 @@ com.taboca.upvisor = {
 				eval(data);
                         }
                 });
+
+
 
 
    },
@@ -72,6 +82,11 @@ com.taboca.upvisor = {
         $("#console").css("display","none");
         self.loadCallback()
      }, 5000);
+   },
+
+   registerEvent: function ( bucket, name, value) { 
+	$("#sharedstore").append("<div class='"+bucket+"' ><p class='"+name+"'>"+value+"</p></div>");
+
    },
 
    registerWidget:function (targetName, scriptSource, name, targetId)  { 

@@ -15,9 +15,6 @@ var gfx =  {
 
 	body {
 		background-color:rgb(253,181,37); margin:0; padding:0;
-		-moz-background-size: 100% 100%; 
-		background-image:url(http://a1.twimg.com/profile_background_images/43617138/fotobiblio2.JPG);
-		background-image:url(http://www.telasocial.com/images/temp/icmc-silvio.jpg);
 	}
 
 	table {
@@ -209,8 +206,15 @@ Rede Social ICMC
 	init : function () {
 	try { 
 	 	var style = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
+	 	var styleBackground = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
 		this._coreDoc.getElementById("headtarget").appendChild(style);
+		this._coreDoc.getElementById("headtarget").appendChild(styleBackground);
 		style.innerHTML=this.style; 
+
+		var bgValue = this._service_jquery(".3pane .background").text();
+		styleBackground.innerHTML="body { background-image: url("+bgValue+") 50% 50% }";
+ 
+
 		console.log(this._coreDoc);
 	
 	} catch(i) { console.log(i) } 
