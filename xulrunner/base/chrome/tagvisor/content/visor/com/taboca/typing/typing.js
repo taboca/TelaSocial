@@ -24,16 +24,30 @@ var typing =  {
 
 	start : function() {
 
+		this.elementTable = this._coreDoc.createElement("table");
+		this.elementTable.setAttribute("border","0");
+		this.elementTable.style.border="0px";
+		this.elementTable.style.width="1500px";
+		this.elementTable.innerHTML="<tr><td id='qrcode'></td><td class='typingPanel' id='typingcontainer'></td></tr></table>";
+
+		this._coreDoc.getElementById(this._getId()).appendChild(this.elementTable);
+/*
 		this.element = this._coreDoc.createElement('div');
 		this.element.className="typingPanel";
 		this.element.id = Math.random();
+*/
 		this.tweetQueue = new Array();
+
 		var first = this._coreDoc.createElement("div");
 		this.firstId = "firsttyping";
 		first.id = this.firstId;
 		this.tweetRepeated = {};
-		this.element.appendChild(first);
-		this._coreDoc.getElementById(this._getId()).appendChild(this.element);
+		this._coreDoc.getElementById('typingcontainer').appendChild(first);
+		//this.element.appendChild(first);
+
+
+		//this._coreDoc.getElementById(this._getId()).appendChild(this.element);
+
 		var self = this;
 		timer.setTimeout( function(){self.updateFeed()},10000);
 	},
@@ -72,6 +86,10 @@ var typing =  {
 		if(this.cycleIndex>=this.cycleArray.length) { 
 			this.cycleIndex=0;
 		} 
+
+                var elCurr = this.cycleArray[this.cycleIndex];
+		this._coreDoc.getElementById("qrcode").innerHTML= '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
+
 		var self = this;
 		timer.setTimeout( function(){self.readStep()},1000);
 	}, 
