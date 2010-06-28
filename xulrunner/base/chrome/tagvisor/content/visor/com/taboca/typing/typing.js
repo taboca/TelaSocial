@@ -26,6 +26,8 @@ var typing =  {
 
 		this.elementTable = this._coreDoc.createElement("table");
 		this.elementTable.setAttribute("border","0");
+		this.elementTable.setAttribute("cellpadding","0");
+		this.elementTable.setAttribute("cellmargin","0");
 		this.elementTable.style.border="0px";
 		this.elementTable.style.width="1280px";
 		this.elementTable.innerHTML="<tr><td id='qrcode'></td><td class='typingPanel' id='typingcontainer'></td></tr></table>";
@@ -101,7 +103,7 @@ var typing =  {
 		for(var i=0;i<this.readIndex;i++) { 
 			sum+=words[i]+" ";
 			if(i==0) { 
-				this._coreDoc.getElementById("qrcode").innerHTML= '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
+				this._coreDoc.getElementById("qrcode").innerHTML= '<img width="120" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
 			} 
 		} 
 		this._coreDoc.getElementById("firsttyping").innerHTML=sum;
