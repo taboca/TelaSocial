@@ -27,7 +27,7 @@ var typing =  {
 		this.elementTable = this._coreDoc.createElement("table");
 		this.elementTable.setAttribute("border","0");
 		this.elementTable.style.border="0px";
-		this.elementTable.style.width="1200px";
+		this.elementTable.style.width="1280px";
 		this.elementTable.innerHTML="<tr><td id='qrcode'></td><td class='typingPanel' id='typingcontainer'></td></tr></table>";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.elementTable);
@@ -62,7 +62,7 @@ var typing =  {
 	popTweet : function() {
 		if (this.tweetQueue.length == 0) return false;
 		var t = this.tweetQueue.pop();
-		if (t in this.tweetRepeated) {
+		if (t.title in this.tweetRepeated) {
 			return;
 		}
 		this.tweetRepeated[t] = true;
