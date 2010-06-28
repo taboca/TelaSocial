@@ -177,8 +177,7 @@ Rede Social ICMC
 <tr>
 <td colspan="3" id='td_panel'>
 <div class="panel" id='area_panel1'>
-<h2>Foto com manipulação digital</h2>
-<h2>por : Silvio Pomin STI-ICMC</h2>
+<p id='bgcredits'></p>
 </div>
 <div class="panel" id='area_panel2'>
 </div>
@@ -200,6 +199,11 @@ Rede Social ICMC
 </>;
 
 		this._coreDoc.getElementById(this._getId()).appendChild(importedElement);
+	
+		// we need to make this more flexible and events based more fluid 
+
+		var bgCredits = this._service_jquery(".3pane .background-credits").text();
+		this._coreDoc.getElementById("bgcredits").innerHTML=bgCredits;
 
 	} ,
 
@@ -211,7 +215,8 @@ Rede Social ICMC
 		this._coreDoc.getElementById("headtarget").appendChild(styleBackground);
 		style.innerHTML=this.style; 
 
-		var bgValue = this._service_jquery(".3pane .background").text();
+		// we need to make this more flexible and events based more fluid 
+		var bgValue   = this._service_jquery(".3pane .background").text();
 		styleBackground.innerHTML="body { background-image: url('"+bgValue+"') }";
  
 
