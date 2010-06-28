@@ -118,7 +118,7 @@ var typing =  {
 			this.readIndex=0;
 			this.cycleIndex++;
 
-			timer.setTimeout( function(){self.readLine()},3000);
+			timer.setTimeout( function(){self.readLine()},5000);
 		} 
 		else { 
 			var self = this;
