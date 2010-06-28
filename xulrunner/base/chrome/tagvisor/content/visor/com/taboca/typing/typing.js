@@ -66,7 +66,7 @@ var typing =  {
 			return;
 		}
 		this.tweetRepeated[t] = true;
-		this.cycleArray[this.cycleTotal++]= { content: t };
+		this.cycleArray[this.cycleTotal++]= { content: t.title, link: t.link  };
 		if(this.cycleArray.length>0 && !this.reading) { 
 			this.readLine();
 			this.reading = true; 
@@ -101,8 +101,7 @@ var typing =  {
 		for(var i=0;i<this.readIndex;i++) { 
 			sum+=words[i]+" ";
 			if(i==0) { 
-                		var elCurr2 = this.cycleArray[this.cycleIndex];
-				this._coreDoc.getElementById("qrcode").innerHTML= '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr2.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
+				this._coreDoc.getElementById("qrcode").innerHTML= '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
 			} 
 		} 
 		this._coreDoc.getElementById("firsttyping").innerHTML=sum;
@@ -142,7 +141,7 @@ var typing =  {
 				var a= this._coreDoc.createElement("div");
                                 a.innerHTML=result.feed.entries[i].title;
 				// a.textContent
-                                this.tweetQueue.push( result.feed.entries[i].title );
+                                this.tweetQueue.push( { title: result.feed.entries[i].title , link: result.feed.entries[i].link });
 			}
 		}
 
