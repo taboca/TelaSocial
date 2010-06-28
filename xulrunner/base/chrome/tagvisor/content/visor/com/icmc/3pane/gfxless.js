@@ -17,6 +17,8 @@ var gfx =  {
 		background-color:rgb(253,181,37); margin:0; padding:0;
 	}
 
+	#bgcredits { font-size:20px; font-weight:bold; color:white; text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black; } 
+
 	table {
 		width:100%;
 		margin:0;
