@@ -46,16 +46,11 @@ from xml.dom.minidom import parse, parseString, getDOMImplementation
 class CheckProcess():
 
     def __init__(self):
-      print 1
+        print "1" 
  
-    def lockparse(): 
-      domfile   = parse("/telasocial.log")
-      pidNode   = domfile.getElementsByTagName("telasocialpid")[0]
-      telapid   = getText(pidNode.childNodes)
-      return telapid
-  
     def usage(self, lockPIDStr):
-        self.process = subprocess.Popen("top -o cpu -l 5 -n 5 -ca -p '$aaaaaa ===$cccc%=== $bbbbbbbbbbbbbbbbbbbbbbb' ",
+
+        self.process = subprocess.Popen("top -o cpu -l 6 -n 5 -ca -p '$aaaaaa ===$cccc%=== $bbbbbbbbbbbbbbbbbbbbbbb' ",
                                         shell=True,
                                         stdout=subprocess.PIPE,
                                         )
@@ -66,36 +61,49 @@ class CheckProcess():
         av = 0
 
 	for item in self.stdout_list:
+		print item
 		if item.find(lockPIDStr) > -1:
                    ii+=1
-                   #print 'Item= ' + item
+                   print 'Item= ' + item
                    items = item.split("===")
                    for token in items: 
                        if token.find("%") > -1: 
                           mmtoken = token.split("%")
 			  print "item(" + mmtoken[0] +")"
                           av += float(mmtoken[0])
-
-        	#print 'Item= ' + item
-
-        return str(float(av/ii)) 
+        if ii>0: 
+          return float(av/ii) 
+        else: 
+          return -1
+  
  
 def main():
    
    check_process = CheckProcess()
 
-   domfile   = parse("/telasocial.log")
-   pidNode   = domfile.getElementsByTagName("telasocialpid")[0]
-   telapid   = getText(pidNode.childNodes)
-   print "Current TelaSocial PID = " + telapid
+   telapid = lockparse() 
+ 
+   if int(telapid) < 0:
+      print "No such TelaSocial process..."
+      subprocess.Popen("python daemon.py",
+                                        shell=True,
+                                        stdout=subprocess.PIPE,
+                                        )
+      
 
-   used_memory = check_process.usage( telapid )
+   else: 
+      print "Current TelaSocial PID = " + str(telapid)
 
-   # here is where we can calculate this average and we may trigger the kill ( -15, -9 ) 
-   # param configured this must be. 
-   # for now we print only
-
-   print used_memory
+      used_memory = check_process.usage( telapid )
+      
+      if used_memory > -1: 
+         print "Process exists, and Memory in use is " + str(used_memory)
+      else: 
+         try: 
+           os.kill(telapid,0)
+         except: 
+           print "Process does not exist, need to clean the /telasocial.log" 
+           
 
 def getText(nodelist):
     rc = ""
@@ -104,6 +112,18 @@ def getText(nodelist):
     return rc
 
 
+def lockparse():
+
+    try : 
+      domfile   = parse("/telasocial.log")
+      pidNode   = domfile.getElementsByTagName("telasocialpid")[0]
+      telapid   = getText(pidNode.childNodes)
+      return telapid
+    except : 
+      return -1
+    
+
 if __name__ == '__main__':
         main()
+
 
