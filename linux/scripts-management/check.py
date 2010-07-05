@@ -46,7 +46,7 @@ from xml.dom.minidom import parse, parseString, getDOMImplementation
 class CheckProcess():
 
     def __init__(self):
-      #
+      print 1
  
     def lockparse(): 
       domfile   = parse("/telasocial.log")
