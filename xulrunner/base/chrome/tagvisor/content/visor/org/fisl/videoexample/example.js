@@ -24,7 +24,7 @@ var  video  = {
                 this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 
 		var thiss = this; 
-		t.setTimeout( function () { thiss.kick() } , 30000); 
+		t.setTimeout( function () { thiss.kick() } , 60*60*1000); 
 	} ,
 
 	images: ['http://stream.softwarelivre.org/sites/default/files/videos/fisl5-41D-27-O%20Gimp%20para%20Mentes%20Criativas.ogg','http://stream.softwarelivre.org/sites/default/files/videos/fisl10-26-Tor%20and%20GNUNet.ogg','http://stream.softwarelivre.org/sites/default/files/videos/06-Stallman+Sunde-web.ogg'], 
@@ -34,7 +34,7 @@ var  video  = {
 		this.element.innerHTML="<video src='"+this.images[parseInt(Math.random()*2)]+"' width='1000' autoplay='true' style='padding-left:0px' />";
 
 		var thiss = this; 
-		t.setTimeout( function () { thiss.kick() } , 60000); 
+		t.setTimeout( function () { thiss.kick() } , 60*60*1000); 
 
 	},
 
