@@ -12,7 +12,7 @@ var gfx =  {
 
 
         .shadow .c {
-                -moz-box-shadow: black 0px 0px 20px;
+                -moz-box-shadow: white 0px 0px 20px;
         }
 
         .e {
@@ -42,6 +42,9 @@ var gfx =  {
 	.clouds { 
 		position:absolute;
 		z-index:200;
+		width:1024px;
+		height:768px; 
+		overflow:hidden;
 	} 
 	table.container {
 		width:1024px;
@@ -69,11 +72,29 @@ var gfx =  {
 	}
 
 
-        .cor_orange { background-color:rgb(253,181,37);; }
-        .cor_lightblue  { background-color:rgb(100,197,210); }
-        .cor_tab3   {
-		background-color:rgb(14,148,171);	
+        .cor_tab1 { 
+		border:0px;
+		border-bottom: 1px solid gray;
 	}
+		
+        .cor_tab2 {
+		border:0px;
+		border-bottom: 1px solid gray;
+	}
+        .cor_tab3 {
+		border:0px;
+		border-bottom: 1px solid gray;
+
+	}
+
+	.cor_active { 
+		border:1px solid gray;
+		padding-left:10px;
+		border-bottom:0px;
+		background: -moz-linear-gradient(top bottom, yellow, rgba(255,255,0,0));
+		text-shadow: 1px 1px 2px yellow, 0 0 1em yellow, 0 0 0.2em yellow;
+	} 
+
 
 
         .transp { background-color:transparent; }
@@ -134,20 +155,20 @@ var gfx =  {
         moveleft: true,
 	
         kick: function () {
-		this.movepos+=5;
+		this.movepos+=1;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		if(this.movepos > 682 && this.movepos < 1024 ) { 
-                        this._coreDoc.getElementById("tab1").className="cor_orange";
-                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
-                        this._coreDoc.getElementById("tab3").className="transp";
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
+                        this._coreDoc.getElementById("tab3").className="cor_active";
 			//this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
                         this._coreDoc.getElementById("area_panel3").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
 		} 
 		if(this.movepos > 341 && this.movepos < 682) { 
-                        this._coreDoc.getElementById("tab1").className="cor_orange";
-                        this._coreDoc.getElementById("tab2").className="transp";
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
+                        this._coreDoc.getElementById("tab2").className="cor_active";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			//this._coreDoc.body.style.backgroundColor="rgb(100,197,210)";
                         this._coreDoc.getElementById("area_panel2").style.display="block";
@@ -155,8 +176,8 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel3").style.display="none";
 		} 
 		if(this.movepos > 0  && this.movepos < 341) { 
-                        this._coreDoc.getElementById("tab1").className="transp";
-                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
+                        this._coreDoc.getElementById("tab1").className="cor_active";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			//this._coreDoc.body.style.backgroundColor="rgb(253,181,37)";
                         this._coreDoc.getElementById("area_panel1").style.display="block";
@@ -213,12 +234,12 @@ var gfx =  {
 </table>
 <table width="100%" class='container2'>
 <tr style="height:50px">
-<td class='cor_orange' id='tab1'>
+<td class='cor_tab1' id='tab1'>
 <div class='tab'>
 Atualizações Tela
 </div>
 </td>
-<td class='cor_lightblue' id='tab2'>
+<td class='cor_tab2' id='tab2'>
 <div class='tab'>
 Palestras
 </div>
