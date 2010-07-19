@@ -23,23 +23,23 @@ var clock_Widget =  {
 
 		var mainDiv      = this._coreDoc.createElement('div');
 		mainDiv.setAttribute("width","350");
-		mainDiv.setAttribute("style","margin-top:150px;margin-left:40px;color:black; ");
+		mainDiv.setAttribute("style","margin-top:5px;-moz-border-radius:25px; width:330px; height:220px; background-color:rgb(200,200,0);border:13px solid black;padding:13px;overflow:hidden;margin-right:15px; ");
 		this._coreDoc.getElementById(this._getId()).appendChild(mainDiv);
 
-		//this.elementWeather = this._coreDoc.createElement('div');
+		this.elementWeather = this._coreDoc.createElement('div');
 		this.elementClock   = this._coreDoc.createElement('div');
 
 		this.elementClock.setAttribute("style","color:black;font-size:34px;font-weight:bold;");
-		//this.elementWeather.setAttribute("style","color:black;font-size:14px;font-weight:bold;");
+		this.elementWeather.setAttribute("style","color:black;font-size:14px;font-weight:bold;");
 		mainDiv.appendChild(this.elementClock);
-		//mainDiv.appendChild(this.elementWeather);
+		mainDiv.appendChild(this.elementWeather);
 
-		//this.elementClock.innerHTML="<span>:</span>";
+		this.elementClock.innerHTML="<span>:</span>";
 
 		this.feed = this._service_jquery;
 
 		var self = this;
-                //timer.setTimeout( function(){self.updateFeed()},10000);
+                timer.setTimeout( function(){self.updateFeed()},10000);
 		this.tick();
 
 	} ,

@@ -11,6 +11,7 @@ var calendar_Widget =  {
 
 	        this._raiseEvent(".container", "start");
                 this._raiseEvent(".container.clock", "start");
+                this._raiseEvent(".container.weather", "start");
                 this._raiseEvent(".container.flickr", "start");
                 this._raiseEvent(".container.fislnews", "start");
                 this._raiseEvent(".container.twitter_fisl", "start");

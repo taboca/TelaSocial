@@ -22,25 +22,25 @@ var clock_Widget =  {
 	start : function () { 
 
 		var mainDiv      = this._coreDoc.createElement('div');
-		mainDiv.setAttribute("width","350");
-		mainDiv.setAttribute("style","margin-top:150px;margin-left:40px;color:black; ");
+		mainDiv.setAttribute("width","300");
+		mainDiv.setAttribute("style","margin-left:175px;padding:10px;-moz-border-radius:25px;-moz-box-shadow:black 0 0 15px;; margin-top:0px;width:255px; padding-right:40px; height:180px;color:black; background-color:yellow; border:10px solid white;; overflow:hidden; ");
 		this._coreDoc.getElementById(this._getId()).appendChild(mainDiv);
 
-		//this.elementWeather = this._coreDoc.createElement('div');
-		this.elementClock   = this._coreDoc.createElement('div');
+		this.elementWeather = this._coreDoc.createElement('div');
+		//this.elementClock   = this._coreDoc.createElement('div');
 
-		this.elementClock.setAttribute("style","color:black;font-size:34px;font-weight:bold;");
-		//this.elementWeather.setAttribute("style","color:black;font-size:14px;font-weight:bold;");
-		mainDiv.appendChild(this.elementClock);
-		//mainDiv.appendChild(this.elementWeather);
+		//this.elementClock.setAttribute("style","color:black;font-size:34px;font-weight:bold;");
+		this.elementWeather.setAttribute("style","color:black;font-size:14px;font-weight:bold;");
+		//mainDiv.appendChild(this.elementClock);
+		mainDiv.appendChild(this.elementWeather);
 
 		//this.elementClock.innerHTML="<span>:</span>";
 
 		this.feed = this._service_jquery;
 
 		var self = this;
-                //timer.setTimeout( function(){self.updateFeed()},10000);
-		this.tick();
+                timer.setTimeout( function(){self.updateFeed()},10000);
+		//this.tick();
 
 	} ,
 

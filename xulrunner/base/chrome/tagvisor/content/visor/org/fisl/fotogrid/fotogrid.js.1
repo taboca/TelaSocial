@@ -15,7 +15,6 @@ var fade_Widget =  {
 	oldChild    :null,
 	lastInserted : null,
 	fadeCycle    : 0,
-	totalElements : "",
 
 		
 	start:function () { 
@@ -24,9 +23,6 @@ var fade_Widget =  {
 		this.feed.setNumEntries(20);
 		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
 		this.element = this._coreDoc.createElement('div');
-
-		this.element.style.marginLeft="10px";
-
 		this.picQueue = new Array();
 		this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 		this.refElement = this._coreDoc.createElement("div");
@@ -45,15 +41,12 @@ var fade_Widget =  {
 			var these = this;
 			this.feed.load( function (ref) { these.__feedUpdated(ref) } );
 		} else { 
-		var k = this._coreDoc.createElement('span');
-
-		k.style.width="320px";
-		k.style.height="240px";
-		k.style.border="5px solid black";
-		k.style.overflow="hidden";
-		k.style.display="inline-block";
-		k.style.backgroundColor="#555";
-
+		var k = this._coreDoc.createElement('div');
+		k.style.opacity=0.01;
+		k.style.position="absolute"
+		k.style.zIndex=this.zIndex;
+		this.zIndex++;
+		k.className = 'photo';
 		var t = this.picQueue.pop();
 		t = "<img id='fadeimage"+this.imageNumber+"' src='"+t+"' >";
 		k.innerHTML = t;
@@ -64,27 +57,9 @@ var fade_Widget =  {
 		} 
 		this.oldChild = this.element.firstChild;
 		this.element.insertBefore(k, this.element.firstChild);
-		try { 
-		if(this.totalElements!="") { 
-			var listCurrent = this.totalElements.split(',');
-			if(listCurrent.length>=6) { 
-				var currLast = listCurrent[5];
-				var eleLast = this._coreDoc.getElementById("fadeimage"+currLast);
-				this._dump(eleLast);
-				this.element.removeChild(eleLast);
-			} 
-			this.totalElements= this.imageNumber+","+this.totalElements;
-				this._dump("list="+this.totalElements);
-		} else { 
-			this.totalElements= ""+this.imageNumber+"";
-		} 
-
-		} catch(i) { this._dump(i) } 
-		/*
 		if(oldOldChild) { 
 			this.element.removeChild(oldOldChild);
 		} 
-		*/
 		these = this;
 		this._coreDoc.getElementById("fadeimage"+this.imageNumber).onload = function () { these.imageLoaded() };
 		return true;
@@ -92,26 +67,27 @@ var fade_Widget =  {
 	},
 
 	imageLoaded : function() { 
+			this._dump("Image Loaded");
 		var currImage =  this._coreDoc.getElementById("fadeimage"+this.imageNumber);
 		var x= parseInt(currImage.width); 
 		var y= parseInt(currImage.height); 
-		if(x>=y) { 
-			currImage.width=320;
-		} else { 
-			
-			currImage.height=240;
-			var xx = parseInt ((320-parseInt((240*x)/y))/2 );
-			currImage.style.marginLeft=xx+"px";
-			
-		} 
+		currImage.width=300;
 		this.imageNumber++;
 		this.kickFadeIn();
 	},
 
 	kickFadeIn : function () { 
-		this.fadeCycle=0;
-		var scopedThis = this;
-               	timer.setTimeout( function () { scopedThis.popPic() }, 5000);
+		if(this.fadeCycle<=1) { 
+			this.fadeCycle+=0.5;
+			this.lastInserted.style.opacity= this.fadeCycle;
+			var scopedThis = this;
+                	timer.setTimeout( function () { scopedThis.kickFadeIn() }, 500);
+
+		} else { 
+			this.fadeCycle=0;
+			var scopedThis = this;
+                	timer.setTimeout( function () { scopedThis.popPic() }, 5000);
+		} 
 	},
 
 	updateFeed : function() {
@@ -132,11 +108,8 @@ var fade_Widget =  {
 		//	if (links[i].getAttribute("rel") == "enclosure") { 
 				var currentLink = links[i];
 				var src = currentLink.getAttribute("url");
-				if(src.indexOf("jpg")>-1) {
-                                        this._dump(src);
-                                        this.picQueue.push(src);
-                                }
-
+				this._dump(src);
+				this.picQueue.push(src);
 		//	} 
 		}
 		this.popPic();

@@ -34,11 +34,10 @@ var gfx =  {
 
 	html { padding:0; margin:0; overflow:hidden; font-family: verdana, arial, sans-serif } 
 	body {
-		background: white;
-
+		background: rgb(98,176,222);
+		background: url(org/fisl/layout-projector/bg.png) 0 0 repeat;;
 		padding:0; margin:0;
 	}
-
 
 	.clouds { 
 		position:absolute;
@@ -47,22 +46,22 @@ var gfx =  {
 		height:768px; 
 		overflow:hidden;
 	} 
-
-	.container {
-		top:0px;
+	table.container {
 		width:1024px;
+		top:0px;
 		position:absolute;
 		z-index:100;
-		background:url(org/fisl/layout-projector/h2.jpg) 0 -20px no-repeat;
 	}
 
 	table.container2 { 
 		position:absolute;
 		width:1024px;
-		top:205px;
+		top:260px;
 		z-index:900;
 	} 
 
+	.panel {
+	}
 	.tab {
                 font-size:20px;
 		width:330px;
@@ -73,6 +72,7 @@ var gfx =  {
 	#tab1, #tab2, #tab3 { 
 		z-index:1000;
 	}
+
 
         .cor_tab1 { 
 		border:0px;
@@ -97,17 +97,18 @@ var gfx =  {
 	} 
 
 
+
         .transp { background-color:transparent; }
 
         #pointer {
-                width:40px;
-                -moz-border-radius:40px;
-                height:40px;
-                background-color:rgb(0,150,255);
-		-moz-box-shadow: rgb(0,150,255) 0 0 45px,rgb(0,150,255) 0 0 35px,rgb(0,150,255) 0 0 25px;
+                width:100px;
+                -moz-border-radius:100px;
+                height:100px;
+                background-color:yellow;
+		-moz-box-shadow: white 0 0 95px,yellow 0 0 75px,yellow 0 0 25px;
                 z-index:150;
                 position:absolute;
-                top:221px;
+                top:230px;
                 left:0px;
         }
 
@@ -119,9 +120,8 @@ var gfx =  {
 	}
 
 	.panel { 
-		margin-left:5px;
 		display:none;
-		height:600px;
+		height:700px;
 		overflow:hidden;
 	} 
 
@@ -197,17 +197,33 @@ var gfx =  {
 		importedElement.innerHTML =  <>
 
 
+<div class='clouds'>
+<div class="shadow">
+<div class='c' style='top:240px;left:-50px;'> </div>
+<div class='c' style='top:220px;left:120px;'> </div>
+<div class='c' style='top:240px;left:370px;'> </div>
+<div class='c' style='top:260px;left:600px;width:460px;height:460px'> </div>
+</div>
+<div>
+<div class='c' style='top:240px;left:-50px;'> </div>
+<div class='c' style='top:220px;left:120px;'> </div>
+<div class='c' style='top:240px;left:370px;'> </div>
+<div class='c' style='top:260px;left:600px;width:460px;height:460px'> </div>
+</div>
+<div class='e' style='top:370px;left:0px;width:1100px;height:400px'> </div>
+</div>
+
+
+
+
 <div id="frame">
 <div id='pointer'>
 </div>
-<div class='container'>
-<table cellpadding="0" >
+<table cellpadding="0" class='container'>
 <tr>
 <td id='area_topleft' valign='top' align="left" width="524">
-<!--
 <img src="org/fisl/layout-tv/fisl-banner-logo.png" height="220" />
 <img src="org/fisl/layout-tv/fisl-banner-fisl.png" height="220" />
--->
 </td>
 <td valign="top" align='left' width="400">
 <div id='area_topright' >
@@ -215,22 +231,21 @@ var gfx =  {
 </td>
 </tr>
 </table>
-</div>
 <table class='container2'>
 <tr style="height:50px">
 <td class='cor_tab1' valign="bottom" id='tab1'>
 <div class='tab'>
-Twitter #fisl11
+Atualizações Tela
 </div>
 </td>
 <td class='cor_tab2'  valign="bottom"  id='tab2'>
 <div class='tab'>
-Flickr #FISL
+Palestras
 </div>
 </td>
 <td class='cor_tab3'  valign="bottom"  id='tab3'>
 <div class='tab'>
-Notícias
+Comunicados
 </div>
 </td>
 </tr>

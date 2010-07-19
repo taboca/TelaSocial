@@ -30,8 +30,8 @@ var twitter =  {
 			margin-left:7px;
 			margin-top:0px;
                         padding:10px;
-                        width:295px;
-                        height:113px;
+                        width:286px;
+                        height:133px;
 			-moz-box-shadow: rgba(0,0,0,.4) 10px 10px 10px;
                 }
 
