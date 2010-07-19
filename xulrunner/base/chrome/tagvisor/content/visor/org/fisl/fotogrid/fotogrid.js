@@ -70,8 +70,8 @@ var fade_Widget =  {
 			if(listCurrent.length>=6) { 
 				var currLast = listCurrent[5];
 				var eleLast = this._coreDoc.getElementById("fadeimage"+currLast);
-				this._dump(eleLast);
-				this.element.removeChild(eleLast);
+			//	this._dump(eleLast);
+		//		this.element.removeChild(eleLast);
 			} 
 			this.totalElements= this.imageNumber+","+this.totalElements;
 				this._dump("list="+this.totalElements);
