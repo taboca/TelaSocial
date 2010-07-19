@@ -24,7 +24,7 @@ var gfx =  {
         }
         .c {
                 background-color:white;
-                -moz-border-radius:325px;
+                -moz-border-radius:425px;
                 padding:1em;
                 width:300px;
                 position:absolute;
@@ -55,7 +55,8 @@ var gfx =  {
 
 	table.container2 { 
 		position:absolute;
-		top:350px;
+		width:1024px;
+		top:260px;
 		z-index:900;
 	} 
 
@@ -63,7 +64,8 @@ var gfx =  {
 	}
 	.tab {
                 font-size:20px;
-		width:341px;
+		width:330px;
+		text-align:center;
                 font-weight:bold;
         }
 
@@ -74,21 +76,20 @@ var gfx =  {
 
         .cor_tab1 { 
 		border:0px;
-		border-bottom: 1px solid gray;
+		color:gray;
 	}
 		
         .cor_tab2 {
 		border:0px;
-		border-bottom: 1px solid gray;
+		color:gray;
 	}
         .cor_tab3 {
 		border:0px;
-		border-bottom: 1px solid gray;
+		color:gray;
 
 	}
 
 	.cor_active { 
-		border:1px solid gray;
 		padding-left:10px;
 		border-bottom:0px;
 		background: -moz-linear-gradient(top bottom, yellow, rgba(255,255,0,0));
@@ -198,20 +199,18 @@ var gfx =  {
 
 <div class='clouds'>
 <div class="shadow">
-<div class='c' style='top:260px;left:-50px;'> </div>
-<div class='c' style='top:210px;left:120px;'> </div>
-<div class='c' style='top:240px;left:330px;'> </div>
-<div class='c' style='top:290px;left:550px;'> </div>
-<div class='c' style='top:390px;left:750px;width:400px;height:400px'> </div>
+<div class='c' style='top:240px;left:-50px;'> </div>
+<div class='c' style='top:220px;left:120px;'> </div>
+<div class='c' style='top:240px;left:370px;'> </div>
+<div class='c' style='top:260px;left:600px;width:460px;height:460px'> </div>
 </div>
 <div>
-<div class='c' style='top:260px;left:-50px;'> </div>
-<div class='c' style='top:210px;left:120px;'> </div>
-<div class='c' style='top:240px;left:330px;'> </div>
-<div class='c' style='top:290px;left:550px;'> </div>
-<div class='c' style='top:290px;left:750px;width:400px;height:400px'> </div>
+<div class='c' style='top:240px;left:-50px;'> </div>
+<div class='c' style='top:220px;left:120px;'> </div>
+<div class='c' style='top:240px;left:370px;'> </div>
+<div class='c' style='top:260px;left:600px;width:460px;height:460px'> </div>
 </div>
-<div class='e' style='top:390px;left:0px;width:1100px;height:400px'> </div>
+<div class='e' style='top:370px;left:0px;width:1100px;height:400px'> </div>
 </div>
 
 
@@ -222,49 +221,37 @@ var gfx =  {
 </div>
 <table cellpadding="0" class='container'>
 <tr>
-<td id='area_topleft' valign='top' align="left">
+<td id='area_topleft' valign='top' align="left" width="524">
 <img src="org/fisl/layout-tv/fisl-banner-logo.png" height="220" />
 <img src="org/fisl/layout-tv/fisl-banner-fisl.png" height="220" />
 </td>
-<td valign="top" align='left'>
+<td valign="top" align='left' width="400">
 <div id='area_topright' >
 </div>
 </td>
 </tr>
 </table>
-<table width="100%" class='container2'>
+<table class='container2'>
 <tr style="height:50px">
-<td class='cor_tab1' id='tab1'>
+<td class='cor_tab1' valign="bottom" id='tab1'>
 <div class='tab'>
 Atualizações Tela
 </div>
 </td>
-<td class='cor_tab2' id='tab2'>
+<td class='cor_tab2'  valign="bottom"  id='tab2'>
 <div class='tab'>
 Palestras
 </div>
 </td>
-<td class='cor_tab3' id='tab3'>
+<td class='cor_tab3'  valign="bottom"  id='tab3'>
 <div class='tab'>
-Comunicados FISL
+Comunicados
 </div>
 </td>
 </tr>
 <tr>
 <td colspan="3" >
 <div class="panel" id='area_panel1'>
-Atualizações Tela ( este painel vai sumir em breve ) 
-<ul>
-<li>Layout novo tipo Abas - feedback via #bloco1icmc ou mgalli em taboca ponto com </li>
-<li>Linha do tempo nas Abas - ponteiro acima para passar percepção das mudanças e saber qdo vem o próximo painel</li>
-<li>Módulo-widget ( typing): Painel fixo com notícias - abaixo com RSS Usp.br. Em breve com multiplexador de RSS ( noticias de várias fontes )</li>
-<li>Aba de Eventos - com datas - irá mudar para uma visão ~ calendário</li>
-<li>Outros: Cores USP</li>
-<li>Outros: Relógio foi pro canto</li>
-<li>Feedback? blog.telasocial.com ou mgalli em taboca ponto com ou #bloco1icmc</li>
-<li>Ideias?: Módulo-widget do bandejão? .. #bloco1icmc</li>
-</ul>
-
 </div>
 <div class="panel" id='area_panel2'>
 </div>
@@ -273,11 +260,8 @@ Atualizações Tela ( este painel vai sumir em breve )
 </td>
 </tr>
 </table>
-
 </div>
-
 </>;
-
 		this._coreDoc.getElementById(this._getId()).appendChild(importedElement);
 
 	} ,

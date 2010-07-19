@@ -17,7 +17,7 @@ var typing =  {
 		.typingPanel { 
 			font-size:35px; 
 			font-weight:bold;
-			color:white;
+			color:black;
 		} 
 
 		table.typing td { 
