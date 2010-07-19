@@ -10,43 +10,13 @@ var gfx =  {
 
 	style : <><![CDATA[
 
-
-        .shadow .c {
-                -moz-box-shadow: white 0px 0px 20px;
-        }
-
-        .e {
-                background-color:white;
-                padding:1em;
-                width:300px;
-                position:absolute;
-                height:300px;
-        }
-        .c {
-                background-color:white;
-                -moz-border-radius:425px;
-                padding:1em;
-                width:300px;
-                position:absolute;
-                height:300px;
-        }
-
-
 	html { padding:0; margin:0; overflow:hidden; font-family: verdana, arial, sans-serif } 
+
 	body {
 		background: white;
 
 		padding:0; margin:0;
 	}
-
-
-	.clouds { 
-		position:absolute;
-		z-index:200;
-		width:1024px;
-		height:768px; 
-		overflow:hidden;
-	} 
 
 	.container {
 		top:0px;
@@ -141,14 +111,6 @@ var gfx =  {
 		overflow:hidden;
 	} 
 
-	#area_topleft {
-		width:850px;
-        }
-
-	video { 
-		-moz-box-shadow: 15px 15px 15px rgba(0,0,0,.5);
-	} 
-
 ]]></>,
 
 
@@ -201,16 +163,17 @@ var gfx =  {
 <div id='pointer'>
 </div>
 <div class='container'>
-<table cellpadding="0" >
+<table cellpadding="0" border='0' >
 <tr>
-<td id='area_topleft' valign='top' align="left" width="524">
-<!--
-<img src="org/fisl/layout-tv/fisl-banner-logo.png" height="220" />
-<img src="org/fisl/layout-tv/fisl-banner-fisl.png" height="220" />
--->
+<td id='area_topleft' valign='top' align="left" width="333">
 </td>
-<td valign="top" align='left' width="400">
+<td valign="top" align='left' width="393">
+<div id='area_topmid' >
+</div>
+</td>
+<td valign="top" align="right" width="303">
 <div id='area_topright' >
+<img  style='margin-top:90px;margin-right:5px;;' src="org/fisl/brand/fisl-banner-mini-logo.png" border="0" />
 </div>
 </td>
 </tr>

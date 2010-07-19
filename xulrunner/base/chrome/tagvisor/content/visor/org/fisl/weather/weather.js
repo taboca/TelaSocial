@@ -22,8 +22,8 @@ var clock_Widget =  {
 	start : function () { 
 
 		var mainDiv      = this._coreDoc.createElement('div');
-		mainDiv.setAttribute("width","300");
-		mainDiv.setAttribute("style","margin-left:175px;padding:10px;-moz-border-radius:25px;-moz-box-shadow:black 0 0 15px;; margin-top:0px;width:255px; padding-right:40px; height:180px;color:black; background-color:yellow; border:10px solid white;; overflow:hidden; ");
+		mainDiv.setAttribute("width","350");
+		mainDiv.setAttribute("style","text-align:center;padding:10px;-moz-border-radius:25px; margin-top:0px;margin-left:70px;width:320px;  height:180px;color:black; ; overflow:hidden; ");
 		this._coreDoc.getElementById(this._getId()).appendChild(mainDiv);
 
 		this.elementWeather = this._coreDoc.createElement('div');
