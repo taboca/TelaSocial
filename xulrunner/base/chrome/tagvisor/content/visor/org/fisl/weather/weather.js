@@ -22,7 +22,7 @@ var clock_Widget =  {
 	start : function () { 
 
 		var mainDiv      = this._coreDoc.createElement('div');
-		mainDiv.setAttribute("width","350");
+		mainDiv.setAttribute("width","320");
 		mainDiv.setAttribute("style","text-align:center;padding:10px;-moz-border-radius:25px; margin-top:0px;margin-left:70px;width:320px;  height:180px;color:black; ; overflow:hidden; ");
 		this._coreDoc.getElementById(this._getId()).appendChild(mainDiv);
 

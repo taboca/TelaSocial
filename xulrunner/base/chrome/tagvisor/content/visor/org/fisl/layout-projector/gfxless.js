@@ -23,7 +23,7 @@ var gfx =  {
 		width:1024px;
 		position:absolute;
 		z-index:100;
-		background:url(org/fisl/layout-projector/h2.jpg) 0 -20px no-repeat;
+		background:url(org/fisl/brand/topbg-1024.jpg) 0 -20px no-repeat;
 	}
 
 	table.container2 { 
