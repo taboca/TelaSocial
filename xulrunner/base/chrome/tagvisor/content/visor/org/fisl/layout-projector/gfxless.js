@@ -102,7 +102,7 @@ var gfx =  {
 
 	#area_topmid { 
 		width:300px;
-		height:250px;
+		height:225px;
 		overflow:hidden;
 		margin-left:115px;
 		text-align:center;
