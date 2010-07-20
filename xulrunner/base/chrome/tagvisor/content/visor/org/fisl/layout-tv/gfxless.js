@@ -10,9 +10,13 @@ var gfx =  {
 
 	style : <><![CDATA[
 
-	html { padding:0; margin:0; overflow:hidden; font-family: verdana, arial, sans-serif } 
+	html {
+		padding:0; margin:0; overflow:hidden; font-family: verdana, arial, sans-serif
+
+	} 
+
 	body {
-		background: rgb(98,176,222);
+		background: rgb(98,176,222) url(org/fisl/brand/bg.png);
 		padding:0; margin:0;
 	}
 
@@ -150,8 +154,8 @@ var gfx =  {
 </td>
 <td valign="top" align='center'>
 <div id='area_bottomright' >
-<img src="org/fisl/layout-tv/fisl-banner-fisl.png" />
-<img src="org/fisl/layout-tv/fisl-banner-logo.png" />
+<img src="org/fisl/brand/fisl-banner-fisl.png" />
+<img src="org/fisl/brand/fisl-banner-logo.png" />
 </div>
 </td>
 </tr>
