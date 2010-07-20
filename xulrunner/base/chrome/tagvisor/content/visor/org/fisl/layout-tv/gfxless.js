@@ -36,14 +36,14 @@ var gfx =  {
 		z-index:1000;
 	}
 
-	#area_bottomright { 
+	#area_topright { 
 		height:750px; 
 		width:820px;
 		overflow:hidden;
 	} 
 
-        .cor_orange { background-color:rgb(253,181,37);; }
-        .cor_lightblue  { background-color:rgb(100,197,210); }
+        .cor_tab1 { background-color:rgb(253,181,37);; }
+        .cor_tab2  { background-color:rgb(100,197,210); }
         .cor_tab3   {
 		background-color:rgb(14,148,171);	
 	}
@@ -52,13 +52,13 @@ var gfx =  {
         .transp { background-color:transparent; }
 
         #pointer {
-                width:45px;
-                -moz-border-radius:25px;
-                height:45px;
+                width:65px;
+                -moz-border-radius:5px;
+                height:20px;
                 background-color:black;
                 z-index:1;
                 position:absolute;
-                top:880px;
+                top:780px;
                 left:0px;
         }
 
@@ -75,22 +75,12 @@ var gfx =  {
 		overflow:hidden;
 	} 
 
-	@font-face {     
-		font-family: Kaffeesatz;
-		src: url(com/icmc/3pane/YanoneKaffeesatz-Regular.otf) format("opentype");
-		font-weight:bold;
-	}
-	@font-face {
-		font-family: Vollkorn;
-		src: url(com/icmc/3pane/vollkorn.otf) format("opentype");
-	}
-	#area_bottom {
-    		font-family:Kaffeesatz,Verdana, Arial, Helvetica, sans-serif;
+	#area_topleft {
 		color:white;
 		font-weight:bold;
 		padding-top:30px;
-		
         }
+
 	video { 
 		-moz-box-shadow: 15px 15px 15px rgba(0,0,0,.5);
 	} 
@@ -106,8 +96,8 @@ var gfx =  {
 		this.movepos+=5;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		if(this.movepos > 1260 && this.movepos < 1950 ) { 
-                        this._coreDoc.getElementById("tab1").className="cor_orange";
-                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="transp";
 			//this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
                         this._coreDoc.getElementById("area_panel3").style.display="block";
@@ -115,7 +105,7 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel1").style.display="none";
 		} 
 		if(this.movepos > 630 && this.movepos < 1260) { 
-                        this._coreDoc.getElementById("tab1").className="cor_orange";
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="transp";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			//this._coreDoc.body.style.backgroundColor="rgb(100,197,210)";
@@ -125,7 +115,7 @@ var gfx =  {
 		} 
 		if(this.movepos > 0  && this.movepos < 630) { 
                         this._coreDoc.getElementById("tab1").className="transp";
-                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			//this._coreDoc.body.style.backgroundColor="rgb(253,181,37)";
                         this._coreDoc.getElementById("area_panel1").style.display="block";
@@ -150,10 +140,10 @@ var gfx =  {
 </div>
 <table cellpadding="0" >
 <tr>
-<td id='area_bottom' valign='top' align="left">
+<td id='area_topleft' valign='top' align="left">
 </td>
 <td valign="top" align='center'>
-<div id='area_bottomright' >
+<div id='area_topright' >
 <img src="org/fisl/brand/fisl-banner-fisl.png" />
 <img src="org/fisl/brand/fisl-banner-logo.png" />
 </div>
@@ -162,12 +152,12 @@ var gfx =  {
 </table>
 <table width="100%">
 <tr style="height:50px">
-<td class='cor_orange' id='tab1'>
+<td class='cor_tab1' id='tab1'>
 <div class='tab'>
 Atualizações Tela
 </div>
 </td>
-<td class='cor_lightblue' id='tab2'>
+<td class='cor_tab2' id='tab2'>
 <div class='tab'>
 Palestras
 </div>
@@ -181,18 +171,6 @@ Comunicados FISL
 <tr>
 <td colspan="3" >
 <div class="panel" id='area_panel1'>
-Atualizações Tela ( este painel vai sumir em breve ) 
-<ul>
-<li>Layout novo tipo Abas - feedback via #bloco1icmc ou mgalli em taboca ponto com </li>
-<li>Linha do tempo nas Abas - ponteiro acima para passar percepção das mudanças e saber qdo vem o próximo painel</li>
-<li>Módulo-widget ( typing): Painel fixo com notícias - abaixo com RSS Usp.br. Em breve com multiplexador de RSS ( noticias de várias fontes )</li>
-<li>Aba de Eventos - com datas - irá mudar para uma visão ~ calendário</li>
-<li>Outros: Cores USP</li>
-<li>Outros: Relógio foi pro canto</li>
-<li>Feedback? blog.telasocial.com ou mgalli em taboca ponto com ou #bloco1icmc</li>
-<li>Ideias?: Módulo-widget do bandejão? .. #bloco1icmc</li>
-</ul>
-
 </div>
 <div class="panel" id='area_panel2'>
 </div>
