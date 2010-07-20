@@ -74,9 +74,9 @@ var gfx =  {
                 -moz-border-radius:5px;
                 height:10px;
                 background-color:rgb(0,150,255);
-                z-index:150;
+                z-index:250;
                 position:absolute;
-                top:221px;
+                top:211px;
                 left:0px;
         }
 
