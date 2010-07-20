@@ -63,14 +63,14 @@ var gfx =  {
 		padding-left:10px;
 		border-bottom:0px;
 		background: -moz-linear-gradient(top bottom, yellow, rgba(255,255,0,0));
-		text-shadow: 1px 1px 2px yellow, 0 0 1em yellow, 0 0 0.2em yellow;
+		text-shadow: 0 0 0.2em gray;
 	} 
 
 
         .transp { background-color:transparent; }
 
         #pointer {
-                width:60px;
+                width:55px;
                 -moz-border-radius:5px;
                 height:10px;
                 background-color:rgb(0,150,255);
@@ -88,7 +88,7 @@ var gfx =  {
 	}
 
 	.panel { 
-		margin-left:5px;
+		margin-left:15px;
 		display:none;
 		height:600px;
 		overflow:hidden;
