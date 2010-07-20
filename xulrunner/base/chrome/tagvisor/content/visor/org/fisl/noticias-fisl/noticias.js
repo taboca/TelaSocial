@@ -21,15 +21,12 @@ var twitter =  {
 		.tweetauthor { 
 			color:gray; 
 		} 
-/*
-			-moz-border-radius:12px;
-*/
 		.tweetpublic { 
 			color:black;
 			font-size:20px;
 			font-weight:bold;
 			background-color: rgba(230,230,230,1);
-			-moz-box-shadow: rgba(0,0,0,.5) 5px 5px 10px; 
+			-moz-border-radius:20px;
 			padding:10px;
 			margin-bottom:15px;
 		} 
