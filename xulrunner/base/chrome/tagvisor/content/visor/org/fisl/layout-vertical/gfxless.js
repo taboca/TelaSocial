@@ -29,6 +29,7 @@ var gfx =  {
 
 	.panel {
 		width:1060px;
+		margin-left:10px;
 	}
 
 	.tab {
@@ -58,13 +59,13 @@ var gfx =  {
         .transp { background-color:transparent; }
 
         #pointer {
-                width:45px;
-                -moz-border-radius:25px;
-                height:45px;
-                background-color:lightblue;
+                width:50px;
+                -moz-border-radius:1px;
+                height:10px;
+                background-color:blue;
                 z-index:1111;
                 position:absolute;
-                top:320px;
+                top:260px;
                 left:0px;
         }
 
@@ -180,13 +181,7 @@ Twitter #fisl11
 </tr>
 <tr>
 <td colspan="3" >
-<div class="panel" id='area_panel1' style='text-align:center;padding:1em;padding-top:250px'>
-
-
-<h1 style='font-size:140px;'>TelaSocial</h1>
-<img src="http://www.mozilla.org/images/poweredby_400.png" />
-
-
+<div class="panel" id='area_panel1' >
 </div>
 <div class="panel" id='area_panel2'>
 </div>
