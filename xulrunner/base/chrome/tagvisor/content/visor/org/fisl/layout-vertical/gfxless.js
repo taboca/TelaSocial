@@ -76,6 +76,7 @@ var gfx =  {
                 height:230px;
                 background-color:rgb(30,30,30);
     		font-family:Kaffeesatz,Verdana, Arial, Helvetica, sans-serif;
+		width:1080px;
 		color:white;
 		font-weight:bold;
         }
