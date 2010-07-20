@@ -90,16 +90,21 @@ com.taboca.tagvisor = {
 
   setFullScreen: function () { 
 
-	if(!window.fullScreen) { 
-	  window.fullScreen = true;
-	} 
-
+        var prefService =  Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+        var zoom = parseFloat(prefService.getCharPref("extensions.tagvisor.zoom"));
+        var aspect = parseFloat(prefService.getCharPref("extensions.tagvisor.resolution"));
+        var res = aspect.split(",");
+        if(zoom && zoom>0) {
+            window.resizeTo( parseInt(res[0]), parseInt(res[1]));
+        } else {
+          if(!window.fullScreen) {
+            window.fullScreen = true;
+          }
+          window.resizeTo(screen.width - 1, screen.height);
+        }
 
 	try { 	
   
-            // firefox and xulrunner mode 
-            window.resizeTo(screen.width - 1, screen.height);
- 
             // Firefox 
             if(document.getElementById("nav-bar")) { 
                document.getElementById('nav-bar').collapsed=true;
