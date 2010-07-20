@@ -49,23 +49,22 @@ var gfx =  {
 		background-color:rgb(70,70,70);	
 	} 
 
-        .cor_orange { background-color:rgb(255,255,255);; }
-        .cor_lightblue  { background-color:rgb(100,197,210); }
+        .cor_tab1 { background-color:rgb(255,255,255);; }
+        .cor_tab2  { background-color:rgb(100,197,210); }
         .cor_tab3   {
 		background-color:rgb(14,148,171);	
 	}
 
-
         .transp { background-color:transparent; }
 
         #pointer {
+                top:260px;
                 width:50px;
                 -moz-border-radius:1px;
                 height:10px;
                 background-color:blue;
                 z-index:1111;
                 position:absolute;
-                top:260px;
                 left:0px;
         }
 
@@ -113,8 +112,8 @@ var gfx =  {
 		this.movepos+=5;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		if(this.movepos > 700 && this.movepos < 1080 ) { 
-                        this._coreDoc.getElementById("tab1").className="cor_orange";
-                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="transp";
 			this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
                         this._coreDoc.getElementById("area_panel3").style.display="block";
@@ -122,7 +121,7 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel1").style.display="none";
 		} 
 		if(this.movepos > 350 && this.movepos < 700) { 
-                        this._coreDoc.getElementById("tab1").className="cor_orange";
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="transp";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			this._coreDoc.body.style.backgroundColor="rgb(100,197,210)";
@@ -132,7 +131,7 @@ var gfx =  {
 		} 
 		if(this.movepos > 0  && this.movepos < 350) { 
                         this._coreDoc.getElementById("tab1").className="transp";
-                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			this._coreDoc.body.style.backgroundColor="rgb(253,181,37)";
 			this._coreDoc.body.style.backgroundColor="rgb(255,255,255)";
@@ -163,12 +162,12 @@ var gfx =  {
 </td>
 </tr>
 <tr style="height:50px">
-<td class='cor_orange' id='tab1'>
+<td class='cor_tab1' id='tab1'>
 <div class='tab'>
 Flickr FISL
 </div>
 </td>
-<td class='cor_lightblue' id='tab2'>
+<td class='cor_tab2' id='tab2'>
 <div class='tab'>
 Notícias FISL
 </div>
