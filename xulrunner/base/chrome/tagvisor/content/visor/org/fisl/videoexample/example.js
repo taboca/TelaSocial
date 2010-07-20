@@ -17,7 +17,7 @@ var  video  = {
 		this.elementv.setAttribute('width', '1000');
 		//this.elementv.setAttribute('height', '360');
 		this.elementv.setAttribute('autoplay', 'true');
-		this.elementv.setAttribute('style', 'padding-left:50px');
+		this.elementv.setAttribute('style', 'padding-left:0px');
 		//this.elementv.setAttribute('src', 'com/taboca/videoexample/formiga.ogg');
 		this.elementv.setAttribute('src', 'http://stream.softwarelivre.org/sites/default/files/videos/fisl1-27-ead.ogg');
 		this.element.appendChild(this.elementv);

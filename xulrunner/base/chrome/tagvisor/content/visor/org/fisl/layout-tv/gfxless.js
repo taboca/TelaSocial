@@ -11,8 +11,11 @@ var gfx =  {
 	style : <><![CDATA[
 
 	html {
-		padding:0; margin:0; overflow:hidden; font-family: verdana, arial, sans-serif
-
+		padding:0;
+		margin:0; font-family: verdana, arial, sans-serif;
+		width:1920px;
+		height:1080px;
+		overflow:hidden;
 	} 
 
 	body {
@@ -24,12 +27,12 @@ var gfx =  {
 		width:1920px;
 	}
 
-	.panel {
-	}
 	.tab {
                 font-size:20px;
 		width:620px;
                 font-weight:bold;
+		border-bottom:1px solid white;
+			
         }
 
 	#tab1, #tab2, #tab3 { 
@@ -42,46 +45,50 @@ var gfx =  {
 		overflow:hidden;
 	} 
 
-        .cor_tab1 { background-color:rgb(253,181,37);; }
-        .cor_tab2  { background-color:rgb(100,197,210); }
-        .cor_tab3   {
-		background-color:rgb(14,148,171);	
+        .cor_tab1  { 
+		border-bottom:2px solid rgb(253,181,37);
 	}
-
+        .cor_tab2  { 
+		border-bottom:2px solid rgb(100,197,210); 
+	}
+        .cor_tab3  { 
+		border-bottom:2px solid rgb(14,148,171);	
+	}
 
         .transp { background-color:transparent; }
 
         #pointer {
+                top:800px;
                 width:65px;
                 -moz-border-radius:5px;
-                height:20px;
+                height:10px;
                 background-color:black;
                 z-index:1;
                 position:absolute;
-                top:780px;
                 left:0px;
         }
 
 	#frame { 
-	 	margin:0;
 		width:1920px;
 		height:1080px;
 		padding:0;
+	 	margin:0;
 	}
 
 	.panel { 
 		display:none;
-		height:700px;
 		overflow:hidden;
+		padding:1em;
 	} 
 
 	#area_topleft {
 		color:white;
 		font-weight:bold;
-		padding-top:30px;
+		padding-top:0px;
         }
 
 	video { 
+		margin-left:25px;
 		-moz-box-shadow: 15px 15px 15px rgba(0,0,0,.5);
 	} 
 

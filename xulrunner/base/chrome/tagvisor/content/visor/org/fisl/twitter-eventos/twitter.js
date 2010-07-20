@@ -12,7 +12,6 @@ var twitter =  {
 	feed    : null, 
 
 	style : <><![CDATA[
-		
 
 		.tweetdate { 
 			color:white;
@@ -24,9 +23,9 @@ var twitter =  {
 		}
 
 		.tweetauthor { 
-
 			color:gray; 
 		} 
+
 		.tweetpublic { 
 			color:black;
 			font-size:30px;
@@ -37,15 +36,13 @@ var twitter =  {
 			padding:10px;
 			margin-top:5px;
 		} 
-		.twitterPanel { 
-		} 
+
 	]]></>, 
 
 
 	start : function() {
 
 		this.element = this._coreDoc.createElement('div');
-		this.element.className="twitterPanel";
 		this.element.id = Math.random();
 		this.tweetQueue = new Array();
 
