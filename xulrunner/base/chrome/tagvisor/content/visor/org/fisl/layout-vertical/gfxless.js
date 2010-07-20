@@ -164,7 +164,7 @@ var gfx =  {
 <tr style="height:50px">
 <td class='cor_orange' id='tab1'>
 <div class='tab'>
-TelaSocial
+Flickr FISL
 </div>
 </td>
 <td class='cor_lightblue' id='tab2'>
@@ -174,7 +174,7 @@ Notícias FISL
 </td>
 <td class='cor_tab3' id='tab3'>
 <div class='tab'>
-Twitter#fisl11
+Twitter #fisl11
 </div>
 </td>
 </tr>
