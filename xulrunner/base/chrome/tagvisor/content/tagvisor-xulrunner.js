@@ -91,9 +91,10 @@ com.taboca.tagvisor = {
   setFullScreen: function () { 
 
         var prefService =  Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
-        var zoom = parseFloat(prefService.getCharPref("extensions.tagvisor.zoom"));
-        var aspect = parseFloat(prefService.getCharPref("extensions.tagvisor.resolution"));
+        var zoom   = parseFloat(prefService.getCharPref("extensions.tagvisor.zoom"));
+        var aspect = prefService.getCharPref("extensions.tagvisor.resolution");
         var res = aspect.split(",");
+
         if(zoom && zoom>0) {
             window.resizeTo( parseInt(res[0]), parseInt(res[1]));
         } else {
