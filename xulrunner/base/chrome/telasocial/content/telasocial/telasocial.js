@@ -124,9 +124,21 @@ function gBrowserLoad(url) {
   var browser = document.getElementById("browser");
   browser.loadURI(url, null, null);
   gBrowserContentWindow = document.getElementById("browser").contentWindow;
+  setTimeout("zoom()",5000);
+
 } 
 
+function zoom() {
 
+  try  {
+  var prefService =  Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+  var zoom = parseFloat(prefService.getCharPref("extensions.tagvisor.zoom"));
+  var contViewer = document.getElementById("browser").docShell.contentViewer;
+  var docViewer = contViewer.QueryInterface(Components.interfaces.nsIMarkupDocumentViewer);
+  docViewer.fullZoom = zoom;
+  } catch(i) { alert(i) }
+
+}
 
 function back() {
   var browser = document.getElementById("browser");
