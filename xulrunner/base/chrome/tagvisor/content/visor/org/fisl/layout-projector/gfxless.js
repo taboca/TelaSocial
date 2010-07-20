@@ -70,11 +70,10 @@ var gfx =  {
         .transp { background-color:transparent; }
 
         #pointer {
-                width:40px;
-                -moz-border-radius:40px;
-                height:40px;
+                width:60px;
+                -moz-border-radius:5px;
+                height:10px;
                 background-color:rgb(0,150,255);
-		-moz-box-shadow: rgb(0,150,255) 0 0 45px,rgb(0,150,255) 0 0 35px,rgb(0,150,255) 0 0 25px;
                 z-index:150;
                 position:absolute;
                 top:221px;
@@ -95,20 +94,18 @@ var gfx =  {
 		overflow:hidden;
 	} 
 
-	@font-face {     
-		font-family: Kaffeesatz;
-		src: url(com/icmc/3pane/YanoneKaffeesatz-Regular.otf) format("opentype");
-		font-weight:bold;
-	}
-	@font-face {
-		font-family: Vollkorn;
-		src: url(com/icmc/3pane/vollkorn.otf) format("opentype");
-	}
-
 	#area_topright { 
 		height:300px;
 		z-index:280;
 		overflow:hidden;
+	} 
+
+	#area_topmid { 
+		width:300px;
+		height:250px;
+		overflow:hidden;
+		margin-left:115px;
+		text-align:center;
 	} 
 
 ]]></>,
