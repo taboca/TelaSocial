@@ -95,6 +95,7 @@ var gfx =  {
 	} 
 
 	#area_topright { 
+		padding-top:130px;
 		height:300px;
 		z-index:280;
 		overflow:hidden;
@@ -163,6 +164,7 @@ var gfx =  {
 <table cellpadding="0" border='0' >
 <tr>
 <td id='area_topleft' valign='top' align="left" width="333">
+<img  style='margin-top:90px;margin-left:30px;' src="org/fisl/brand/fisl-banner-mini-logo.png" border="0" />
 </td>
 <td valign="top" align='left' width="393">
 <div id='area_topmid' >
@@ -170,7 +172,6 @@ var gfx =  {
 </td>
 <td valign="top" align="right" width="303">
 <div id='area_topright' >
-<img  style='margin-top:90px;margin-right:5px;;' src="org/fisl/brand/fisl-banner-mini-logo.png" border="0" />
 </div>
 </td>
 </tr>
