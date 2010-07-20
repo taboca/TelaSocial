@@ -22,8 +22,8 @@ var clock_Widget =  {
 	start : function () { 
 
 		var mainDiv      = this._coreDoc.createElement('div');
-		mainDiv.setAttribute("width","280");
-		mainDiv.setAttribute("style","margin-top:150px;margin-left:40px;color:black; ");
+//		mainDiv.setAttribute("width","280");
+		mainDiv.setAttribute("style","color:black");
 		this._coreDoc.getElementById(this._getId()).appendChild(mainDiv);
 
 		//this.elementWeather = this._coreDoc.createElement('div');

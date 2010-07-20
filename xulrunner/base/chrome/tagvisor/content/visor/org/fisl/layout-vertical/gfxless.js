@@ -38,9 +38,6 @@ var gfx =  {
 	}
 
 	#area_bottomright { 
-		text-align:center;
-		width:360px;
-		background-color:rgb(70,70,70);	
 	} 
 
 	#area_topright { 
@@ -73,19 +70,6 @@ var gfx =  {
 		height:1350px;
 		overflow:hidden;
 	} 
-
-	@font-face {     
-		font-family: Kaffeesatz;
-		src: url(com/icmc/3pane/YanoneKaffeesatz-Regular.otf) format("opentype");
-		font-weight:bold;
-	}
-
-
-@font-face {
-	font-family: Vollkorn;
-	src: url(com/icmc/3pane/vollkorn.otf) format("opentype");
-
-}
 
 	#area_bottom {
 		padding:1em;
@@ -199,7 +183,7 @@ Twitter #fisl11
 </td>
 </tr>
 <tr>
-<td colspan='2' id='area_bottom' valign='top' style='background: rgb(30,30,30) 0 0 no-epeat;margin-left:120px;'>
+<td colspan='3' id='area_bottom' valign='top'>
 </td>
 <td id='area_bottomright' valign="middle">
 </td>
