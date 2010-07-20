@@ -49,11 +49,9 @@ var gfx =  {
 		background-color:rgb(70,70,70);	
 	} 
 
-        .cor_tab1 { background-color:rgb(255,255,255);; }
-        .cor_tab2  { background-color:rgb(100,197,210); }
-        .cor_tab3   {
-		background-color:rgb(14,148,171);	
-	}
+        .cor_tab1 { background-color:rgb(255,255,255); }
+        .cor_tab2 { background-color:rgb(100,197,210); }
+        .cor_tab3 { background-color:rgb(14,148,171);  }
 
         .transp { background-color:transparent; }
 
@@ -100,7 +98,11 @@ var gfx =  {
 		color:white;
 		font-weight:bold;
         }
-
+	
+	#area_panel1 span { 
+		margin-left:15px;
+		margin-top:10px;
+	} 
 
 ]]></>,
 
