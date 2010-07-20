@@ -18,13 +18,7 @@ var gfx =  {
 	}
 
 	table {
-		margin:0;
 		z-index:1000;
-		position:absolute;
-	}
-
-	table td {
-		border:0px solid white;
 	}
 
 	.panel {
@@ -49,6 +43,9 @@ var gfx =  {
 		background-color:rgb(70,70,70);	
 	} 
 
+	#area_topright { 
+	} 
+
         .cor_tab1 { background-color:rgb(255,255,255); }
         .cor_tab2 { background-color:rgb(100,197,210); }
         .cor_tab3 { background-color:rgb(14,148,171);  }
@@ -56,8 +53,8 @@ var gfx =  {
         .transp { background-color:transparent; }
 
         #pointer {
-                top:260px;
-                width:50px;
+                top:250px;
+                width:60px;
                 -moz-border-radius:1px;
                 height:10px;
                 background-color:blue;
@@ -159,8 +156,19 @@ var gfx =  {
 </div>
 <table cellpadding="0" cellspacing="0" height="1920">
 <tr>
-<td colspan="3" style="padding:0" align="left" valign="bottom" >
-<img src="org/fisl/brand/bgtop-1080.jpg" style="margin:0" />
+<td colspan="3"  align="left" valign="bottom" style="height:250px;padding:0;background:url(org/fisl/brand/bgtop-1080.jpg) 0 0" >
+<table border='0' width='1080'>
+<tr>
+<td id='area_topleft' width='300'>
+</td>
+<td id='area_topmid'>
+</td>
+<td id='area_topright' width='250' valign="top" align="right">
+</td>
+</tr>
+</table>
+
+
 </td>
 </tr>
 <tr style="height:50px">
