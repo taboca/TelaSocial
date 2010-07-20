@@ -158,7 +158,7 @@ var gfx =  {
 <table cellpadding="0" cellspacing="0" height="1920">
 <tr>
 <td colspan="3" style="padding:0" align="left" valign="bottom" >
-<img src="http://softwarelivre.org/designs/themes/fisl11/imgs/header.jpg" width="1074" style="margin:0" height="270"/>
+<img src="org/fisl/brand/bgtop-1080.jpg" style="margin:0" />
 </td>
 </tr>
 <tr style="height:50px">
@@ -195,7 +195,7 @@ Twitter#fisl11
 </td>
 </tr>
 <tr>
-<td colspan='2' id='area_bottom' valign='top' style='background: rgb(30,30,30) url(/com/icmc/3pane/usp-logo/trademark.jpg) 0 0 no-epeat;margin-left:120px;'>
+<td colspan='2' id='area_bottom' valign='top' style='background: rgb(30,30,30) 0 0 no-epeat;margin-left:120px;'>
 </td>
 <td id='area_bottomright' valign="middle">
 </td>
