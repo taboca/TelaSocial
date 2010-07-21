@@ -9,6 +9,7 @@ var typing =  {
 	crop    : "50",
 	title   : "Twitter 10",
 	feedURL : "http://www4.usp.br/index.php/noticias?format=feed&type=rss",
+	feedIcon: "",
 	firstId : null, 
 	typingContainerId: null, 
 
@@ -32,7 +33,9 @@ var typing =  {
 	start : function() {
 
 		this._dump("APpanem is :"+this.name);
-		this.feedURL =  this._service_jquery("."+this.name+" .source").text();
+		this.feedURL  =  this._service_jquery("."+this.name+" .source").text();
+		this.feedIcon =  this._service_jquery("."+this.name+" .logo").text();
+
 		this._dump("URL to read is:" +this.feedURL);
 		this.feed = new this._service_google.feeds.Feed(this.feedURL);
 		this.feed.setNumEntries(10);
@@ -45,7 +48,8 @@ var typing =  {
 		this.elementTable.style.border="0px";
 		this.elementTable.style.width="1024x";
 		this.typingContainerId = "typingcontainer"+Math.random();
-		this.elementTable.innerHTML="<tr><td id='qrcode'></td><td class='typingPanel' id='"+this.typingContainerId+"'></td></tr></table>";
+		this.typingContainerIcon = "iconcontainer"+Math.random();
+		this.elementTable.innerHTML="<tr><td id='"+this.typingContainerIcon+"'></td><td class='typingPanel' id='"+this.typingContainerId+"'></td></tr></table>";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.elementTable);
 /*
@@ -117,7 +121,7 @@ var typing =  {
 		for(var i=0;i<this.readIndex;i++) { 
 			sum+=words[i]+" ";
 			if(i==0) { 
-				this._coreDoc.getElementById("qrcode").innerHTML= '<img width="120" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
+				this._coreDoc.getElementById(this.typingContainerIcon).innerHTML= '<img width="120" src="'+this.feedIcon+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
 			} 
 		} 
 		this._coreDoc.getElementById(this.firstId).innerHTML=sum;
