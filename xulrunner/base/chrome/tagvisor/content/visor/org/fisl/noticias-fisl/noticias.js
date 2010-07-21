@@ -93,7 +93,7 @@ var twitter =  {
 			var title   = self.feed(this).find('title').text();
 			var link    = self.feed(this).find('link').text();
 	
-			self.tweetQueue.push( '<span class="tweetdate">' + pubDate + '</span>' + title + ' <span class="tweetauthor">(FISL)</span>');
+			self.tweetQueue.push(  title + ' <span class="tweetauthor">(FISL)</span><span class="tweetdate">' + pubDate + '</span>');
 
 		});
 
