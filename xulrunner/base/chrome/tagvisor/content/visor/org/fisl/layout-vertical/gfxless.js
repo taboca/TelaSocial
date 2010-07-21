@@ -145,6 +145,7 @@ var gfx =  {
 <table border='0' width='1080'>
 <tr>
 <td id='area_topleft' width='300'>
+<img  style='margin-top:90px;margin-left:30px;' src="org/fisl/brand/fisl-banner-mini-logo.png" border="0" />
 </td>
 <td id='area_topmid'>
 </td>

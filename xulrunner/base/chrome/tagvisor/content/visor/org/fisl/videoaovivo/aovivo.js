@@ -12,13 +12,10 @@ var  video  = {
 	start : function () { 
 
 		this.element = this._coreDoc.createElement("div");
-
 		this.elementv = this._coreDoc.createElement('video');
 		this.elementv.setAttribute('width', '1000');
-		//this.elementv.setAttribute('height', '360');
 		this.elementv.setAttribute('autoplay', 'true');
 		this.elementv.setAttribute('style', 'padding-left:0px');
-		//this.elementv.setAttribute('src', 'com/taboca/videoexample/formiga.ogg');
 		this.elementv.setAttribute('src', 'http://tv.softwarelivre.org/sites/default/files/videos/fisl1-27-ead.ogg');
 		this.element.appendChild(this.elementv);
                 this._coreDoc.getElementById(this._getId()).appendChild(this.element);

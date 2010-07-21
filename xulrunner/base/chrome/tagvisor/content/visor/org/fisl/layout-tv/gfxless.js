@@ -10,6 +10,11 @@ var gfx =  {
 
 	style : <><![CDATA[
 
+
+	#area_panel3 { 
+		background-color:white;
+		height:200px;
+	} 
 	html {
 		padding:0;
 		margin:0; font-family: verdana, arial, sans-serif;
@@ -45,14 +50,15 @@ var gfx =  {
 		overflow:hidden;
 	} 
 
+	.cor_active { 
+		text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;;
+	} 
+
         .cor_tab1  { 
-		border-bottom:2px solid rgb(253,181,37);
 	}
         .cor_tab2  { 
-		border-bottom:2px solid rgb(100,197,210); 
 	}
         .cor_tab3  { 
-		border-bottom:2px solid rgb(14,148,171);	
 	}
 
         .transp { background-color:transparent; }
@@ -105,7 +111,7 @@ var gfx =  {
 		if(this.movepos > 1260 && this.movepos < 1950 ) { 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
-                        this._coreDoc.getElementById("tab3").className="transp";
+                        this._coreDoc.getElementById("tab3").className="cor_active";
 			//this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
                         this._coreDoc.getElementById("area_panel3").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
@@ -113,7 +119,7 @@ var gfx =  {
 		} 
 		if(this.movepos > 630 && this.movepos < 1260) { 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";
-                        this._coreDoc.getElementById("tab2").className="transp";
+                        this._coreDoc.getElementById("tab2").className="cor_active";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			//this._coreDoc.body.style.backgroundColor="rgb(100,197,210)";
                         this._coreDoc.getElementById("area_panel2").style.display="block";
@@ -121,7 +127,7 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel3").style.display="none";
 		} 
 		if(this.movepos > 0  && this.movepos < 630) { 
-                        this._coreDoc.getElementById("tab1").className="transp";
+                        this._coreDoc.getElementById("tab1").className="cor_active";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			//this._coreDoc.body.style.backgroundColor="rgb(253,181,37)";
@@ -151,8 +157,9 @@ var gfx =  {
 </td>
 <td valign="top" align='center'>
 <div id='area_topright' >
-<img src="org/fisl/brand/fisl-banner-fisl.png" />
-<img src="org/fisl/brand/fisl-banner-logo.png" />
+<img src="http://tv.softwarelivre.org/themes/tvsl/logo.png" height="180"/>
+<img src="org/fisl/brand/fisl-banner-fisl.png" height="180"/>
+<img src="org/fisl/brand/fisl-banner-logo.png" height="180"/>
 </div>
 </td>
 </tr>
@@ -161,7 +168,7 @@ var gfx =  {
 <tr style="height:50px">
 <td class='cor_tab1' id='tab1'>
 <div class='tab'>
-Atualizações Tela
+Flickr #fisl11
 </div>
 </td>
 <td class='cor_tab2' id='tab2'>
