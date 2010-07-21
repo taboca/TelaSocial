@@ -136,7 +136,7 @@ function zoom() {
   var contViewer = document.getElementById("browser").docShell.contentViewer;
   var docViewer = contViewer.QueryInterface(Components.interfaces.nsIMarkupDocumentViewer);
   docViewer.fullZoom = zoom;
-  } catch(i) { alert(i) }
+  } catch(i) {  }
 
 }
 
