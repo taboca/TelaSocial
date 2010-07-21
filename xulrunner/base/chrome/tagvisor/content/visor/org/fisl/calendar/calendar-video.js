@@ -10,10 +10,10 @@ var calendar_Widget =  {
 	start : function () { 
 
 	        this._raiseEvent(".container", "start");
-                this._raiseEvent(".container.fotogrid", "start");
-                this._raiseEvent(".container.twitter", "start");
+                this._raiseEvent(".container.typing_fisl", "start");
+                this._raiseEvent(".container.typing_atualizacoes", "start");
+                this._raiseEvent(".container.typing_twitter", "start");
                 this._raiseEvent(".container.video", "start");
-                this._raiseEvent(".container.twitterslash", "start");
 
                 var self = this;
                 timer.setTimeout( function(){self.kickMore()},1000);
