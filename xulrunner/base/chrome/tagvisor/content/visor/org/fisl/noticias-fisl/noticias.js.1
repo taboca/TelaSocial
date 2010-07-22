@@ -33,10 +33,6 @@ var twitter =  {
 		.twitterPanel { 
 			width:1000px;
 		} 
-		.newsdesc { 
-			font-size:18px;
-			
-		} 
 	]]></>, 
 	start : function() {
 
@@ -94,12 +90,10 @@ var twitter =  {
 		var self  = this; 
 		this.feed(xml).find('item').each(function(){
 			var pubDate = self.feed(this).find('pubDate').text();
-			var description = self.feed(this).find('description').text();
 			var title   = self.feed(this).find('title').text();
 			var link    = self.feed(this).find('link').text();
 	
-			//self.tweetQueue.push(  title + ' <div class="tweetauthor">(FISL)</div><div class="tweetdate">' + pubDate + '</div>');
-			self.tweetQueue.push(  title + '<div class="newsdesc">' + description + '</div>');
+			self.tweetQueue.push(  title + ' <span class="tweetauthor">(FISL)</span><span class="tweetdate">' + pubDate + '</span>');
 
 		});
 

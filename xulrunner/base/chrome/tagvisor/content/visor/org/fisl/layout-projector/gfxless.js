@@ -69,6 +69,11 @@ var gfx =  {
 
         .transp { background-color:transparent; }
 
+	#area_panel3 { 
+
+		padding-right:1em; 
+	}
+		
         #pointer {
                 width:55px;
                 -moz-border-radius:5px;
@@ -186,7 +191,7 @@ Twitter #fisl11
 </td>
 <td class='cor_tab2'  valign="bottom"  id='tab2'>
 <div class='tab'>
-Flickr #FISL
+Flickr tag: fisl11
 </div>
 </td>
 <td class='cor_tab3'  valign="bottom"  id='tab3'>
