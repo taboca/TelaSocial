@@ -167,17 +167,17 @@ var gfx =  {
 <tr style="height:50px">
 <td class='cor_tab1' id='tab1'>
 <div class='tab'>
-Flickr #fisl11
+Twitter #fisl11
 </div>
 </td>
 <td class='cor_tab2' id='tab2'>
 <div class='tab'>
-Palestras
+Twitter @fisl
 </div>
 </td>
 <td class='cor_tab3' id='tab3'>
 <div class='tab'>
-Comunicados FISL
+RSS site FISL
 </div>
 </td>
 </tr>
