@@ -19,22 +19,26 @@ var  video  = {
 		this.elementv.setAttribute('autoplay', 'true');
 		this.elementv.setAttribute('style', 'padding-left:0px');
 		//this.elementv.setAttribute('src', 'com/taboca/videoexample/formiga.ogg');
-		this.elementv.setAttribute('src', 'http://tv.softwarelivre.org/sites/default/files/videos/fisl1-27-ead.ogg');
+		this.elementv.setAttribute('src', '');
 		this.element.appendChild(this.elementv);
                 this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 
 		var thiss = this; 
-		t.setTimeout( function () { thiss.kick() } , 60*60*1000); 
+		t.setTimeout( function () { thiss.kick() } , 2000); 
 	} ,
 
-	images: ['http://tv.softwarelivre.org/sites/default/files/videos/fisl5-41D-27-O%20Gimp%20para%20Mentes%20Criativas.ogg','http://tv.softwarelivre.org/sites/default/files/videos/fisl10-26-Tor%20and%20GNUNet.ogg','http://tv.softwarelivre.org/sites/default/files/videos/06-Stallman+Sunde-web.ogg'], 
+	images: ['org/fisl/videoexample/i1.ogg','org/fisl/videoexample/i2.ogg','org/fisl/videoexample/i3.ogg','org/fisl/videoexample/i4.ogg','org/fisl/videoexample/i5.ogg','org/fisl/videoexample/i6.ogg'], 
+	titles: ['Abertura Oficial', 'Enquete ','Fabricio Solagna','josé fortunati',"manuela d'avila","Murilo"], 
+	timing: [ 3*60*1000+11000, 2*60*1000+32000, 2*60*1000+44000, 1*60*1000+27000  ], 
 
+	cc:0,
 	kick : function () { 
 
-		this.element.innerHTML="<video src='"+this.images[parseInt(Math.random()*2)]+"' width='1000' autoplay='true' style='padding-left:0px' />";
+		this.element.innerHTML="<video src='"+this.images[cc]+"' width='950' autoplay='true' style='padding-left:0px' />";
+		cc++;
 
 		var thiss = this; 
-		t.setTimeout( function () { thiss.kick() } , 60*60*1000); 
+		t.setTimeout( function () { thiss.kick() } , this.timing[cc]); 
 
 	},
 
