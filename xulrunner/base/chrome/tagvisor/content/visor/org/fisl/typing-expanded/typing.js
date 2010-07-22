@@ -119,7 +119,7 @@ var typing =  {
 			this.readIndex=0;
 			this.cycleIndex++;
 
-			timer.setTimeout( function(){self.readLine()},5000);
+			timer.setTimeout( function(){self.readLine()},15000);
 		} 
 		else { 
 			var self = this;
@@ -135,7 +135,7 @@ var typing =  {
 			this.feed.load( function (e) {  self.__feedUpdated(e) } );
 		}
 		var self = this;
-		timer.setTimeout( function(){self.updateFeed()},10000);
+		timer.setTimeout( function(){self.updateFeed()},30000);
 	},
 
 	__feedUpdated : function(result) {
