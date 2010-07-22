@@ -8,7 +8,7 @@ com.taboca.upvisor.registerWidget( ".container" , "org/fisl/clock/clock.js","clo
 com.taboca.upvisor.registerWidget( ".container" , "org/fisl/typing-expanded/typing.js","fislnews", "area_panel4");
 //com.taboca.upvisor.registerWidget( ".container" , "org/fisl/fade/fade.js","flickr", "area_panel2");
 com.taboca.upvisor.registerWidget( ".container" , "org/fisl/fotogrid/fotogrid.js","flickr", "area_panel3");
-com.taboca.upvisor.registerWidget( ".container" , "org/fisl/twitter-fisl/twitter.js","twitter_fisl_oficial", "area_panel2");
+com.taboca.upvisor.registerWidget( ".container" , "org/fisl/twitter-fisl-oficial/twitter.js","twitter_fisl_oficial", "area_panel2");
 com.taboca.upvisor.registerWidget( ".container" , "org/fisl/twitter-fisl/twitter.js","twitter_fisl", "area_panel1");
 
 com.taboca.upvisor.startEngine( function () { com.taboca.upvisor.raiseEvent(".calendar", "start"); } );

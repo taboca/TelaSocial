@@ -15,6 +15,7 @@ var calendar_Widget =  {
                 this._raiseEvent(".container.flickr", "start");
                 this._raiseEvent(".container.fislnews", "start");
                 this._raiseEvent(".container.twitter_fisl", "start");
+                this._raiseEvent(".container.twitter_fisl_oficial", "start");
 
                 var self = this;
                 timer.setTimeout( function(){self.kickMore()},1000);

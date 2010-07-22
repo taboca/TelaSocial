@@ -46,7 +46,7 @@ var twitter =  {
 		this.tweetQueue = new Array();
 
 		var first = this._coreDoc.createElement("div");
-		this.firstId = "firsttwitter";
+		this.firstId = "firsttwitter"+Math.random();
 		first.id = this.firstId;
 
 		this.tweetRepeated = {};
