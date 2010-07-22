@@ -69,7 +69,7 @@ var gfx =  {
 
         .transp { background-color:transparent; }
 
-	#area_panel3 { 
+	#area_panel4 { 
 
 		padding-right:1em; 
 	}

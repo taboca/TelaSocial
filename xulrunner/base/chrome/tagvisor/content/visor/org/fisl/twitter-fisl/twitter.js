@@ -23,7 +23,7 @@ var twitter =  {
 			color:black;                        
 			display:inline-block;
                         background-color:#ff8;
-                        font-size:22px;
+                        font-size:20px;
 			overflow:hidden;
                         font-weight:bold;                        
                         margin:15px;
