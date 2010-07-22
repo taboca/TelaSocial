@@ -46,7 +46,7 @@ var typing =  {
 		this.elementTable.setAttribute("cellpadding","0");
 		this.elementTable.setAttribute("cellmargin","0");
 		this.elementTable.style.border="0px";
-		this.elementTable.style.width="1024x";
+		this.elementTable.style.width="1024px";
 		this.typingContainerId = "typingcontainer"+Math.random();
 		this.typingContainerIcon = "iconcontainer"+Math.random();
 		this.elementTable.innerHTML="<tr><td id='"+this.typingContainerIcon+"'></td><td class='typingPanel' id='"+this.typingContainerId+"'></td></tr></table>";
