@@ -20,7 +20,7 @@ var fade_Widget =  {
 		
 	start:function () { 
 		try { 
-		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=fisl&lang=en-us&format=rss_200');
+		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?tags=fisl11&lang=en-us&format=rss_200');
 		this.feed.setNumEntries(20);
 		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
 		this.element = this._coreDoc.createElement('div');
