@@ -22,7 +22,7 @@ var twitter =  {
 		.postitpanel {                        
 			color:black;                        
 			display:inline-block;
-                        background-color:#ffd;
+                        background-color:#ff8;
                         font-size:14px;
 			overflow:hidden;
                         font-weight:bold;                        
