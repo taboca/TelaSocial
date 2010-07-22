@@ -99,6 +99,10 @@ var gfx =  {
 		overflow:hidden;
 	} 
 
+	#area_panel3 { 
+		margin-left:0;
+	} 
+
 	#area_topright { 
 		padding-top:130px;
 		height:300px;
@@ -121,7 +125,7 @@ var gfx =  {
         moveleft: true,
 	
         kick: function () {
-		this.movepos+=1;
+		this.movepos+=5;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		if(this.movepos > 768 && this.movepos < 1024 ) { 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";

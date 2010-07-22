@@ -8,6 +8,7 @@ var twitter =  {
 
 	crop    : "50",
 	title   : "Twitter 10",
+	feedURL : "http://twitter.com/statuses/user_timeline/14386212.rss",
 	feedURL : "http://search.twitter.com/search.rss?q=%23fisl11",
 	feed    : null, 
 
