@@ -34,11 +34,11 @@ var  video  = {
 	cc:0,
 	kick : function () { 
 
-		this.element.innerHTML="<video src='"+this.images[cc]+"' width='950' autoplay='true' style='padding-left:0px' />";
-		cc++;
+		this.element.innerHTML="<video src='"+this.images[this.cc]+"' width='950' autoplay='true' style='padding-left:0px' />";
+		this.cc++;
 
 		var thiss = this; 
-		t.setTimeout( function () { thiss.kick() } , this.timing[cc]); 
+		t.setTimeout( function () { thiss.kick() } , this.timing[this.cc]); 
 
 	},
 
