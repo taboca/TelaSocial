@@ -109,15 +109,7 @@ var typing =  {
 			sum+=words[i]+" ";
 			if(i==0) { 
 				this._coreDoc.getElementById("qrcode").innerHTML= '<img width="120" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
-				this._coreDoc.getElementById("typingexpanded").innerHTML= "<span class='padding:1em;font-size:20px'>"+ elCurr.description + "</span>";
-				var jq = this._service_jquery;
-
-				jq("#typingexpanded").find('img').each(function(){
-                       			 var img = jq(this).attr("src");
-					 var imgfull = "http://softwarelivre.org/" + img;
-					 jq(this).attr("src",imgfull);
-
-				});
+				this._coreDoc.getElementById("typingexpanded").innerHTML= elCurr.description;
 			} 
 		} 
 		this._coreDoc.getElementById("firsttyping").innerHTML=sum;
