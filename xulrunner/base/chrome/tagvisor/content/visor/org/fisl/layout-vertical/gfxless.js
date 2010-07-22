@@ -41,6 +41,7 @@ var gfx =  {
 	} 
 
 	#area_topright { 
+		padding-top:70px;
 	} 
 
         .cor_tab1 { background-color:rgb(255,255,255); }
