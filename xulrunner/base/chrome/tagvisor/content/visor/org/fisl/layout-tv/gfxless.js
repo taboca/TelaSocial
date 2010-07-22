@@ -12,7 +12,6 @@ var gfx =  {
 
 
 	#area_panel3 { 
-		background-color:white;
 		height:200px;
 	} 
 	html {
