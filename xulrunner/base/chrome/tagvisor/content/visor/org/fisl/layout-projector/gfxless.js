@@ -125,7 +125,7 @@ var gfx =  {
         moveleft: true,
 	
         kick: function () {
-		this.movepos+=5;
+		this.movepos+=2;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		if(this.movepos > 768 && this.movepos < 1024 ) { 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";
