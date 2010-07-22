@@ -8,7 +8,7 @@ var twitter =  {
 
 	crop    : "50",
 	title   : "Twitter 10",
-	feedURL : "http://search.twitter.com/search.rss?q=%23fisl11",
+	feedURL : "http://twitter.com/statuses/user_timeline/14386212.rss",
 	feed    : null, 
 
 	style : <><![CDATA[
@@ -116,7 +116,7 @@ var twitter =  {
 
 			//if (result.feed.entries[i]) {
 				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor2">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-				this.tweetQueue.push( '<img align="left" width="48" src="'+img+'" style="margin-right:6px;" /><span class="tweetauthor2">(' + author.replace(/ \(.*$/,'') + ')</span> ' + title);
+				this.tweetQueue.push( '<img align="left" src="'+img+'" style="margin-right:6px;" /><span class="tweetauthor2">(' + author.replace(/ \(.*$/,'') + ')</span> ' + title);
 			//}
 		//}
 		}

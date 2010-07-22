@@ -35,7 +35,7 @@ var gfx =  {
 
 	.tab {
                 font-size:20px;
-		width:330px;
+		width:250px;
 		text-align:center;
                 font-weight:bold;
         }
@@ -123,32 +123,49 @@ var gfx =  {
         kick: function () {
 		this.movepos+=1;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
-		if(this.movepos > 682 && this.movepos < 1024 ) { 
+		if(this.movepos > 768 && this.movepos < 1024 ) { 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
-                        this._coreDoc.getElementById("tab3").className="cor_active";
+                        this._coreDoc.getElementById("tab3").className="cor_tab3";
+                        this._coreDoc.getElementById("tab4").className="cor_active";
 			//this._coreDoc.body.style.backgroundColor="rgb(14,148,171)";
-                        this._coreDoc.getElementById("area_panel3").style.display="block";
+                        this._coreDoc.getElementById("area_panel4").style.display="block";
+                        this._coreDoc.getElementById("area_panel3").style.display="none";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
 		} 
-		if(this.movepos > 341 && this.movepos < 682) { 
+		if(this.movepos > 512 && this.movepos < 768) { 
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
+                        this._coreDoc.getElementById("tab3").className="cor_active";
+                        this._coreDoc.getElementById("tab4").className="cor_tab4";
+			//this._coreDoc.body.style.backgroundColor="rgb(100,197,210)";
+                        this._coreDoc.getElementById("area_panel1").style.display="none";
+                        this._coreDoc.getElementById("area_panel2").style.display="none";
+                        this._coreDoc.getElementById("area_panel3").style.display="block";
+                        this._coreDoc.getElementById("area_panel4").style.display="none";
+		} 
+		if(this.movepos > 256  && this.movepos < 512) { 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="cor_active";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
-			//this._coreDoc.body.style.backgroundColor="rgb(100,197,210)";
-                        this._coreDoc.getElementById("area_panel2").style.display="block";
+                        this._coreDoc.getElementById("tab4").className="cor_tab4";
+			//this._coreDoc.body.style.backgroundColor="rgb(253,181,37)";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
+                        this._coreDoc.getElementById("area_panel2").style.display="block";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
+                        this._coreDoc.getElementById("area_panel4").style.display="none";
 		} 
-		if(this.movepos > 0  && this.movepos < 341) { 
+		if(this.movepos > 0  && this.movepos < 256) { 
                         this._coreDoc.getElementById("tab1").className="cor_active";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
+                        this._coreDoc.getElementById("tab4").className="cor_tab4";
 			//this._coreDoc.body.style.backgroundColor="rgb(253,181,37)";
                         this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
+                        this._coreDoc.getElementById("area_panel4").style.display="none";
 		} 
 		if(this.movepos > 1024 ) { 
 			this.movepos = 0;
@@ -189,24 +206,31 @@ var gfx =  {
 Twitter #fisl11
 </div>
 </td>
-<td class='cor_tab2'  valign="bottom"  id='tab2'>
+<td class='cor_tab2' valign="bottom" id='tab2'>
+<div class='tab'>
+Twitter @FISL
+</div>
+</td>
+<td class='cor_tab3'  valign="bottom"  id='tab3'>
 <div class='tab'>
 Flickr tag: fisl11
 </div>
 </td>
-<td class='cor_tab3'  valign="bottom"  id='tab3'>
+<td class='cor_tab4'  valign="bottom"  id='tab4'>
 <div class='tab'>
 Notícias
 </div>
 </td>
 </tr>
 <tr>
-<td colspan="3" >
+<td colspan="4" >
 <div class="panel" id='area_panel1'>
 </div>
 <div class="panel" id='area_panel2'>
 </div>
 <div class="panel" id='area_panel3'>
+</div>
+<div class="panel" id='area_panel4'>
 </div>
 </td>
 </tr>
