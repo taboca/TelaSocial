@@ -34,11 +34,11 @@ var  video  = {
 	cc:0,
 	kick : function () { 
 
+		if(this.cc>3) { this.cc=0 } 
+
 		this.element.innerHTML="<video src='"+this.images[this.cc]+"' width='950' autoplay='true' style='padding-left:0px' />";
 		this.cc++;
 
-
-		if(this.cc>3) { this.cc=0} 
 		var thiss = this; 
 		t.setTimeout( function () { thiss.kick() } , this.timing[this.cc]); 
 
