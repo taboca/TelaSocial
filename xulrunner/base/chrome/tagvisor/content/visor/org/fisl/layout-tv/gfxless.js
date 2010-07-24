@@ -156,9 +156,9 @@ var gfx =  {
 </td>
 <td valign="top" align='center'>
 <div id='area_topright' >
-<img src="http://tv.softwarelivre.org/themes/tvsl/logo.png" height="180"/>
-<img src="org/fisl/brand/fisl-banner-fisl.png" height="180"/>
 <img src="org/fisl/brand/fisl-banner-logo.png" height="180"/>
+<img src="org/fisl/brand/fisl-banner-fisl.png" height="180"/>
+<img src="org/fisl/brand/marca_horizontal.png" height="180"/>
 </div>
 </td>
 </tr>

@@ -27,17 +27,19 @@ var  video  = {
 		t.setTimeout( function () { thiss.kick() } , 2000); 
 	} ,
 
-	images: ['org/fisl/videoexample/i1.ogg','org/fisl/videoexample/i2.ogg','org/fisl/videoexample/i3.ogg','org/fisl/videoexample/i4.ogg','org/fisl/videoexample/i5.ogg','org/fisl/videoexample/i6.ogg'], 
+	images: ['i1.ogg','i2.ogg','i3.ogg','i4.ogg','org/fisl/videoexample/i5.ogg','org/fisl/videoexample/i6.ogg'], 
 	titles: ['Abertura Oficial', 'Enquete ','Fabricio Solagna','josé fortunati',"manuela d'avila","Murilo"], 
 	timing: [ 3*60*1000+11000, 2*60*1000+32000, 2*60*1000+44000, 1*60*1000+27000  ], 
 
-	cc:0,
+	cc:-1,
 	kick : function () { 
 
-		if(this.cc>3) { this.cc=0 } 
-
-		this.element.innerHTML="<video src='"+this.images[this.cc]+"' width='950' autoplay='true' style='padding-left:0px' />";
 		this.cc++;
+		if(this.cc>=15) { this.cc=0 } 
+
+		this._dump(this.images[this.cc]);
+
+		this.element.innerHTML="<video src='org/fisl/videoexample/i"+this.cc+".ogg' width='950' autoplay='true' style='padding-left:0px' />";
 
 		var thiss = this; 
 		t.setTimeout( function () { thiss.kick() } , this.timing[this.cc]); 
