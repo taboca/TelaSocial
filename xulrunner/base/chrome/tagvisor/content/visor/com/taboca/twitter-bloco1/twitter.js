@@ -43,8 +43,8 @@ var twitter =  {
                         font-weight:bold;
                         margin:15px;
                         padding:15px;
-                        width:300px;
-                        height:220px;
+                        width:310px;
+                        height:240px;
                         -moz-box-shadow: black 10px 10px 10px;
                 }
 	]]></>, 
@@ -136,7 +136,7 @@ var twitter =  {
 
 			//if (result.feed.entries[i]) {
 				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor2">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-				this.tweetQueue.push( { content: '<span class="tweetauthor2">BibliotecaICMC</span> ' + title, command: cmd } );
+				this.tweetQueue.push( { content: '<span class="tweetauthor2">Twitter @BibliotecaICMC</span> ' + title, command: cmd } );
 			//}
 		//}
 		}
