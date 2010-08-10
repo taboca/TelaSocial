@@ -162,7 +162,7 @@ var gfx =  {
 <tr style="height:50px">
 <td class='cor_orange' id='tab1'>
 <div class='tab'>
-Telão ICMC - v 0.3.5
+Telão ICMC - v 0.3.6
 </div>
 </td>
 <td class='cor_lightblue' id='tab2'>

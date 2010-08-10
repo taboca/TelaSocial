@@ -46,7 +46,7 @@ var twitter =  {
 			var bgTitle = title.split("imagens_icmc: ")[1];	
 
 			self._dump(bgTitle);
-			self._coreDoc.body.setAttribute("style","background: url("+bgTitle+") no-repeat 50% 50%");
+			self._coreDoc.body.setAttribute("style","background: url("+bgTitle+") no-repeat 0 0 ");
 
 		});
 		} catch (i) { self._dump(i)  }
