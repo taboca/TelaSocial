@@ -78,8 +78,8 @@ var grade =  {
 
   	style: <><![CDATA[
 
-		.gradeTable td { 
 
+		.gradeTable td { 
 			border:0px;
 			border-bottom:1px solid #ddd; 
 		} 
@@ -87,7 +87,6 @@ var grade =  {
 		.gradeContainer { 
 
 			color:black;font-size:20px;font-weight:bold;text-shadow: #555 2px 2px 5px;
-
 	 	} 
 
 		.gradeContainer h3 { 
