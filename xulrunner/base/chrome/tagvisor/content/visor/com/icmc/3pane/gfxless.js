@@ -212,14 +212,14 @@ Rede Social ICMC
 	init : function () {
 	try { 
 	 	var style = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
-	 	var styleBackground = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
+	 	//var styleBackground = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
 		this._coreDoc.getElementById("headtarget").appendChild(style);
-		this._coreDoc.getElementById("headtarget").appendChild(styleBackground);
+		//this._coreDoc.getElementById("headtarget").appendChild(styleBackground);
 		style.innerHTML=this.style; 
 
 		// we need to make this more flexible and events based more fluid 
-		var bgValue   = this._service_jquery(".3pane .background").text();
-		styleBackground.innerHTML="body { background-image: url('"+bgValue+"') }";
+		//var bgValue   = this._service_jquery(".3pane .background").text();
+		//styleBackground.innerHTML="body { background-image: url('"+bgValue+"') }";
  
 
 		console.log(this._coreDoc);
