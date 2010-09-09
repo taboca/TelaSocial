@@ -32,9 +32,9 @@ var typing =  {
 		this.elementTable.setAttribute("border","0");
 		this.elementTable.setAttribute("cellpadding","0");
 		this.elementTable.setAttribute("cellmargin","0");
-		this.elementTable.style.border="0px";
-		this.elementTable.style.width="1024x";
-		this.elementTable.innerHTML="<tr><td id='qrcode'></td><td class='typingPanel' id='typingcontainer'></td></tr></table>";
+		this.elementTable.style.border="1px";
+		this.elementTable.style.width="1070x";
+		this.elementTable.innerHTML="<tr><td id='icon'></td><td class='typingPanel' style='width:900px' id='typingcontainer'></td></tr></table>";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.elementTable);
 /*
@@ -102,12 +102,11 @@ var typing =  {
 		var elCurr = this.cycleArray[this.cycleIndex];
 		var words = elCurr.content.split(" ");
 		var sum = "";
-		//sum += '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
 
 		for(var i=0;i<this.readIndex;i++) { 
 			sum+=words[i]+" ";
 			if(i==0) { 
-				this._coreDoc.getElementById("qrcode").innerHTML= '<img width="120" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
+				this._coreDoc.getElementById("icon").innerHTML= '<img width="120" src="http://www.ifsc.usp.br/imagens/favicon.ico" style="margin-right:15px; margin-bottom:10px; " align="left" />';
 			} 
 		} 
 		this._coreDoc.getElementById("firsttyping").innerHTML=sum;
