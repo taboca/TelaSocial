@@ -77,7 +77,7 @@ var gfx =  {
                 height:230px;
                 background-color:orange;
     		font-family:Kaffeesatz,Verdana, Arial, Helvetica, sans-serif;
-		width:1080px;
+		width:1060px;
 		color:black;
 		font-weight:bold;
         }
@@ -140,17 +140,16 @@ var gfx =  {
 <div id="frame">
 <div id='pointer'>
 </div>
-<table cellpadding="0" cellspacing="0" height="1920">
+<table border="1" cellpadding="0" width="1080" cellspacing="0" height="1920">
 <tr>
+<td colspan="3"  align="left" valign="top" style="height:350px;padding:0;background:white url(http://www.ifsc.usp.br/imagens/bg01e.gif) 0 20px repeat-x" >
 
-<td colspan="3"  align="left" valign="top" style="height:230px;padding:0;background:white url(http://www.ifsc.usp.br/imagens/bg01e.gif) 0 20px repeat-x" >
-
-<table border='0' width='1080' height="190">
+<table border='0' width='1080' height="350">
 <tr>
 <td id='area_topleft' width='230' valign='bottom' align="center" style='background: url(http://www.ifsc.usp.br/imagens/logo_ifsc_home.gif) 0 0 no-repeat' >
 
 </td>
-<td id='area_topmid' colspan="2">
+<td id='area_topmid' >
 </td>
 </tr>
 </table>
