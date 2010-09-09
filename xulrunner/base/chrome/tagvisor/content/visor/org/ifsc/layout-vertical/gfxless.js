@@ -146,7 +146,7 @@ var gfx =  {
 
 <table border='0' width='1080' height="350">
 <tr>
-<td id='area_topleft' width='230' valign='bottom' align="center" style='background: url(http://www.ifsc.usp.br/imagens/logo_ifsc_home.gif) 0 0 no-repeat' >
+<td id='area_topleft' width='230' valign='middle' align="center" style='background: url(http://www.ifsc.usp.br/imagens/logo_ifsc_home.gif) 0 0 no-repeat' >
 
 </td>
 <td id='area_topmid' >
