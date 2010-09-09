@@ -17,6 +17,14 @@ and other provisions required by the GPL or the LGPL. If you do not delete
 the provisions above, a recipient may use your version of this file under
 the terms of any one of the MPL, the GPL or the LGPL.
 
+List of Contributors: 
+
+Add your name to this list to keep track and provide evidence of your interest and consent that you are a contributor to the project and accept the open source ( above licensing ). If you are a new contributor and checking code in other locations, make sure you update the file with a local license information and your name as a contributor. 
+
+  Marcio Galli - mgalli@taboca.com
+  ...  
+  ... 
+   
 
 Prior Project Background 
 ===
