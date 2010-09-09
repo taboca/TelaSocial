@@ -1,0 +1,1 @@
+Images, graphics, and names, such as IFSC are tradarmarks of IFSC - USP University of Sao Paulo. TelaSocial, TagVisor, Crowdvisor, Taboca are trademarks of Marcio dos Santos Galli informatica / Taboca labs. 
