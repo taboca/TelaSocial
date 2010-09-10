@@ -1,4 +1,0 @@
-crontab -e
-
-* *     * * *     /root/memory/telasocial-mem-monitor/telasocial-runner
-
