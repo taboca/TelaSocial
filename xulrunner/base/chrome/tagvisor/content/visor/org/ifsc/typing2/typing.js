@@ -106,7 +106,7 @@ var typing =  {
 		for(var i=0;i<this.readIndex;i++) { 
 			sum+=words[i]+" ";
 			if(i==0) { 
-				this._coreDoc.getElementById("icon").innerHTML= '<img width="120" src="http://www.ifsc.usp.br/imagens/favicon.ico" style="margin-right:15px; margin-bottom:10px; " align="left" />';
+				this._coreDoc.getElementById("icon").innerHTML= '<img src="http://www.ifsc.usp.br/imagens/tela_social/logo_ifsc.jpg" style="margin-right:15px; margin-bottom:10px; " align="left" />';
 			} 
 		} 
 		this._coreDoc.getElementById("firsttyping").innerHTML=sum;
@@ -142,10 +142,8 @@ var typing =  {
 		var i;
 		for (i = 0; i < result.feed.entries.length; i++) {
 			if (result.feed.entries[i]) {
-				//this.tweetQueue.push( '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+result.feed.entries[i].link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />'+ result.feed.entries[i].title + ' <span class="tweetauthor">(' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
 				var a= this._coreDoc.createElement("div");
                                 a.innerHTML=result.feed.entries[i].title;
-				// a.textContent
                                 this.tweetQueue.push( { title: result.feed.entries[i].title , link: result.feed.entries[i].link });
 			}
 		}

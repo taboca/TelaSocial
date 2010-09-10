@@ -15,6 +15,11 @@ var twitter =  {
 	style : <><![CDATA[
 		
 
+		.tweetauthor2 { 
+			color:gray; 
+			font-size:15px;
+		} 
+
 		.postitpanel {                        
 			color:black;                        
 			display:inline-block;
@@ -84,6 +89,7 @@ var twitter =  {
 		if (this.tweetQueue.length == 0) return false;
 		var obj = this.tweetQueue.pop();
 		var t = obj.content; 
+		var c = obj.command; 
 		
 		if (t in this.tweetRepeated) {
 			return;
@@ -91,6 +97,9 @@ var twitter =  {
 		this.tweetRepeated[t] = true;
 		var k = this._coreDoc.createElement('span');
 		k.className = 'postitpanel';
+		if(c=="command") { 
+			k.className = 'command';
+		} 
 		k.innerHTML = t;
 		this.element.insertBefore(k, this.element.firstChild);
 		return true;
@@ -114,11 +123,31 @@ var twitter =  {
 
                 for (var i = 0; i < items.length; i++) {
 
-			var titleElement = items[i].getElementsByTagName("title")[0];
-			var title = titleElement.firstChild.nodeValue;
-			this.tweetQueue.push( { content: title } );
+		//for (i = 0; i < result.feed.entries.length; i++) {
+      var titleElement = items[i].getElementsByTagName("title")[0];
+      var title = titleElement.firstChild.nodeValue;
+
+      var authorElement = items[i].getElementsByTagName("author")[0];
+      var author = authorElement.firstChild.nodeValue;
+
+      var imgElement = items[i].getElementsByTagNameNS("http://search.yahoo.com/mrss/","content")[0];
+      var img = imgElement.getAttribute("url");
+
+	var cmd ='';
+	if(title.indexOf("reason:")>-1) { 
+		cmd='command';
+	} 
+
+			//if (result.feed.entries[i]) {
+				//this.tweetQueue.push(  result.feed.entries[i].title + ' <span class="tweetauthor2">(by @ ' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
+				this.tweetQueue.push( { content: '<img align="top" src="'+img+'" /><span class="tweetauthor2">(' + author.replace(/ \(.*$/,'') + ')</span> ' + title, command: cmd } );
+			//}
+		//}
 		}
 
+		//this.lastid = result.feed.entries[i-1].link.match(/\d+$/);
+		//this.feed = new this._service_google.feeds.Feed(this.feedURL + '&since_id=' + this.lastid);
+		//this.feed.setNumEntries(10);
 	}
 
 }

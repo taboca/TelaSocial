@@ -51,10 +51,10 @@ var gfx =  {
         .transp { background-color:transparent; }
 
         #pointer {
-                top:220px;
+                top:533px;
                 width:60px;
                 -moz-border-radius:1px;
-                height:10px;
+                height:20px;
                 background-color:orange;
                 z-index:1111;
                 position:absolute;
@@ -68,7 +68,7 @@ var gfx =  {
 
 	.panel { 
 		display:none;
-		height:1350px;
+		height:1000px;
 		overflow:hidden;
 	} 
 
@@ -140,16 +140,16 @@ var gfx =  {
 <div id="frame">
 <div id='pointer'>
 </div>
-<table border="1" cellpadding="0" width="1080" cellspacing="0" height="1920">
+<table border="0" cellpadding="0" width="1080" cellspacing="0" height="1920">
 <tr>
-<td colspan="3"  align="left" valign="top" style="height:350px;padding:0;background:white url(http://www.ifsc.usp.br/imagens/bg01e.gif) 0 20px repeat-x" >
+<td colspan="3"  align="left" valign="top" style="height:550px;padding:0;background:white url(http://www.ifsc.usp.br/imagens/tela_social/barra_sup.jpg) 0px 0px no-repeat" >
 
 <table border='0' width='1080' height="350">
 <tr>
-<td id='area_topleft' width='230' valign='middle' align="center" style='background: url(http://www.ifsc.usp.br/imagens/logo_ifsc_home.gif) 0 0 no-repeat' >
+<td id='area_topleft' width='230' valign='middle' align="center" >
 
 </td>
-<td id='area_topmid' >
+<td id='area_topmid' align="right" valign="top" >
 </td>
 </tr>
 </table>
@@ -165,7 +165,7 @@ Acontece no IFSC
 </td>
 <td class='cor_tab2' id='tab2'>
 <div class='tab'>
-Flickr
+Fotos do IFSC
 </div>
 </td>
 <td class='cor_tab3' id='tab3'>
