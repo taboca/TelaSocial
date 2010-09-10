@@ -125,19 +125,19 @@ var fade_Widget =  {
 		}
 
 		var doc = result.xmlDocument;
-		//var links = doc.getElementsByTagName("link");
-		var links = doc.getElementsByTagNameNS("http://search.yahoo.com/mrss/","content");
+		var links = doc.getElementsByTagName("link");
+		//var links = doc.getElementsByTagNameNS("http://search.yahoo.com/mrss/","content");
 		var i;
 		for (i = 0; i < links.length; i++) {
-		//	if (links[i].getAttribute("rel") == "enclosure") { 
+			if (links[i].getAttribute("rel") == "enclosure") { 
 				var currentLink = links[i];
-				var src = currentLink.getAttribute("url");
+				var src = currentLink.getAttribute("href");
 				if(src.indexOf("jpg")>-1) {
                                         this._dump(src);
                                         this.picQueue.push(src);
                                 }
 
-		//	} 
+			} 
 		}
 		this.popPic();
 	}
