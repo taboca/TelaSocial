@@ -17,6 +17,20 @@ var fade_Widget =  {
 	fadeCycle    : 0,
 	totalElements : "",
 
+	style : <><![CDATA[
+		.picBox { 
+			width:320px; 
+			height:240px;
+			-moz-box-shadow: 10px 10px 5px rgba(0,0,0,.5);
+			overflow:hidden; 
+			display:inline-block; 
+			background-color:#555;			
+			margin-right:10px;
+			margin-bottom:10px;
+		} 
+  	]]></>,
+
+
 		
 	start:function () { 
 		try { 
@@ -24,6 +38,11 @@ var fade_Widget =  {
 		this.feed.setNumEntries(20);
 		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
 		this.element = this._coreDoc.createElement('div');
+
+	 	var style = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
+		this._coreDoc.getElementById("headtarget").appendChild(style);
+		style.innerHTML=this.style; 
+
 
 		this.element.style.marginLeft="10px";
 
@@ -46,13 +65,7 @@ var fade_Widget =  {
 			this.feed.load( function (ref) { these.__feedUpdated(ref) } );
 		} else { 
 		var k = this._coreDoc.createElement('span');
-
-		k.style.width="320px";
-		k.style.height="240px";
-		k.style.border="10px solid black";
-		k.style.overflow="hidden";
-		k.style.display="inline-block";
-		k.style.backgroundColor="#555";
+		k.className='picBox';
 
 		var t = this.picQueue.pop();
 		t = "<img id='fadeimage"+this.imageNumber+"' src='"+t+"' >";
@@ -126,7 +139,6 @@ var fade_Widget =  {
 
 		var doc = result.xmlDocument;
 		var links = doc.getElementsByTagName("link");
-		//var links = doc.getElementsByTagNameNS("http://search.yahoo.com/mrss/","content");
 		var i;
 		for (i = 0; i < links.length; i++) {
 			if (links[i].getAttribute("rel") == "enclosure") { 
