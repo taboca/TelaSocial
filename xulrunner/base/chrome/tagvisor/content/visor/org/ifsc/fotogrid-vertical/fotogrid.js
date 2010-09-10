@@ -49,7 +49,7 @@ var fade_Widget =  {
 
 		k.style.width="320px";
 		k.style.height="240px";
-		k.style.border="5px solid black";
+		k.style.border="10px solid black";
 		k.style.overflow="hidden";
 		k.style.display="inline-block";
 		k.style.backgroundColor="#555";
