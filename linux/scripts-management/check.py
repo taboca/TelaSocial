@@ -11,15 +11,16 @@
 # for the specific language governing rights and limitations under the
 # License.
 #
-# The Original Code is TelaSocial Monitor Script 
+# The Original Code is TelaSocial Monitor Script
 #
 # The Initial Developer of the Original Code is
-# Marcio S. Galli - Taboca 
+# Armando Biagioni Neto
 # Portions created by the Initial Developer are Copyright (C) 2010
 # the Initial Developer. All Rights Reserved.
 #
 # Contributor(s):
 #  Marcio Galli - mgalli@taboca.com
+#  Armando Neto - armando@armandoneto.com
 #
 # Alternatively, the contents of this file may be used under the terms of
 # either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -34,96 +35,85 @@
 # the terms of any one of the MPL, the GPL or the LGPL.
 #
 # ***** END LICENSE BLOCK *****
-
-# Original Copyright (C) 2010 Marcio S Galli 
-# This script monitors a PID usage of CPU using top command in interactive mode. 
-# This is to be used in a crontab 
-
+import logging
 import subprocess
-import xml.dom.minidom
-from xml.dom.minidom import parse, parseString, getDOMImplementation
+import os
+from time import sleep
 
-class CheckProcess():
+LOG_FILENAME = '/var/log/telasocial.log'
+#300MB = 300.000kB
+MEMORY_LIMIT = 300000 
 
-    def __init__(self):
-        print "1" 
- 
-    def usage(self, lockPIDStr):
-
-        self.process = subprocess.Popen("top -o cpu -l 6 -n 5 -ca -p '$aaaaaa ===$cccc%=== $bbbbbbbbbbbbbbbbbbbbbbb' ",
-                                        shell=True,
-                                        stdout=subprocess.PIPE,
-                                        )
-
-        self.stdout_list = self.process.communicate()[0].split('\n')
-        
-        ii = 0 
-        av = 0
-
-	for item in self.stdout_list:
-		print item
-		if item.find(lockPIDStr) > -1:
-                   ii+=1
-                   print 'Item= ' + item
-                   items = item.split("===")
-                   for token in items: 
-                       if token.find("%") > -1: 
-                          mmtoken = token.split("%")
-			  print "item(" + mmtoken[0] +")"
-                          av += float(mmtoken[0])
-        if ii>0: 
-          return float(av/ii) 
-        else: 
-          return -1
-  
- 
-def main():
-   
-   check_process = CheckProcess()
-
-   telapid = lockparse() 
- 
-   if int(telapid) < 0:
-      print "No such TelaSocial process..."
-      subprocess.Popen("python daemon.py",
-                                        shell=True,
-                                        stdout=subprocess.PIPE,
-                                        )
-      
-
-   else: 
-      print "Current TelaSocial PID = " + str(telapid)
-
-      used_memory = check_process.usage( telapid )
-      
-      if used_memory > -1: 
-         print "Process exists, and Memory in use is " + str(used_memory)
-      else: 
-         try: 
-           os.kill(telapid,0)
-         except: 
-           print "Process does not exist, need to clean the /telasocial.log" 
-           
-
-def getText(nodelist):
-    rc = ""
-    for node in nodelist:
-        rc = rc + node.data
-    return rc
+# create logger
+LOG_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG,format=LOG_FORMAT)
 
 
-def lockparse():
 
-    try : 
-      domfile   = parse("/telasocial.log")
-      pidNode   = domfile.getElementsByTagName("telasocialpid")[0]
-      telapid   = getText(pidNode.childNodes)
-      return telapid
-    except : 
-      return -1
-    
 
+def start_telasocial():
+	try:
+		#dont need to fork python
+		subprocess.Popen('startx /usr/lib/taboca/telasocial/telasocial',shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+		#workaround to wait X to be started to grab its pid
+		sleep(5)
+		logging.info('TelaSocial started with PID: ' + grab_pid())
+	except:
+		logging.error('Impossible to start X and Telasocial: ' + subprocess.communicate()[0])
+
+def grab_pid():
+	try:
+		pidOfTelasocial = subprocess.Popen('pidof telasocial',shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+		telasocialPid = pidOfTelasocial.communicate()[0].rstrip('\n')
+		#print 'telasocial pid: ' + telasocialPid
+		return telasocialPid
+	except:
+		return ''
+
+#invocate only if there is a process running
+def memory_test(pid):
+	command = 'cat /proc/'+pid+'/status'
+	memoryOf = subprocess.Popen(command,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+	processStatus = memoryOf.communicate()[0].split('\n')
+
+	for item in processStatus:
+		if item.find('VmRSS:') > -1:
+			#returns only the value in kiloBytes
+			return item.lstrip('VmRSS:\t ').rstrip(' kB')
+
+	
+def check_running():
+	#grab the pid
+	telasocialPid = grab_pid()
+	logging.info('telasocial running with PID: ' + telasocialPid)
+
+	#there is a process running
+	if telasocialPid != '':
+		#so memory usage will be tested
+		memoryUsage = memory_test(telasocialPid)
+		
+		if int(memoryUsage) > MEMORY_LIMIT:
+			logging.warning('Overload. ' + memoryUsage + 'kB')
+			try: 
+				os.kill(int(telasocialPid),15)
+				logging.info('process killed. Trying to restart')
+				
+				#workaround to wait X to be killed before restart
+				sleep(5)
+				#Starting Telasocial
+				start_telasocial()
+				
+			except: 
+				logging.debug('Process does not exist')
+		else:
+			logging.info('memory usage is OK: ' + str(memoryUsage) + 'kB')
+		
+	else:
+		#nothing running
+		logging.info('No such TelaSocial process. Trying to start')
+		#Starting Telasocial
+		start_telasocial()
+		
+			
 if __name__ == '__main__':
-        main()
-
-
+	check_running()
