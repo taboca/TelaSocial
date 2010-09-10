@@ -21,11 +21,11 @@ var fade_Widget =  {
 		.picBox { 
 			width:320px; 
 			height:240px;
-			-moz-box-shadow: 10px 10px 5px rgba(0,0,0,.5);
+			-moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
 			overflow:hidden; 
 			display:inline-block; 
 			background-color:#555;			
-			margin-right:10px;
+			margin-right:20px;
 			margin-bottom:10px;
 		} 
   	]]></>,
