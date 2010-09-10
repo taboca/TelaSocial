@@ -1,5 +1,17 @@
+To put Ubuntu in text mode
+
 http://ubuntu-ky.ubuntuforums.org/showthread.php?t=1322949
 
-grub setup
+grub setup instructions
+
+$ sudo gedit /etc/default/grub
+
+2 - Change the line GRUB_CMDLINE_LINUX_DEFAULT="quiet splash" to GRUB_CMDLINE_LINUX_DEFAULT="quiet splash text"
+
+3 - Save and close the grub file
+
+$ sudo update-grub
+
+
 
 
