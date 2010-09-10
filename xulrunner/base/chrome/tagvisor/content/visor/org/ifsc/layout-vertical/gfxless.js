@@ -21,6 +21,11 @@ var gfx =  {
 		z-index:1000;
 	}
 
+	table.maintable { 
+		width:1080px;
+		height:1920px;
+	} 
+
 	.panel {
 		width:1060px;
 		margin-left:10px;
@@ -28,7 +33,6 @@ var gfx =  {
 
 	.tab {
                 font-size:20px;
-		width:350px;
 		padding:1em;
                 font-weight:bold;
         }
@@ -140,7 +144,7 @@ var gfx =  {
 <div id="frame">
 <div id='pointer'>
 </div>
-<table border="0" cellpadding="0" width="1080" cellspacing="0" height="1920">
+<table class='maintable' border="0" >
 <tr>
 <td colspan="3"  align="left" valign="top" style="height:550px;padding:0;background:white url(http://www.ifsc.usp.br/imagens/tela_social/barra_sup.jpg) 0px 0px no-repeat" >
 
