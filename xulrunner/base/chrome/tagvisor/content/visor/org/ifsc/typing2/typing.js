@@ -34,7 +34,7 @@ var typing =  {
 		this.elementTable.setAttribute("cellmargin","0");
 		this.elementTable.style.border="1px";
 		this.elementTable.style.width="1070x";
-		this.elementTable.innerHTML="<tr><td id='icon'></td><td class='typingPanel' style='width:900px' id='typingcontainer'></td></tr></table>";
+		this.elementTable.innerHTML="<tr><td valign='top' id='icon'></td><td class='typingPanel' style='width:900px' id='typingcontainer'></td></tr></table>";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.elementTable);
 /*

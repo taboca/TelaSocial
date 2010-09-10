@@ -44,18 +44,18 @@ var gfx =  {
 		padding-top:70px;
 	} 
 
-        .cor_tab1 { background-color:rgb(255,255,255); }
+        .cor_tab1 { background-color:rgb(253,181,37); }
         .cor_tab2 { background-color:rgb(100,197,210); }
         .cor_tab3 { background-color:rgb(14,148,171);  }
 
         .transp { background-color:transparent; }
 
         #pointer {
-                top:533px;
+                top:530px;
                 width:60px;
                 -moz-border-radius:1px;
                 height:20px;
-                background-color:orange;
+                background-color:black;
                 z-index:1111;
                 position:absolute;
                 left:0px;
@@ -74,8 +74,8 @@ var gfx =  {
 
 	#area_bottom {
 		padding:1em;
-                height:230px;
-                background-color:orange;
+                height:270px;
+                background-color:white;
     		font-family:Kaffeesatz,Verdana, Arial, Helvetica, sans-serif;
 		width:1060px;
 		color:black;
@@ -119,7 +119,7 @@ var gfx =  {
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			this._coreDoc.body.style.backgroundColor="rgb(253,181,37)";
-			this._coreDoc.body.style.backgroundColor="rgb(255,255,255)";
+			//this._coreDoc.body.style.backgroundColor="rgb(255,255,255)";
                         this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";

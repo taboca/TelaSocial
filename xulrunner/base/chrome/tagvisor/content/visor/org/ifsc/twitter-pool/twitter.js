@@ -23,7 +23,7 @@ var twitter =  {
 		}
 
 		.tweetauthor { 
-			color:gray; 
+			color:white; 
 		} 
 
 		.tweetpublic { 
@@ -31,8 +31,8 @@ var twitter =  {
 			font-size:30px;
 			font-weight:bold;
 			-moz-border-radius:12px;
-			background-color: rgba(0,0,0,.1);
-			-moz-box-shadow: rgba(0,0,0,.1) 0 0 20px; 
+			background-color: rgba(255,255,255,.4);
+			-moz-box-shadow: rgba(255,255,255,.4) 0 0 20px; 
 			padding:10px;
 			margin-top:10px;
 			margin-bottom:10px;
