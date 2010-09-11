@@ -42,7 +42,7 @@ timer = require("timer");
 var imageshow = {
 	name : __appName,
 	target : __targetName,
-	argetId : __targetId,
+	targetId : __targetId,
 	crop : "50",
 	title : "Twitterbg 10",
 	feedURL : "https://twitter.com/statuses/user_timeline/176536278.rss",
