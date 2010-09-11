@@ -39,10 +39,10 @@
 c = require("choreographer");
 timer = require("timer");
 
-var twitterbg = {
+var imageshow = {
 	name : __appName,
-     target : __targetName,
-     targetId : __targetId,
+	target : __targetName,
+	argetId : __targetId,
 	crop : "50",
 	title : "Twitterbg 10",
 	feedURL : "https://twitter.com/statuses/user_timeline/176536278.rss",
@@ -72,7 +72,7 @@ var twitterbg = {
 		
 
 		var self = this;
-		timer.setTimeout( function(){self.updateFeed()},1000*30*60);
+		timer.setTimeout( function(){self.updateFeed()},1000);
 	},
 
 	init : function () {
@@ -83,11 +83,11 @@ var twitterbg = {
 	} ,
 
 	updateFeed : function() {
-	var self =this;
-	this.feed.ajax( { type:"GET", url: this.feedURL, dataType: "xml", success: function (xml) { self.__feedUpdated(xml) } });
+		var self =this;
+		this.feed.ajax( { type:"GET", url: this.feedURL, dataType: "xml", success: function (xml) { self.__feedUpdated(xml) } });
 
 
-	timer.setTimeout( function(){self.updateFeed()},1000*30*60);
+		timer.setTimeout( function(){self.updateFeed()},1000*30*60);
 	},
 
 	__feedUpdated : function(xml) {
@@ -112,4 +112,4 @@ var twitterbg = {
 
 	}
 }
-c.register(twitterbg);
+c.register(imageshow);
