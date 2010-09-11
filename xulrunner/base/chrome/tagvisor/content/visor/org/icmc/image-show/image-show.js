@@ -53,11 +53,8 @@ var imageshow = {
 	style : <><![CDATA[
 	
 		.wallpaper{
-			width:800px;
-			height:600px;
-			border-right:10px solid white;
-			border-left:10px solid white;
-			z-index: 10;
+			width:100%;
+			height:100%;
 		}
 
 	]]></>,
@@ -76,9 +73,9 @@ var imageshow = {
 	},
 
 	init : function () {
-		//var style = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
-		//this._coreDoc.getElementById("headtarget").appendChild(style);
-		//style.innerHTML=this.style; 
+		var style = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
+		this._coreDoc.getElementById("headtarget").appendChild(style);
+		style.innerHTML=this.style; 
 		this.feed = this._service_jquery;
 	} ,
 
