@@ -17,8 +17,6 @@ var gfx =  {
 		background-color:rgb(253,181,37); margin:0; padding:0;
 	}
 
-	#bgcredits { font-size:20px; font-weight:bold; color:white; text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black; } 
-
 	table {
 		width:100%;
 		margin:0;
@@ -30,17 +28,11 @@ var gfx =  {
 		border:10px solid rgba(0,0,0,.7);
 	}
 
-	.panel {
-	}
 
 	.tab {
                 font-size:20px;
-		width:620px;
                 font-weight:bold;
         }
-
-	#area_panel1 { 
-	}
 
 	#tab1, #tab2, #tab3 { 
 		z-index:1000;
@@ -51,13 +43,12 @@ var gfx =  {
 		background-color:rgb(70,70,70);	
 	} 
 
-        .cor_orange { background-color:rgb(253,181,37);; }
-        .cor_orange { background-color:transparent;; }
-        .cor_lightblue  { background-color:rgb(100,197,210); }
+        .cor_tab1 { background-color:rgb(253,181,37);; }
+        .cor_tab1 { background-color:transparent;; }
+        .cor_tab2  { background-color:rgb(100,197,210); }
         .cor_tab3   {
 		background-color:rgb(14,148,171);	
 	}
-
 
         .transp { background-color:transparent; }
 
@@ -77,9 +68,15 @@ var gfx =  {
 		padding:0;
 	}
 
+	#td_panel { 
+		padding:0;
+	} 
+
 	.panel { 
 		display:none;
-		height:700px;
+		margin:0;
+		width:100%;
+		height:750px;
 		overflow:hidden;
 	} 
 
@@ -115,8 +112,8 @@ var gfx =  {
 		this.movepos+=5;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		if(this.movepos > 1260 && this.movepos < 1950 ) { 
-                        this._coreDoc.getElementById("tab1").className="cor_orange";
-                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(14,148,171)";
                         this._coreDoc.getElementById("area_panel3").style.display="block";
@@ -124,8 +121,8 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel1").style.display="none";
 		} 
 		if(this.movepos > 630 && this.movepos < 1260) { 
-                        this._coreDoc.getElementById("tab1").className="cor_orange";
-                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(100,197,210)";
                         this._coreDoc.getElementById("area_panel2").style.display="block";
@@ -134,7 +131,7 @@ var gfx =  {
 		} 
 		if(this.movepos > 0  && this.movepos < 630) { 
                         this._coreDoc.getElementById("tab1").className="transp";
-                        this._coreDoc.getElementById("tab2").className="cor_lightblue";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(253,181,37)";
 			this._coreDoc.getElementById("td_panel").style.backgroundColor="transparent";
@@ -160,26 +157,25 @@ var gfx =  {
 </div>
 <table class='main' cellpadding="10" cellspacing="0" height="100%">
 <tr style="height:50px">
-<td class='cor_orange' id='tab1'>
+<td class='cor_tab1' id='tab1' > 
 <div class='tab'>
-Telão ICMC - v 0.3.6
+Destaque
 </div>
 </td>
-<td class='cor_lightblue' id='tab2'>
+<td class='cor_tab2' id='tab2' >
 <div class='tab'>
 Palestras ICMC
 </div>
 </td>
-<td class='cor_tab3' id='tab3'>
+<td class='cor_tab3' id='tab3' >
 <div class='tab'>
 Rede Social ICMC
 </div>
 </td>
 </tr>
 <tr>
-<td colspan="3" id='td_panel'>
+<td colspan="3" id='td_panel' valign='top'>
 <div class="panel" id='area_panel1'>
-<p id='bgcredits'></p>
 </div>
 <div class="panel" id='area_panel2'>
 </div>
@@ -202,10 +198,6 @@ Rede Social ICMC
 
 		this._coreDoc.getElementById(this._getId()).appendChild(importedElement);
 	
-		// we need to make this more flexible and events based more fluid 
-
-		var bgCredits = this._service_jquery(".3pane .background-credits").text();
-		this._coreDoc.getElementById("bgcredits").innerHTML=bgCredits;
 
 	} ,
 
