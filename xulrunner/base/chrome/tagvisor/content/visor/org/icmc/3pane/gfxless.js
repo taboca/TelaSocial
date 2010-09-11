@@ -43,12 +43,9 @@ var gfx =  {
 		background-color:rgb(70,70,70);	
 	} 
 
-        .cor_tab1 { background-color:rgb(253,181,37);; }
-        .cor_tab1 { background-color:transparent;; }
-        .cor_tab2  { background-color:rgb(100,197,210); }
-        .cor_tab3   {
-		background-color:rgb(14,148,171);	
-	}
+        .cor_tab1 { background-color:rgb(253,181,37); }
+        .cor_tab2 { background-color:rgb(100,197,210); }
+        .cor_tab3 { background-color:rgb(14,148,171);	}
 
         .transp { background-color:transparent; }
 
@@ -76,27 +73,14 @@ var gfx =  {
 		display:none;
 		margin:0;
 		width:100%;
-		height:750px;
+		height:710px;
 		overflow:hidden;
 	} 
-
-	@font-face {     
-		font-family: Kaffeesatz;
-		src: url(com/icmc/3pane/YanoneKaffeesatz-Regular.otf) format("opentype");
-		font-weight:bold;
-	}
-
-
-@font-face {
-	font-family: Vollkorn;
-	src: url(com/icmc/3pane/vollkorn.otf) format("opentype");
-
-}
 
 	#area_bottom {
                 height:230px;
                 background-color:rgba(0,0,0,.7);
-    		font-family:Kaffeesatz,Verdana, Arial, Helvetica, sans-serif;
+    		font-family: Verdana, Arial, Helvetica, sans-serif;
 		color:white;
 		font-weight:bold;
         }
