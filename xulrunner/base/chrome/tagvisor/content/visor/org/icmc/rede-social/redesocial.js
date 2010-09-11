@@ -1,14 +1,14 @@
 c     = require("choreographer");
 timer = require("timer");
 
-var twitter =  {
+var redesocial =  {
 	name   : __appName,
         target : __targetName,
         targetId : __targetId,
 
 	crop    : "50",
 	title   : "Twitter 10",
-	feedURL : "http://twitter.com/statuses/user_timeline/75017337.rss",
+	feedURL : "http://redesocial.com/statuses/user_timeline/75017337.rss",
 	feed    : null, 
 
 	style : <><![CDATA[
@@ -53,12 +53,12 @@ var twitter =  {
 	start : function() {
 
 		this.element = this._coreDoc.createElement('div');
-		this.element.className="twitterPanel";
+		this.element.className="redesocialPanel";
 		this.element.id = Math.random();
 		this.tweetQueue = new Array();
 
 		var first = this._coreDoc.createElement("div");
-		this.firstId = "firsttwitter";
+		this.firstId = "firstredesocial";
 		first.id = this.firstId;
 
 		this.tweetRepeated = {};
@@ -148,4 +148,4 @@ var twitter =  {
 
 }
 
-c.register(twitter);
+c.register(redesocial);
