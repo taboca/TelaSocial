@@ -1,6 +1,6 @@
 
 c = require("choreographer");
-t = require("timer");
+timer = require("timer");
 
 var calendar_Widget =  {
 
@@ -11,10 +11,15 @@ var calendar_Widget =  {
 
 	        this._raiseEvent(".container", "start");
                 this._raiseEvent(".container.clock", "start");
-//                this._raiseEvent(".container.grade", "start");
                 this._raiseEvent(".container.twitter", "start");
+                this._raiseEvent(".container.uspmain", "start");
+                this._raiseEvent(".container.redesocial", "start");
+                this._raiseEvent(".bgsemana", "start");
 
-		selff = this;
+
+                var self = this;
+                timer.setTimeout( function(){self.kickMore()},1000);
+
 		
 	} ,
 
@@ -25,19 +30,10 @@ var calendar_Widget =  {
 	kickState : false, 
 
         kickMore: function () { 
-/*
-		if(this.kickState) { 
-               	 	this._raiseEvent(".container.twitter", "kill");
-              		this._raiseEvent(".container.twitter", "init");
-
-			this.kickState=false; 
-		} else { 
-			this.kickState=true;
-
-		} 
-*/
+	       	this._raiseEvent(".container", "kick");
+              	var self = this;
+             	timer.setTimeout( function(){self.kickMore()},100);
  	} 
-
 
 }
 
