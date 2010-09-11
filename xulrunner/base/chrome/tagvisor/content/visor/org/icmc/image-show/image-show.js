@@ -18,6 +18,7 @@
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
+ *      Marcio Galli   <mgalli@taboca.com>
  *      Rafael Sartori <faelsartori@gmail.com>
  *
  * Alternatively, the contents of this file may be used under the terms of
