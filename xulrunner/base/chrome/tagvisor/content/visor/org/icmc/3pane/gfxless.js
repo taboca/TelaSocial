@@ -141,17 +141,17 @@ var gfx =  {
 </div>
 <table class='main' cellpadding="10" cellspacing="0" height="100%">
 <tr style="height:50px">
-<td class='cor_tab1' id='tab1' > 
+<td class='cor_tab1' id='tab1' width="620"> 
 <div class='tab'>
 Destaque
 </div>
 </td>
-<td class='cor_tab2' id='tab2' >
+<td class='cor_tab2' id='tab2' width="620">
 <div class='tab'>
 Palestras ICMC
 </div>
 </td>
-<td class='cor_tab3' id='tab3' >
+<td class='cor_tab3' id='tab3' width="620">
 <div class='tab'>
 Rede Social ICMC
 </div>
