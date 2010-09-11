@@ -6,9 +6,6 @@ pref("extensions.tagvisor.auto",true);
 pref("extensions.tagvisor.zoom",".5");
 pref("extensions.tagvisor.resolution","960,560");
 
-
-
-
 pref("nglayout.debug.disable_xul_cache", true);
 pref("nglayout.debug.disable_xul_fastload", true);
 
