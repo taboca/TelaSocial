@@ -14,7 +14,7 @@ var calendar_Widget =  {
                 this._raiseEvent(".container.redesocial", "start");
                 this._raiseEvent(".container.uspmain", "start");
                 this._raiseEvent(".container.redesocial", "start");
-                this._raiseEvent(".bgsemana", "start");
+                this._raiseEvent(".container.imageshow", "start");
 
 
                 var self = this;
