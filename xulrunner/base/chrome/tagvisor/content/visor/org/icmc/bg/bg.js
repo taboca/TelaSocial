@@ -38,12 +38,9 @@ var twitter =  {
 		this._dump("!!!");
 		var self  = this; 
 		try { 
-		this.feed(xml).find('item').each(function(){
-			var pubDate = self.feed(this).find('pubDate').text();
-			var title   = self.feed(this).find('title').text();
-			var link    = self.feed(this).find('link').text();
+			var bgObject = this.feed(xml).find('item') //gets the most recent tweet
 	
-			var bgTitle = title.split("imagens_icmc: ")[1];	
+			var bgTitle = bgObject.find('title').text().split("imagens_icmc: ")[1];  
 
 			self._dump(bgTitle);
 			self._coreDoc.body.setAttribute("style","background: url("+bgTitle+") no-repeat 0 0 ");
