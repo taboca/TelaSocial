@@ -8,7 +8,7 @@ var redesocial =  {
 
 	crop    : "50",
 	title   : "Twitter 10",
-	feedURL : "http://redesocial.com/statuses/user_timeline/75017337.rss",
+	feedURL : "http://twitter.com/statuses/user_timeline/75017337.rss",
 	feed    : null, 
 
 	style : <><![CDATA[
