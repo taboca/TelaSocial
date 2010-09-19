@@ -34,7 +34,8 @@ var gfx =  {
                 font-weight:bold;
         }
 
-	#tab1, #tab2, #tab3 { 
+	#tab1, #tab2, #tab3, #tab4 { 
+		width:25%;
 		z-index:1000;
 	}
 
@@ -45,7 +46,8 @@ var gfx =  {
 
         .cor_tab1 { background-color:rgb(253,181,37); }
         .cor_tab2 { background-color:rgb(100,197,210); }
-        .cor_tab3 { background-color:rgb(14,148,171);	}
+		.cor_tab3 { background-color:rgb(82,165,187);	}
+        .cor_tab4 { background-color:rgb(14,148,171);	}
 
         .transp { background-color:transparent; }
 
@@ -73,7 +75,7 @@ var gfx =  {
 		display:none;
 		margin:0;
 		width:100%;
-		height:710px;
+		height:806px;
 		overflow:hidden;
 	} 
 
@@ -95,33 +97,49 @@ var gfx =  {
         kick: function () {
 		this.movepos+=5;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
-		if(this.movepos > 1260 && this.movepos < 1950 ) { 
+		if(this.movepos > 1412 && this.movepos < 1950 ) { 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
-                        this._coreDoc.getElementById("tab3").className="cor_tab3";
+						this._coreDoc.getElementById("tab3").className="cor_tab3";
+                        this._coreDoc.getElementById("tab4").className="cor_tab4";
 			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(14,148,171)";
-                        this._coreDoc.getElementById("area_panel3").style.display="block";
+						this._coreDoc.getElementById("area_panel1").style.display="none";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
-                        this._coreDoc.getElementById("area_panel1").style.display="none";
+                        this._coreDoc.getElementById("area_panel3").style.display="none";
+                        this._coreDoc.getElementById("area_panel4").style.display="block";                        
 		} 
-		if(this.movepos > 630 && this.movepos < 1260) { 
+		if(this.movepos > 930 && this.movepos < 1412) { 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
-                        this._coreDoc.getElementById("tab3").className="cor_tab3";
-			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(100,197,210)";
-                        this._coreDoc.getElementById("area_panel2").style.display="block";
+						this._coreDoc.getElementById("tab3").className="cor_tab3";
+                        this._coreDoc.getElementById("tab4").className="cor_tab4";
+			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(82,165,187)";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
-                        this._coreDoc.getElementById("area_panel3").style.display="none";
+                        this._coreDoc.getElementById("area_panel2").style.display="none";
+                        this._coreDoc.getElementById("area_panel3").style.display="block";
+                        this._coreDoc.getElementById("area_panel4").style.display="none";
 		} 
-		if(this.movepos > 0  && this.movepos < 630) { 
+		if(this.movepos > 457 && this.movepos < 930) { 
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
+                        this._coreDoc.getElementById("tab2").className="cor_tab2";
+						this._coreDoc.getElementById("tab3").className="cor_tab3";
+                        this._coreDoc.getElementById("tab4").className="cor_tab4";
+			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(100,197,210)";
+                        this._coreDoc.getElementById("area_panel1").style.display="none";
+                        this._coreDoc.getElementById("area_panel2").style.display="block";
+                        this._coreDoc.getElementById("area_panel3").style.display="none";
+                        this._coreDoc.getElementById("area_panel4").style.display="none";
+		} 
+		if(this.movepos > 0  && this.movepos < 457) { 
                         this._coreDoc.getElementById("tab1").className="transp";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
-                        this._coreDoc.getElementById("tab3").className="cor_tab3";
-			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(253,181,37)";
+						this._coreDoc.getElementById("tab3").className="cor_tab3";
+                        this._coreDoc.getElementById("tab4").className="cor_tab4";
 			this._coreDoc.getElementById("td_panel").style.backgroundColor="transparent";
                         this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
+                        this._coreDoc.getElementById("area_panel4").style.display="none";
 		} 
 		if(this.movepos > 1950 ) { 
 
@@ -141,34 +159,41 @@ var gfx =  {
 </div>
 <table class='main' cellpadding="10" cellspacing="0" height="100%">
 <tr style="height:50px">
-<td class='cor_tab1' id='tab1' width="620"> 
+<td class='cor_tab1' id='tab1'> 
 <div class='tab'>
 Destaque
 </div>
 </td>
-<td class='cor_tab2' id='tab2' width="620">
+<td class='cor_tab2' id='tab2'>
 <div class='tab'>
-Palestras ICMC
+Noticias ICMC
 </div>
 </td>
-<td class='cor_tab3' id='tab3' width="620">
+<td class='cor_tab3' id='tab3'>
+<div class='tab'>
+Eventos ICMC
+</div>
+</td>
+<td class='cor_tab4' id='tab4'>
 <div class='tab'>
 Rede Social ICMC
 </div>
 </td>
 </tr>
 <tr>
-<td colspan="3" id='td_panel' valign='top'>
+<td colspan="4" id='td_panel' valign='top'>
 <div class="panel" id='area_panel1'>
 </div>
 <div class="panel" id='area_panel2'>
 </div>
 <div class="panel" id='area_panel3'>
 </div>
+<div class="panel" id='area_panel4'>
+</div>
 </td>
 </tr>
 <tr>
-<td colspan='2' id='area_bottom' valign='top' style='background: rgb(30,30,30) url(/com/icmc/3pane/usp-logo/trademark.jpg) 0 0 no-epeat;margin-left:120px;'>
+<td colspan='3' id='area_bottom' valign='top' style='background: rgb(30,30,30) url(/com/icmc/3pane/usp-logo/trademark.jpg) 0 0 no-repeat;margin-left:120px;'>
 </td>
 <td id='area_bottomright' valign="middle">
 </td>
