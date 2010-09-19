@@ -1,4 +1,3 @@
-
 c = require("choreographer");
 t = require("timer");
 
@@ -75,7 +74,7 @@ var gfx =  {
 		display:none;
 		margin:0;
 		width:100%;
-		height:710px;
+		height:806px;
 		overflow:hidden;
 	} 
 
@@ -193,7 +192,7 @@ Rede Social ICMC
 </td>
 </tr>
 <tr>
-<td colspan='3' id='area_bottom' valign='top' style='background: rgb(30,30,30) url(/com/icmc/3pane/usp-logo/trademark.jpg) 0 0 no-epeat;margin-left:120px;'>
+<td colspan='3' id='area_bottom' valign='top' style='background: rgb(30,30,30) url(/com/icmc/3pane/usp-logo/trademark.jpg) 0 0 no-repeat;margin-left:120px;'>
 </td>
 <td id='area_bottomright' valign="middle">
 </td>
