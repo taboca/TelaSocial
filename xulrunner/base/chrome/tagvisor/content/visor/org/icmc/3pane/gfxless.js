@@ -73,7 +73,7 @@ var gfx =  {
 		display:none;
 		margin:0;
 		width:100%;
-		height:710px;
+		height:806px;
 		overflow:hidden;
 	} 
 
