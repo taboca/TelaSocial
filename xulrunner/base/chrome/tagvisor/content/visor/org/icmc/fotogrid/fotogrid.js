@@ -41,11 +41,11 @@ var fade_Widget =  {
 			k.style.width = this.picWidth + "px";
 			k.style.height= this.picHeight + "px";
 			k.style.marginLeft = "10px";
-			k.style.marginTop ="40px"; 
-			k.style.border="5px solid black";
+			k.style.marginTop ="45px"; 
+			//k.style.border="5px solid black";
 			k.style.overflow="hidden";
 			k.style.display="inline-block";
-			k.style.backgroundColor="#555";
+			//k.style.backgroundColor="#555";
 			this.element.insertBefore(k, this.element.firstChild);
 			this.refContainers[i]=k;
 		}
@@ -68,7 +68,7 @@ var fade_Widget =  {
 				this.refContainerCycle=0;
 			} 
 			var currentContainer = this.refContainers[this.refContainerCycle];
-			currentContainer.innerHTML = "<img id='fadeimage"+this.imageNumber+"' src='"+t+"' >";
+			currentContainer.innerHTML = "<img id='fadeimage"+this.imageNumber+"' src='"+t+"' style='-moz-box-shadow: black 5px 5px 10px;opacity:.3'>";
 			these = this;
 			this._coreDoc.getElementById("fadeimage"+this.imageNumber).onload = function () { these.imageLoaded() };
 			return true;
@@ -81,18 +81,19 @@ var fade_Widget =  {
 		var y= parseInt(currImage.height); 
 
 		if(x>=y) {
-			currImage.width=this.picWidth;
+			currImage.width=this.picWidth-10;
 
 			var yy = parseInt ((this.picHeight-parseInt((this.picWidth*y)/x))/2 );
 			currImage.style.marginTop=yy+"px";
 		} else { 
 			
-			currImage.height=this.picHeight;
+			currImage.height=this.picHeight-10;
 			var xx = parseInt ((this.picWidth-parseInt((this.picHeight*x)/y))/2 );
 			currImage.style.marginLeft=xx+"px";
 			
 		} 
-			this.imageNumber++;
+		currImage.style.opacity="1";
+		this.imageNumber++;
 		this.kickFadeIn();
 	},
 
