@@ -15,7 +15,7 @@ var clock_Widget =  {
 
 		this.element = this._coreDoc.createElement('div');
 
-		this.element.setAttribute("style","color:white;font-size:90px;font-weight:bold;padding:20px;padding-top:5px;;text-shadow: black 10px 0px 0px;margin-right:1em");
+		this.element.setAttribute("style","color:white;font-size:90px;font-weight:bold;padding:20px;padding-top:5px;;text-shadow: black 10px 0px 0px;");
 		this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 		this.element.innerHTML="<span>:</span>";
 
