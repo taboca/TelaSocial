@@ -204,9 +204,9 @@ Rede Social ICMC
 </td>
 </tr>
 <tr>
-<td colspan='2' id='area_bottom' valign='top' style='background: rgb(30,30,30) url(/com/icmc/3pane/usp-logo/trademark.jpg) 0 0 no-epeat;margin-left:120px;'>
+<td colspan='2' id='area_bottom' valign='top' style=''>
 </td>
-<td id='area_bottomright' valign="middle">
+<td id='area_bottomright' align="center" valign="middle">
 </td>
 
 </tr>
