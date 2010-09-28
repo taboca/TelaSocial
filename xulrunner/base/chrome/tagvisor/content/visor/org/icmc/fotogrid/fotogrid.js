@@ -80,9 +80,11 @@ var fade_Widget =  {
 		var x= parseInt(currImage.width); 
 		var y= parseInt(currImage.height); 
 
-		if(x>=y) { 
+		if(x>=y) {
 			currImage.width=this.picWidth;
-			currImage.style.marginTop=parseInt((this.picHeight-y)/2);
+
+			var yy = parseInt ((this.picHeight-parseInt((this.picWidth*y)/x))/2 );
+			currImage.style.marginTop=yy+"px";
 		} else { 
 			
 			currImage.height=this.picHeight;
