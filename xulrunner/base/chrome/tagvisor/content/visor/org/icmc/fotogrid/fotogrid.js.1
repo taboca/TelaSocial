@@ -1,24 +1,40 @@
 
+/*
+
+New architecture is
+
+* N slots, divs are created and an array holds all them  pos[x] = div. We add the position in each cycle. 
+* We shift position
+* We load rss and put in queue
+* we get from the queue. When the queue is empty we call to fill queue again 
+
+*/
 c     = require("choreographer");
 timer = require("timer");
 
 var fade_Widget =  {
 
         name        : __appName,
-        target      : __targetName,
-        targetId    : __targetId,
         feed        : null,
+
+        target       : __targetName,
+        targetId     : __targetId,
+	zIndex       :10,
 	refElement   : null, 
-	imageNumber  : 0,
+	imageNumber  :0,
 	element      : null,
+	oldChild     :null,
+	lastInserted : null,
 	picWidth     : 450, 
 	picHeight    : 337, 
-        picQueue     : null, 
+
+
         totalElements: 8, 
-	refContainers: null, 
+	refContainers: new Array(), 
         refContainerCycle : -1, 
 		
-	start: function () { 
+	start:function () { 
+		try { 
 
 		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?id=54317030@N05&lang=pt-br&format=rss_200');
 		this.feed.setNumEntries(20);
@@ -33,10 +49,8 @@ var fade_Widget =  {
 		this.refElement = this._coreDoc.createElement("div");
 		this.element.appendChild(this.refElement);
 
-		this.refContainers = new Array();
 
-		for(var i=0; i<this.totalElements; i++) { 
-
+		for(var i=0;i<totalElements;i++) { 
 			var k = this._coreDoc.createElement("span");
 			k.style.width = this.picWidth + "px";
 			k.style.height= this.picHeight + "px";
@@ -47,28 +61,38 @@ var fade_Widget =  {
 			k.style.display="inline-block";
 			k.style.backgroundColor="#555";
 			this.element.insertBefore(k, this.element.firstChild);
+
 			this.refContainers[i]=k;
 		}
 
 		this.popPic();
 
-	},
+
+
+		} catch(i) { this._dump(i) } 
+	} ,
 
 	init : function() {
 	},
 
 	popPic: function() {
 		if (this.picQueue.length == 0) { 
+			//this._dump("Loading...");
 			var these = this;
 			this.feed.load( function (ref) { these.__feedUpdated(ref) } );
 		} else { 
+
 			var t = this.picQueue.pop();
-			this.refContainerCycle++;
+			this.refContainerCycle++:
+
 			if(this.refContainerCycle == this.totalElements) { 
 				this.refContainerCycle=0;
 			} 
 			var currentContainer = this.refContainers[this.refContainerCycle];
 			currentContainer.innerHTML = "<img id='fadeimage"+this.imageNumber+"' src='"+t+"' >";
+
+			this.imageNumber++;
+
 			these = this;
 			this._coreDoc.getElementById("fadeimage"+this.imageNumber).onload = function () { these.imageLoaded() };
 			return true;
@@ -79,10 +103,8 @@ var fade_Widget =  {
 		var currImage =  this._coreDoc.getElementById("fadeimage"+this.imageNumber);
 		var x= parseInt(currImage.width); 
 		var y= parseInt(currImage.height); 
-
 		if(x>=y) { 
 			currImage.width=this.picWidth;
-			currImage.style.marginTop=parseInt((this.picHeight-y)/2);
 		} else { 
 			
 			currImage.height=this.picHeight;
@@ -90,7 +112,6 @@ var fade_Widget =  {
 			currImage.style.marginLeft=xx+"px";
 			
 		} 
-			this.imageNumber++;
 		this.kickFadeIn();
 	},
 
@@ -99,12 +120,18 @@ var fade_Widget =  {
                	timer.setTimeout( function () { scopedThis.popPic() }, 10000);
 	},
 
+	updateFeed : function() {
+		if (! this.popPic()) {
+		}
+	},
+
 	__feedUpdated : function(result) {
 		if (result.error ) {
 			return;
 		}
 
 		var doc = result.xmlDocument;
+		//var links = doc.getElementsByTagName("link");
 		var links = doc.getElementsByTagNameNS("http://search.yahoo.com/mrss/","content");
 		var i;
 		for (i = 0; i < links.length; i++) {
@@ -115,6 +142,7 @@ var fade_Widget =  {
                                         this._dump(src);
                                         this.picQueue.push(src);
                                 }
+
 		//	} 
 		}
 		this.popPic();
