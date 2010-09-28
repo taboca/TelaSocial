@@ -116,7 +116,7 @@ var fade_Widget =  {
 	kickFadeIn : function () { 
 		this.fadeCycle=0;
 		var scopedThis = this;
-               	timer.setTimeout( function () { scopedThis.popPic() }, 500);
+               	timer.setTimeout( function () { scopedThis.popPic() }, 10000);
 	},
 
 	updateFeed : function() {
