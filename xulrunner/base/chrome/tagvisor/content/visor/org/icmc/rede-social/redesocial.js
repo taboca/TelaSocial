@@ -202,7 +202,6 @@ var redesocial =  {
 
 			this.tweetQueue.push( { content: title, color: color } );
 		}
-firstredesocial
 	}
 }
 
