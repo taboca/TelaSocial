@@ -57,7 +57,7 @@ var redesocial =  {
 		.postitpanel1 {                        
 			color:black;                        
 			display:inline-block;
-                        background-color:#FFFFD0;
+                        background-color:#ffc;
                         font-size:18px;
 			overflow:hidden;
                         font-weight:bold;                        
@@ -71,7 +71,7 @@ var redesocial =  {
 		.postitpanel2 {                        
 			color:black;                        
 			display:inline-block;
-                        background-color:#FFFF8A;
+                        background-color:#cff;
                         font-size:18px;
 			overflow:hidden;
                         font-weight:bold;                        
@@ -85,7 +85,7 @@ var redesocial =  {
 		.postitpanel3 {                        
 			color:black;                        
 			display:inline-block;
-                        background-color:#FFFF45;
+                        background-color:#fcf;
                         font-size:18px;
 			overflow:hidden;
                         font-weight:bold;                  
