@@ -53,6 +53,11 @@ var redesocial =  {
 	feed3	: null,
 
 	style : <><![CDATA[
+		
+		.redesocialPanel {
+			margin-left: 29px;
+			margin-top: 32px;
+		}
 
 		.postitpanel1 {                        
 			color:black;                        
@@ -190,7 +195,7 @@ var redesocial =  {
 
 			this.tweetQueue.push( { content: title, color: color } );
 		}
-
+firstredesocial
 	}
 }
 
