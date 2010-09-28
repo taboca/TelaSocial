@@ -28,21 +28,10 @@ var typing =  {
 
 	start : function() {
 
-		this.elementTable = this._coreDoc.createElement("table");
-		this.elementTable.setAttribute("class","typing");
-		this.elementTable.setAttribute("border","0");
-		this.elementTable.setAttribute("cellpadding","0");
-		this.elementTable.setAttribute("cellmargin","0");
-		this.elementTable.style.border="0px";
-		this.elementTable.style.width="1280px";
-		this.elementTable.innerHTML="<tr><td id='qrcode'></td><td class='typingPanel' id='typingcontainer'></td></tr></table>";
+		this.elementTable = this._coreDoc.createElement("div");
+		this.elementTable.innerHTML="<div id='qrcode' style='float:left;' ></div><div class='typingPanel' id='typingcontainer'></div>";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.elementTable);
-/*
-		this.element = this._coreDoc.createElement('div');
-		this.element.className="typingPanel";
-		this.element.id = Math.random();
-*/
 		this.tweetQueue = new Array();
 
 		var first = this._coreDoc.createElement("div");
@@ -50,10 +39,6 @@ var typing =  {
 		first.id = this.firstId;
 		this.tweetRepeated = {};
 		this._coreDoc.getElementById('typingcontainer').appendChild(first);
-		//this.element.appendChild(first);
-
-
-		//this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 
 		var self = this;
 		timer.setTimeout( function(){self.updateFeed()},10000);
