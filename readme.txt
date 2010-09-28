@@ -22,7 +22,8 @@ List of Contributors:
 Add your name to this list to keep track and provide evidence of your interest and consent that you are a contributor to the project and accept the open source ( above licensing ) terms provided in this file. If you are a new contributor and checking code in other locations, make sure you update the file with a local license information and your name as a contributor, in each file you edit or create.
 
   Marcio Galli - mgalli@taboca.com
-  Alexandre Koji Imai Negrão - akin@grad.icmc.usp.br  
+  Alexandre Koji Imai Negrão - akin@grad.icmc.usp.br
+  Rafael Sartori - faelsartori@gmail.com
   ... 
   ...
    

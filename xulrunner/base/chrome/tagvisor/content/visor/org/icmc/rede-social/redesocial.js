@@ -59,6 +59,12 @@ var redesocial =  {
 			margin-top: 32px;
 		}
 
+		.tweetauthor {
+			color:gray;
+			font-size:16px;
+			font-weight:italic;		
+		}
+
 		.postitpanel1 {                        
 			color:black;                        
 			display:inline-block;
@@ -169,7 +175,8 @@ var redesocial =  {
 		this.tweetRepeated[t] = true;
 		var k = this._coreDoc.createElement('span');
 		k.className = 'postitpanel'+ c;
-		k.innerHTML = t;
+		var author = t.split(':')[0];
+		k.innerHTML = "<span class = 'tweetauthor'> by @" + author + "</span><br>" + t.split(author+':')[1];
 		this.element.insertBefore(k, this.element.firstChild);
 		return true;
 	},
@@ -195,7 +202,6 @@ var redesocial =  {
 
 			this.tweetQueue.push( { content: title, color: color } );
 		}
-firstredesocial
 	}
 }
 
