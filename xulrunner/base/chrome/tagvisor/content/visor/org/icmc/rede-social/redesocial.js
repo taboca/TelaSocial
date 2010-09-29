@@ -53,7 +53,11 @@ var redesocial =  {
 	feed3	: null,
 
 	style : <><![CDATA[
-
+		
+		.tweetauthor{
+			color:gray;
+			font-size:16px;
+		}
 
 		.postitbase { 
 			transform: rotate(1.1deg);
@@ -171,10 +175,11 @@ var redesocial =  {
 		this.tweetRepeated[t] = true;
 		var k = this._coreDoc.createElement('span');
 		k.className = 'postitbase postitpanel'+ c;
+		var author = t.split(':')[0]
 		var range = Math.random()*2; 
 		range-=.7;
 		k.style.MozTransform = 'rotate('+range+'deg)';
-		k.innerHTML = t;
+		k.innerHTML = "<span class = 'tweetauthor'> by @" + author + "</span><br>" + t.split(author+':')[1];
 		this.element.insertBefore(k, this.element.firstChild);
 		return true;
 	},
