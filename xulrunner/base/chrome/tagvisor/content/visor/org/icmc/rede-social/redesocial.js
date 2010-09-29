@@ -53,16 +53,12 @@ var redesocial =  {
 	feed3	: null,
 
 	style : <><![CDATA[
-		
-		.redesocialPanel {
-			margin-left: 29px;
-			margin-top: 32px;
-		}
 
-		.tweetauthor {
-			color:gray;
-			font-size:16px;
-			font-weight:italic;		
+
+		.postitbase { 
+			transform: rotate(1.1deg);
+			-webkit-transform: rotate(1.1deg);
+			-moz-transform: rotate(1.1deg);
 		}
 
 		.postitpanel1 {                        
@@ -82,7 +78,7 @@ var redesocial =  {
 		.postitpanel2 {                        
 			color:black;                        
 			display:inline-block;
-                        background-color:#cff;
+                        background-color:#fcf;
                         font-size:18px;
 			overflow:hidden;
                         font-weight:bold;                        
@@ -96,7 +92,7 @@ var redesocial =  {
 		.postitpanel3 {                        
 			color:black;                        
 			display:inline-block;
-                        background-color:#fcf;
+                        background-color:#cff;
                         font-size:18px;
 			overflow:hidden;
                         font-weight:bold;                  
@@ -174,9 +170,11 @@ var redesocial =  {
 		}
 		this.tweetRepeated[t] = true;
 		var k = this._coreDoc.createElement('span');
-		k.className = 'postitpanel'+ c;
-		var author = t.split(':')[0];
-		k.innerHTML = "<span class = 'tweetauthor'> by @" + author + "</span><br>" + t.split(author+':')[1];
+		k.className = 'postitbase postitpanel'+ c;
+		var range = Math.random()*2; 
+		range-=.7;
+		k.style.MozTransform = 'rotate('+range+'deg)';
+		k.innerHTML = t;
 		this.element.insertBefore(k, this.element.firstChild);
 		return true;
 	},
@@ -202,6 +200,7 @@ var redesocial =  {
 
 			this.tweetQueue.push( { content: title, color: color } );
 		}
+
 	}
 }
 
