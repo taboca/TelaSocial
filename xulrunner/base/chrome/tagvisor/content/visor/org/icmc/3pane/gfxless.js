@@ -47,7 +47,7 @@ var gfx =  {
 
 	style : <><![CDATA[
 
-	html { padding:0; margin:0; overflow:hidden; font-family: verdana, arial, sans-serif } 
+	html { padding:0; margin:0; overflow:hidden; font-family: Fontin, verdana, arial, sans-serif } 
 
 	body {
 		background-color:rgb(253,181,37); margin:0; padding:0;
@@ -116,10 +116,32 @@ var gfx =  {
 	#area_bottom {
                 height:230px;
                 background-color:rgba(0,0,0,.7);
-    		font-family: Verdana, Arial, Helvetica, sans-serif;
 		color:white;
-		font-weight:bold;
         }
+
+@font-face {
+    font-family: GraublauWeb;
+    src: url(org/icmc/3pane/GraublauWeb.otf) format("opentype");
+}
+
+@font-face {
+    font-family: GraublauWeb;
+    font-weight:900;
+    src: url(org/icmc/3pane/GraublauWebBold.otf) format("opentype");
+}
+
+@font-face {
+    font-family: Vollkorn;
+	src: url(org/icmc/3pane/vollkorn.otf) format("opentype");
+
+}
+
+@font-face {
+    font-family: Fontin;
+	src: url(org/icmc/3pane/Fontin-Regular.otf) format("opentype");
+	
+}
+
 
 
 ]]></>,
