@@ -12,6 +12,7 @@ var gfx =  {
 	style : <><![CDATA[
 
 	html {
+		background-color:black;
 		padding:0;
 		margin:0; font-family: verdana, arial, sans-serif;
 		width:1920px;
@@ -21,6 +22,7 @@ var gfx =  {
 
 	table {
 		width:1920px;
+		height:1080px;
 	}
 
 ]]></>,
