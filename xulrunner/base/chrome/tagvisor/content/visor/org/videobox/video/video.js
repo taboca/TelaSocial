@@ -12,12 +12,6 @@ var  video  = {
 	start : function () { 
 
 		this.element = this._coreDoc.createElement("div");
-
-		this.elementv = this._coreDoc.createElement('video');
-		this.elementv.setAttribute('width', '1000');
-		this.elementv.setAttribute('autoplay', 'true');
-		this.elementv.setAttribute('style', 'padding-left:0px');
-		this.elementv.setAttribute('src', '');
 		this.element.appendChild(this.elementv);
                 this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 
@@ -26,8 +20,8 @@ var  video  = {
 	} ,
 
 	images: ['video.ogg'], 
-	titles: ['description"], 
-	timing: [ 60*1000+27000  ], 
+	titles: ['description'], 
+	timing: [ 60*1000+27000 ], 
 
 	cc:-1,
 	kick : function () { 
