@@ -12,7 +12,6 @@ var  video  = {
 	start : function () { 
 
 		this.element = this._coreDoc.createElement("div");
-		this.element.appendChild(this.elementv);
                 this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 
 		var thiss = this; 
