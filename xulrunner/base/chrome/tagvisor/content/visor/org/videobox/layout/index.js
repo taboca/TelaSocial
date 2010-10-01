@@ -6,6 +6,7 @@ var gfx =  {
         name   : __appName,
         target : __targetName,
         targetId : __targetId,
+
         _coreDoc: null,
 
 	style : <><![CDATA[
