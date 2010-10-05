@@ -9,10 +9,17 @@ var choreographer = exports.getWindow =function getWindow() {
 // We dont need to loop through the actual extension 
 var register = exports.register = function registerWidget(refObject) { 
 
-	var mediator = windowsMediator.getService(Ci.nsIWindowMediator);
-	var mainWin = mediator.getMostRecentWindow("navigator:browser");
-	mainWin.com.taboca.tagvisor.widgetToVisor(refObject); 
- 
+        var mediator = windowsMediator.getService(Ci.nsIWindowMediator);
+        var mainWin = mediator.getMostRecentWindow("navigator:browser");
+        //mainWin.com.taboca.tagvisor.widgetToVisor(refObject); 
+	// this is direct mode..
+ 	// the problem here is that we need to be smart and be friendly 
+	// with compatibility with Firefox soon 
+        var appWin = mainWin.gBrowserContentWindow;
+        appWin.wrappedJSObject.com.taboca.upvisor.matchRegistration(refObject, refObject.name, refObject.target, refObject.targetId);
+
+
+
 } 
 
 var kill = exports.kill = function killWidget(refWid) { 
