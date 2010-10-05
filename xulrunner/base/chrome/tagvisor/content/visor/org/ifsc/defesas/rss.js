@@ -147,7 +147,6 @@ var rsseventos =  {
 	updateFeed : function() {
 		this.feed.ajax( { type:"GET", url: this.feedURL, dataType: "xml", success: function (xml) {  self.__feedUpdated(xml) } });
 		var self = this;
-		this.render();
 		timer.setTimeout( function(){self.updateFeed()},60*1000*15);
 	},
 	__feedUpdated : function(xml) {
@@ -165,6 +164,7 @@ var rsseventos =  {
 			self.tweetQueue.push( '<span class="defesa_title">'+title+'</span><div class="defesa_description">'+desc+'</div><div class="defesa_local">'+local+'</div><div class="defesa_datahora">'+hora+' | '+data+'</div>' );
 			
 		});
+		this.render();
 
 	}
 }
