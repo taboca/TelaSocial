@@ -44,7 +44,7 @@ var rsseventos =  {
         targetId : __targetId,
 	crop    : "50",
 	title   : "Twitter 10",
-	feedURL : "http://www.ifsc.usp.br/defesas_rss.php",
+	feedURL : "http://www.ifsc.usp.br/defesas2_rss.php",
 	feed    : null, 
 	style : <><![CDATA[
 		#storetempEventos {
@@ -58,16 +58,11 @@ var rsseventos =  {
 			border-right:6px solid white;
 			padding-right:.5em;
 		}
-		.tweetauthor { 
-			color:gray; 
-		} 
 		.defesas {
 			color:black;
                         display:inline-block;
                         background-color:#ff5;
-                        font-size:22px;
                         overflow:hidden;
-                        font-weight:bold;
                         margin:15px;
 			margin-left:25px;
                         padding:15px;
@@ -75,6 +70,17 @@ var rsseventos =  {
                         height:220px;
                         -moz-box-shadow: black 10px 10px 10px;
 		} 
+		.defesa_title { 
+                        font-weight:bold;
+                        font-size:22px;
+		} 
+		.defesa_description { 
+			font-size:15px;
+			margin-top:20px;
+			color:darkblue;;
+			font-weight:bold;
+		} 
+
 		.twitterPanelEventos { 
 			width:100%;
 		} 
@@ -108,12 +114,19 @@ var rsseventos =  {
 		this.feed = this._service_jquery;
 	} ,
 	render : function() {
+		var counter = 0;
 		while(this.tweetQueue.length>0) { 
-			var t = this.tweetQueue.pop();
-			var k = this._coreDoc.createElement('div');
-			k.className = 'defesas';
-			k.innerHTML = t;
-			this.element.insertBefore(k, this.element.firstChild);
+
+			if(counter < 6) { 
+
+				counter++;
+				var t = this.tweetQueue.pop();
+				var k = this._coreDoc.createElement('div');
+				k.className = 'defesas';
+				k.innerHTML = t;
+				this.element.insertBefore(k, this.element.firstChild);
+
+			} 
 		} 
 	},
 
@@ -121,17 +134,21 @@ var rsseventos =  {
 		this.feed.ajax( { type:"GET", url: this.feedURL, dataType: "xml", success: function (xml) {  self.__feedUpdated(xml) } });
 		var self = this;
 		this.render();
-		timer.setTimeout( function(){self.updateFeed()},10*10000);
+		timer.setTimeout( function(){self.updateFeed()},10*1000);
 	},
 	__feedUpdated : function(xml) {
 
 		var self  = this; 
 		this.feed(xml).find('item').each(function(){
-			var pubDate = self.feed(this).find('pubDate').text();
+			//var pubDate = self.feed(this).find('pubDate').text();
 			var title   = self.feed(this).find('title').text();
+			var desc    = self.feed(this).find('description').text();
+			//var local    = self.feed(this).find('local').text();
+			//var data    = self.feed(this).find('data').text();
+			//var hora    = self.feed(this).find('hora').text();
 			var link    = self.feed(this).find('link').text();
 			
-			self.tweetQueue.push( '<span class="defesasNota">' + pubDate + '</span>' + title);
+			self.tweetQueue.push( '<span class="defesa_title">'+title+'</span><div class="defesa_description">'+desc+'</div>' );
 			
 		});
 

@@ -45,7 +45,7 @@ var layoutVertical =  {
 	} 
 
 	#area_topright { 
-		padding-top:70px;
+		padding-top:90px;
 	} 
 
         .cor_tab1 { background-color:rgb(253,181,37); }
@@ -160,7 +160,7 @@ var layoutVertical =  {
 <td id='area_topleft' width='230' valign='middle' align="center" >
 
 </td>
-<td id='area_topmid' align="right" valign="top" >
+<td id='area_topmid' align="right" valign="middle" >
 </td>
 </tr>
 </table>

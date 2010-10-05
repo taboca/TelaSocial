@@ -6,29 +6,27 @@ var twitter =  {
         target : __targetName,
         targetId : __targetId,
 
-	feedURL : "http://www.ifsc.usp.br/destaques_rss.php",
+	crop    : "50",
+	title   : "Twitter 10",
+	feedURL : "http://search.twitter.com/search.rss?q=%23fisl11",
+	feedURL : "http://twitter.com/statuses/user_timeline/188878581.rss",
 	feed    : null, 
 
 	style : <><![CDATA[
 		
 
-		.destaque_element {                        
+		.postitpanel {                        
 			color:black;                        
 			display:inline-block;
-                        font-size:38px;
+                        font-size:42px;
 			overflow:hidden;
                         font-weight:bold;                        
+			color:gray;
                         margin:15px;
                         padding:15px;
                         width:1010px;
                         height:350px;
-			color:#444;
                 }
-
-		.destaque_element img { 
-			float:left;
-			margin-right:1em;
-		} 
 
 		.command {
                         color:black;
@@ -84,12 +82,11 @@ var twitter =  {
 	popTweet : function() {
 		if (this.tweetQueue.length == 0) return false;
 		var obj = this.tweetQueue.pop();
-		var t = obj.title; 
-		var url = obj.image; 
+		var t = obj.content; 
 		
 		var k = this._coreDoc.createElement('span');
-		k.className = 'destaque_element';
-		k.innerHTML = '<table height="350"><tr><td valign="middle"><img width="300" src="'+url+'" /></td><td valign="middle">'+t+'</td></tr></table>';
+		k.className = 'postitpanel';
+		k.innerHTML = t;
 		var old = this.element.firstChild;
 		this.element.insertBefore(k, this.element.firstChild);
 		this.element.removeChild(old);
@@ -116,11 +113,7 @@ var twitter =  {
 
 			var titleElement = items[i].getElementsByTagName("title")[0];
 			var title = titleElement.firstChild.nodeValue;
-
-			var imageElement = items[i].getElementsByTagName("image")[0];
-			var image = imageElement.firstChild.nodeValue;
-
-			this.tweetQueue.push( { title: title, image: image } );
+			this.tweetQueue.push( { content: title } );
 		}
 
 	}
