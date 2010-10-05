@@ -15,6 +15,7 @@ var typing =  {
 		.typingPanel { 
 			font-size:35px; 
 			font-weight:bold;
+			height:190px;
 			color:black;
 		} 
 
