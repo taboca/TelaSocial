@@ -32,8 +32,8 @@ var layoutVertical =  {
 	}
 
 	.tab {
-                font-size:30px;
-		padding:1em;
+                font-size:28px;
+		padding:.5em;
                 font-weight:bold;
         }
 
@@ -55,7 +55,7 @@ var layoutVertical =  {
         .transp { background-color:transparent; }
 
         #pointer {
-                top:550px;
+                top:540px;
                 width:60px;
                 -moz-border-radius:1px;
                 height:20px;
