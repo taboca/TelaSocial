@@ -1,7 +1,7 @@
 c     = require("choreographer");
 timer = require("timer");
 
-var twitter =  {
+var acontece =  {
 	name   : __appName,
         target : __targetName,
         targetId : __targetId,
@@ -56,7 +56,7 @@ var twitter =  {
 	setupContainer: function () { 
 		this.element.innerHTML="";
 		var first = this._coreDoc.createElement("div");
-		this.firstId = "firsttwitter";
+		this.firstId = "firstacontece";
 		first.id = this.firstId;
 		this.tweetRepeated = {};
 		this.element.appendChild(first);
@@ -89,7 +89,7 @@ var twitter =  {
 		var i;
 		for (i = result.feed.entries.length-1; i >=0 ; i--) {
 			if (result.feed.entries[i]) {
-				var t =  '<span class="tweetdate">' + result.feed.entries[i].publishedDate + '</span>' + result.feed.entries[i].title + ' <span class="tweetauthor">(Acontece no IFSC)</span>';
+				var t =  '<span class="tweetdate">' + result.feed.entries[i].publishedDate + '</span>' + result.feed.entries[i].title + ' <span class="tweetauthor"></span>';
 				var k = this._coreDoc.createElement('div');
 				k.className = 'tweetpublic';
 				k.innerHTML = t;
@@ -103,4 +103,4 @@ var twitter =  {
 
 }
 
-c.register(twitter);
+c.register(acontece);

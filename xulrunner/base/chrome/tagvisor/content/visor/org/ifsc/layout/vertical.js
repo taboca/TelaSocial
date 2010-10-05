@@ -2,7 +2,7 @@
 c = require("choreographer");
 t = require("timer");
 
-var gfx =  {
+var layoutVertical =  {
 
         name   : __appName,
         target : __targetName,
@@ -218,4 +218,4 @@ Rede Social IFSC
 
 }
 
-c.register(gfx);
+c.register(layoutVertical);
