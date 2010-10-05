@@ -23,7 +23,7 @@ var typing =  {
 	start : function() {
 
 		this.elementTable = this._coreDoc.createElement("div");
-		this.elementTable.innerHTML="<div id='icon' style='float:left;' ></div><div><span style='color:darkblue;'>Fonte: www.ifsc.usp.br</span><div class='typingPanel' id='typingcontainer'></div></div>";
+		this.elementTable.innerHTML="<div id='icon' style='float:left;' ></div><div><div class='typingPanel' id='typingcontainer'></div><div style='color:rgb(50,60,150);text-align:right'>Fonte: www.ifsc.usp.br</div></div>";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.elementTable);
 		this._coreDoc.getElementById("icon").innerHTML= '<img width="150" src="org/ifsc/vendor-layout/logo.jpg" style="margin-right:15px; margin-bottom:10px; " align="left" />';
