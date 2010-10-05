@@ -15,6 +15,7 @@ var calendar_Widget =  {
                 this._raiseEvent(".container.typing", "start");
                 this._raiseEvent(".container.fotos", "start");
                 this._raiseEvent(".container.twitterslash", "start");
+                this._raiseEvent(".container.destaque", "start");
 
                 var self = this;
                 timer.setTimeout( function(){self.kickMore()},1000);

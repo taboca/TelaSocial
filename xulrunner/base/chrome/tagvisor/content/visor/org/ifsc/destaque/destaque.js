@@ -18,15 +18,14 @@ var twitter =  {
 		.postitpanel {                        
 			color:black;                        
 			display:inline-block;
-                        background-color:#ff5;
-                        font-size:22px;
+                        font-size:42px;
 			overflow:hidden;
                         font-weight:bold;                        
+			color:gray;
                         margin:15px;
                         padding:15px;
-                        width:450px;
-                        height:220px;
-			-moz-box-shadow: black 10px 10px 10px;
+                        width:1010px;
+                        height:350px;
                 }
 
 		.command {
@@ -85,14 +84,12 @@ var twitter =  {
 		var obj = this.tweetQueue.pop();
 		var t = obj.content; 
 		
-		if (t in this.tweetRepeated) {
-			return;
-		}
-		this.tweetRepeated[t] = true;
 		var k = this._coreDoc.createElement('span');
 		k.className = 'postitpanel';
 		k.innerHTML = t;
+		var old = this.element.firstChild;
 		this.element.insertBefore(k, this.element.firstChild);
+		this.element.removeChild(old);
 		return true;
 	},
 
@@ -102,7 +99,7 @@ var twitter =  {
 			this.feed.load( function (e) {  self.__feedUpdated(e) } );
 		}
 		var self = this;
-		timer.setTimeout( function(){self.updateFeed()},60000);
+		timer.setTimeout( function(){self.updateFeed()},10000);
 	},
 
 	__feedUpdated : function(result) {

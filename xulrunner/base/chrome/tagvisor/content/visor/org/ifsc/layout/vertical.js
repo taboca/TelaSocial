@@ -55,7 +55,7 @@ var layoutVertical =  {
         .transp { background-color:transparent; }
 
         #pointer {
-                top:530px;
+                top:550px;
                 width:60px;
                 -moz-border-radius:1px;
                 height:20px;
@@ -90,6 +90,13 @@ var layoutVertical =  {
 		margin-left:15px;
 		margin-top:10px;
 	} 
+
+	#area_midmid { 
+		width:1080px; 
+		height:420px; 
+		overflow:hidden;
+	} 
+
 
 ]]></>,
 
@@ -148,7 +155,7 @@ var layoutVertical =  {
 <tr>
 <td colspan="3"  align="left" valign="top" style="height:550px;padding:0;background:white url(http://www.ifsc.usp.br/imagens/tela_social/barra_sup.jpg) 0px 0px no-repeat" >
 
-<table border='0' width='1080' height="350">
+<table border='0' width='1080' height="120">
 <tr>
 <td id='area_topleft' width='230' valign='middle' align="center" >
 
@@ -158,6 +165,8 @@ var layoutVertical =  {
 </tr>
 </table>
 
+<div id="area_midmid">
+</div>
 
 </td>
 </tr>
