@@ -32,7 +32,7 @@ var layoutVertical =  {
 	}
 
 	.tab {
-                font-size:20px;
+                font-size:30px;
 		padding:1em;
                 font-weight:bold;
         }
