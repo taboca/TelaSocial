@@ -29,7 +29,7 @@ var clock_Widget =  {
 		//this.elementWeather = this._coreDoc.createElement('div');
 		this.elementClock   = this._coreDoc.createElement('div');
 
-		this.elementClock.setAttribute("style","color:black;font-size:34px;font-weight:bold;");
+		this.elementClock.setAttribute("style","-moz-border-radius:20px; background-color:white;padding:15px;margin-right:20px;color:black;font-size:40px;width:200px;opacity:.5;font-weight:bold;");
 		//this.elementWeather.setAttribute("style","color:black;font-size:14px;font-weight:bold;");
 		mainDiv.appendChild(this.elementClock);
 		//mainDiv.appendChild(this.elementWeather);
