@@ -164,17 +164,17 @@ var layoutVertical =  {
 <tr style="height:50px">
 <td class='cor_tab1' id='tab1'>
 <div class='tab'>
-Acontece no IFSC
+Acontece 
 </div>
 </td>
 <td class='cor_tab2' id='tab2'>
 <div class='tab'>
-Fotos do IFSC
+Fotos 
 </div>
 </td>
 <td class='cor_tab3' id='tab3'>
 <div class='tab'>
-Rede Social IFSC
+Defesas
 </div>
 </td>
 </tr>
