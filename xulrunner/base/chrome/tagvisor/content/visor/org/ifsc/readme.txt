@@ -6,8 +6,10 @@ Images, graphics, and names, such as IFSC are tradarmarks of IFSC - USP Universi
 * FIXED - source color to ifsc.usp.br at the typing at bottom
 * FIXED - logo at the bottom
 
-* Twitter -> Defesa - http://www.ifsc.usp.br/defesas_rss.php
-* Highlight Component - Rotate last 5
-* Flickr Images Random over the most recent - as opposite to the 9 by 9
-* http://www.ifsc.usp.br/destaque_rss.php
+* FIXED - Defesa - http://www.ifsc.usp.br/defesas2_rss.php - added local hora data
+* FIXED - http://www.ifsc.usp.br/destaque_rss.php
 
+notas: 
+
+* Procure por timer no destaque, defesas, e fotogrid, para mudar o tempo. 
+* Tem um timer para o start ( talvez desnecessário, e outro que e' a taxa de atualização ) 

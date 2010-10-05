@@ -61,24 +61,38 @@ var rsseventos =  {
 		.defesas {
 			color:black;
                         display:inline-block;
-                        background-color:#ff5;
+                        background-color:#ffc;
                         overflow:hidden;
                         margin:15px;
 			margin-left:25px;
                         padding:15px;
                         width:450px;
-                        height:220px;
+                        height:270px;
                         -moz-box-shadow: black 10px 10px 10px;
 		} 
 		.defesa_title { 
                         font-weight:bold;
                         font-size:22px;
 		} 
-		.defesa_description { 
+		.defesa_local { 
+                        font-weight:bold;
 			font-size:15px;
-			margin-top:20px;
-			color:darkblue;;
+			color:#777;
+			border-top:1px solid gray;
+			padding-top:10px;
+		} 
+		.defesa_datahora { 
+                        font-weight:bold;
+			font-size:15px;
+			color:#777;
+			border-top:1px solid gray;
+			padding-top:10px;
+		} 
+		.defesa_description { 
+                        font-size:22px;
 			font-weight:bold;
+			margin-top:20px;
+			color:#447;
 		} 
 
 		.twitterPanelEventos { 
@@ -134,7 +148,7 @@ var rsseventos =  {
 		this.feed.ajax( { type:"GET", url: this.feedURL, dataType: "xml", success: function (xml) {  self.__feedUpdated(xml) } });
 		var self = this;
 		this.render();
-		timer.setTimeout( function(){self.updateFeed()},10*1000);
+		timer.setTimeout( function(){self.updateFeed()},60*1000*15);
 	},
 	__feedUpdated : function(xml) {
 
@@ -143,12 +157,12 @@ var rsseventos =  {
 			//var pubDate = self.feed(this).find('pubDate').text();
 			var title   = self.feed(this).find('title').text();
 			var desc    = self.feed(this).find('description').text();
-			//var local    = self.feed(this).find('local').text();
-			//var data    = self.feed(this).find('data').text();
-			//var hora    = self.feed(this).find('hora').text();
+			var local    = self.feed(this).find('local').text();
+			var data    = self.feed(this).find('data').text();
+			var hora    = self.feed(this).find('hora').text();
 			var link    = self.feed(this).find('link').text();
 			
-			self.tweetQueue.push( '<span class="defesa_title">'+title+'</span><div class="defesa_description">'+desc+'</div>' );
+			self.tweetQueue.push( '<span class="defesa_title">'+title+'</span><div class="defesa_description">'+desc+'</div><div class="defesa_local">'+local+'</div><div class="defesa_datahora">'+hora+' | '+data+'</div>' );
 			
 		});
 
