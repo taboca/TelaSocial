@@ -63,49 +63,29 @@ var redesocial =  {
 			transform: rotate(1.1deg);
 			-webkit-transform: rotate(1.1deg);
 			-moz-transform: rotate(1.1deg);
+			color:black;                        
+			display:inline-block;
+                        font-size:18px;
+			overflow:hidden;
+                        font-weight:bold;                        
+                        margin:15px;
+                        padding:18px;
+                        width:300px;
+                        height:170px;
+			-moz-box-shadow: black 10px 10px 10px;
 		}
 
 		.postitpanel1 {                        
-			color:black;                        
-			display:inline-block;
-                        background-color:#ffc;
-                        font-size:18px;
-			overflow:hidden;
-                        font-weight:bold;                        
-                        margin:15px;
-                        padding:18px;
-                        width:300px;
-                        height:170px;
-			-moz-box-shadow: black 10px 10px 10px;
-                }
+			background-color:#ffc;
+        }
 
 		.postitpanel2 {                        
-			color:black;                        
-			display:inline-block;
-                        background-color:#fcf;
-                        font-size:18px;
-			overflow:hidden;
-                        font-weight:bold;                        
-                        margin:15px;
-                        padding:18px;
-                        width:300px;
-                        height:170px;
-			-moz-box-shadow: black 10px 10px 10px;
-                }
+            background-color:#fcf;
+        }
 
 		.postitpanel3 {                        
-			color:black;                        
-			display:inline-block;
-                        background-color:#cff;
-                        font-size:18px;
-			overflow:hidden;
-                        font-weight:bold;                  
-                        margin:15px;
-                        padding:18px;
-                        width:300px;
-                        height:170px;
-			-moz-box-shadow: black 10px 10px 10px;
-                }
+        	background-color:#cff;
+        }
 
 		.command {
                         color:black;

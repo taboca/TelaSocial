@@ -43,6 +43,7 @@ var gfx =  {
         name   : __appName,
         target : __targetName,
         targetId : __targetId,
+		destaque: SemComp,
         _coreDoc: null,
 
 	style : <><![CDATA[
@@ -200,8 +201,7 @@ var gfx =  {
 <table class='main' cellpadding="10" cellspacing="0" height="100%">
 <tr style="height:50px">
 <td class='cor_tab1' id='tab1' width="620"> 
-<div class='tab'>
-Destaque
+<div id='destaque' class='tab'>
 </div>
 </td>
 <td class='cor_tab2' id='tab2' width="620">
@@ -239,7 +239,7 @@ Rede Social ICMC
 </>;
 
 		this._coreDoc.getElementById(this._getId()).appendChild(importedElement);
-	
+		this._codeDoc.getElementById("destaque").innerHTML = "Destaque: " + destaque;
 
 	} ,
 
