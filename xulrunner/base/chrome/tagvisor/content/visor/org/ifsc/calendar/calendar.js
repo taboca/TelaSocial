@@ -32,7 +32,7 @@ var calendar_Widget =  {
         kickMore: function () { 
 	       	this._raiseEvent(".container", "kick");
               	var self = this;
-             	timer.setTimeout( function(){self.kickMore()},100);
+             	timer.setTimeout( function(){self.kickMore()},200);
  	} 
 
 }

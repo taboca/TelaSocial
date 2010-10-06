@@ -74,11 +74,7 @@ var twitter =  {
 		this._coreDoc.getElementById("headtarget").appendChild(style);
 		style.innerHTML=this.style; 
 
-		this.feed = new this._service_google.feeds.Feed(this.feedURL);
-		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
-		this.feed.setNumEntries(10);
-
-
+		this.feed = this._service_jquery;
 
 	} ,
 	popTweet : function() {
@@ -97,31 +93,27 @@ var twitter =  {
 	},
 
 	updateFeed : function() {
-		if (! this.popTweet()) {
-			var self =this; 
-			this.feed.load( function (e) {  self.__feedUpdated(e) } );
-		}
 		var self = this;
+		if (! this.popTweet()) {
+			this.feed.ajax( { type:"GET", url: this.feedURL, dataType: "xml", success: function (xml) {  self.__feedUpdated(xml) } });
+		}
 		timer.setTimeout( function(){self.updateFeed()},10000);
 	},
 
 	__feedUpdated : function(result) {
-		var i;
+		var self  = this;
+
 		if (result.error) {
 			return;
 		}
-		var items = result.xmlDocument.getElementsByTagName("item");
 
-                for (var i = 0; i < items.length; i++) {
+                this.feed(result).find('item').each(function(){
 
-			var titleElement = items[i].getElementsByTagName("title")[0];
-			var title = titleElement.firstChild.nodeValue;
+                        var title = self.feed(this).find('title').text();
+                        var image = self.feed(this).find('image').text();
 
-			var imageElement = items[i].getElementsByTagName("image")[0];
-			var image = imageElement.firstChild.nodeValue;
-
-			this.tweetQueue.push( { title: title, image: image } );
-		}
+			self.tweetQueue.push( { title: title, image: image } );
+		});
 
 	}
 
