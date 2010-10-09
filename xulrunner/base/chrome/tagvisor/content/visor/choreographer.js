@@ -80,8 +80,8 @@ com.taboca.upvisor = {
    completeAll: function () { 
      self= this; 
      setTimeout( function () {
-        $("#dump").css("display","none");
-        $("#console").css("display","none");
+        $("#dump").css("display","block");
+        $("#console").css("display","block");
         self.loadCallback()
      }, 5000);
    },
