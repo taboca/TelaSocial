@@ -5,15 +5,10 @@ var acontece =  {
 	name   : __appName,
         target : __targetName,
         targetId : __targetId,
-
-	crop    : "50",
-	title   : "Twitter 10",
 	feedURL : "http://www.ifsc.usp.br/eventos_rss.php",
 	feed    : null, 
-
 	style : <><![CDATA[
-
-		.tweetdate { 
+		.acontece_date { 
 			color:white;
 			font-weight:bold;
 			font-size:22px;
@@ -21,12 +16,7 @@ var acontece =  {
 			border-right:6px solid white;
 			padding-right:.5em
 		}
-
-		.tweetauthor { 
-			color:white; 
-		} 
-
-		.tweetpublic { 
+		.acontece_panel { 
 			color:black;
 			font-size:30px;
 			font-weight:bold;
@@ -34,12 +24,11 @@ var acontece =  {
 			background-color: rgba(255,255,255,.4);
 			-moz-box-shadow: rgba(255,255,255,.4) 0 0 20px; 
 			padding:10px;
+			height:135px;
 			margin-top:10px;
 			margin-bottom:10px;
 		} 
-
 	]]></>, 
-
 
 	start : function() {
 
@@ -56,7 +45,7 @@ var acontece =  {
 	setupContainer: function () { 
 		this.element.innerHTML="";
 		var first = this._coreDoc.createElement("div");
-		this.firstId = "firstacontece";
+		this.firstId = "acontece_first";
 		first.id = this.firstId;
 		this.tweetRepeated = {};
 		this.element.appendChild(first);
@@ -87,11 +76,14 @@ var acontece =  {
 			return;
 		}
 		var i;
-		for (i = result.feed.entries.length-1; i >=0 ; i--) {
+		//for (i = result.feed.entries.length-1; i >=0 ; i--) {
+		var maxi = result.feed.entries.length-1;
+		if (maxi>6) maxi=5; 
+		for (i=maxi;i>=0;i--) {
 			if (result.feed.entries[i]) {
-				var t =  '<span class="tweetdate">' + result.feed.entries[i].publishedDate + '</span>' + result.feed.entries[i].title + ' <span class="tweetauthor"></span>';
+				var t =  '<span class="acontece_date"> ' + result.feed.entries[i].publishedDate + '</span>' + result.feed.entries[i].title;
 				var k = this._coreDoc.createElement('div');
-				k.className = 'tweetpublic';
+				k.className = 'acontece_panel';
 				k.innerHTML = t;
 				this.element.insertBefore(k, this.element.firstChild);
 			}
