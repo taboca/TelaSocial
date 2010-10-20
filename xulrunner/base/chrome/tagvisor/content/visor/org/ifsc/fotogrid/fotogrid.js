@@ -21,7 +21,7 @@ var fade_Widget =  {
 	start: function () { 
 
 		//this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?id=53806588@N04&lang=pt-BR&format=RSS_200');
-		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?id=54803351@N05&lang=en-us&format=rss_200');
+		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?id=54803351@N05&lang=en-us&format=');
 		this.feed.setNumEntries(20);
 		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
 
