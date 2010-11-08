@@ -43,7 +43,7 @@ var gfx =  {
         name   : __appName,
         target : __targetName,
         targetId : __targetId,
-		destaque: SemComp,
+		destaque: "SemComp",
         _coreDoc: null,
 
 	style : <><![CDATA[
@@ -239,7 +239,7 @@ Rede Social ICMC
 </>;
 
 		this._coreDoc.getElementById(this._getId()).appendChild(importedElement);
-		this._codeDoc.getElementById("destaque").innerHTML = "Destaque: " + destaque;
+		this._coreDoc.getElementById("destaque").innerHTML = "Destaque: " + this.destaque;
 
 	} ,
 
