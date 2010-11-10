@@ -20,3 +20,13 @@ This project is an open-source and web-based system and offers an interactive so
 2. [Timeline example widget](http://www.youtube.com/watch?v=ykGudjEmgPM&feature=related) 
 3. [Overview social causes](http://www.youtube.com/watch?v=Qz70ecXaZ3c&feature=related) 
 4. [Treadmill App](http://www.youtube.com/watch?v=Dz2evO9JFGc&feature=related) 
+
+### Who used? 
+
+1. [2009 - ICMC - University of Sao Paulo](http://www.youtube.com/watch?v=75l0HdY0Z4c)
+2. [2010 - FISL11 - Major Open Source Event in Brazil](http://www.youtube.com/watch?v=OFtNdmc2ThE) 
+2. [2010 - IFSC - University of Sao Paulo](http://www.youtube.com/watch?v=1761dOyI3CE&feature=player_embedded) 
+
+### Contact 
+
+adm at taboca dot com 
