@@ -11,18 +11,15 @@ var typing =  {
 	feed    : null, 
 
 	style : <><![CDATA[
-
 		.typingPanel { 
 			font-size:35px; 
 			font-weight:bold;
 			color:black;
 		} 
-
 	]]></>, 
 
 	start : function() {
 		this.elementTable = this._coreDoc.createElement("div");
-		//this.elementTable.innerHTML="<div id='icon' style='float:left;' ></div><table width='880'><tr><td height='200' valign='middle'><div class='typingPanel' id='typingcontainer'></div></td></tr><tr><td><div style='font-size:18px;color:rgb(50,60,150);text-align:right'>Fonte: www.ifsc.usp.br</div></td></tr></table>";
 		this.elementTable.innerHTML="<table width='1060'><tr><td align='center' valign='middle' width='140'><div id='icon' style='' ></div></td><td><table width='100%'><tr><td height='200' valign='middle'><div class='typingPanel' id='typingcontainer'></div></td></tr><tr><td><div style='font-size:18px;color:rgb(50,60,150);text-align:right'>Fonte: www.ifsc.usp.br</div></td></tr></table></td></tr></table>";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.elementTable);
@@ -43,9 +40,8 @@ var typing =  {
 	 	var style = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
 		this._coreDoc.getElementById("headtarget").appendChild(style);
 		style.innerHTML=this.style; 
-		this.feed = new this._service_google.feeds.Feed(this.feedURL);
-		this.feed.setNumEntries(10);
-	} ,
+                this.feed = this._service_jquery;
+	},
 	popTweet : function() {
 		if (this.tweetQueue.length == 0) return false;
 		var t = this.tweetQueue.pop();
@@ -53,7 +49,7 @@ var typing =  {
 			return;
 		}
 		this.tweetRepeated[t] = true;
-		this.cycleArray[this.cycleTotal++]= { content: t.title, link: t.link  };
+		this.cycleArray[this.cycleTotal++]= { content: t.title };
 		if(this.cycleArray.length>0 && !this.reading) { 
 			this.readLine();
 			this.reading = true; 
@@ -68,13 +64,10 @@ var typing =  {
 	reading : false,
 	readIndex : 0,
 
-	// this.element is the reference
 	readLine: function () { 
 		if(this.cycleIndex>=this.cycleArray.length) { 
 			this.cycleIndex=0;
 		} 
-
-
 		var self = this;
 		timer.setTimeout( function(){self.readStep()},1000);
 	}, 
@@ -83,7 +76,6 @@ var typing =  {
 		var elCurr = this.cycleArray[this.cycleIndex];
 		var words = elCurr.content.split(" ");
 		var sum = "";
-		//sum += '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
 
 		for(var i=0;i<this.readIndex;i++) { 
 			sum+=words[i]+" ";
@@ -109,31 +101,19 @@ var typing =  {
 
 	updateFeed : function() {
 		if (!this.popTweet()) {
-			var self =this; 
-			this.feed.load( function (e) {  self.__feedUpdated(e) } );
+			var self =this;
+			this.feed.ajax( { type:"GET", url: this.feedURL, dataType: "xml", success: function (xml) {  self.__feedUpdated(xml) } });
 		}
 		var self = this;
 		timer.setTimeout( function(){self.updateFeed()},10000);
 	},
 
-	__feedUpdated : function(result) {
-		if (result.error || result.feed.entries < 1) {
-			return;
-		}
-		var i;
-		for (i = 0; i < result.feed.entries.length; i++) {
-			if (result.feed.entries[i]) {
-				//this.tweetQueue.push( '<img width="84" src="http://go.bath.ac.uk/qr/download?DATA='+result.feed.entries[i].link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />'+ result.feed.entries[i].title + ' <span class="tweetauthor">(' + result.feed.entries[i].author.replace(/ \(.*$/,'') + ')</span>');
-				var a= this._coreDoc.createElement("div");
-                                a.innerHTML=result.feed.entries[i].title;
-				// a.textContent
-                                this.tweetQueue.push( { title: result.feed.entries[i].title , link: result.feed.entries[i].link });
-			}
-		}
-
-		this.lastid = result.feed.entries[i-1].link.match(/\d+$/);
-		this.feed = new this._service_google.feeds.Feed(this.feedURL + '&since_id=' + this.lastid);
-		this.feed.setNumEntries(10);
+	__feedUpdated : function(xml) {
+		var self  = this;
+                this.feed(xml).find('item').each(function(){
+                        var title = self.feed(this).find('title').text();
+                        self.tweetQueue.push( { title: title });
+		});
 	}
 
 }

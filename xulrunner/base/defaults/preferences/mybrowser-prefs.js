@@ -9,6 +9,8 @@ pref("extensions.tagvisor.auto",true);
 pref("nglayout.debug.disable_xul_cache", true);
 pref("nglayout.debug.disable_xul_fastload", true);
 
+
+
 // for CCW mode we fixed ubuntu with pref("layout.css.dpi", 72);
 
 

@@ -65,7 +65,7 @@ var twitter =  {
 		this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 
 		var self = this;
-		timer.setTimeout( function(){self.updateFeed()},1000);
+		timer.setTimeout( function(){self.updateFeed()},5000);
 
 	},
 
