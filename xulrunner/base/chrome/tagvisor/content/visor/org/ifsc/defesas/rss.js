@@ -131,13 +131,13 @@ var rsseventos =  {
 		var counter = 0;
 		var self = this;
 		if(this.tweetQueue.length<1) { 
-			timer.setTimeout( function(){self.updateFeed()},60*1000);
+			timer.setTimeout( function(){self.updateFeed()},60*10*1000);
 		} else { 
 			var k = this._coreDoc.createElement('div');
 			k.className="defesas";
 			k.innerHTML = this.tweetQueue.pop();
 			this.element.insertBefore(k, this.element.firstChild);
-			timer.setTimeout( function () { self.render() }, 2000);
+			timer.setTimeout( function () { self.render() }, 600);
 		} 
 	},
 
@@ -146,6 +146,13 @@ var rsseventos =  {
 		this.feed.ajax( { type:"POST", url: this.feedURL, dataType: "xml", success: function (xml) {  self.__feedUpdated(xml) } });
 	},
 	__feedUpdated : function(xml) {
+
+		this.element.innerHTML="";
+                var first = this._coreDoc.createElement("div");
+                this.firstId = "firsttwitterEventos";
+                first.id = this.firstId;
+                this.tweetRepeated = {};
+                this.element.appendChild(first);
 
 		var self  = this; 
 		var cc = 0;
