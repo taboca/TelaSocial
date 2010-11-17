@@ -66,13 +66,13 @@ var fade_Widget =  {
 			var currentContainer = this.refContainers[this.refContainerCycle];
 			currentContainer.innerHTML = "<img id='fadeimage_fotogrid_new"+this.imageNumber+"' src='"+t+"' style='-moz-box-shadow: black 5px 5px 10px;opacity:.3'>";
 			these = this;
-			this._coreDoc.getElementById("fadeimage"+this.imageNumber).onload = function () { these.imageLoaded() };
+			this._coreDoc.getElementById("fadeimage_fotogrid_new"+this.imageNumber).onload = function () { these.imageLoaded() };
 			return true;
 		} 
 	},
 
 	imageLoaded : function() { 
-		var currImage =  this._coreDoc.getElementById("fadeimage"+this.imageNumber);
+		var currImage =  this._coreDoc.getElementById("fadeimage_fotogrid_new"+this.imageNumber);
 		var x= parseInt(currImage.width); 
 		var y= parseInt(currImage.height); 
 
