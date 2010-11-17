@@ -95,9 +95,11 @@ var layoutVertical =  {
 		this.movepos+=2;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		var currIndex = Math.floor(this.movepos/this.tabsWidth); 
-		this._service_jquery(".panel",this._coreDoc).attr("style","display:none");
-                this._coreDoc.getElementById(this.tabsPanelId[currIndex]).setAttribute("style","display:block");
-                this._coreDoc.getElementById("panelContainer").setAttribute("style",this.tabsPanelColors[currIndex]);
+		if(currIndex<this.tabsTitle.length) { 
+			this._service_jquery(".panel",this._coreDoc).attr("style","display:none");
+                	this._coreDoc.getElementById(this.tabsPanelId[currIndex]).setAttribute("style","display:block");
+                	this._coreDoc.getElementById("panelContainer").setAttribute("style",this.tabsPanelColors[currIndex]);
+		} 
 		if(this.movepos > 1080 ) this.movepos = 0;
         },
 
