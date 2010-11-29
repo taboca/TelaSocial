@@ -20,7 +20,7 @@ var fade_Widget =  {
 		
 	start: function () { 
 
-		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?id=54317030@N05&lang=pt-br&format=rss_200');
+		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?id=56306050@N03&lang=pt-br&format=rss_200');
 		this.feed.setNumEntries(20);
 		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
 
