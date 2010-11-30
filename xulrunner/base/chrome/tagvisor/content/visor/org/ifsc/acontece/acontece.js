@@ -39,7 +39,7 @@ var acontece =  {
 		this.setupContainer();
 
 		var self = this;
-		timer.setTimeout( function(){self.updateFeed()},10000);
+		timer.setTimeout( function(){self.updateFeed()},20000);
 	},
 
 	setupContainer: function () { 

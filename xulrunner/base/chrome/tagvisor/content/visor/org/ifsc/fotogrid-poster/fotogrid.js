@@ -4,6 +4,7 @@ timer = require("timer");
 
 var fade_Widget =  {
 
+// search for fadeimage and change it to be dynaMIC unique id
         name        : __appName,
         target      : __targetName,
         targetId    : __targetId,
@@ -12,10 +13,10 @@ var fade_Widget =  {
 	refElement   : null, 
 	imageNumber  : 0,
 	element      : null,
-	picWidth     : 340, 
-	picHeight    : 254, 
+	picWidth     : 1040, 
+	picHeight    : 930, 
         picQueue     : null, 
-        totalElements: 9, 
+        totalElements: 1, 
 	refContainers: null, 
         refContainerCycle : -1, 
 		
@@ -36,7 +37,7 @@ var fade_Widget =  {
 			k.style.width = this.picWidth + "px";
 			k.style.height= this.picHeight + "px";
 			k.style.marginLeft = "10px";
-			k.style.marginTop ="50px"; 
+			k.style.marginTop ="30px"; 
 			k.style.overflow="hidden";
 			k.style.display="inline-block";
 			this.element.insertBefore(k, this.element.firstChild);
@@ -44,7 +45,7 @@ var fade_Widget =  {
 		}
 
 		var scopedThis = this;
-               	timer.setTimeout( function () { scopedThis.popPic() }, 30000);
+               	timer.setTimeout( function () { scopedThis.popPic() }, 30*1000);
 
 	},
 
@@ -63,15 +64,15 @@ var fade_Widget =  {
 				this.refContainerCycle=0;
 			} 
 			var currentContainer = this.refContainers[this.refContainerCycle];
-			currentContainer.innerHTML = "<img id='fadeimage"+this.imageNumber+"' src='"+t+"' style='-moz-box-shadow: black 5px 5px 10px;opacity:.3'>";
+			currentContainer.innerHTML = "<img id='fadeimage_fotogrid_new"+this.imageNumber+"' src='"+t+"' style='-moz-box-shadow: black 5px 5px 10px;opacity:.3'>";
 			these = this;
-			this._coreDoc.getElementById("fadeimage"+this.imageNumber).onload = function () { these.imageLoaded() };
+			this._coreDoc.getElementById("fadeimage_fotogrid_new"+this.imageNumber).onload = function () { these.imageLoaded() };
 			return true;
 		} 
 	},
 
 	imageLoaded : function() { 
-		var currImage =  this._coreDoc.getElementById("fadeimage"+this.imageNumber);
+		var currImage =  this._coreDoc.getElementById("fadeimage_fotogrid_new"+this.imageNumber);
 		var x= parseInt(currImage.width); 
 		var y= parseInt(currImage.height); 
 
@@ -94,7 +95,7 @@ var fade_Widget =  {
 
 	kickFadeIn : function () { 
 		var scopedThis = this;
-               	timer.setTimeout( function () { scopedThis.popPic() }, 1000*30);
+               	timer.setTimeout( function () { scopedThis.popPic() }, 1000*60*15);
 	},
 
 	__feedUpdated : function(xml) {

@@ -9,11 +9,11 @@ var layoutVertical =  {
         targetId : __targetId,
         _coreDoc: null,
 
-        tabsColors: ['background-color:rgb(253,181,37);','background-color:rgb(100,197,210);','background-color:rgb(14,148,171)'],
-        tabsPanelColors: ['background-color:rgb(253,181,37);','background-color:rgb(100,197,210);','background-color:rgb(14,148,171);'],
-        tabsIds: ['tab1','tab2','tab3'],
-        tabsTitles: ['Acontece','Fotos','Defesas'],
-        tabsPanelId: ['area_panel1','area_panel2','area_panel3'],
+        tabsColors: ['background-color:rgb(253,181,37);','background-color:rgb(100,197,210);','background-color:rgb(14,148,171)','background-color:rgb(253,181,37);'],
+        tabsPanelColors: ['background-color:rgb(253,181,37);','background-color:rgb(100,197,210);','background-color:rgb(14,148,171);','background-color:rgb(253,181,37);'],
+        tabsIds: ['tab1','tab2','tab3','tab4'],
+        tabsTitles: ['Acontece','Fotos','Defesas','Poster'],
+        tabsPanelId: ['area_panel1','area_panel2','area_panel3','area_panel4'],
 
 	tabsTotal: 0,
         movepos : 0,
@@ -27,13 +27,8 @@ var layoutVertical =  {
 		background-color:rgb(255,255,255); margin:0; padding:0;
 	}
 
-	table {
-		z-index:1000;
-	}
-
 	table.maintable { 
 		width:1080px;
-		height:1920px;
 	} 
 
 	.panel {
@@ -46,8 +41,8 @@ var layoutVertical =  {
 
 	.tab {
                 font-size:28px;
-		padding:10px;
 		margin:0px;
+		padding:15px;
                 font-weight:bold;
         }
 
@@ -111,7 +106,7 @@ var layoutVertical =  {
 </div>
 <table class='maintable' border="0" >
 <tr>
-<td colspan="3"  align="left" valign="top" style="height:550px;padding:0;background:white url(http://www.ifsc.usp.br/imagens/tela_social/barra_sup.jpg) 0px 0px no-repeat" >
+<td align="left" valign="top" style="height:550px;padding:0;background:white url(http://www.ifsc.usp.br/imagens/tela_social/barra_sup.jpg) 0px 0px no-repeat" >
 
 <table border='0' width='1080' height="120">
 <tr>
@@ -128,18 +123,23 @@ var layoutVertical =  {
 
 </td>
 </tr>
+</table>
+
+<table>
+
 <tr style="height:50px" id='tabContainer'>
 </tr>
 <tr>
 <td id='panelContainer'>
 </td>
 </tr>
+</table>
+<table>
 <tr>
-<td colspan='3' id='area_bottom' valign='top'>
+<td id='area_bottom' valign='top'>
 </td>
 <td id='area_bottomright' valign="middle">
 </td>
-
 </tr>
 </table>
 
@@ -154,7 +154,7 @@ var layoutVertical =  {
 			var tdTab = this._coreDoc.createElement("td");
 			tdTab.setAttribute("style",this.tabsColors[i]+";width:"+this.tabsWidth+"px");
 			tdTab.setAttribute("id",this.tabsIds[i]);
-   			tdTab.innerHTML="<div class='tab'>"+this.tabsTitles[i]+"</div>";
+   			tdTab.innerHTML="<div class='tab' >"+this.tabsTitles[i]+"</div>";
 			this._coreDoc.getElementById("tabContainer").appendChild(tdTab); 
 
 			var divPanel = this._coreDoc.createElement("div");

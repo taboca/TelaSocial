@@ -119,7 +119,7 @@ var rsseventos =  {
 		this.element.appendChild(first);
 		this._coreDoc.getElementById(this._getId()).appendChild(this.element);
 		var self = this;
-		timer.setTimeout( function(){self.updateFeed()},10000);
+		timer.setTimeout( function(){self.updateFeed()},15000);
 	},
 	init : function () { 
 	 	var style = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
@@ -129,43 +129,47 @@ var rsseventos =  {
 	} ,
 	render : function() {
 		var counter = 0;
-		while(this.tweetQueue.length>0) { 
-
-			if(counter < 6) { 
-
-				counter++;
-				var t = this.tweetQueue.pop();
-				var k = this._coreDoc.createElement('div');
-				k.className = 'defesas';
-				k.innerHTML = t;
-				this.element.insertBefore(k, this.element.firstChild);
-
-			} 
+		var self = this;
+		if(this.tweetQueue.length<1) { 
+			timer.setTimeout( function(){self.updateFeed()},60*10*1000);
+		} else { 
+			var k = this._coreDoc.createElement('div');
+			k.className="defesas";
+			k.innerHTML = this.tweetQueue.pop();
+			this.element.insertBefore(k, this.element.firstChild);
+			timer.setTimeout( function () { self.render() }, 600);
 		} 
 	},
 
 	updateFeed : function() {
 		var self =this;
-		this.feed.ajax( { type:"GET", url: this.feedURL, dataType: "xml", success: function (xml) {  self.__feedUpdated(xml) } });
+		this.feed.ajax( { type:"POST", url: this.feedURL, dataType: "xml", success: function (xml) {  self.__feedUpdated(xml) } });
 	},
 	__feedUpdated : function(xml) {
 
+		this.element.innerHTML="";
+                var first = this._coreDoc.createElement("div");
+                this.firstId = "firsttwitterEventos";
+                first.id = this.firstId;
+                this.tweetRepeated = {};
+                this.element.appendChild(first);
+
 		var self  = this; 
+		var cc = 0;
 		this.feed(xml).find('item').each(function(){
-			//var pubDate = self.feed(this).find('pubDate').text();
 			var title   = self.feed(this).find('title').text();
 			var desc    = self.feed(this).find('description').text();
-			var local    = self.feed(this).find('local').text();
+			var local   = self.feed(this).find('local').text();
 			var data    = self.feed(this).find('data').text();
 			var hora    = self.feed(this).find('hora').text();
-			var link    = self.feed(this).find('link').text();
-			
-			self.tweetQueue.push( '<span class="defesa_title">'+title+'</span><div class="defesa_description">'+desc+'</div><div class="defesa_local">'+local+'</div><div class="defesa_datahora">'+hora+' | '+data+'</div>' );
+			if(cc<6) { 
+				self.tweetQueue.push( '<span class="defesa_title">'+title+'</span><div class="defesa_description">'+desc+'</div><div class="defesa_local">'+local+'</div><div class="defesa_datahora">'+hora+' | '+data+'</div>' );
+				cc++;
+			} 
 			
 		});
 		var self = this;
 		self.render();
-		timer.setTimeout( function(){self.updateFeed()},30000);
 
 	}
 }
