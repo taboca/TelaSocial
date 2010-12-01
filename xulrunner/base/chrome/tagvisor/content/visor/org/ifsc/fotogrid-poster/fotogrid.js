@@ -45,7 +45,7 @@ var fade_Widget =  {
 
 		var scopedThis = this;
                 this._coreDoc.getElementById(this._getId()).addEventListener("social-focus",function handle(e) { scopedThis.timeEvent(e) } , false);
-               	timer.setTimeout( function () { scopedThis.popPic() }, 30000);
+               	timer.setTimeout( function () { scopedThis.popPic() }, 10000);
 
 	},
 
@@ -121,13 +121,27 @@ var fade_Widget =  {
 	__feedUpdated : function(xml) {
 		var self  = this;
 		this.feed(xml).find('entry').each(function(){
-			var link = self.feed(this).find('link[rel="enclosure"]');
-			if(link.attr("rel") == "enclosure" ) { 
-				var src = link.attr("href");
-                       		if(src.indexOf("jpg")>-1 || src.indexOf("gif")>-1) {
-					self.picQueue.push(src);
-                       		}
+
+			var title = self.feed(this).find('title').text();
+			var docDate=new Date();
+			var docDateString = title.split("/");
+			var docDay = docDateString[0];
+			var docMonth = docDateString[1];
+			var docYear = docDateString[2];
+			docDate.setFullYear(parseInt(docYear),parseInt(docMonth-1),parseInt(docDay));
+			var today = new Date();
+			if (docDate>=today) { 
+				var link = self.feed(this).find('link[rel="enclosure"]');
+				if(link.attr("rel") == "enclosure" ) { 
+					var src = link.attr("href");
+       	                		if(src.indexOf("jpg")>-1 || src.indexOf("gif")>-1) {
+						self.picQueue.push(src);
+       	                		}
+				} 
+			} else { 
+				self.picQueue.push("http://www.ifsc.usp.br/imagens/tela_social/logo_ifsc.jpg");
 			} 
+
 		});
 		this.popPic();
 	}
