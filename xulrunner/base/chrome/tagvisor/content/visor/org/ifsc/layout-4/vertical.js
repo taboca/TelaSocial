@@ -86,16 +86,30 @@ var layoutVertical =  {
 
 
 ]]></>,
+       
+        pass: new Array(), 
+ 
         kick: function () {
 		this.movepos+=2;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
 		var currIndex = Math.floor(this.movepos/this.tabsWidth); 
+
 		if(currIndex<this.tabsTitles.length) { 
+ 		   if(!this.pass[currIndex]) { 
+			this.pass[currIndex]=true;		
 			this._service_jquery(".panel",this._coreDoc).attr("style","display:none");
                 	this._coreDoc.getElementById(this.tabsPanelId[currIndex]).setAttribute("style","display:block");
+
+
+			this._send(this._coreDoc.getElementById(this.tabsPanelId[currIndex]),"social-focus",null);
+
                 	this._coreDoc.getElementById("panelContainer").setAttribute("style",this.tabsPanelColors[currIndex]);
+ 		   } 
 		} 
-		if(this.movepos > 1080 ) this.movepos = 0;
+		if(this.movepos > 1080 ) { 
+			this.movepos = 0;
+			this.pass= new Array();
+		} 
         },
 
 	start : function () { 
