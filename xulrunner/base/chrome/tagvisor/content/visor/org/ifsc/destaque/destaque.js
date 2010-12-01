@@ -15,7 +15,7 @@ var twitter =  {
 		.destaque_element {                        
 			color:black;                        
 			display:inline-block;
-                        font-size:50px;
+                        font-size:45px;
 			overflow:hidden;
                         font-weight:bold;                        
                         margin:15px;

@@ -45,6 +45,7 @@ var acontece =  {
 	},
  
   	focus: function (e) { 
+		//this._dump(e); 
         },
 
 	setupContainer: function () { 
