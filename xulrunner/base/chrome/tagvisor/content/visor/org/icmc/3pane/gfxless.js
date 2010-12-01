@@ -150,11 +150,17 @@ var gfx =  {
 
         movepos : 0,
         moveleft: true,
+ 
+        done : new Array(), 
 	
         kick: function () {
 		this.movepos+=5;
                 this._coreDoc.getElementById("pointer").style.left=this.movepos+"px";
+               
 		if(this.movepos > 1260 && this.movepos < 1950 ) { 
+			if(!this.done[2]) { 
+
+			this.done[2] = true; 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
@@ -162,8 +168,11 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel3").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
+			} 
 		} 
 		if(this.movepos > 630 && this.movepos < 1260) { 
+			if(!this.done[1]) { 
+			this.done[1] = true; 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
@@ -171,8 +180,11 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel2").style.display="block";
                         this._coreDoc.getElementById("area_panel1").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
+			} 
 		} 
 		if(this.movepos > 0  && this.movepos < 630) { 
+			if(!this.done[0]) { 
+			this.done[0]=true;
                         this._coreDoc.getElementById("tab1").className="transp";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
@@ -181,11 +193,11 @@ var gfx =  {
                         this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
+			} 
 		} 
 		if(this.movepos > 1950 ) { 
-
-			this.movepos = 0
-
+			this.done=new Array();
+			this.movepos = 0;
 		} 
         },
 
