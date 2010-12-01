@@ -4,19 +4,18 @@ timer = require("timer");
 
 var fade_Widget =  {
 
-// search for fadeimage and change it to be dynaMIC unique id
         name        : __appName,
         target      : __targetName,
         targetId    : __targetId,
         feed        : null,
-        feedURL     : "http://api.flickr.com/services/feeds/photos_public.gne?id=54803351@N05&lang=en-us&format=",
+        feedURL     : "http://api.flickr.com/services/feeds/photos_public.gne?id=56576142@N08&lang=pt-br&format=",
 	refElement   : null, 
 	imageNumber  : 0,
 	element      : null,
-	picWidth     : 1040, 
-	picHeight    : 930, 
+        picWidth     : 1040,
+        picHeight    : 930,
         picQueue     : null, 
-        totalElements: 1, 
+        totalElements: 2, 
 	refContainers: null, 
         refContainerCycle : -1, 
 		
@@ -45,12 +44,34 @@ var fade_Widget =  {
 		}
 
 		var scopedThis = this;
-               	timer.setTimeout( function () { scopedThis.popPic() }, 30*1000);
+                this._coreDoc.getElementById(this._getId()).addEventListener("social-focus",function handle(e) { scopedThis.timeEvent(e) } , false);
+               	timer.setTimeout( function () { scopedThis.popPic() }, 30000);
 
 	},
 
 	init : function() {
 	},
+
+        flipContainers:0,
+
+        timeEvent: function () {
+
+                for(var i=0; i<this.totalElements; i++) {
+			var k = this.refContainers[i]; 
+			k.style.width = "0px";
+			k.style.height= "0px";
+                }
+
+		var k = this.refContainers[this.flipContainers]; 
+		k.style.width = this.picWidth + "px";
+		k.style.height= this.picHeight + "px";
+                this.flipContainers++;
+                if(this.flipContainers>=this.totalElements) {
+                        this.flipContainers=0;
+                }
+                this.kickFadeIn();
+
+        },
 
 	popPic: function() {
 		if (this.picQueue.length == 0) { 
@@ -64,15 +85,15 @@ var fade_Widget =  {
 				this.refContainerCycle=0;
 			} 
 			var currentContainer = this.refContainers[this.refContainerCycle];
-			currentContainer.innerHTML = "<img id='fadeimage_fotogrid_new"+this.imageNumber+"' src='"+t+"' style='-moz-box-shadow: black 5px 5px 10px;opacity:.3'>";
+			currentContainer.innerHTML = "<img id='posterimage"+this.imageNumber+"' src='"+t+"' style='-moz-box-shadow: black 5px 5px 10px;opacity:.3'>";
 			these = this;
-			this._coreDoc.getElementById("fadeimage_fotogrid_new"+this.imageNumber).onload = function () { these.imageLoaded() };
+			this._coreDoc.getElementById("posterimage"+this.imageNumber).onload = function () { these.imageLoaded() };
 			return true;
 		} 
 	},
 
 	imageLoaded : function() { 
-		var currImage =  this._coreDoc.getElementById("fadeimage_fotogrid_new"+this.imageNumber);
+		var currImage =  this._coreDoc.getElementById("posterimage"+this.imageNumber);
 		var x= parseInt(currImage.width); 
 		var y= parseInt(currImage.height); 
 
@@ -90,12 +111,11 @@ var fade_Widget =  {
 		} 
 		currImage.style.opacity="1";
 		this.imageNumber++;
-		this.kickFadeIn();
 	},
 
 	kickFadeIn : function () { 
 		var scopedThis = this;
-               	timer.setTimeout( function () { scopedThis.popPic() }, 1000*60*15);
+               	timer.setTimeout( function () { scopedThis.popPic() }, 1000*10);
 	},
 
 	__feedUpdated : function(xml) {
@@ -104,7 +124,7 @@ var fade_Widget =  {
 			var link = self.feed(this).find('link[rel="enclosure"]');
 			if(link.attr("rel") == "enclosure" ) { 
 				var src = link.attr("href");
-                       		if(src.indexOf("jpg")>-1) {
+                       		if(src.indexOf("jpg")>-1 || src.indexOf("gif")>-1) {
 					self.picQueue.push(src);
                        		}
 			} 

@@ -12,7 +12,7 @@ var layoutVertical =  {
         tabsColors: ['background-color:rgb(253,181,37);','background-color:rgb(100,197,210);','background-color:rgb(14,148,171)','background-color:rgb(253,181,37);'],
         tabsPanelColors: ['background-color:rgb(253,181,37);','background-color:rgb(100,197,210);','background-color:rgb(14,148,171);','background-color:rgb(253,181,37);'],
         tabsIds: ['tab1','tab2','tab3','tab4'],
-        tabsTitles: ['Acontece','Fotos','Defesas','Poster'],
+        tabsTitles: ['Acontece','Fotos','Defesas','Midia'],
         tabsPanelId: ['area_panel1','area_panel2','area_panel3','area_panel4'],
 
 	tabsTotal: 0,

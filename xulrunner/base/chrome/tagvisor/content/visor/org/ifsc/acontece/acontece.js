@@ -40,7 +40,12 @@ var acontece =  {
 
 		var self = this;
 		timer.setTimeout( function(){self.updateFeed()},20000);
+
+		this._coreDoc.getElementById(this._getId()).addEventListener("social-focus",function handle(e) { self.focus(e) } , false);
 	},
+ 
+  	focus: function (e) { 
+        },
 
 	setupContainer: function () { 
 		this.element.innerHTML="";
