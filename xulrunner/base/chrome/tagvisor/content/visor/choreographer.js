@@ -193,6 +193,13 @@ com.taboca.upvisor = {
 	widgetObject._service_google = google;
         widgetObject._dump = this.dump;
         widgetObject._service_jquery = $;
+
+        widgetObject._send = function (target, event, data) { 
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent(event, true, false);
+            evt.data = data;
+            target.dispatchEvent(evt);
+        }
 	
         widgetObject._getId = function () {
                 if( this._parentName == "" ) {  
