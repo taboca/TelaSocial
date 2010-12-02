@@ -20,7 +20,7 @@ var typing =  {
 
 	start : function() {
 		this.elementTable = this._coreDoc.createElement("div");
-		this.elementTable.innerHTML="<table width='1060'><tr><td align='center' valign='middle' width='140'><div id='icon' style='' ></div></td><td><table width='100%'><tr><td height='200' valign='middle'><div class='typingPanel' id='typingcontainer'></div></td></tr><tr><td><div style='font-size:18px;color:rgb(50,60,150);text-align:right'>Fonte: www.ifsc.usp.br</div></td></tr></table></td></tr></table>";
+		this.elementTable.innerHTML="<table width='1060'><tr><td align='center' valign='middle' width='140'><div id='icon' style='' ></div></td><td><table width='100%'><tr><td height='220' valign='middle'><div class='typingPanel' id='typingcontainer'></div></td></tr><tr><td><div style='font-size:18px;color:rgb(50,60,150);text-align:right'>Fonte: www.ifsc.usp.br</div></td></tr></table></td></tr></table>";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.elementTable);
 		this._coreDoc.getElementById("icon").innerHTML= '<img src="http://www.ifsc.usp.br/imagens/tela_social/logo_ifsc.jpg" style="margin-right:15px; margin-bottom:10px; " align="left" />';
