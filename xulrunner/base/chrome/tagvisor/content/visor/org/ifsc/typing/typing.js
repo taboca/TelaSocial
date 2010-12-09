@@ -12,7 +12,7 @@ var typing =  {
 
 	style : <><![CDATA[
 		.typingPanel { 
-			font-size:42px; 
+			font-size:46px; 
 			font-weight:bold;
 			color:black;
 		} 

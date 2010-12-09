@@ -15,19 +15,20 @@ var twitter =  {
 		.destaque_element {                        
 			color:black;                        
 			display:inline-block;
-                        font-size:41px;
+                        font-size:50px;
+
 			overflow:hidden;
                         font-weight:bold;                        
                         margin:15px;
                         padding:15px;
-                        width:1010px;
-                        height:350px;
+                        width:1050px;
+                        height:410px;
 			color:#444;
                 }
 
 		.destaque_element img { 
 			float:left;
-			margin-right:1em;
+			margin-right:20px;
 		} 
 
 		.command {

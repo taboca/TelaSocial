@@ -53,9 +53,8 @@ var layoutVertical =  {
         .transp { background-color:transparent; }
 
         #pointer {
-                top:540px;
+                top:557px;
                 width:60px;
-                -moz-border-radius:1px;
                 height:20px;
                 background-color:black;
                 z-index:1111;
@@ -69,7 +68,9 @@ var layoutVertical =  {
 	}
 
 	#area_bottom {
-		padding:1em;
+		padding:20px;
+		padding-top:10px;
+		padding-bottom:10px;
                 height:270px;
                 background-color:white;
     		font-family:Kaffeesatz,Verdana, Arial, Helvetica, sans-serif;
@@ -80,7 +81,7 @@ var layoutVertical =  {
 	
 	#area_midmid { 
 		width:1080px; 
-		height:420px; 
+		height:460px; 
 		overflow:hidden;
 	} 
 
@@ -120,14 +121,14 @@ var layoutVertical =  {
 </div>
 <table class='maintable' border="0" >
 <tr>
-<td align="left" valign="top" style="height:550px;padding:0;background:white url(http://www.ifsc.usp.br/imagens/tela_social/barra_sup.jpg) 0px 0px no-repeat" >
+<td align="left" valign="top" style="height:560px;padding:0;background:white url(http://www.ifsc.usp.br/imagens/tela_social/barra_sup.jpg) 0px -23px no-repeat" >
 
-<table border='0' width='1080' height="120">
+<table border='0' width='1080' height="90">
 <tr>
 <td id='area_topleft' width='230' valign='middle' align="center" >
 
 </td>
-<td id='area_topmid' align="right" valign="middle" >
+<td id='area_topmid' align="right" valign="top" >
 </td>
 </tr>
 </table>
