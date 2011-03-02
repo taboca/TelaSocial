@@ -1,8 +1,0 @@
-<!ENTITY options.version.label          "version 0.7">
-<!ENTITY options.title.label            "PiP - Picture in Picture">
-<!ENTITY options.restoreButton.label    "Restore Default Size">
-
-<!ENTITY options.size.label             "Pip Window Size">
-
-
-<!ENTITY tagvisor.buttonguide.tooltip    "Click here when over a page with a video.">
