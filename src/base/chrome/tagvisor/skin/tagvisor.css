@@ -1,0 +1,14 @@
+
+#tagvisorcanvas {
+
+	background:url("chrome://tagvisor/skin/lines.png");
+
+}
+
+label {
+
+}
+
+#tagvisormenu { 
+    list-style-image  : url("chrome://tagvisor/skin/icon_video.png");
+}

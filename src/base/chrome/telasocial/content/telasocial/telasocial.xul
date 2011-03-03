@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://telasocial/locale/telasocial.dtd">
+
+<window
+  id     = "telasocial"
+  title  = "&telasocial.title;"
+  width  = "800"
+  windowtype   = "navigator:browser"
+  height = "600"
+  xmlns  = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="telasocial.js"/>
+  <hbox collapsed="true">
+    <button id="back" label="&telasocial.back;" oncommand="back();" disabled="true"/>
+    <button id="forward" label="&telasocial.forward;" oncommand="forward();" disabled="true"/>
+    <button id="reload" label="&telasocial.reload;" oncommand="reload();"/>
+    <button id="stop" label="&telasocial.stop;" oncommand="stop();" disabled="true"/>
+    <textbox id="urlbar" value="" flex="1" onchange="go();"/>
+    <button id="go" label="&telasocial.go;" oncommand="go();"/>
+  </hbox>
+  <browser flex="1" id="browser" src="" type="content-primary"/>
+  <statusbar collapsed="true" >
+    <statusbarpanel id="status" label="" crop="end" flex="1"/>
+    <progressmeter id="progress" mode="determined" value="0%" style="display: none"/>
+    <statusbarpanel id="security" label="" style="display: none"/>
+  </statusbar>
+</window>
