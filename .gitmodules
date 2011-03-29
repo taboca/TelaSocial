@@ -1,0 +1,3 @@
+[submodule "gallery/ifsc"]
+	path = gallery/ifsc
+	url = git://github.com/taboca/telasocial-template-ifsc-usp-saocarlos.git
