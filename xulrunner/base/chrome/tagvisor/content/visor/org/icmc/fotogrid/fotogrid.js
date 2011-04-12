@@ -1,4 +1,3 @@
-
 c     = require("choreographer");
 timer = require("timer");
 
@@ -8,6 +7,7 @@ var fade_Widget =  {
         target      : __targetName,
         targetId    : __targetId,
         feed        : null,
+        feedURL     : "http://api.flickr.com/services/feeds/photos_public.gne?id=56306050@N03&lang=pt-br&format=",
 	refElement   : null, 
 	imageNumber  : 0,
 	element      : null,
@@ -20,13 +20,8 @@ var fade_Widget =  {
 		
 	start: function () { 
 
-		this.feed = new this._service_google.feeds.Feed('http://api.flickr.com/services/feeds/photos_public.gne?id=56306050@N03&lang=pt-br&format=rss_200');
-		this.feed.setNumEntries(20);
-		this.feed.setResultFormat(this._service_google.feeds.Feed.XML_FORMAT);
-
+                this.feed = this._service_jquery;
 		this.picQueue = new Array();
-
-
 		this.element = this._coreDoc.createElement('div');
 		this.element.style.marginLeft="10px";
 		this._coreDoc.getElementById(this._getId()).appendChild(this.element);
@@ -36,21 +31,19 @@ var fade_Widget =  {
 		this.refContainers = new Array();
 
 		for(var i=0; i<this.totalElements; i++) { 
-
 			var k = this._coreDoc.createElement("span");
 			k.style.width = this.picWidth + "px";
 			k.style.height= this.picHeight + "px";
 			k.style.marginLeft = "10px";
-			k.style.marginTop ="45px"; 
-			//k.style.border="5px solid black";
+			k.style.marginTop ="50px"; 
 			k.style.overflow="hidden";
 			k.style.display="inline-block";
-			//k.style.backgroundColor="#555";
 			this.element.insertBefore(k, this.element.firstChild);
 			this.refContainers[i]=k;
 		}
 
-		this.popPic();
+		var scopedThis = this;
+               	timer.setTimeout( function () { scopedThis.popPic() }, 30000);
 
 	},
 
@@ -60,7 +53,8 @@ var fade_Widget =  {
 	popPic: function() {
 		if (this.picQueue.length == 0) { 
 			var these = this;
-			this.feed.load( function (ref) { these.__feedUpdated(ref) } );
+			this.feed.ajax( { type:"POST", url: this.feedURL, dataType: "xml", success: function (xml) {  these.__feedUpdated(xml) } });
+
 		} else { 
 			var t = this.picQueue.pop();
 			this.refContainerCycle++;
@@ -99,29 +93,23 @@ var fade_Widget =  {
 
 	kickFadeIn : function () { 
 		var scopedThis = this;
-               	timer.setTimeout( function () { scopedThis.popPic() }, 10000);
+               	timer.setTimeout( function () { scopedThis.popPic() }, 1000*30);
 	},
 
-	__feedUpdated : function(result) {
-		if (result.error ) {
-			return;
-		}
-
-		var doc = result.xmlDocument;
-		var links = doc.getElementsByTagNameNS("http://search.yahoo.com/mrss/","content");
-		var i;
-		for (i = 0; i < links.length; i++) {
-		//	if (links[i].getAttribute("rel") == "enclosure") { 
-				var currentLink = links[i];
-				var src = currentLink.getAttribute("url");
-				if(src.indexOf("jpg")>-1) {
-                                        this._dump(src);
-                                        this.picQueue.push(src);
-                                }
-		//	} 
-		}
+	__feedUpdated : function(xml) {
+		var self  = this;
+		this.feed(xml).find('entry').each(function(){
+			var link = self.feed(this).find('link[rel="enclosure"]');
+			if(link.attr("rel") == "enclosure" ) { 
+				var src = link.attr("href");
+                       		if(src.indexOf("jpg")>-1) {
+					self.picQueue.push(src);
+                       		}
+			} 
+		});
 		this.popPic();
 	}
 }
 
 c.register(fade_Widget);
+
