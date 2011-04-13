@@ -43,7 +43,7 @@ var gfx =  {
         name   : __appName,
         target : __targetName,
         targetId : __targetId,
-		destaque: "ICMC 40 anos",
+		destaque: "Pesquisa no ICMC",
         _coreDoc: null,
 
 	style : <><![CDATA[
