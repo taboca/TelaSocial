@@ -10,6 +10,8 @@ pref("nglayout.debug.disable_xul_cache", true);
 pref("nglayout.debug.disable_xul_fastload", true);
 
 
+// use this to see debug in the console
+pref("browser.dom.window.dump.enabled", true);
 
 // for CCW mode we fixed ubuntu with pref("layout.css.dpi", 72);
 
