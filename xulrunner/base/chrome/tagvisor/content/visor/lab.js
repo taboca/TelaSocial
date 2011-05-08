@@ -44,6 +44,7 @@ function clearConsole() {
 
 function printToConsole(message) {
   document.getElementById("console").textContent += message;
+  dump(message);
 }
 
 
