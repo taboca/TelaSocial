@@ -71,12 +71,12 @@ function runCode() {
   }
 }
 
-function initLoader(scriptcode,name, targetName, targetId) { 
+function initLoader(scriptcode,name, targetName, targetId, scriptBasePath) { 
   var aLoader = new Cuddlefish.Loader({rootPaths: ["lib/"], print: printToConsole});
   scriptsLoaders[name]=aLoader; 
   var ret = null; 
   try {
-    scriptcode = "var __appName = '"+name+"'; __targetName = '"+targetName+"'; var  __targetId = '"+targetId+"'; "+ scriptcode; 
+    scriptcode = "var __basePath = '"+scriptBasePath+"'; var __appName = '"+name+"'; __targetName = '"+targetName+"'; var  __targetId = '"+targetId+"'; "+ scriptcode; 
     if (scriptcode) aLoader.runScript(scriptcode);
   } catch (e) {  aLoader.console.exception(e); }
 

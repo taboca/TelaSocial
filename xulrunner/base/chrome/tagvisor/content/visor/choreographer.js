@@ -91,6 +91,19 @@ com.taboca.upvisor = {
 
    },
 
+   loadContent: function (basePath, successCallback, errorCallback) { 
+        $.ajax({
+                        url: basePath,
+                        cache: false, async:false,
+                        success: function(data){
+                                successCallback(data);
+                        }, 
+                        error: function (e) { 
+ 				errorCallback(e) 
+			}
+                });
+   },
+
    registerWidget:function (targetName, scriptSource, name, targetId)  { 
 	var wInfo = { 
 		targetName: targetName, 
@@ -137,7 +150,7 @@ com.taboca.upvisor = {
 			success: function(data){
 				
 				self.dump("loading script... "+ curr.name +" and target Id = " + curr.targetId);
-				initLoader(data, curr.name, curr.targetName, curr.targetId);
+				initLoader(data, curr.name, curr.targetName, curr.targetId, curr.scriptSource);
 				self.loadSequential();
   			}
 		});

@@ -17,25 +17,18 @@ div {
 } 
 
 ]]></>,
+     
+        asyncStart: function (data) { 
+		var importedElement = this._coreDoc.createElement("div");
+		importedElement.innerHTML =  data;
+		this._coreDoc.getElementById(this._getId()).appendChild(importedElement);
+        }, 
        
 	start : function () { 
-
-		var importedElement = this._coreDoc.createElement("div");
-		importedElement.innerHTML =  <>
-
-testing
-<div id="area1">
-area 1
-</div>
-<div id="area2">
-area2
-</div>
-
-ops
-</>;
-
-		this._coreDoc.getElementById(this._getId()).appendChild(importedElement);
-
+                var self = this;
+		c.load("./org/simple/layout/data.html", function s(d) {
+			self.asyncStart(d);
+		} , function e(i) { console.log(i) } ); 
 	} ,
 
 	init : function () {
