@@ -11,7 +11,7 @@ var layoutVertical =  {
 	style : <><![CDATA[
 
 div { 
-	border:10px solid black;
+	border:1px solid black;
 	margin:1em;
 	padding:1em;
 } 
@@ -23,11 +23,15 @@ div {
 		var importedElement = this._coreDoc.createElement("div");
 		importedElement.innerHTML =  <>
 
+testing
 <div id="area1">
+area 1
 </div>
 <div id="area2">
+area2
 </div>
 
+ops
 </>;
 
 		this._coreDoc.getElementById(this._getId()).appendChild(importedElement);

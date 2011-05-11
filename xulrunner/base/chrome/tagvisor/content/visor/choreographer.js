@@ -61,7 +61,7 @@ com.taboca.upvisor = {
 
 			// url:"http://www.icmc.usp.br/~comunica/telaicmc/regras-layout.js",
 	$.ajax({
-                        url: "./rules-static/index.js",
+                        url: "./org/simple/index.js",
                         cache: false,
                         success: function(data){
 				eval(data);
