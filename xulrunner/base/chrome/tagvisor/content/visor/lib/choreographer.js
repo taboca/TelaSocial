@@ -17,23 +17,27 @@ var register = exports.register = function registerWidget(refObject) {
  
 } 
 
+/* This is function that can be used to load files from the local basePath 'visor' 
+   structure. Some refs to possibility of related work: 
+   https://developer.mozilla.org/en/Components.utils.evalInSandbox
+*/
+
 exports.load = function (basePath, successCallback, errorCallback) { 
  
-//console.log(1);
         var mediator = windowsMediator.getService(Ci.nsIWindowMediator);
         var mainWin = mediator.getMostRecentWindow("navigator:browser");
         var appWin = mainWin.gBrowserContentWindow;
         var dirsvc = Cc["@mozilla.org/file/directory_service;1"]
              .getService(Ci.nsIProperties);
         var appDir =  dirsvc.get("resource:app", Ci.nsIFile).path;
- 	//console.log("lib/chromeless load: basePath = " + appDir + " and " + basePath);
 
-//	try { 
- //       var s = Cu.Sandbox(appWin.contentWindow); 
-  //      var result = Cu.evalInSandbox("com.taboca.upvisor.loadContent('org/simple/layout/data.html',function s(e) { console.log(e) } )", s);
-//	} catch (i) { console.log(i) } 
+        /*
+	try { 
+           var s = Cu.Sandbox(appWin.contentWindow); 
+           var result = Cu.evalInSandbox("com.taboca.upvisor.loadContent('org/simple/layout/data.html',function s(e) { console.log(e) } )", s);
+	} catch (i) { console.log(i) } 
+        */
 	appWin.wrappedJSObject.com.taboca.upvisor.loadContent(basePath, successCallback, errorCallback);
-//https://developer.mozilla.org/en/Components.utils.evalInSandbox
 
 } 
 
