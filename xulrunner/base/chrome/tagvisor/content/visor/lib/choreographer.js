@@ -37,6 +37,8 @@ exports.load = function (basePath, successCallback, errorCallback) {
            var result = Cu.evalInSandbox("com.taboca.upvisor.loadContent('org/simple/layout/data.html',function s(e) { console.log(e) } )", s);
 	} catch (i) { console.log(i) } 
         */
+
+        // Calls the actual ajax load function over in the main app space
 	appWin.wrappedJSObject.com.taboca.upvisor.loadContent(basePath, successCallback, errorCallback);
 
 } 
