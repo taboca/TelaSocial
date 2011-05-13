@@ -71,6 +71,11 @@ function runCode() {
   }
 }
 
+/* We are not using yet the scriptBasePath here, but the reasoning was to tell 
+   the widget code which path she is. Maybe we need to revisit this whole thing
+   And to simply make each component execute in a window or something whrere  
+   it knows its own basePath */ 
+
 function initLoader(scriptcode,name, targetName, targetId, scriptBasePath) { 
   var aLoader = new Cuddlefish.Loader({rootPaths: ["lib/"], print: printToConsole});
   scriptsLoaders[name]=aLoader; 
