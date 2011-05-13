@@ -1,4 +1,5 @@
 pref("toolkit.defaultChromeURI", "chrome://telasocial/content/telasocial.xul");
+pref("extensions.tagvisor.app","org/icmc/index-icmc-4.0.js");
 pref("general.useragent.extra.telasocial", "TelaSocial CrowdBrowsing/0.1");
 pref("extensions.tagvisor.auto",true);
 

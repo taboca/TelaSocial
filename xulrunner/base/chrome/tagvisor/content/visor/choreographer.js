@@ -50,6 +50,7 @@ com.taboca.upvisor = {
 
    rulesLoad: function () { 
                         //url: "http://www.icmc.usp.br/~comunica/telaicmc/events.js",
+/*
 	  $.ajax({
                         url: "./rules-static/events.js",
                         cache: false,
@@ -57,19 +58,19 @@ com.taboca.upvisor = {
                                 eval(data);
                         }
                 });
+*/
 
-
+        var prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+        var url = prefService.getCharPref("extensions.tagvisor.app");
+dump(url);
 			// url:"http://www.icmc.usp.br/~comunica/telaicmc/regras-layout.js",
 	$.ajax({
-                        url: "./org/simple/index.js",
-                        cache: false,
-                        success: function(data){
-				eval(data);
-                        }
-                });
-
-
-
+                url: url,
+                cache: false,
+                success: function(data){
+                   eval(data);
+                }
+        });
 
    },
 
