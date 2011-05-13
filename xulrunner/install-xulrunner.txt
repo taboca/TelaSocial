@@ -14,3 +14,4 @@ Execute the app
 
 Change the rule scripts in the chrome tagvisor content visor ./rules-static 
 
+If XULRunner --install-app does not work, you can also load directly calling /Full_path_to_xulrunner/xulrunner-bin full_path_to_telasocial/xulrunner/base/application.ini
