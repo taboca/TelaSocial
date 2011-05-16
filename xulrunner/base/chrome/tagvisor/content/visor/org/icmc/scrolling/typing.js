@@ -107,10 +107,10 @@ var typing =  {
 		var elm = this.cycleArray[this.cycleIndex].content;
                 this.x-=2;
                 this.ctx.fillStyle = "rgb(55, 55, 55)";
-                this.ctx.fillRect (0, 20, this.w , this.h);
+                this.ctx.fillRect (0, 0, this.w , this.h);
                 this.ctx.fillStyle = "rgba(255, 255, 255, 1)";
                 this.ctx.restore();
-                this.ctx.fillText(elm, this.x,50);
+                this.ctx.fillText(elm, this.x,100);
 
 		var self = this;
                 if(this.x<-1*this.ww) { 
