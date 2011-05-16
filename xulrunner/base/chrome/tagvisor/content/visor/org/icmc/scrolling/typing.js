@@ -88,8 +88,8 @@ var typing =  {
                 this.ww = this.ctx.mozMeasureText(elm);
                 this.ctx.save();
                 this.ctx.fillText(elm, this.ww,50);
-                //this.x=this.ww;
-                this.x=0;
+                this.x=this.w;
+                //this.x=0;
 
 		var self = this;
 		timer.setTimeout( function(){self.readStep()},1000);
@@ -114,9 +114,10 @@ var typing =  {
 
 		var self = this;
                 if(this.x<-1*this.ww) { 
+			this.cycleIndex++;
 			timer.setTimeout( function(){self.readLine()},5000);
                 } else { 
-			timer.setTimeout( function(){self.readStep()},30);
+			timer.setTimeout( function(){self.readStep()},20);
 		} 
 
 
