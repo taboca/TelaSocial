@@ -124,7 +124,7 @@ function gBrowserLoad(url) {
   var browser = document.getElementById("browser");
   browser.loadURI(url, null, null);
   gBrowserContentWindow = document.getElementById("browser").contentWindow;
-  setTimeout("zoom()",5000);
+  setTimeout("zoom()",1000);
 
 } 
 

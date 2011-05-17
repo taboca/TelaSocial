@@ -57,7 +57,7 @@ com.taboca.tagvisor = {
   prestart_services: function () { 
 	var tt = this; 
 	this.checkStartRestore();
-	setTimeout( function () { tt.checkStartDelayed(); }, 5000); 
+	setTimeout( function () { tt.checkStartDelayed(); }, 1000); 
   },
 	
   checkStartDelayed: function () { 
@@ -81,7 +81,7 @@ com.taboca.tagvisor = {
         var auto = this.prefService.getBoolPref("extensions.tagvisor.auto");
 	if(auto) { 
 	  var self = this; 	
-          setTimeout( function () { self.play();  } ,5000);
+          setTimeout( function () { self.play();  } ,1000);
 	} 
      } 
   },

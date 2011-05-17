@@ -16,17 +16,15 @@ var calendar_Widget =  {
                 this._raiseEvent(".container.redesocial", "start");
                 this._raiseEvent(".container.imageshow", "start");
 
-
                 var self = this;
                 timer.setTimeout( function(){self.kickMore()},1000);
 
-		
 	} ,
 
 	init : function () {
-		
 
 	} ,
+
 	kickState : false, 
 
         kickMore: function () { 

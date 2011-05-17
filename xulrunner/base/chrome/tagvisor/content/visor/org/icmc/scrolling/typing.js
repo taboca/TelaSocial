@@ -38,7 +38,7 @@ var typing =  {
 
                 this.ctx = this.canvas.getContext("2d");
                 this.ctx.fillStyle = "rgba(0, 0, 0, 1)";
-                this.ctx.font = "100px Verdana";
+                this.ctx.font = "80px Verdana";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.canvas);
 		this.tweetQueue = new Array();
@@ -97,7 +97,7 @@ var typing =  {
 	
         ctx : null, 
  	w : 1300, 
-	h : 200,
+	h : 100,
         x : 0,
         ww : 0,
         canvas: null, 
@@ -110,7 +110,7 @@ var typing =  {
                 this.ctx.fillRect (0, 0, this.w , this.h);
                 this.ctx.fillStyle = "rgba(255, 255, 255, 1)";
                 this.ctx.restore();
-                this.ctx.fillText(elm, this.x,100);
+                this.ctx.fillText(elm, this.x,65);
 
 		var self = this;
                 if(this.x<-1*this.ww) { 

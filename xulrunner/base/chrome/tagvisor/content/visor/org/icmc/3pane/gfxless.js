@@ -93,7 +93,7 @@ var gfx =  {
                 background-color:black;
                 z-index:10000;
                 position:absolute;
-                top:44px;
+                top:144px;
                 left:0px;
         }
 
@@ -115,7 +115,7 @@ var gfx =  {
 	} 
 
 	#area_bottom {
-                height:230px;
+                height:110px;
                 background-color:rgba(0,0,0,.7);
 		color:white;
         }
@@ -211,6 +211,12 @@ var gfx =  {
 <div id='pointer'>
 </div>
 <table class='main' cellpadding="10" cellspacing="0" height="100%">
+<tr>
+<td colspan='2' id='area_bottom' valign='top' style=''>
+</td>
+<td id='area_bottomright' align="center" valign="middle">
+</td>
+</tr>
 <tr style="height:50px">
 <td class='cor_tab1' id='tab1' width="620"> 
 <div id='destaque' class='tab'>
@@ -236,13 +242,6 @@ Rede Social ICMC
 <div class="panel" id='area_panel3'>
 </div>
 </td>
-</tr>
-<tr>
-<td colspan='2' id='area_bottom' valign='top' style=''>
-</td>
-<td id='area_bottomright' align="center" valign="middle">
-</td>
-
 </tr>
 </table>
 

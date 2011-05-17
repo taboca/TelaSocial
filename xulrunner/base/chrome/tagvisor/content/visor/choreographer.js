@@ -50,7 +50,6 @@ com.taboca.upvisor = {
 
    rulesLoad: function () { 
                         //url: "http://www.icmc.usp.br/~comunica/telaicmc/events.js",
-/*
 	  $.ajax({
                         url: "./rules-static/events.js",
                         cache: false,
@@ -58,11 +57,9 @@ com.taboca.upvisor = {
                                 eval(data);
                         }
                 });
-*/
 
         var prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
         var url = prefService.getCharPref("extensions.tagvisor.app");
-dump(url);
 			// url:"http://www.icmc.usp.br/~comunica/telaicmc/regras-layout.js",
 	$.ajax({
                 url: url,
@@ -76,6 +73,7 @@ dump(url);
 
    dump: function (str) { 
 	$("#dump").append(str+"<br />");
+        dump(str + "\n");
    },
 
    completeAll: function () { 
@@ -84,7 +82,7 @@ dump(url);
         $("#dump").css("display","none");
         $("#console").css("display","none");
         self.loadCallback()
-     }, 5000);
+     }, 1000);
    },
 
    registerEvent: function ( bucket, name, value) { 
@@ -114,7 +112,7 @@ dump(url);
 		name:name
 	} 
 	this.pendingWidgets[this.loadCounter] = wInfo;
-	this.dump("Registering ("+this.loadCounter+") = "+wInfo.name+" and targetId = "+targetId);
+	dump("Registering ("+this.loadCounter+") = "+wInfo.name+" and targetId = "+targetId + "\n");
 	this.loadCounter++;
 	this.stackLoadScripts++;
    } ,
@@ -157,18 +155,7 @@ dump(url);
 		});
 
 	}  else { 
-        //	this.tryFinish();
 	} 
-   },
-
-   tryFinish: function() { 
-
-	this.stackLoadScripts--;
-        this.dump("...");
-	if(this.stackLoadScripts==0) { 
-		this.renderWidgets();
-        }
-
    },
 
    widgetKill: function ( name, target) { 
@@ -181,6 +168,7 @@ dump(url);
 	} 
 
    }, 
+   notDone:true,
    matchRegistration: function (widgetObject, name, targetName, targetId) { 
 
 	this.stackLoadScripts--;
@@ -191,13 +179,13 @@ dump(url);
                 targetName = "";
         }
         scopedthis.widgetList[ targetName + "." + name] = widgetObject;
-        this.dump("Available scope '"+targetName+"."+name+"'");
+        dump("Available scope '"+targetName+"."+name+"'" + "\n");
         widgetObject._childList  = new Array();
         widgetObject._parentName = targetName;
         widgetObject._name       = name;
         widgetObject._targetId   = targetId;
         if(scopedthis.widgetList[targetName]) {
-		this.dump("Giving id scope "+targetId +" to myself = "+widgetObject._name );
+		dump("Giving id scope "+targetId +" to myself = "+widgetObject._name );
                 scopedthis.widgetList[targetName]._childList[name] = targetId ;
         }
         var choreographer=this;
@@ -223,12 +211,15 @@ dump(url);
                 }
         }
         widgetObject._raiseEvent  = function (a,b,c) { choreographer.raiseEvent(a,b,c);
- }
+        }
         widgetObject._uniqueId = Math.random()*100000;
         widgetObject.init();
 
 	if(this.stackLoadScripts==0) {
-                this.completeAll();
+                if(this.notDone) { 
+			this.notDone=false;
+          	        this.completeAll();
+		} 
         }
    },
 
