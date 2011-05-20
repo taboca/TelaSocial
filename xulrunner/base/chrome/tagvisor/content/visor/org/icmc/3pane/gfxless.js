@@ -51,7 +51,8 @@ var gfx =  {
 	html { padding:0; margin:0; overflow:hidden; font-family: Fontin, verdana, arial, sans-serif } 
 
 	body {
-		background-color:rgb(253,181,37); margin:0; padding:0;
+/*		background-color:rgb(253,181,37); margin:0; padding:0;*/
+		background-color:rgb(70,80,90); margin:0; padding:0;
 	}
 
 	table {
@@ -77,13 +78,17 @@ var gfx =  {
 
 	#area_bottomright { 
 		text-align:center;
-		background-color:rgb(70,70,70);	
+/*		background-color:rgb(70,70,70);	*/
+		background-color:rgb(100,100,100);	
 	} 
-
-        .cor_tab1 { background-color:rgb(253,181,37); }
+		
+		.cor_tab1 { background-color:rgb(253,181,37); }
         .cor_tab2 { background-color:rgb(100,197,210); }
         .cor_tab3 { background-color:rgb(14,148,171);	}
-
+/*
+        .cor_tab1 { background-color:rgb(153,281,137); }
+        .cor_tab2 { background-color:rgb(200,97,110); }
+        .cor_tab3 { background-color:rgb(14,48,171);	}*/
         .transp { background-color:transparent; }
 
         #pointer {
@@ -93,7 +98,7 @@ var gfx =  {
                 background-color:black;
                 z-index:10000;
                 position:absolute;
-                top:144px;
+                top:212px;
                 left:0px;
         }
 
@@ -115,8 +120,9 @@ var gfx =  {
 	} 
 
 	#area_bottom {
-                height:110px;
-                background-color:rgba(0,0,0,.7);
+                height:160px;
+/*                background-color:rgba(0,0,0,.7);*/
+                background-color:rgba(0,0,0,197);
 		color:white;
         }
 
@@ -159,7 +165,6 @@ var gfx =  {
                
 		if(this.movepos > 1260 && this.movepos < 1950 ) { 
 			if(!this.done[2]) { 
-
 			this.done[2] = true; 
                         this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
@@ -184,12 +189,12 @@ var gfx =  {
 		} 
 		if(this.movepos > 0  && this.movepos < 630) { 
 			if(!this.done[0]) { 
-			this.done[0]=true;
-                        this._coreDoc.getElementById("tab1").className="transp";
+			this.done[0] = true;			
+                        this._coreDoc.getElementById("tab1").className="cor_tab1";
                         this._coreDoc.getElementById("tab2").className="cor_tab2";
                         this._coreDoc.getElementById("tab3").className="cor_tab3";
 			this._coreDoc.getElementById("td_panel").style.backgroundColor="rgb(253,181,37)";
-			this._coreDoc.getElementById("td_panel").style.backgroundColor="transparent";
+			//this._coreDoc.getElementById("td_panel").style.backgroundColor="transparent";
                         this._coreDoc.getElementById("area_panel1").style.display="block";
                         this._coreDoc.getElementById("area_panel2").style.display="none";
                         this._coreDoc.getElementById("area_panel3").style.display="none";
@@ -258,6 +263,7 @@ Rede Social ICMC
 	try { 
 	 	var style = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
 	 	//var styleBackground = this._coreDoc.createElementNS("http://www.w3.org/1999/xhtml", "style");
+
 		this._coreDoc.getElementById("headtarget").appendChild(style);
 		//this._coreDoc.getElementById("headtarget").appendChild(styleBackground);
 		style.innerHTML=this.style; 
