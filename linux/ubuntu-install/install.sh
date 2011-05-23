@@ -1,6 +1,6 @@
 
 mkdir /usr/lib/taboca
-cp -r ./build/* ./usr/lib/taboca
+cp -r ./build/* /usr/lib/taboca
 
 cp ./screen/ubuntu/xorg.conf /etc/X11/xorg.conf
 
