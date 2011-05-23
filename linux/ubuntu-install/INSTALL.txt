@@ -5,6 +5,11 @@ Assumption that you have your ./build populated with ./build/xulrunner and ./bui
 0) sudo su 
 1) ./install.sh
 
+MANUAL -- resolution
+=====
+
+Make your ubuntu in 1920x1080
+
 MANUAL  -- installing Telasocial in the cron job ( every one minute it will check things ) 
 ===============================================================
 2) type crontab -e 
