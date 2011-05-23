@@ -8,7 +8,7 @@ var typing =  {
 
 	crop    : "50",
 	title   : "Twitter 10",
-	feedURL : "http://www4.usp.br/index.php/noticias?format=feed&type=rss",
+	feedURL : "http://icmc-usp.blogspot.com/feeds/posts/default",
 	feed    : null, 
 
 	style : <><![CDATA[
