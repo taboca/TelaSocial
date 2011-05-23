@@ -7,7 +7,7 @@ var twitter =  {
         targetId : __targetId,
 
 	feedURL : "http://search.twitter.com/search.rss?q=%23janelasvirtuais",
-	feedURLdois : "http://www.janelasvirtuais.xpg.com.br/whitelist.xml",
+	feedURLdois : "http://www.icmc.usp.br/~janelasvirtuais/whitelist.xml",
 	feed    : null,
 	feeddois    : null,
 	colors : [],
@@ -16,6 +16,11 @@ var twitter =  {
 	approved: [],
 	
 	style : <><![CDATA[
+
+		.twitterPanel {
+			margin-left:25px;
+			margin-top:20px;
+		}
 
 		.tweetauthor { 
 			color:gray; 
@@ -87,7 +92,7 @@ var twitter =  {
 										self.approvedUpdated(xml);
 									 } 
 									});
-		//timer.setTimeout( function(){self.loadApproved()},60*1000);
+		timer.setTimeout( function(){self.loadApproved()},6*1000);
 	},
 
 	approvedUpdated : function(xml) {
@@ -107,8 +112,8 @@ var twitter =  {
 	popTweet : function() {
 		if (this.tweetQueue.length == 0) { 
 			var self = this;
-			timer.setTimeout( function(){self.loadApproved()},60*1000);
-			timer.setTimeout( function(){self.updateFeed()},60*1000);
+			//timer.setTimeout( function(){self.loadApproved()},60*1000);
+			//timer.setTimeout( function(){self.updateFeed()},60*1000);
 			return false;
 		} 
 		var obj = this.tweetQueue.pop();
@@ -140,6 +145,8 @@ var twitter =  {
 	updateFeed : function() {
 		var self = this; 
 		this.feed.ajax( { type:"GET", url: this.feedURL, dataType: "xml", success: function (xml) { self.__feedUpdated(xml) } });
+
+		timer.setTimeout( function(){self.updateFeed()},10000);
 	},
 
 	__feedUpdated : function(xml) {
