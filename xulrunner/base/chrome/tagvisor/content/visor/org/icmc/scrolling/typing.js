@@ -8,23 +8,10 @@ var typing =  {
 
 	crop    : "50",
 	title   : "Twitter 10",
-	feedURL : "http://www4.usp.br/index.php/noticias?format=feed&type=rss",
+	feedURL : "http://icmc-usp.blogspot.com/feeds/posts/default", 
 	feed    : null, 
 
-	style : <><![CDATA[
-
-		.typingPanel { 
-			font-size:35px; 
-			font-weight:bold;
-			color:white;
-		} 
-
-		table.typing td { 
-			border:0px;
-		} 
-
-
-	]]></>, 
+	style : ".typingPanel { font-size:35px; font-weight:bold; color:white; } table.typing td { border:0px; } ", 
 
 
 	start : function() {
@@ -37,8 +24,8 @@ var typing =  {
                 this.canvas.height = this.h;
 
                 this.ctx = this.canvas.getContext("2d");
-                this.ctx.fillStyle = "rgba(0, 0, 0, 1)";
-                this.ctx.font = "80px Verdana";
+                this.ctx.fillStyle = "rgb(251,181,37)";
+                this.ctx.font = "40px Verdana";
 
 		this._coreDoc.getElementById(this._getId()).appendChild(this.canvas);
 		this.tweetQueue = new Array();
@@ -97,7 +84,7 @@ var typing =  {
 	
         ctx : null, 
  	w : 1300, 
-	h : 100,
+	h : 70,
         x : 0,
         ww : 0,
         canvas: null, 
@@ -106,11 +93,11 @@ var typing =  {
 
 		var elm = this.cycleArray[this.cycleIndex].content;
                 this.x-=2;
-                this.ctx.fillStyle = "rgb(55, 55, 55)";
+                this.ctx.fillStyle = "rgb(253, 181, 37)";
                 this.ctx.fillRect (0, 0, this.w , this.h);
-                this.ctx.fillStyle = "rgba(255, 255, 255, 1)";
+                this.ctx.fillStyle = "rgba(0, 0, 0, 1)";
                 this.ctx.restore();
-                this.ctx.fillText(elm, this.x,65);
+                this.ctx.fillText(elm, this.x,45);
 
 		var self = this;
                 if(this.x<-1*this.ww) { 
