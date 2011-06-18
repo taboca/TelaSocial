@@ -107,7 +107,10 @@ com.taboca.tagvisor = {
           if(!window.fullScreen) {
             window.fullScreen = true;
           }
-          window.resizeTo(screen.width - 1, screen.height);
+          //window.resizeTo(screen.width - 1, screen.height);
+          window.innerWidth = screen.width - 1;
+          window.innerHeight = screen.height;
+    
         }
 
 	try { 	
