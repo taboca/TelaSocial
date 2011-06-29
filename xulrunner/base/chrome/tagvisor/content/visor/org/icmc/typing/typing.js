@@ -8,23 +8,10 @@ var typing =  {
 
 	crop    : "50",
 	title   : "Twitter 10",
-	feedURL : "http://icmc-usp.blogspot.com/feeds/posts/default",
+	feedURL : "http://icmc-usp.blogspot.com/feeds/posts/default", 
 	feed    : null, 
 
-	style : <><![CDATA[
-
-		.typingPanel { 
-			font-size:35px; 
-			font-weight:bold;
-			color:white;
-		} 
-
-		table.typing td { 
-			border:0px;
-		} 
-
-
-	]]></>, 
+	style : " .typingPanel { font-size:35px; font-weight:bold; color:white; } table.typing td { border:0px; } ", 
 
 	start : function() {
 
@@ -92,9 +79,6 @@ var typing =  {
 
 		for(var i=0;i<this.readIndex;i++) { 
 			sum+=words[i]+" ";
-			if(i==0) { 
-				this._coreDoc.getElementById("qrcode").innerHTML= '<img width="120" src="http://go.bath.ac.uk/qr/download?DATA='+ elCurr.link+'" style="margin-right:15px; margin-bottom:10px; " align="left" />';
-			} 
 		} 
 		this._coreDoc.getElementById("firsttyping").innerHTML=sum;
 		this.readIndex++;

@@ -46,35 +46,7 @@ var rsseventos =  {
 	title   : "Twitter 10",
 	feedURL : "http://www.icmc.usp.br/eventos/feed/",
 	feed    : null, 
-	style : <><![CDATA[
-		#storetempEventos {
-			margin: 0 auto; // nao funciona - "centralizar"
-		}
-		.tweetdateEventos { 
-			color:blue;
-			font-weight:bold;
-			font-size:32px;
-			margin-right:.5em;
-			border-right:6px solid white;
-			padding-right:.5em;
-		}
-		.tweetauthor { 
-			color:gray; 
-		} 
-		.tweetpublicEventos {
-			color:black;
-			font-size:40px;
-			font-weight:bold;
-			-moz-border-radius:12px;
-			background-color: rgba(255,255,255,.5);
-			-moz-box-shadow: rgba(255,255,255,.5) 0 0 10px; 
-			padding:10px;
-			margin:10px;
-		} 
-		.twitterPanelEventos { 
-			width:100%;
-		} 
-	]]></>, 
+	style : ' #storetempEventos { margin: 0 auto;  } .tweetdateEventos { color:blue; font-weight:bold; font-size:32px; margin-right:.5em; border-right:6px solid white; padding-right:.5em; } .tweetauthor { color:gray; } .tweetpublicEventos { color:black; font-size:40px; font-weight:bold; -moz-border-radius:12px; background-color: rgba(255,255,255,.5); -moz-box-shadow: rgba(255,255,255,.5) 0 0 10px; padding:10px; margin:10px; } .twitterPanelEventos { width:100%; } ' , 
 	start : function() {
 
                 this.elementStore = this._coreDoc.createElement('div');
