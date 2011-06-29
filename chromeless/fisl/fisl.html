@@ -15,10 +15,18 @@
 			} 
 		} 
 	} 
+	var tags = ["oficial","erratas","fisl","tags","identica","twitter"];
 	function animate() { 
-		setTimeout("animateNext('widget10')",000);
-		setTimeout("animateNext('widget6')",15000);
-		setTimeout("animate()",30000);
+
+		setTimeout("animateNext('target_inicial')",000);
+		setTimeout("animateNext('target_oficial')",5000);
+		setTimeout("animateNext('target_erratas')",10000);
+		setTimeout("animateNext('target_fisl')",15000);
+		setTimeout("animateNext('target_tags')",20000);
+		setTimeout("animateNext('target_identica')",25000);
+		setTimeout("animateNext('target_twitter')",30000);
+		setTimeout("animate()",35000);
+
  	} 
  	var cc=0;
         var scaleold=null;
@@ -103,7 +111,7 @@
 <td  valign="top">
 <div class="area1">
 
-<div id="widget10" style="margin:0;height:216px;overflow:hidden;border:0px solid black">
+<div id="target_inicial" style="margin:0;height:216px;overflow:hidden;border:0px solid black">
 
 <!--
 <iframe style='float:right;-moz-transform:scale(2.0);margin-top:200px' src='http://selos.climatempo.com.br/selos/MostraSelo.php?CODCIDADE=363&SKIN=laranja' scrolling='no' frameborder='0' width='210' height='370' marginheight='0' marginwidth='0'></iframe>
@@ -123,15 +131,15 @@
 
 </div>
 
-<iframe src="./twitter/fisl_oficial.html" class="panel"></iframe>
-<iframe src="./feeds/feed-main-rss.html" class="panel" style='border:0px solid red;height:900px'></iframe>
+<iframe id="target_oficial" src="./twitter/fisl_oficial.html" class="panel"></iframe>
+<iframe id="target_erratas" src="./feeds/feed-main-rss.html" class="panel" style='border:0px solid red;height:900px'></iframe>
 
 
 </div>
 
 </td>
 
-<td style='background: url("brand/bg-purple.png");' valign="top">
+<td id="target_fisl" style='background: url("brand/bg-purple.png");' valign="top">
 
 <table style="width:1080px">
 <tr>
@@ -167,7 +175,7 @@
 
 <td style='background: url("brand/bg-orange.png");' valign="top">
 
-<div id="widget6" class='panel' style="left:0px;width:1080px;height:320px;overflow:hidden">
+<div id="target_tags" class='panel' style="left:0px;width:1080px;height:320px;overflow:hidden">
 <table border="0"><tr>
 <td valign="top" >
 <div style='overflow:hidden;width:560px'>
@@ -175,7 +183,7 @@
 </div>
 </iframe>
 </td>
-<td valign="top" style='padding-top:4em'>
+<td  valign="top" style='padding-top:4em'>
 
 <img style='margin:1em;-moz-box-shadow: 0 0 10px black;;background:white;padding:5px;-moz-border-radius:15px;' src='http://theme.identi.ca/0.9.7/identica/logo.png' width="70" align='middle'/><span style='font-size:230%;font-weight:bold'>#fisl12</span><br />
 <img src='brand/twitter.png' width="80" align='middle' style='padding:0px;background-color:white;-moz-border-radius:16px;-moz-box-shadow: 0 0 10px black;margin:1em' /><span style='font-size:230%;font-weight:bold'>#fisl12</span><br />
@@ -185,11 +193,14 @@
 </table>
 </div>
 
+<div id="target_identica" >
 <img style='margin-left:2em' src='http://theme.identi.ca/0.9.7/identica/logo.png' width="80" />
 <iframe src="./feeds/feed-identica.html" style='position:relative;left:0px;border:0px;overflow:hidden;width:1080px;height:700px;background:none'>
 </iframe>
 
-<iframe src="./twitter/fisl12.html" style='position:relative;left:0px;border:0px;overflow:hidden;width:1080px;height:800px;background:none'>
+</div>
+
+<iframe id="target_twitter" src="./twitter/fisl12.html" style='position:relative;left:0px;border:0px;overflow:hidden;width:1080px;height:800px;background:none'>
 </iframe>
 
 
