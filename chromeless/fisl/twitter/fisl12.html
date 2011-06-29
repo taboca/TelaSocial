@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style>
+  
+ .twtr-hd { 
+   display:none;
+ } 
+
+ .twtr-tweet-text {
+    font-size: 155%;
+    font-family: Georgia, Serif;
+    font-weight:bold;
+ }
+  
+ .twtr-tweet { 
+   margin-bottom:5px;
+   background-color:rgba(255,255,255,.5);
+   padding:.5em;
+ } 
+ 
+ .twtr-avatar { 
+    width:80px ! important;
+    height:80px ! important;
+    margin-right:20px;
+ } 
+ .twtr-tweet img { 
+    width:80px ! important;
+    height:80px ! important;
+  } 
+
+</style>
+</head>
+
+<body>
+<div style="padding:15px;width:1080px;">
+<img src="../brand/twitter.png" style='padding:0px;margin-bottom:5px;;background-color:white;-moz-border-radius:13px;' />
+
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#FISL',
+  interval: 6000,
+  title: 'FISL 2011',
+  subject: 'Tecnologia que Liberta',
+  width:  1030,
+  height: 680,
+  theme: {
+    shell: {
+      background: 'transparent',
+      color: '#000'
+    },
+    tweets: {
+      background: 'rgba(255,255,255,.3)',
+      color: '#000',
+      links: '#000'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    toptweets: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
+
+</div>
+
+</body>
+</html>

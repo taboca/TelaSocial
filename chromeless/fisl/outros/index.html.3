@@ -1,0 +1,208 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script>
+        var c=1;
+	var r=0;
+	var tt=0;
+
+	function s21() { 
+
+		setTimeout("animateNext('widget2')",000);
+		setTimeout("animateNext('widget6')",5+10000);
+		setTimeout("animateNext('widget3')",5+18000);
+		setTimeout("animateNext('widget33')",5+24000);
+		setTimeout("animateNext('widget5')",5+30000);
+		setTimeout("s1()",40000);
+
+ 	} 
+ 	var cc=0;
+        var scaleold=null;
+        var scale=null;
+	var priorwww=null;
+
+	function animateNext(id) { 
+		var a = document.getElementById(id);
+		cc++;
+/*
+		x = parseInt(window.innerWidth/2); 	
+		y = parseInt(window.innerHeight/2);; 	
+
+		x-= a.offsetLeft+parseInt(a.offsetWidth/2); 	
+		y-= a.offsetTop+parseInt(a.offsetHeight/2); 	
+*/
+		x= a.offsetLeft; 	
+		y= a.offsetTop; 	
+
+		ww = a.offsetWidth;
+		www = window.innerWidth;		        
+/*
+		if(priorwww) { 
+		   scale = priorwww/ww; 
+		} else { 
+		} 
+ 		priorwww = ww; 
+*/
+                   scale = www/ww;
+
+		if(!scaleold) { 
+//		document.styleSheets[0].insertRule("#pagina2 { -moz-transition-property: -moz-transform; -moz-transform:scale("+scale+"); -moz-transition-duration:3s;  }",cc+1);
+		}  
+		
+		scaleold = scale; 
+                document.styleSheets[0].insertRule("#pagina { -moz-transition-property: -moz-transform; -moz-transform:translate("+-1*x+","+-1*y+"); -moz-transition-duration:3s;  }",cc);
+
+	//	document.styleSheets[0].insertRule("#pagina3 { -moz-transition-property: -moz-transform; -moz-transform:translate(parseInt(-1*x*scale), parseInt(-1*y*scale)); -moz-transition-duration:3s;  }",cc);
+	} 
+
+</script>
+
+<style>
+ 
+
+    .panel { 
+	width:1070px;
+        height:100%;
+	border:0;
+    } 
+
+    .panels { 
+       padding:0;
+       margin:0;
+       width:3240px;
+    } 
+
+    #pagina3 { 
+	width:9080px; 
+	height:1920px; 
+	-moz-transform:scale(.666);
+	-moz-transform-origin:0 0;
+	overflow:hidden;
+	background-color:white;
+    } 
+	
+    html { background:black } 
+
+   div  { 
+	position:relative;
+   } 
+
+</style>
+</head>
+
+<body onload="s1()">
+
+<div id="overflower" style='position:relative;'>
+
+<div id='pagina3' >
+<div id='pagina2' style="-moz-transform-origin: 0 0;width:3240px;height:1920px; ">
+<div id='pagina'>
+
+<table class="panels" >
+<tr>
+<td style='background: url("brand/bg-yellow.png");' valign="top">
+
+<div id="widget10" class='panel' style="left:0px;top:-50px;width:1000px;height:420px;overflow:hidden;-moz-transform:scale(.5)">
+<iframe src="./brand/fisl12.svg" style='position:relative;top:-130px;left:40px;border:0px;overflow:hidden;width:700px;height:700px;background:none'>
+</iframe>
+</div>
+
+<div id="widget11" class='panel' style="">
+<iframe src="./feeds/feed-main-rss.html" class="panel">
+</iframe>
+</div>
+
+
+
+</td>
+
+<td style='background: url("brand/bg-purple.png");' valign="top">
+
+<table style="width:1080px">
+<tr>
+<td valign="top">
+
+<div id="widget2" class='panel' style="left:0px;width:1080px;height:720px;overflow:hidden;text-align:left;">
+<table width="100%" >
+<tr>
+<td>
+<h1>29 JUN / 02 JUL 2011</h1>
+Centro de Eventos PUCRS - Porto Alegre - Brasil
+</td>
+<td align="right">
+<h1>29 JUN / 02 JUL 2011</h1>
+Centro de Eventos PUCRS - Porto Alegre - Brasil
+</td>
+</tr>
+</table>
+<iframe src="brand/fisl12.svg" style='-moz-transform:scale(2);-moz-transform-origin:0 0;position:relative;top:-300px;left:-370px;border:0px;overflow:hidden;width:800px;height:700px;background:none'>
+</iframe>
+</div>
+
+</td>
+</tr>
+</table>
+
+
+
+
+<h1>Lugar programação</h1>
+
+
+
+
+
+
+</td>
+
+<td style="width:1080px;height:1920px;background-color:rgb(230,200,0)" valign="top">
+<div id="widget6" class='panel' style="left:0px;width:1080px;height:320px;overflow:hidden">
+<iframe src="brand/fisl12.svg" style='position:relative;top:-130px;left:40px;border:0px;overflow:hidden;width:700px;height:700px;background:none'>
+</iframe>
+</div>
+
+<iframe src="./twitter/fisl12.html" style='position:relative;left:0px;border:0px;overflow:hidden;width:1080px;height:800px;background:none'>
+</iframe>
+
+<iframe src="./twitter/fisl_oficial.html" style='position:relative;left:0px;border:0px;overflow:hidden;width:1080px;height:800px;background:none'>
+</iframe>
+
+<!--
+<iframe src="./feeds/feed.html" style='position:relative;left:0px;border:0px;overflow:hidden;width:1080px;height:700px;background:none'>
+</iframe>
+
+-->
+
+</td>
+
+<td style="width:1080px;height:1920px;background-color:rgb(255,255,255)" valign="top">
+ 
+<div id="widget5" style="width:1080px;height:1920px;background-color:white;text-align:center;font-family:verdana;padding-top:700px">
+
+<h1>Tecnologia por</h1>
+
+<img src="http://www.telasocial.com/images/telasocial-logo-413.png">
+
+</div>
+
+</td>
+
+</tr>
+
+
+</table>
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+</body>
+</html>
