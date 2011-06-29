@@ -11,14 +11,14 @@
 			var param = document.location.toString().split("mode=");
 			if(param[1]=="tv") { 
 				document.getElementById("pagina3").style.width="1080";
+				animate();
 			} 
 		} 
-				animate();
 	} 
 	function animate() { 
 		setTimeout("animateNext('widget10')",000);
-		setTimeout("animateNext('widget6')",6000);
-		setTimeout("animate()",12000);
+		setTimeout("animateNext('widget6')",15000);
+		setTimeout("animate()",30000);
  	} 
  	var cc=0;
         var scaleold=null;
