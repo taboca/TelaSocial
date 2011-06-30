@@ -113,7 +113,8 @@ for( var y = 0; ( nodes = description.childNodes[ y ] ); y++ ) {
       // Create a feed instance that will grab Digg's feed.
       //var feed = new google.feeds.Feed("http://search.twitter.com/search.atom?q=+from%3Afisl_oficial");
       //var feed = new google.feeds.Feed("http://softwarelivre.org/fisl12/noticias/feed");
-      var feed = new google.feeds.Feed("http://softwarelivre.org/lucasa/erratas-e-avisos-do-fisl12/feed");
+
+      var feed = new google.feeds.Feed("http://softwarelivre.org/fisl12-feed/blog/feed");
     
       // Request the results in XML
       feed.setResultFormat(google.feeds.Feed.XML_FORMAT);
