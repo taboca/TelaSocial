@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="refresh" content="700;url=http://www.telasocial.com/ts/telasocial-fisl-2/fisl.html?mode=tv" /> 
+    <meta http-equiv="refresh" content="840;url=http://www.telasocial.com/ts/telasocial-fisl-2/fisl.html?mode=tv" /> 
 <script>
         var c=1;
 	var r=0;
@@ -17,16 +17,17 @@
 		} 
 	} 
 	var tags = ["oficial","erratas","fisl","tags","identica","twitter"];
+	function sec(x) { return 1000*x } 
 	function animate() { 
 
-		setTimeout("animateNext('target_inicial')",000);
-		setTimeout("animateNext('target_oficial')",15000);
-		setTimeout("animateNext('target_erratas')",30000);
-		setTimeout("animateNext('target_fisl')",45000);
-		setTimeout("animateNext('target_tags')",60000);
-		setTimeout("animateNext('target_identica')",75000);
-		setTimeout("animateNext('target_twitter')",100000);
-		setTimeout("animate()",115000);
+		setTimeout("animateNext('target_inicial')",sec(0));
+		setTimeout("animateNext('target_oficial')",sec(60));
+		setTimeout("animateNext('target_erratas')",sec(120);
+		setTimeout("animateNext('target_fisl')",sec(180));
+		setTimeout("animateNext('target_tags')",sec(180+60));
+		setTimeout("animateNext('target_identica')",sec(180+60+60);
+		setTimeout("animateNext('target_twitter')",sec(180+180);
+		setTimeout("animate()",420);
 
  	} 
  	var cc=0;
@@ -80,7 +81,7 @@
 
     #pagina3 { 
 	width:10080px; 
-	height:4200px; 
+	height:5200px; 
 	-moz-transform:scale(.666);
 	-moz-transform-origin:0 0;
 	overflow:hidden;
