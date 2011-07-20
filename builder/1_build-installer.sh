@@ -2,11 +2,15 @@ rm -rf ./telasocial-output.zip
 rm -rf ./installer 
 
 rm -rf TelaSocial
+
 git clone git://github.com/taboca/TelaSocial.git
 
-cp -r ./TelaSocial/linux/ubuntu-install/* ./installer
-
 mkdir ./installer
+
+echo .
+cp -r ./TelaSocial/linux/ubuntu-install/* ./installer
+echo .
+
 mkdir ./installer/build
 
 cp -r ./TelaSocial/xulrunner/base/* ./installer/build
