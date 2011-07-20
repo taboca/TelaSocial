@@ -1,0 +1,11 @@
+component {6724fc1b-3ec4-40e2-8583-8061088b3185} components/harness.js
+contract @mozilla.org/harness-service;1?id=6724fc1b-3ec4-40e2-8583-8061088b3185 {6724fc1b-3ec4-40e2-8583-8061088b3185}
+category app-startup Harness_Service_for_6724fc1b-3ec4-40e2-8583-8061088b3185 @mozilla.org/harness-service;1?id=6724fc1b-3ec4-40e2-8583-8061088b3185
+
+content chromeless chromeless/content/
+
+interfaces components/IMediaRecorder.xpt
+binary-component components/libmediarecorder.dylib ABI=Darwin_x86-gcc3
+#binary-component components/libmediarecorder.dll ABI=WINNT_x86-msvc
+#binary-component components/libmediarecorder.so ABI=Linux_x86-gcc3
+
