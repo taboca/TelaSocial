@@ -32,6 +32,9 @@ $ sudo gedit /etc/default/grub
 
 $ sudo update-grub
 
+MANUAL - xorg
+================================================================
+
 REBOOT 
 =================
 
