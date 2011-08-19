@@ -73,7 +73,7 @@ var typing =  {
 			this.readIndex=0;
 			this.cycleIndex++;
 
-			setTimeout( function(){self.readLine()},5000);
+			setTimeout( function(){self.readLine()},7000);
 		} 
 		else { 
 			var self = this;

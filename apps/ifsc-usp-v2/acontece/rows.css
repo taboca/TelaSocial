@@ -26,12 +26,19 @@
 	margin-top:1em;
     } 
     div h3 { 
-	font-size:140%;
+	font-size:180%;
 	-moz-border-radius:25px;
-	padding:.3em;
+	padding:.2em;
+	margin:0;
 	margin-top:-.3em;
     } 
     div.desc * { 
-	font-size:120% ! important;
-	color:#555;
+	font-size:26px ! important;
+	margin-bottom:5px;
+	color:rgb(120,100,0) ! important;
+	font-weight:normal;
+    } 
+
+    div.desc { 
+	margin-left:1em;
     } 

@@ -92,10 +92,7 @@ var defesas =  {
                 first.id = this.firstId;
                 this.tweetRepeated = {};
                 this.element.appendChild(first);
-
 		var self  = this; 
-	//	var maxi = result.feed.entries.length-1;
-
 		var cc=0;
      		$(result.xmlDocument).find('item').each(function(){
                         var title   = $(this).find('title').text();
@@ -109,24 +106,6 @@ var defesas =  {
                                 cc++;
                         }
                 });
-
-
-/*
-		if (maxi>6) maxi=5;
-		for (i=0;i<=maxi;i++) {
-			if (result.feed.entries[i]) {
-
-				var curr = result.feed.entries[i];
-				var title   = curr.title; 
-				var desc    = curr.description;
-				var local   = curr.local;
-				var data    = curr.data;
-				var hora    = curr.hora;
-
-				self.tweetQueue.push( '<span class="defesa_title">'+title+'</span><div class="defesa_description">'+desc+'</div><div class="defesa_local">'+local+'</div><div class="defesa_datahora">'+hora+' | '+data+'</div>' );
-			}
-		}
-*/
 
 		var self = this;
 		self.render();

@@ -117,7 +117,6 @@ var midia =  {
      		$(result.xmlDocument).find('entry').each(function(){
 			var title = $(this).find('title').text();
 
-/*
 			var docDate=new Date();
 			var docDateString = title.split("/");
 			var docDay = docDateString[0];
@@ -127,7 +126,6 @@ var midia =  {
 			var today = new Date();
 			if (docDate>=today) { 
 
-*/
 				var link = $(this).find('link[rel="enclosure"]');
 				if(link.attr("rel") == "enclosure" ) { 
 					var src = link.attr("href");
@@ -135,11 +133,9 @@ var midia =  {
 						self.picQueue.push(src);
        	                		}
 				} 
-/*
 			} else { 
-				self.picQueue.push("http://www.ifsc.usp.br/imagens/tela_social/logo_ifsc.jpg");
+				self.picQueue.push("http://www.ifsc.usp.br/www4/images/stories/logomarcas/logo_vertical_500x821.jpg");
 			} 
-*/
 
 		});
 		this.popPic();
