@@ -1,1 +1,1 @@
-untar xulrunner-2-tar.tar as ./xulrunner
+Change index.html to the path to you app

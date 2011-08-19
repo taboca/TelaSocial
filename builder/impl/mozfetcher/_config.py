@@ -1,7 +1,7 @@
 software = {
     "Linux_64bit": {
-       "url": "http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/runtimes/xulrunner-2.0.en-US.linux-x86_64.tar.bz2",
-       "md5": "cb0dc6ff5304b325098fc8910057884f",
+       "url": "http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/6.0/runtimes/xulrunner-6.0.en-US.linux-x86_64.tar.bz2",
+       "md5": "fb13a15ad4626192d7044fee2b3d9157",
        "bin": {
            "path": "xulrunner/xulrunner",
            "sig": "d103f16afe6a6125bb28987a9e391fee"
