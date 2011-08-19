@@ -35,9 +35,12 @@ var tempoWidget =  {
 		if(secs<=9) { 
 			prefix = "0";
 		} 
+		if(min<=9) { 
+			prefixmin = "0";
+		} 
 
 		//text = text.replace(/:..( [AP]M)$/, '$1');
-		this.elementClock.innerHTML = hour+":"+min+":"+prefix+secs;
+		this.elementClock.innerHTML = hour+":"+prefixmin+min+":"+prefix+secs;
 		var scopedThis = this;
 		setTimeout( function () { scopedThis.tick() }, 1000);
 
