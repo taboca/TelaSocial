@@ -10,6 +10,10 @@ mkdir ./installer/build
 cp -r ./TelaSocial/xulrunner/base/* ./installer/build
 rm -rf  ./installer/build/chrome/tagvisor/content/visor/*
 cp index.html ./installer/build/chrome/tagvisor/content/visor/
+
+# local
+cp -r ../apps/ifsc-usp-v2/* ./installer/build/chrome/tagvisor/content/visor
+
 cp mybrowser-prefs.js ./installer/build/defaults/preferences/mybrowser-prefs.js
 #cp xorg.conf ./installer/screen/ubuntu/xorg.conf
 cp -r ./build/xulrunner ./installer/build
