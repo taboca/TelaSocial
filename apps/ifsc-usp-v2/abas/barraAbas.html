@@ -1,0 +1,73 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <link media="screen, projection" type="text/css" href="../lib/hdgrid.css" rel="stylesheet">
+    <link media="screen, projection" type="text/css" href="../base.css" rel="stylesheet">
+    <script src="../vendor/jquery-min.js"></script>
+    <script src="../lib/tagvisor.js"></script>
+    <script src="../const.js"></script>
+
+<script>
+	function s1() { 
+                if(document.location.toString().indexOf("mode")>-1) { 
+                        var param = document.location.toString().split("mode=");
+                        if(param[1]=="tv") { 
+                                document.getElementById("viewport").style.width="1080";
+                                document.getElementById("viewport").style.height="1920";
+                                tv.add($('.slide'));
+                                animate();
+                        } 
+                } 
+        } 
+
+	function animate() { 
+                tv.play();
+		// um minuto e 30 secs
+		setTimeout("animate()",TEMPO_REFRESH_ABAS);
+ 	} 
+</script>
+
+<style>
+ .tab { 
+ 	width:540px; 
+	padding:1em;
+	font-size:30px;
+	display:inline;
+ } 
+ body, html { margin:0px; padding:0px }
+ #pagescale { width:6000px } 
+</style>
+
+</head>
+
+<body onload="s1()" id='main'>
+
+<div id='viewport' class='viewport' >
+<div id='pagetranslate' >
+<div id='pagescale'>
+
+<div class='gh1080 slide'  data-time="1s" data-effect="move" data-duration="4s" style='background: url("../brand/bg-orange.png");' >
+<div >
+<iframe src='../acontece/index.html' width='100%' height='100%' frameborder='no'  ></iframe>
+</div>
+</div>
+
+<div class='gh1080 slide' data-time="30s" data-effect="move" data-duration="4s" style='background: url("../brand/bg-lightblue.png");' >
+<div >
+<iframe src='../defesas/index.html' width='100%' height='100%' frameborder='no' style='overflow:hidden'  ></iframe>
+</div>
+</div>
+
+<div class='gh1080 slide' data-time="60s" data-effect="move" data-duration="4s" style='background: url("../brand/bg-blue.png");' >
+
+<iframe id='midia' src='../midia/index.html' width='100%' height='100%' frameborder='no' style='overflow:hidden'  ></iframe>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
