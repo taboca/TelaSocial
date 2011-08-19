@@ -26,9 +26,13 @@ var tempoWidget =  {
 	},
 	tick : function () {
 		this.data = new Date();
-		var text = this.data.toLocaleTimeString();
+		//var text = this.data.toLocaleTimeString();
+		//var text = this.data.toTimeString();
+		var hour = this.data.getHours();
+		var min = this.data.getMinutes();
+		var secs = this.data.getSeconds();
 		//text = text.replace(/:..( [AP]M)$/, '$1');
-		this.elementClock.innerHTML = text;
+		this.elementClock.innerHTML = hour+":"+min+":"+secs;
 		var scopedThis = this;
 		setTimeout( function () { scopedThis.tick() }, 1000);
 
