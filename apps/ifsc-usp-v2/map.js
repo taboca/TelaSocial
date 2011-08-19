@@ -20,7 +20,7 @@ $(document).ready(function() {
    widget("#main #middle-tabs", "abas", "./abas/barraAbasTop.html", iframeTemplate);
    widget("#main #topmiddle", "mid", "./destaques/index.html", iframeTemplate);
    widget("#main #bottom", "typing", "./typing/index.html", iframeTemplate);
-   widget("#main #bottomright", "tempo", "./weather/index.html", iframeTemplate);
+   widget("#main #bottomright", "tempo", "./weather-inpe/index.html", iframeTemplate);
 
    setTimeout("cicleMidia()",TEMPO_INICIO_MIDIA);
 });
