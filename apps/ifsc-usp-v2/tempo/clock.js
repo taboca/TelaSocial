@@ -31,8 +31,13 @@ var tempoWidget =  {
 		var hour = this.data.getHours();
 		var min = this.data.getMinutes();
 		var secs = this.data.getSeconds();
+		var prefix = "";
+		if(secs<=9) { 
+			prefix = "0";
+		} 
+
 		//text = text.replace(/:..( [AP]M)$/, '$1');
-		this.elementClock.innerHTML = hour+":"+min+":"+secs;
+		this.elementClock.innerHTML = hour+":"+min+":"+prefix+secs;
 		var scopedThis = this;
 		setTimeout( function () { scopedThis.tick() }, 1000);
 
