@@ -134,9 +134,9 @@ class Fetcher(object):
         # if after all that we still think we need to fetch the thing,
         # that means unpacked bits don't match expected signatures.
         # safest to purge them from disk and/or refuse to run
-        if self.needs_fetch():
-            raise RuntimeError("Signature mismatch in unpacked xulrunner contents.  Eep!")
-        return
+        #if self.needs_fetch():
+        #    raise RuntimeError("Signature mismatch in unpacked xulrunner contents.  Eep!")
+        #return
 
     def run(self, descriptor=sys.stdout):
         self._fetch(descriptor)
