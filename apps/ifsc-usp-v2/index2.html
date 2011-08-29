@@ -16,22 +16,6 @@
 	var r=0;
 	var tt=0;
 
-	function s1() { 
-		if(document.location.toString().indexOf("mode")>-1) { 
-			var param = document.location.toString().split("mode=");
-			if(param[1]=="tv") { 
-				document.getElementById("viewport").style.width="1080";
-				document.getElementById("viewport").style.height="1920";
-                		tv.add($('.slide'));
-				animate();
-			} 
-		} 
-	} 
-	function animate() { 
-                tv.play();
-		setTimeout("animate()",TEMPO_REFRESH_ABAS);
- 	} 
-
 </script>
 
 <style>
@@ -50,10 +34,27 @@
         margin:0; padding:0; 
 	background-color:black;
     } 
+	
+    #debug { 
+		background:white;	
+	} 
+    #animation { 
+		display:none;
+  	} 
+	
 </style>
 </head>
 
 <body onload="s1()" id="main">
+
+<div id="debug" >
+</div>
+
+<ul id='animation'>
+ <li data-scope='abas-meio' data-target='panel_acontece' data-time="1s" data-effect="move" data-duration="4s" />
+ <li data-scope='abas-meio' data-target='panel_defesas' data-time="30s" data-effect="move" data-duration="4s" />
+ <li data-scope='abas-meio' data-target='panel_midia' data-time="60s" data-effect="move" data-duration="4s"  />
+</ul>
 
 <div id='viewport' class='viewport' >
 <div id='pagetranslate' >

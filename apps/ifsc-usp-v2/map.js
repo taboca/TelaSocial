@@ -1,29 +1,31 @@
-
-/* Check data-time attribute in index2.html and also ./abas/barraAbas.html 
-   to change animation timing */
- 
-function widget(rule, id, src, template) { 
-	$(rule).html(iframeTemplate.data);
- 	$(rule+" iframe").attr("id",id);
- 	$(rule+" iframe").attr("src",src);
-} 
-
-var iframeTemplate = { 
-   data: '<iframe frameborder="no" style="height:100%;width:100%;overflow:hidden;" class="gv6"   src="" id="" ></iframe>'
-} 
-
 /* Grids On The Fly */
 
 $(document).ready(function() {
-   widget("#main #topright", "clock", "./tempo/index.html", iframeTemplate);
-   widget("#main #middle", "abas-meio", "./abas/barraAbas.html?mode=tv", iframeTemplate);
-   widget("#main #middle-tabs", "abas", "./abas/barraAbasTop.html", iframeTemplate);
-   widget("#main #topmiddle", "mid", "./destaques/index.html", iframeTemplate);
-   widget("#main #bottom", "typing", "./typing/index.html", iframeTemplate);
-   widget("#main #bottomright", "tempo", "./weather-inpe/index.html", iframeTemplate);
+   register("#main #topright", "clock", "./tempo/index.html", iframeTemplate);
+   register("#main #middle", "abas-meio", "./abas/barraAbas.html", iframeTemplate);
+   register("#main #middle-tabs", "abas", "./abas/barraAbasTop.html", iframeTemplate);
+   register("#main #topmiddle", "mid", "./destaques/index.html", iframeTemplate);
+   register("#main #bottom", "typing", "./typing/index.html", iframeTemplate);
+   register("#main #bottomright", "tempo", "./weather-inpe/index.html", iframeTemplate);
 
-   setTimeout("cicleMidia()",TEMPO_INICIO_MIDIA);
+   compile();  // this can be based in events in time too or scoped rules events.  So, when something happens 
+ 		// in the live store, it happens. one use case is that insertion of a IFRAME mutation 
+		// should generate a residual event in the store DOM, so you know, via selection rules
+		// when the store event ( iframe ) was loaded. So, for example is let's you start animation
+		// when all the iframes are in the DOM  
+
+   // case "#main #topright[loaded=true] & #main #middle & #mai bottom { event -> clockstart } 
+   // clockstart is reality in the live DOM. So #engine #clockstart and this will start ticking inside of it 
+   // where ticking is a tag #tick 
+
 });
+
+function startEngine() { 
+
+   s1();
+   setTimeout("cicleMidia()",TEMPO_INICIO_MIDIA);
+
+} 
 
 function cicleMidia() { 
    setTimeout( function () { 
@@ -33,3 +35,21 @@ function cicleMidia() {
 	cicleMidia();
    }, TEMPO_REFRESH_MIDIA);
 } 
+
+function s1() { 
+	if(document.location.toString().indexOf("mode")>-1) { 
+		var param = document.location.toString().split("mode=");
+		if(param[1]=="tv") { 
+			document.getElementById("viewport").style.width="1080";
+			document.getElementById("viewport").style.height="1920";
+               		tv.add($('#animation li'));
+			animate();
+		} 
+	} 
+} 
+function animate() { 
+        tv.play();
+	setTimeout("animate()",TEMPO_REFRESH_ABAS);
+ } 
+
+

@@ -1,0 +1,51 @@
+Cases
+
+ 	For each second, we kick a time stamp event
+  	if someone wants to add something to the current t+1
+	you insert a rule for the t+1. 
+
+	Case, a 30 seconds animation that has t=1 E=1 t=10,E2 and t=20, E3
+	and repeats.
+
+	* * 1 E1
+	* * 10 E2 
+	* * 20 E3 
+ 	
+	time[secs=1] { E1 } time[secs=10] { E2 } time[secs=20] { E3 } 
+
+	Each time event that happens in the timeline DOM storage appears and 
+	goes away, to a history DOM storage, which means processed. 
+
+
+DailyCron 
+ 
+  A heart beat loop ticker system that queries a 
+  data set of rules and applies ( generate events ) 
+ 
+  Temporal Selectors
+  
+  Date, 
+  Time, 
+
+  time[date="20/08/2011"] { 
+     apply-event: 
+  } 
+
+  time[cron="* * *"] { 
+     apply-event: 
+  } 
+
+===
+
+* Insert time-based event at any time
+* Delete time-based events 
+
+Mutation Events
+
+  + Iframe creation ( compatible widget ) 
+  + Iframe destruction ( compatible widget ) 
+  + DOM manipulation
+  + CSS rule insertion / removal 
+
+
+
