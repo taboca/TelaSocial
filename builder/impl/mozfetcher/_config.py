@@ -4,7 +4,7 @@ software = {
        "md5": "fb13a15ad4626192d7044fee2b3d9157",
        "bin": {
            "path": "xulrunner/xulrunner",
-           "sig": "d103f16afe6a6125bb28987a9e391fee"
+           "sig": "c39ea6817a6171197358e988cdc721f2cd0488fa"
        }
     },
     # for both 32 and 64 bit darwin we'll use 32 bit binaries
@@ -25,11 +25,11 @@ software = {
         }
     },
     "Linux_32bit": {
-        "url": "http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/runtimes/xulrunner-2.0.en-US.linux-i686.tar.bz2",
-        "md5": "5acef7cc816691f5c8726731ee0d8bdf",
+        "url": "http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/6.0/runtimes/xulrunner-6.0.en-US.linux-i686.tar.bz2",
+        "md5": "37c11cd838e9903b669f5290acd36f8d",
         "bin": {
             "path": "xulrunner/xulrunner",
-            "sig": "d103f16afe6a6125bb28987a9e391fee"
+            "sig": "95e56db330a70487de6b5629618831db88fe1be2"
         }
     }
 }
