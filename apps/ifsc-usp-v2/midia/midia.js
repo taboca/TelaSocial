@@ -134,7 +134,7 @@ var midia =  {
        	                		}
 				} 
 			} else { 
-				self.picQueue.push("http://www.ifsc.usp.br/www4/images/stories/logomarcas/logo_vertical_500x821.jpg");
+				self.picQueue.push(DEFAULT_MIDIA);
 			} 
 
 		});

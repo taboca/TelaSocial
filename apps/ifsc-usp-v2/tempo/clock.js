@@ -32,6 +32,7 @@ var tempoWidget =  {
 		var min = this.data.getMinutes();
 		var secs = this.data.getSeconds();
 		var prefix = "";
+		var prefixmin = "";
 		if(secs<=9) { 
 			prefix = "0";
 		} 
