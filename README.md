@@ -1,19 +1,16 @@
 # Welcome to TelaSocial - Bem-vindo ao TelaSocial 
 
  
-
 ## Português 
 
-Este é um projeto de código-aberto voltado para quiosques interativos que podem ser utilizados em painéis. 
-
-### Instruções
-
-1. [Instalação Linux](https://github.com/taboca/TelaSocial/wiki)
+1. [Instalação XULRunner/Linux](https://github.com/taboca/TelaSocial/wiki/pt-BR---Instala%C3%A7%C3%A3o-Linux)
 
 ## English 
 
 This project is an open-source and web-based system and offers an interactive solution for kiosks for public and semi-public environments, but not limited too. 
  
+1. [OS FAQ](https://github.com/taboca/TelaSocial/wiki/FAQ---Operating-System-Support)
+
 ### Demos
 
 1. [Kiosk used in FISL, major open source event in Brazil](http://www.youtube.com/watch?v=nkgHOrMkcWU)
