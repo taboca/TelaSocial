@@ -1,5 +1,11 @@
 # Welcome to TelaSocial - Bem-vindo ao TelaSocial 
 
+This project has a lot being changed nowadays ( September 2011 ). Notice this is a repository of a lot of old things, plus new things, and also client and Web-based ( that can be server hosted ) code. So a few pointers now: 
+
+   TelaSocial 
+          \_____apps ( Example of content app -- Web and JS only ) 
+          \_____xulrunner ( the client basic XULRunner app) 
+          \_____builder ( an attempt to build a simple browser xulrunner app ) 
  
 ## Português 
 
