@@ -19,8 +19,8 @@
 	var pending = null;
 
 	/* Editar */
-	var appHost = "tp://200.134.24.25/static/tela-acontece.html";
-	var controlHost = "http://200.134.24.25/control/1.js";
+	var appHost = "/static/tela-acontece.html";
+	var controlHost = "/control/1.js";
 
 	function start() { 
 		try { 
@@ -35,13 +35,14 @@
 					pending = false;
 				}
 			} else { 
-
+				/*
 				error++;
-
 				if(error>6) { 
 					pending = true;
 					error=0;
-				} 
+				}		 
+
+				*/
 			}  
 		} catch (i) { 
 		} 
@@ -55,10 +56,13 @@
 		script.type= 'text/javascript';
 		script.src= controlHost + "?" + Math.random();
 		document.getElementById('control').appendChild(script);
-		setTimeout("start()",2000);
+		setTimeout("start()",15000);
 
 		
 	} 
+		
+	setTimeout(function () { pending = true }, 35000); 
+
 
 </script>
 </head>
