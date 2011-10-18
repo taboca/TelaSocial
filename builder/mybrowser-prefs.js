@@ -5,6 +5,7 @@ pref("extensions.tagvisor.auto",true);
 
 // These are debug mode you can simulate any type of TV with the zoom out 
 
+pref("browser.cache.disk.enable", false);
 pref("nglayout.debug.disable_xul_cache", true);
 pref("nglayout.debug.disable_xul_fastload", true);
 
