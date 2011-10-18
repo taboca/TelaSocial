@@ -16,6 +16,8 @@
 
 	var cc = 0;
 	var error = 0;
+	var apphost = "";
+
 	function start() { 
 		try { 
 			if(controlLastUpdate>lastUpdate) { 
@@ -28,7 +30,7 @@
 				error++;
 
 				if(error>6) { 
-					document.getElementById("canvas").src="http://200.134.24.25/static/tela-acontece.html?"+Math.random();
+					document.getElementById("canvas").src= apphost + "/static/tela-acontece.html?"+Math.random();
 					error=0;
 				} 
 			}  
@@ -42,7 +44,7 @@
 
 		var script= document.createElement('script');
 		script.type= 'text/javascript';
-		script.src= 'http://200.134.24.25/control/1.js?' + Math.random();
+		script.src= apphost + '/control/1.js?' + Math.random();
 		document.getElementById('control').appendChild(script);
 		setTimeout("start()",15000);
 
