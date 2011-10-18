@@ -35,6 +35,7 @@
 # the terms of any one of the MPL, the GPL or the LGPL.
 #
 # ***** END LICENSE BLOCK *****
+import urllib2
 import logging
 import subprocess
 import os
@@ -42,7 +43,9 @@ from time import sleep
 
 LOG_FILENAME = '/var/log/telasocial.log'
 #300MB = 300.000kB
-MEMORY_LIMIT = 300000 
+MEMORY_LIMIT = 300000
+
+SERVER_ADDRESS = '200.134.24.25'
 
 # create logger
 LOG_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -53,8 +56,10 @@ logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG,format=LOG_FORMAT)
 
 def start_telasocial():
 	try:
+        alive = urllib2.urlopen("http://"+SERVER_ADDRESS+"/control/server.txt")
+
 		#dont need to fork python
-		subprocess.Popen('startx /usr/lib/taboca/telasocial/telasocial',shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+		subprocess.Popen('/usr/lib/taboca/telasocial/telasocial',shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
 		#workaround to wait X to be started to grab its pid
 		sleep(5)
 		logging.info('TelaSocial started with PID: ' + grab_pid())
