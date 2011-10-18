@@ -16,10 +16,11 @@
 
 	var cc = 0;
 	var error = 0;
+	var pending = null;
 
 	/* Editar */
-	var appHost = "/static/tela-acontece.html";
-	var controlHost = "/control/1.js";
+	var appHost = "tp://200.134.24.25/static/tela-acontece.html";
+	var controlHost = "http://200.134.24.25/control/1.js";
 
 	function start() { 
 		try { 
@@ -29,11 +30,16 @@
 				if(server_command == "src" ) { 
 					document.getElementById("canvas").src=server_value;
 				} 
+				if(pending) {
+					document.getElementById("canvas").setAttribute("src",appHost + "?" + Math.random());
+					pending = false;
+				}
 			} else { 
+
 				error++;
 
 				if(error>6) { 
-					document.getElementById("canvas").src=appHost + Math.random();
+					pending = true;
 					error=0;
 				} 
 			}  
@@ -47,9 +53,9 @@
 
 		var script= document.createElement('script');
 		script.type= 'text/javascript';
-		script.src= controlHost + Math.random();
+		script.src= controlHost + "?" + Math.random();
 		document.getElementById('control').appendChild(script);
-		setTimeout("start()",15000);
+		setTimeout("start()",2000);
 
 		
 	} 
