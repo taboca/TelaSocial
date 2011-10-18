@@ -10,7 +10,9 @@ This project has a lot being changed nowadays ( September 2011 ). Notice this is
 ## Português 
 
 1. [Instalação XULRunner/Linux](https://github.com/taboca/TelaSocial/wiki/pt-BR---Instala%C3%A7%C3%A3o-Linux)
-
+2. [Novo - Instalador - Packager](https://github.com/taboca/TelaSocial/wiki/Packager-linux-pt-br)
+3. [Novo - FAQ geral](https://github.com/taboca/TelaSocial/wiki/FAQ-pt-BR) 
+         
 ## English 
 
 This project is an open-source and web-based system and offers an interactive solution for kiosks for public and semi-public environments, but not limited too. 
