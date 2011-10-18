@@ -14,8 +14,9 @@
 	var server_command = "";
 	var server_value ="";
 
-	function start() { 
+	var cc = 0;
 
+	function start() { 
 		try { 
 			if(controlLastUpdate>lastUpdate) { 
 				lastUpdate = controlLastUpdate;
@@ -23,24 +24,22 @@
 					document.getElementById("canvas").src=server_value;
 				} 
 			} else { 
-
 			}  
-
-
 		} catch (i) { 
-			alert('hey'+i);			
 		} 
 
+		if(cc>200) { 
+			document.getElementById("control").innerHTML="";
+			cc=0;
+		} 
 
-			var script= document.createElement('script');
-			script.type= 'text/javascript';
-			script.src= 'http://200.134.24.25/control/1.js?' + Math.random();
-			document.getElementById('control').appendChild(script);
+		var script= document.createElement('script');
+		script.type= 'text/javascript';
+		script.src= 'http://200.134.24.25/control/1.js?' + Math.random();
+		document.getElementById('control').appendChild(script);
+		setTimeout("start()",15000);
 
-		setTimeout("start()",5000);
-
-
-
+		
 	} 
 
 </script>
