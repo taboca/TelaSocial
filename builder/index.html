@@ -16,7 +16,10 @@
 
 	var cc = 0;
 	var error = 0;
-	var apphost = "";
+
+	/* Editar */
+	var appHost = "/static/tela-acontece.html";
+	var controlHost = "/control/1.js";
 
 	function start() { 
 		try { 
@@ -30,7 +33,7 @@
 				error++;
 
 				if(error>6) { 
-					document.getElementById("canvas").src= apphost + "/static/tela-acontece.html?"+Math.random();
+					document.getElementById("canvas").src=appHost + Math.random();
 					error=0;
 				} 
 			}  
@@ -44,7 +47,7 @@
 
 		var script= document.createElement('script');
 		script.type= 'text/javascript';
-		script.src= apphost + '/control/1.js?' + Math.random();
+		script.src= controlHost + Math.random();
 		document.getElementById('control').appendChild(script);
 		setTimeout("start()",15000);
 
@@ -56,7 +59,7 @@
 <body onload='start()'>
 <!-- put the server host in the following lines --> 
 
-<iframe src="/static/tela-acontece.html" id='canvas' scrollbars="no"></iframe>
+<iframe src="about:blank" id='canvas' scrollbars="no"></iframe>
 <div id="control">
 </div>
 
