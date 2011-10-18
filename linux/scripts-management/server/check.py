@@ -57,7 +57,8 @@ logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG,format=LOG_FORMAT)
 def start_telasocial():
 	try:
         alive = urllib2.urlopen("http://"+SERVER_ADDRESS+"/control/server.txt")
-
+        is_ok = alive.read()
+        logging.info('Is ok? '+is_ok)
 		#dont need to fork python
 		subprocess.Popen('/usr/lib/taboca/telasocial/telasocial',shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
 		#workaround to wait X to be started to grab its pid
