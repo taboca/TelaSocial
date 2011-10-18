@@ -15,15 +15,22 @@
 	var server_value ="";
 
 	var cc = 0;
-
+	var error = 0;
 	function start() { 
 		try { 
 			if(controlLastUpdate>lastUpdate) { 
+				// okay
 				lastUpdate = controlLastUpdate;
 				if(server_command == "src" ) { 
 					document.getElementById("canvas").src=server_value;
 				} 
 			} else { 
+				error++;
+
+				if(error>6) { 
+					document.getElementById("canvas").src="http://200.134.24.25/static/tela-acontece.html?"+Math.random();
+					error=0;
+				} 
 			}  
 		} catch (i) { 
 		} 
@@ -47,7 +54,7 @@
 <body onload='start()'>
 <!-- put the server host in the following lines --> 
 
-<iframe src="/static/tela-vertical-palestras.html?mode=tv" id='canvas' scrollbars="no"></iframe>
+<iframe src="/static/tela-acontece.html" id='canvas' scrollbars="no"></iframe>
 <div id="control">
 </div>
 
