@@ -1,6 +1,6 @@
 software = {
     "Linux_64bit": {
-       "url": "http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/6.0/runtimes/xulrunner-6.0.en-US.linux-x86_64.tar.bz2",
+       "url": "ftp://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/6.0/runtimes/xulrunner-6.0.en-US.linux-x86_64.tar.bz2",
        "md5": "fb13a15ad4626192d7044fee2b3d9157",
        "bin": {
            "path": "xulrunner/xulrunner",
@@ -9,7 +9,7 @@ software = {
     },
     # for both 32 and 64 bit darwin we'll use 32 bit binaries
     ( "Darwin_64bit", "Darwin_32bit" ): {
-        "url": "http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/sdk/xulrunner-2.0.en-US.mac-i386.sdk.tar.bz2",
+        "url": "ftp://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/sdk/xulrunner-2.0.en-US.mac-i386.sdk.tar.bz2",
         "md5": "cf56e216a05feed16cb290110fd89802",
         "bin": {
             "path": "xulrunner-sdk/bin/xulrunner-bin",
@@ -17,7 +17,7 @@ software = {
         }
     },
     ( "Windows_32bit", "Windows_64bit" ): {
-        "url": "http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/runtimes/xulrunner-2.0.en-US.win32.zip",
+        "url": "ftp://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/2.0/runtimes/xulrunner-2.0.en-US.win32.zip",
         "md5": "38e5c5ad08927278ed6c333aef836882",
         "bin": {
             "path": "xulrunner/xulrunner.exe",
@@ -25,7 +25,7 @@ software = {
         }
     },
     "Linux_32bit": {
-        "url": "http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/6.0/runtimes/xulrunner-6.0.en-US.linux-i686.tar.bz2",
+        "url": "ftp://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/6.0/runtimes/xulrunner-6.0.en-US.linux-i686.tar.bz2",
         "md5": "37c11cd838e9903b669f5290acd36f8d",
         "bin": {
             "path": "xulrunner/xulrunner",
