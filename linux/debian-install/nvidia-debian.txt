@@ -1,0 +1,16 @@
+Attempted approach from her
+http://wiki.debian.org/NvidiaGraphicsDrivers#Installation-1
+ vi /etc/apt/sources.list
+   
+   added 
+           deb http://ftp.debian.org/debian squeeze main contrib non-free
+( http://manpages.debian.net/cgi-bin/man.cgi?query=sources.list&sektion=5&apropos=0&manpath=Debian+Sid&locale=en ) 
+apt-get update
+But end up downloading current driver in http://www.nvidia.com/object/linux-display-ia32-295.40-driver.html binary ( RUN ) and executed the script
+apt-get install binutils
+apt-get install linux-source-2.6.32
+apt-get install linux-headers-2.6.32-5-686
+./NVIDIA-Linux-x86-295.40.run 
+Information on Zotac ION 
+Next-Gen NVIDIA ION GPU
+
