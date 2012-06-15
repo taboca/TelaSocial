@@ -7,6 +7,7 @@ skin    tagvisor classic/1.0  		tagvisor/skin/
 content telasocial 			telasocial/content/telasocial/
 locale  telasocial en-US 		telasocial/locale/en-US/telasocial/
 
+content mozapps        mozapps/content
 
 overlay chrome://telasocial/content/telasocial.xul chrome://tagvisor/content/overlay-xulrunner.xul
 
