@@ -38,3 +38,8 @@ This project is an open-source and web-based system and offers an interactive so
 ### Contact 
 
 adm at taboca dot com 
+
+### Pre-requirements and other projects involved
+
+1. XULRunner — https://developer.mozilla.org/en/XULRunner
+1. TelaSocial Mediator 
