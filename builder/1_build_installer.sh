@@ -1,3 +1,5 @@
+echo "*** Using ../apps/base/* as content app ***" 
+
 rm -rf ./telasocial-output.zip
 rm -rf ./installer
 rm -rf TelaSocial
@@ -12,7 +14,7 @@ rm -rf  ./installer/build/chrome/tagvisor/content/visor/*
 cp index.html ./installer/build/chrome/tagvisor/content/visor/
 
 # local
-cp -r ../app/base/* ./installer/build/chrome/tagvisor/content/visor
+cp -r ../apps/base/* ./installer/build/chrome/tagvisor/content/visor
 
 cp mybrowser-prefs.js ./installer/build/defaults/preferences/mybrowser-prefs.js
 
