@@ -1,6 +1,6 @@
 # Welcome to TelaSocial - Bem-vindo ao TelaSocial 
 
-This project has a lot being changed nowadays ( September 2011 ). Notice this is a repository of a lot of old things, plus new things, and also client and Web-based ( that can be server hosted ) code. So a few pointers now: 
+Notice this repository brings the full history of the project so it may bring a lot of data that is not in place anymore if you are using HEAD. The new structure is: 
 
     TelaSocial 
           \_____apps ( Example of content app -- Web and JS only ) 
@@ -31,6 +31,9 @@ This project is an open-source and web-based system and offers an interactive so
 1. [2009 - ICMC - University of Sao Paulo](http://www.youtube.com/watch?v=75l0HdY0Z4c)
 2. [2010 - FISL11 - Major Open Source Event in Brazil](http://www.youtube.com/watch?v=OFtNdmc2ThE) 
 2. [2010 - IFSC - University of Sao Paulo](http://www.youtube.com/watch?v=1761dOyI3CE&feature=player_embedded) 
+3. [2011 — FISL12] 
+4. [2011 - Latinoware] 
+5. [2012 - EESC] 
 
 ### Contact 
 
