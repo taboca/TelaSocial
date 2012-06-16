@@ -11,3 +11,8 @@ content mozapps        mozapps/content
 
 overlay chrome://telasocial/content/telasocial.xul chrome://tagvisor/content/overlay-xulrunner.xul
 
+# https://github.com/taboca/TelaSocial/issues/22
+# https://github.com/taboca/TelaSocial/issues/20
+override chrome://global/content/netError.xhtml chrome://telasocial/content/error.xhtml
+
+
