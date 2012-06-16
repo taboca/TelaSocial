@@ -26,10 +26,10 @@ software = {
     },
     "Linux_32bit": {
         "url": "http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/13.0/runtimes/xulrunner-13.0.en-US.linux-i686.tar.bz2",
-        "md5": "9aec43cfbd5085ed73904428deaf474c",
+        "md5": "6f752fcc15e96155614903f0fb8f5b58",
         "bin": {
             "path": "xulrunner/xulrunner",
-            "sig": "c1631ad5326c3c66ab1d1dd7cba6179cdee6fe56"
+            "sig": "b8cf8edc7bd568dde711f1e90bcea53270f9cf18"
         }
     }
 }
