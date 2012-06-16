@@ -16,4 +16,8 @@ pref("browser.dom.window.dump.enabled", true);
 
 // for CCW mode we fixed ubuntu with pref("layout.css.dpi", 72);
 
+// This is for XULRunner app to show inline error pages, 
+// based in netError.xhtml for example, instead of alert boxes 
+// http://kb.mozillazine.org/Browser.xul.error_pages.enabled 
 
+pref("browser.xul.error_pages.enabled", true);
