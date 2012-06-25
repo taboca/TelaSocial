@@ -20,5 +20,6 @@ cp -r ../xulrunner/base/* ./installer/build
 echo "Cleanup base TelaSocial app..."
 rm -rf  ./installer/build/chrome/tagvisor/content/visor/*
 
+echo "Check installer directory!" 
 
 
