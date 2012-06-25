@@ -9,8 +9,8 @@ Notice this repository brings the full history of the project so it may bring a 
  
 ## Português 
 
-1. [Instalação XULRunner/Linux](https://github.com/taboca/TelaSocial/wiki/pt-BR---Instala%C3%A7%C3%A3o-Linux)
 2. [Novo - Instalador - Packager](https://github.com/taboca/TelaSocial/wiki/Packager-linux-pt-br)
+1. [Velho — Instalação XULRunner/Linux](https://github.com/taboca/TelaSocial/wiki/pt-BR---Instala%C3%A7%C3%A3o-Linux)
 3. [Novo - FAQ geral](https://github.com/taboca/TelaSocial/wiki/FAQ-pt-BR) 
          
 ## English 
