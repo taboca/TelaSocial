@@ -8,4 +8,4 @@ cp index.html ./installer/build/chrome/tagvisor/content/visor/
 echo "Add YOUR prefs..."
 cp mybrowser-prefs.js ./installer/build/defaults/preferences/mybrowser-prefs.js
 
-
+echo "*** Build directory installed - you can zip or install from ./installer ***"
