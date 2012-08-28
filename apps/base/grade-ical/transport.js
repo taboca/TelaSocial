@@ -99,6 +99,8 @@ var transport =  {
 			this.dataOut[daStr]=new Array();
 		} 
 try { 
+		ho-=3;
+		eho-=3;
 		this.dataOut[daStr].push( { 'inicio': ho+":"+mi, 'fim': eho+':'+emi, 'descricao': sub, 'sigla': "- ",'local': " ",'apresentador': ""});
 		//this.dataOut[daStr].push( 'hey');
 } catch (i) { alert(i) } 

@@ -35,9 +35,9 @@ This project is an open-source and web-based system and offers an interactive so
 4. [2011 - Latinoware] 
 5. [2012 - EESC] 
 
-### Contact 
+### Articles
 
-adm at taboca dot com 
+* https://github.com/taboca/TelaSocial/wiki/NodeJS-and-extras-for-TelaSocial-Mediator-in-Linux
 
 ### Pre-requirements and other projects involved
 
