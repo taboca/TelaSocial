@@ -1,0 +1,22 @@
+ #viewport { 
+   -moz-transform-origin:0 0;
+   overflow:hidden;
+ } 
+ 
+ #pagetranslate { 
+   width:10080px; 
+   height:5200px; 
+ } 
+
+ html, body {
+    margin:0; padding:0; 
+ } 
+
+ #debug { 
+   display:none;
+   background:white;	
+ } 
+ #animation { 
+   display:none;
+ } 
+	

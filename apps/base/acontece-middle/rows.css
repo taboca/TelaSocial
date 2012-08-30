@@ -1,0 +1,44 @@
+    body { 
+ 	font-weight:bold;	
+    } 
+
+    div.pubdate { 
+	float:right;
+	padding:.3em;
+	color:#555;
+	-moz-border-radius:15px;
+	font-size:130%;
+	margin:0;
+	margin-right10px;
+    } 
+    
+    div.itemshadow { 
+	background:url(../vendor/shadow.png) 50% 0 no-repeat; 
+	background-size: 330px 60px; 
+	opacity:.5;
+	margin-top:1.4em;
+	height:30px; 
+	width:100%;
+    } 
+    div.item { 
+	color:#444;
+	margin-top:.5em;
+    } 
+    div#container { 
+    } 
+    div h3 { 
+	font-size:150%;
+	font-weight:bold;
+	color:#444;
+	margin:0;
+	margin-top:0em;
+	margin-bottom:.3em;
+    } 
+    div.desc * { 
+	font-size:16px ! important;
+	margin-bottom:5px;
+	color:#777 ! important;
+    } 
+
+    div.desc { 
+    } 

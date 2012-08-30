@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <link media="screen, projection" type="text/css" href="../base.css" rel="stylesheet">
+    <link media="screen, projection" type="text/css" href="../lib/hdgrid.css" rel="stylesheet">
+    <link media="screen, projection" type="text/css" href="../lib/tagvisor.css" rel="stylesheet">
+<script src="../vendor/jquery-min.js"></script>
+<script src="../lib/choreographer.js"></script>
+<script src="map.js"></script>
+<script src="../lib/tagvisor.js"></script>
+<script>
+
+function animate() { 
+  tv.setup();
+  tv.add($('#animation li'));
+  tv.play();
+} 
+
+
+</script>
+<style>
+
+#logo { 
+  -moz-transform: perspective( 400px ) rotateY(0deg);
+
+} 
+
+</style>
+  </head>
+<body onload='animate()' id='main' style='background: url(../brand/green.png) 0px 130px repeat-x;background-size:1080px 100px'>
+
+<div id='viewport' class='viewport main' >
+<div id='pagetranslate' >
+<div id='pagescale' style=''>
+
+<ul id='animation'>
+ <li data-scope='' data-target='logo' data-time="1s" data-effect="flip3d" data-duration="4s" />
+</ul>
+
+
+<div class='gh' style='' >
+<img id='logo' src="../brand/logo.png"  width='240'/>
+</div>
+
+<div class='gh bottom' id='topleft' style='width:800px;'>
+<table border='0' width="800" cellpadding='10' style='margin-top:34px'  >
+<tr>
+<td valign='bottom' >
+<span style='color:darkblue' class='titlelogo'>
+telaSocial 
+</span>
+</td>
+<td valign='middle' id='topright' class='datetime' style='height:40px;'>
+</td>
+</tr>
+<tr>
+<td valign='top'>
+<span style='color:white;text-shadow:2px 2px 5px black' class='titletop'>
+Sinalização Interativa Digital
+</span>
+</td>
+<td valign='top' align='right'>
+<span id='topright2' class='datetime'>
+22 de Março de 2012
+</span>
+
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+</div>
+</body>
+</html>
