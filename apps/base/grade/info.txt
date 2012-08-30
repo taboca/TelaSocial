@@ -1,0 +1,2 @@
+Prototype initial version to the grade display ( zoom star wars style ) 
+with ical parsing 
