@@ -1,0 +1,41 @@
+<html>
+<head>
+	<script  type="text/javascript" src='../vendor/jquery.js'></script> 
+</head>
+<body>
+
+<p><a href="#" class="button" id="agenda" rel="agenda_sample">Send item to calendar</a></p>
+
+<textarea rows="10" cols="50" id="agenda_sample">
+{
+  "date": "19/10/2011",
+  "inicio": "11:00",
+  "fim": "13:00",
+  "descricao": "Testando",
+  "sigla": "keynote",
+  "local": "chile",
+  "apresentador": "Rasmus Lerdorf"
+}
+</textarea>
+
+
+	
+		<script type="text/javascript" charset="utf-8">
+			$('.button').click(function(){
+				json = eval('('+$('#'+$(this).attr('rel')).val()+')');
+				$.post(
+					'/send_feed_item',
+					json,
+					function(){
+						// Done!
+					}
+				);
+				
+				return false;
+			}).error(function() { alert("error"); });
+		</script>
+
+
+</body>
+</html>
+
