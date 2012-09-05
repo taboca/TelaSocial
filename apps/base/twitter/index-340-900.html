@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../base.css">
+<style>
+  
+ .twtr-hd { 
+   display:none;
+ } 
+
+ .twtr-tweet-text {
+    font-size: 130%;
+    font-family: Georgia, Serif;
+    font-weight:bold;
+ }
+  
+ .twtr-tweet { 
+   margin-bottom:5px;
+   background-color:rgba(255,255,255,.5);
+   padding:.5em;
+ } 
+ 
+ .twtr-avatar { 
+    width:60px ! important;
+    height:60px ! important;
+    margin-right:10px;
+ } 
+ .twtr-tweet img { 
+    width:60px ! important;
+    height:60px ! important;
+  } 
+ body { 
+	color:black;
+ 	font-weight:bold;
+	font-size:200%;
+} 
+
+
+</style>
+</head>
+
+<body>
+<div style="width:100%" >
+
+<div style='margin:10px;color:rgba(0,0,0,.5);font-size:20px'>
+<img src="../brand/twitter.png" style='border-radius:8px;margin-top:-10px;'  align='middle'/> 
+Twitter Latinoware
+</div>
+
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#latinoware',
+  interval: 8000,
+  title: 'VIII SEMATRON',
+  subject: 'Semana da Engenharia Mecatrônica',
+  width:  340,
+  height: 900,
+  theme: {
+    shell: {
+      background: 'transparent',
+      color: '#000'
+    },
+    tweets: {
+      background: 'rgba(255,255,255,.3)',
+      color: '#000',
+      links: '#000'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    toptweets: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
+
+</div>
+
+</body>
+</html>
