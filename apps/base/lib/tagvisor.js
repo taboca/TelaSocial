@@ -43,28 +43,38 @@ var tv = {
 	ticksSerialized: new Array(),
 	viewWidth: null,
 	viewHeight: null, 
+        recordScale: 1,
 	itemsByTicks: new Array(),
 	sortedItems: new Array(),
-	dataStyle: ".slide { position:relative; } ", 
+        noScrollX:null, 
+        noScrollY:null, 
+	tickMode: true, 	
+	dataStyle: ".slide { position:relative; }  ", 
 
 	dumpTransform: function (property) { 
 		return prop+";-ms-"+prop+";-webkit-"+prop+";-moz-"+prop+";-o-"+prop+";";
 	},
-
-	setup: function () { 
+	setup: function (doc) { 
+	
+		if(doc) { 
+			viewWidth = doc.body.clientWidth;
+			viewHeight =  doc.body.clientHeight;
+		} else { 
+			viewWidth = document.body.clientWidth;
+			viewHeight =  document.body.clientHeight;
+		} 
+		var dataStyle = this.dataStyle + "html { overflow:hidden; width:100%; height:100%; } ";
 		var inlinestyle = document.createElement('link');
 		inlinestyle.setAttribute("rel","stylesheet");
-		inlinestyle.setAttribute("href","data:text/css,"+ escape(this.dataStyle));
+		inlinestyle.setAttribute("href","data:text/css,"+ escape(dataStyle));
 		document.getElementsByTagName("head")[0].appendChild(inlinestyle);
 	}, 
-
 	refreshView: function (d) { 
-		this.viewLeft = d.getElementById("viewport").offsetLeft;
-		this.viewTop =  d.getElementById("viewport").offsetTop;
-		this.viewWidth = d.getElementById("viewport").offsetWidth;
-		this.viewHeight =  d.getElementById("viewport").offsetHeight;
+		this.viewLeft = d.documentElement.clientLeft;
+		this.viewTop =  d.documentElement.clientTop;
+		this.viewWidth = d.documentElement.clientWidth;
+		this.viewHeight = d.documentElement.clientHeight;
 	}, 
-
 	sortArray: function (arr){
 	  var sortedKeys = new Array();
 	  var sortedObj = {};
@@ -82,6 +92,18 @@ var tv = {
 		return a - b;
 	},
 
+	addElement:function (item) { 
+		var time = item.getAttribute("data-time");
+		if(time) { 
+		if(time.indexOf("s")>-1) { 
+			var secs = time.split("s")[0];
+			// we use 2 ticks per sec
+			var tickStamp = parseInt(secs*2); 
+			this.itemsByTicks[tickStamp] = item; 
+		} 
+		} 
+	} ,
+	
 	add:function (list) { 
 		for(var i=0;i<list.length;i++) { 
 			var item = list[i];
@@ -97,7 +119,17 @@ var tv = {
 		} 	
 	} ,
 	
-	play: function () { 
+	play: function (doc) { 
+		if(this.playMode==false) {
+
+			this.setup(doc);
+		}  
+		var these = this; 
+		setTimeout(function () { these.startPlay() }, 500); 
+ 
+	},
+  
+	startPlay: function () { 
 		this.playMode=true; 
 		this.sortedItems = this.sortArray(this.itemsByTicks);
 		var i=0;
@@ -108,15 +140,22 @@ var tv = {
 		this.ticksSerialized[i]=-1;
 		this.currentTick=0;
 		this.counterSequential=0;
-		this.tick();
-	} ,
+		this.tick(1);
+	},
 
-	tick: function () { 
+	tick: function (dir) { 
 		if(this.playMode) { 
 			try { 
+				if(!this.tickMode) { 
+					if(dir==1) this.counterSequential++;
+					if(dir==-1) this.counterSequential--;
+				} 
 				var nextTick = this.ticksSerialized[this.counterSequential];
 				if(nextTick > -1) {
-					if(nextTick==this.currentTick) { 
+					if(nextTick==this.currentTick || this.tickMode == false) { 
+						if(this.tickMode == false ) { 
+							this.currentTick = nextTick;
+						} 
 						var lookUpElement = this.itemsByTicks[this.currentTick];
 						if(lookUpElement) {  
 
@@ -144,7 +183,7 @@ try {
 								var str = fCommand.split("dispatch_load('"); 
 								var str1 = str[1].split("'");
 								var url = str1[0];
-								lookUpElement.src=url+"?"+Math.random();
+								targetElement.src=url+"?"+Math.random();
 } catch (i) {  } 
 							} 
 							} 
@@ -160,6 +199,12 @@ try {
 							if(fEffect == 'scalefit') { 
 								this.effects_scale(targetElement,dur, currDoc);
 							} 
+							if(fEffect == 'end') { 
+
+							        currDoc.documentElement.setAttribute("style",";overflow:auto;width:auto;height:auto");
+	 				       			currDoc.body.setAttribute("style","");
+								this.playMode = false;
+							}
 							if(fEffect == "fadeout") { 
 								this.effects_fadeOut(targetElement,dur);
 							} 
@@ -172,21 +217,27 @@ try {
 							if(fEffect == "movecenter") { 
 								this.effects_animateNext(targetElement, currDoc,dur, true);
 							} 
-							this.counterSequential++;
+							if(this.tickMode )  { 
+								this.counterSequential++;
+							} 
 						} 
 					} 
-					this.currentTick++;
+					if(this.tickMode) { 
+						this.currentTick++;
+					} 
 					var stampThis = this; 
-					setTimeout(function () { stampThis.tick() } ,500); 
-
+					if(this.tickMode) { 
+						setTimeout(function () { stampThis.tick(1) } ,500); 
+					} 
 				} else { 
 					//end
 				} 
 	
 			} catch (i) { 
+				if(this.tickMode) this.currentTick++;  
 				this.currentTick++;
 				var stampThis = this; 
-				setTimeout(function () { stampThis.tick() } ,500); 
+				setTimeout(function () { stampThis.tick(1) } ,500); 
 			}
 		} 
 	} ,
@@ -207,18 +258,17 @@ try {
 	},
 
 	effects_flip3d: function (el, t) { 
-	        el.setAttribute("style","-moz-transition-property: -moz-transform; -moz-transition-duration:"+t+"s;-moz-transform: perspective( 400px ) rotateY(360deg);");
+	        var moz = "-moz-transition-property: -moz-transform; -moz-transition-duration:"+t+"s;-moz-transform: perspective( 400px ) rotateY(360deg);"
+	        var webkit = "-webkit-transition-property: -webkit-transform; -webkit-transition-duration:"+t+"s;-webkit-transform: perspective( 400px ) rotateY(360deg);"
+	        el.setAttribute("style", moz + webkit);
 	},
 
 	effects_scale: function (a, t, d) { 
 
-
 		var x = 0; 
 		var y = 0;
 		var center = true;
-
 		this.refreshView(d); 
-
 		var el = this.offset(a);
 
 		if(!center) { 
@@ -228,45 +278,31 @@ try {
 			var x= el.left - this.viewLeft - parseInt((this.viewWidth - parseInt(a.offsetWidth))/2);	
 			var y= el.top - this.viewTop - parseInt((this.viewHeight - parseInt(a.offsetHeight))/2);	
 		} 
-	        d.getElementById("pagetranslate").setAttribute("style","-moz-transition-property: -moz-transform; -moz-transform:translate("+-1*x+","+-1*y+"); -moz-transition-duration:"+t+"s; -webkit-transition-property: -webkit-transform; -webkit-transform:translate("+parseInt(-1*x)+"px,"+parseInt(-1*y)+"px); -webkit-transition-duration:"+t+"s; -o-transition-property: -o-transform; -o-transform:translate("+parseInt(-1*x)+"px,"+parseInt(-1*y)+"px); -o-transition-duration:"+t+"s;");
-//	        el.setAttribute("style","-moz-transition-property: -moz-transform; -moz-transition-duration:"+t+"s;-moz-transform:scale(1.2);");
-
+	        d.body.setAttribute("style","-moz-transition-property: -moz-transform; -moz-transform:translate("+-1*x+"px,"+-1*y+"px); -moz-transition-duration:"+t+"s; -webkit-transition-property: -webkit-transform; -webkit-transform:translate("+parseInt(-1*x)+"px,"+parseInt(-1*y)+"px); -webkit-transition-duration:"+t+"s; -o-transition-property: -o-transform; -o-transform:translate("+parseInt(-1*x)+"px,"+parseInt(-1*y)+"px); -o-transition-duration:"+t+"s;");
 
 		var el = this.offset(a);
-
 		var sW = this.viewWidth/a.offsetWidth;
 		var sH = this.viewHeight/a.offsetHeight;
 
 		var sC = 0;
-		
-		// we check if the scaled is overflow, then we scale in by vertical if so
 	
-		var x= el.left - this.viewLeft +  parseInt( parseInt(a.offsetWidth)/2);	
-		var y= el.top -this.viewTop +  parseInt( parseInt(a.offsetHeight)/2);	
+			var x= el.left;	
+			var y= el.top;	
 
 		var probeHeight = a.offsetHeight*sW;
 		if(probeHeight<=this.viewHeight) { 
 			sC = sW ;
+			this.recordScale = a.offsetWidth/this.viewWidth;
 		} 
 		else { 
 		 sC = sH;
+		 this.recordScale = a.offsetHeight/this.viewHeight;
 		} 
-	
-//		document.getElementById("pagescale").style.mozTransformOrigin= x + "px " + y + "px";
-	        var str =   "-moz-transform-origin: " + x + "px " + y + "px;-moz-transition-property: -moz-transform, -moz-transform-origin; -moz-transition-duration:"+t+"s;-moz-transform:scale("+sC+");";
-	        str += "-webkit-transform-origin: " + x + "px " + y + "px;-webkit-transition-property: -webkit-transform, -webkit-transform-origin; -webkit-transition-duration:"+t+"s;-webkit-transform:scale("+sC+");";
-
-	        d.getElementById("pagescale").setAttribute("style",str);
-	        //d.getElementById("pagescale").setAttribute("style","-moz-transform-origin: " + x + "px " + y + "px;-moz-transition-property: -moz-transform; -moz-transition-duration:"+t+"s;-moz-transform:scale("+sW+");");
-	        //d.getElementById("pagescale").setAttribute("style","-moz-transform-origin: " + x + "px " + y + "px;-moz-transition-property: -moz-transform; -moz-transition-duration:"+t+"s;-moz-transform:scale("+sW+");");
-
-//	        d.getElementById("pagescale").setAttribute("style","-moz-transition-property: -moz-transform; -moz-transition-duration:"+t+"s;-moz-transform:scale("+sW+");");
-
-
-
+	        var str =   "-moz-transition-property: -moz-transform, -moz-transform-origin; -moz-transition-duration:"+t+"s;-moz-transform:scale("+sC+");";
+	        str += "-webkit-transition-property: -webkit-transform, -webkit-transform-origin; -webkit-transition-duration:"+t+"s;-webkit-transform:scale("+sC+");";
+	        str += "-o-transition-property: -o-transform, -o-transform-origin; -o-transition-duration:"+t+"s;-o-transform:scale("+sC+");";
+	        d.documentElement.setAttribute("style",str);
 	},
-
-
 	effects_animateNext: function (a,d,t,center) { 
 
 		var el = this.offset(a);
@@ -283,13 +319,7 @@ try {
 		var ww = a.offsetWidth;
 		var www = window.innerWidth;		        
 	        var scale = www/(ww+800);
-
-		//document.getElementById("pagescale").setAttribute("style"," -moz-transition-property: -moz-transform; -moz-transform:scale("+scale+"); -moz-transition-duration:3s;  -webkit-transition-property: -webkit-transform; -webkit-transform:scale("+scale+"); -webkit-transition-duration:3s;  -o-transition-property: -o-transform; -o-transform:scale("+scale+"); -o-transition-duration:3s;");
-	
 		x-=0;
 	        d.getElementById("pagetranslate").setAttribute("style","-moz-transition-property: -moz-transform; -moz-transform:translate("+-1*x+","+-1*y+"); -moz-transition-duration:"+t+"s; -webkit-transition-property: -webkit-transform; -webkit-transform:translate("+parseInt(-1*x)+"px,"+parseInt(-1*y)+"px); -webkit-transition-duration:"+t+"s; -o-transition-property: -o-transform; -o-transform:translate("+parseInt(-1*x)+"px,"+parseInt(-1*y)+"px); -o-transition-duration:"+t+"s;");
 	} 
-
 } 
-
-
