@@ -11,7 +11,7 @@
 function animate() { 
   tv.add($('#animation li'));
   tv.play();
-  setTimeout("animate()", 20000);
+  setTimeout("animate()", 16000);
 } 
 </script>
 <head>
@@ -21,13 +21,10 @@ function animate() {
 <ul id='animation'>
  <li data-target='t1' data-time="4s" data-effect="scalefit" data-duration="4s" />
  <li data-target='t2' data-time="8s" data-effect="scalefit" data-duration="4s" />
- <li data-target='all' data-time="12s" data-effect="scalefit" data-duration="4s" />
+ <li data-target='t1' data-time="12s" data-effect="scalefit" data-duration="4s" />
 </ul>
 
-<div id='all' style='width:780px;height:160px;;'>
-<img src='logo-tela.png' id='t1' height='150' style='margin-left:20px;margin-right:42px'/>
+<img src='logo-tela.png' id='t1' width="200" style='margin-left:20px;margin-right:42px'/>
 <img src='logo-mozilla-power.png' id='t2' height='150' />
-</div>
-<iframe id='video' src='' width='100%' height='100%' frameborder='no'  ></iframe>
 </body>
 </html>

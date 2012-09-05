@@ -1,8 +1,12 @@
-
     .gv1, .gv2, .gv3, .gv4, .gv5, .gv6, .gv7, .gv8, .gv9 { 
 	clear:both;
     } 
      
+    .gv1080 { 
+ 	clear:both;
+	height:1080px;
+     } 
+    
     .gh1080 { 
 	display:inline;
   	float:left;
@@ -14,11 +18,17 @@
   	float:left;
 	width:1920px;
     } 
-  
+   
+    .gh960 { 
+	display:inline;
+  	float:left;
+	width:960px;
+    } 
+
+
     .gh { 
 	display:inline;
   	float:left;
-	margin:0 ! important;
     } 
 
     .gh540 { 
@@ -35,7 +45,8 @@
 	height:100px;
 	display:inline;
   	float:left;
-	width:360px;
+	margin:10px;
+	width:340px;
     }
 
    .gh180 { 
@@ -50,8 +61,8 @@
         padding:0;
 	display:inline;
   	float:left;
-	margin:0px;
-	width:720px;
+	margin:10px;
+	width:700px;
     }
 
 

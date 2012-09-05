@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link media="screen, projection" type="text/css" href="../base.css" rel="stylesheet">
+    <link media="screen, projection" type="text/css" href="../lib/hdgrid.css" rel="stylesheet">
+    <link media="screen, projection" type="text/css" href="../lib/tagvisor.css" rel="stylesheet">
+<script src="../vendor/jquery-min.js"></script>
+<script src="../lib/choreographer.js"></script>
+<script src="map.js"></script>
+<script src="../lib/tagvisor.js"></script>
+<script>
+
+function animate() { 
+  tv.setup();
+  tv.add($('#animation li'));
+  tv.play();
+} 
+
+
+</script>
+  </head>
+<body onload='animate()' id='main' style=''>
+
+<table border='0' width="800" cellpadding='10'  >
+<tr>
+<td id='topright'  >
+</td>
+<td  align='right' id='topright2' style='border-left:5px solid white;'>
+</td>
+</tr>
+</table>
+
+</body>
+</html>

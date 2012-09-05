@@ -9,7 +9,7 @@
  } 
 
  .twtr-tweet-text {
-    font-size: 130%;
+    font-size: 180%;
     font-family: Georgia, Serif;
     font-weight:bold;
  }
@@ -21,19 +21,21 @@
  } 
  
  .twtr-avatar { 
-    width:60px ! important;
-    height:60px ! important;
-    margin-right:10px;
+    width:80px ! important;
+    height:80px ! important;
+    margin-right:20px;
  } 
  .twtr-tweet img { 
-    width:60px ! important;
-    height:60px ! important;
+    width:80px ! important;
+    height:80px ! important;
   } 
  body { 
 	color:black;
  	font-weight:bold;
+	overflow:hidden;
 	font-size:200%;
 } 
+
 
 
 </style>
@@ -42,9 +44,8 @@
 <body>
 <div style="width:100%" >
 
-<div style='margin:10px;color:rgba(0,0,0,.5);font-size:20px'>
-<img src="../brand/twitter.png" style='border-radius:8px;margin-top:-10px;'  align='middle'/> 
-Twitter Latinoware
+<div style='margin:10px;color:rgba(255,255,255,.5)'>
+<img src="../brand/twitter.png" style='border-radius:8px;margin-top:-20px;'  align='middle'/> Twitter #BrazilJS
 </div>
 
 <script src="http://widgets.twimg.com/j/2/widget.js"></script>
@@ -52,12 +53,12 @@ Twitter Latinoware
 new TWTR.Widget({
   version: 2,
   type: 'search',
-  search: '#latinoware',
+  search: 'braziljs',
   interval: 8000,
-  title: 'VIII SEMATRON',
-  subject: 'Semana da Engenharia Mecatrônica',
-  width:  340,
-  height: 900,
+  title: 'BrazilJS',
+  subject: 'BrasilJS',
+  width:  780,
+  height: 660,
   theme: {
     shell: {
       background: 'transparent',
