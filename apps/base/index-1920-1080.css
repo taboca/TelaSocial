@@ -6,15 +6,9 @@ html, body { margin:0; padding:0; color:white; overflow:hidden }
   font-family: 'Varela', sans-serif;
 } 
 
-#viewport.main { 
-  background: url('http://braziljs.com.br/images/porto-alegre.jpg'); 
-  background-size:1920px 1080px;
-} 
-
-#pagescale { 
-  width:100%;
-  height:100%;
-  background: -moz-radial-gradient( 70% 60%, circle , white rgba(255,255,255,0));
+body { 
+  width:1920px; height:1080px;
+  background: -moz-radial-gradient( 50% 50%, circle , white, orange);
 } 
 
 .datetime  { 
