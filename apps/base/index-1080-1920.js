@@ -7,7 +7,7 @@ $(document).ready(function() {
       iframe pages are ready. */
 
    register("/main/footer", "cabecalho", "./header/index.html", iframeTemplate);
-   register("/main/lado", "sidebar", "./twitter/index.html", iframeTemplate);
+   register("/main/lado", "sidebar", "./twitter/index-340-900.html", iframeTemplate);
    register("/main/middle", "meio", "./abas/index.html", iframeTemplate);
    register("/main/topmiddle", "mid", "./destaques/index.html", iframeTemplate);
    register("/main/bottomsection", "grade", "./grade-ical/index.html", iframeTemplate);
