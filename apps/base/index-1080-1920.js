@@ -7,7 +7,7 @@ $(document).ready(function() {
    /* The exercise here is that we want to load the sub elements and internal 
       iframe pages are ready. */
 
-   register("/main/header", "cabecalho", "./header/index.html", iframeTemplate);
+   register("/main/footer", "cabecalho", "./header/index.html", iframeTemplate);
 //   We failed miserably in the attempt to add the clock to the actual inner 
 //   div in the iframe. This because we do not know the rule within the Iframe 
 //   And it is so particular. A workaround would be the do path1,path2 but 
@@ -15,7 +15,7 @@ $(document).ready(function() {
 //   loaded at the actual component level ( first layer ). We need to organize 
 //   a bit better how the composition actually works here and this whole  
 //   child -> iframe models..
-//   register("/main/header/cabecalho", "clock", "./tempo/index.html", iframeTemplate);
+//   register("/main/footer/cabecalho", "clock", "./tempo/index.html", iframeTemplate);
 
    register("/main/lado", "sidebar", "./twitter/index.html", iframeTemplate);
    //register("/main/middle", "acontece", "./acontece/index.html", iframeTemplate);

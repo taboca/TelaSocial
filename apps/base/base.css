@@ -16,31 +16,11 @@ h1 {
    font-weight:bold;
 }
 
-.titlelogo { 
- 	font-size:32px;
-	font-weight:bold;
-} 
-
-.titletop { 
- 	font-size:24px;
-	font-weight:bold;
-} 
-
-.bottom { color:white } 
-.bottom h2 { margin:1em } 
-
-#viewport.main { 
-  background:url(g.png) 0 0;height:1920px ;
-  background: -moz-radial-gradient( 50% 50%, circle closest-corner, #fff, #fff, #99c);
-} 
-
-
 .datetime  { 
-  width:290px; 
   font-size:160%;
   color:black;
   font-weight:bold;
-  text-align:right;
+  text-align:left;
 } 
 
 
