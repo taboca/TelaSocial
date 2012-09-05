@@ -4,8 +4,21 @@ html, body { margin:0; padding:0; overflow:hidden }
 
 body { 
   width:1080px; height:1920px;
-  background: -moz-radial-gradient( 50% 50%, circle , white, orange);
+  background:white;
 } 
+
+#viewport { 
+  background: -moz-radial-gradient( 0% 0%, ellipse , rgba(255,255,255,0), rgba(255,255,255,0), orange ) ;
+  background-size:1080px 1920px;
+} 
+
+#viewport2 { 
+  background: -moz-radial-gradient( 100% 100%, ellipse , rgba(255,255,255,0), rgba(255,255,255,0), orange ) ;
+  background-size:1080px 1920px;
+  
+  width:1080px; height:1920px;
+} 
+
 
 * { 
   font-family: 'Varela', sans-serif;

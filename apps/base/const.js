@@ -12,10 +12,11 @@ URL_DESTAQUES = "http://g1.globo.com/dynamo/economia/rss2.xml";
 URL_DESTAQUES = "http://blog.telasocial.com/rss.xml";
 URL_TYPING = "http://g1.globo.com/dynamo/ciencia-e-saude/rss2.xml";
 URL_WEATHER = "http://weather.yahooapis.com/forecastrss?w=449704&u=c";
+URL_GRADE ="/channel-store/grade";
 
 TEMPO_INICIO_MIDIA = 5000; 
-TEMPO_REFRESH_MIDIA = 60000; 
-TEMPO_REFRESH = 60000; 
+TEMPO_REFRESH_MIDIA = 80000; 
+TEMPO_REFRESH = 80000; 
 TEMPO_REFRESH_WEATHER = 90000; 
 
 
