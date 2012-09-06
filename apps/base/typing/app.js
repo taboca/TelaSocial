@@ -1,20 +1,20 @@
 
-var typing =  {
+var app =  {
 	feedURL : URL_TYPING,
 	feed    : null, 
 	start : function() {
 		this.elementTable = document.createElement("div");
-		this.elementTable.innerHTML="<table><tr><td align='center' valign='middle' width='110'><div id='icon' style='' ></div></td><td><table ><tr><td height='255' valign='middle'><div class='typingPanel' id='typingcontainer'></div></td></tr><tr><td></td></tr></table></td></tr></table>";
+		this.elementTable.innerHTML="<table><tr><td align='center' valign='middle' width='110'><div id='icon' style='' ></div></td><td><table ><tr><td height='255' valign='middle'><div class='appPanel' id='appcontainer'></div></td></tr><tr><td></td></tr></table></td></tr></table>";
 
 		document.getElementById("main").appendChild(this.elementTable);
 		document.getElementById("icon").innerHTML= '<img src="../vendor/g1.png" style="margin:10px; " align="left" />';
 		this.tweetQueue = new Array();
 
 		var first = document.createElement("div");
-		this.firstId = "firsttyping";
+		this.firstId = "firstapp";
 		first.id = this.firstId;
 		this.tweetRepeated = {};
-		document.getElementById('typingcontainer').appendChild(first);
+		document.getElementById('appcontainer').appendChild(first);
 
 		var self = this;
 		setTimeout( function(){self.updateFeed()},1000);
@@ -66,7 +66,7 @@ var typing =  {
 			if(i==0) { 
 			} 
 		} 
-		document.getElementById("firsttyping").innerHTML=sum;
+		document.getElementById("firstapp").innerHTML=sum;
 		this.readIndex++;
 		if(this.readIndex>words.length) { 
 			var self = this;
