@@ -4,7 +4,7 @@ var app =  {
 	feed    : null, 
 	start : function() {
 		this.elementTable = document.createElement("div");
-		this.elementTable.innerHTML="<table><tr><td align='center' valign='middle' width='110'><div id='icon' style='' ></div></td><td><table ><tr><td height='255' valign='middle'><div class='appPanel' id='appcontainer'></div></td></tr><tr><td></td></tr></table></td></tr></table>";
+		this.elementTable.innerHTML="<table><tr><td align='center' valign='middle' ><div id='icon' style='' ></div></td><td><table ><tr><td height='255' valign='middle'><div class='appPanel' id='appcontainer'></div></td></tr><tr><td></td></tr></table></td></tr></table>";
 
 		document.getElementById("main").appendChild(this.elementTable);
 		document.getElementById("icon").innerHTML= '<img src="../vendor/g1.png" style="margin:10px; " align="left" />';
