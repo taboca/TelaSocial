@@ -21,8 +21,8 @@ var typing =  {
 	},
 
 	init : function () { 
-		this.feed = new google.feeds.Feed(this.feedURL);
-		this.feed.setResultFormat(google.feeds.Feed.XML_FORMAT);
+		this.feed = new t8l.feeds.Feed(this.feedURL);
+		this.feed.setResultFormat(t8l.feeds.Feed.XML_FORMAT);
 		this.feed.setNumEntries(10);
 	} ,
 	
@@ -92,10 +92,13 @@ var typing =  {
 		setTimeout( function(){self.updateFeed()},1000);
 	},
 
-	__feedUpdated : function(xml) {
+	__feedUpdated : function(result) {
+
 		var self  = this;
-		
-                $(xml.xmlDocument).find('item').each(function(){
+		if (result.error) {
+			return;
+		}
+     		$(result.xmlDocument).find('item').each(function(){
                         var title = $(this).find('title').text();
                         self.tweetQueue.push( { title: title });
 		});
