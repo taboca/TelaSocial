@@ -24,6 +24,12 @@
   background-color:rgba(255,255,255,.5);
   border-top-right-radius:20px;
 } 
+ 
+.innerInnerHour { 
+  padding:.5em;
+  -moz-transform-origin:0 0;
+  -moz-transform:rotate(-90deg);
+} 
 
 .innerInnerHeader { 
   margin:.5em;

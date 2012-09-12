@@ -114,17 +114,25 @@ start : function () {
 			var hourIndex=0, roomIndex=0;
 			var openElements = new Array();
 			var dumpHeader=false;
+			var dumpHours=0;
 
 			for(var hour in hourSlices ) { 
 				
 			   if(hourIndex==0&&!dumpHeader) { 
 				dumpHeader = true; 
+				buffer=mapCell({'type':'corner'});
 			        for( var e in updateColumns ) { 
 					var roomChar = mapCell({'type':'header', 'value': e});
 					buffer+=roomChar;
 				} 
 			   } 
+			   var columnCount=0;
 			   for( var e in updateColumns ) { 
+			      if(columnCount==0) { 
+				  var delta = parseInt(slicesSequence[hourIndex+1]-slicesSequence[hourIndex]);
+				  var roomChar = mapCell({'type':'slices', 'value': hour, 'height': delta });
+				  buffer+=roomChar;
+			      } 
 			      var items = updateColumns[e];
 			      var keyChar='';
 			      for( var kk in items) { 
@@ -149,6 +157,7 @@ start : function () {
 			      } 
 		  	      buffer+=keyChar;
 			      roomIndex++;
+			      columnCount++;
 			   } // columns = rooms  
                          
                            hourIndex++;
@@ -158,10 +167,10 @@ start : function () {
                         container.setAttribute('id', cName);
                         document.body.appendChild(container);
 
-			cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth)/cols);
+			cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth-40)/cols);
 
 			var classProposal = 'inner'+parseInt(Math.random()*1000);
-                        grid(buffer, cols, cName, classProposal);
+                        grid(buffer, cols+1, cName, classProposal);
 			//("style",'width:'+cssWidth+'px;background-color:rgba(255,0,0,.3)');
 
 			var proposedHeight=0;
@@ -183,6 +192,15 @@ start : function () {
 					$(this).html('');
 				   } 
 
+				   if(probeElement.type == 'slices') { 
+                                        var hour = probeElement.value;
+                                        var delta = probeElement.height;
+					$(this).addClass('innerHour');
+					var localWidth=30;
+					$(this).attr("style",'width:'+localWidth+'px;height:'+delta+'px;');
+				 	$(this).html('<div class="innerInnerHour">'+hour+'</div>');
+				   } 
+
 				   if(probeElement.type == 'header') { 
                                         var room = probeElement.value;
 					$(this).addClass('innerHeader');
@@ -190,6 +208,13 @@ start : function () {
 				 	$(this).html('<div class="innerInnerHeader">'+room+'</div>');
 				   } 
 	
+				   if(probeElement.type == 'corner') { 
+					var localWidth=30;
+                                        var room = probeElement.value;
+					$(this).attr("style",'width:'+localWidth+'px;');
+				 	$(this).html('<div class="innerInnerHeader"></div>');
+				   } 
+
 				} 
 			});
 
