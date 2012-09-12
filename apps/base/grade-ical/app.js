@@ -113,9 +113,17 @@ start : function () {
 			var buffer = '';
 			var hourIndex=0, roomIndex=0;
 			var openElements = new Array();
+			var dumpHeader=false;
 
 			for(var hour in hourSlices ) { 
 				
+			   if(hourIndex==0&&!dumpHeader) { 
+				dumpHeader = true; 
+			        for( var e in updateColumns ) { 
+					var roomChar = mapCell({'type':'header', 'value': e});
+					buffer+=roomChar;
+				} 
+			   } 
 			   for( var e in updateColumns ) { 
 			      var items = updateColumns[e];
 			      var keyChar='';
@@ -162,17 +170,26 @@ start : function () {
 			 	if(probeElement)  {	
 				   if(probeElement.type=='event') { 
                                         var el = probeElement.value;
-				 	$(this).html(el.descricao);
+				 	$(this).html('<div class="innerInnerCell">'+el.descricao+'</div>');
 					$(this).addClass('inner');
 					var delta = getHourEnds(el)-getHourBegins(el);
 					$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
 				   } 
-				   else { 
+
+				   if(probeElement.type == 'none') { 
                                         var delta = probeElement.value;
 					$(this).addClass('innerNone');
 					$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
 					$(this).html('');
 				   } 
+
+				   if(probeElement.type == 'header') { 
+                                        var room = probeElement.value;
+					$(this).addClass('innerHeader');
+					$(this).attr("style",'width:'+cssWidth+'px;');
+				 	$(this).html('<div class="innerInnerHeader">'+room+'</div>');
+				   } 
+	
 				} 
 			});
 
