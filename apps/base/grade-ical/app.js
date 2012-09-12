@@ -33,18 +33,27 @@ function eventsBySortedHours(values) {
    return keys;
 
 }
-var gridToChar = [ 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','x','y','z'];
-var gridCharUsed=0;
-function getCellChar() { 
-  return gridToChar[gridCharUsed++]; 
+
+// returns unicode characters so we have a lot of possible table values
+var charToElement = new Array();
+var gridCharUsed=32000;
+function mapCell(storeElement) { 
+  var proposalUTFChar = getUnicodeCharacter(gridCharUsed++);
+  charToElement['_'+proposalUTFChar]=storeElement;
+  return proposalUTFChar;
 } 
 
 var gridOther = [ 'Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'];
 var cellOtherNext=0;
-function getCellOther() { 
+function mapNoneCell() { 
   return gridOther[cellOtherNext++]; 
 } 
 
+var gridRoom = [ '1','2','3','4','5','6','7','8','9','0','_'];
+var gridRoomNext=0;
+function getRoomChar() { 
+  return gridRoom[gridRoomNext++]; 
+}
 
 var app = {
 
@@ -119,7 +128,8 @@ start : function () {
 			for(var hour in hourSlices ) { 
 				for( var i in eventBegins[hour] ) { 
 					  var item = eventBegins[hour][i];
-					  item.cellMap=getCellChar();
+					  //item.cellMap=getCellChar();
+					  item.cellMap=mapCell(item);
 					  if(!updateColumns[item.local]) { 
 						updateColumns[item.local]=new Array();
 					  } 
@@ -134,7 +144,9 @@ start : function () {
 			var buffer = '';
 			var yy=0, xx=0;
 			var openElements = new Array();
+
 			for(var hour in hourSlices ) { 
+				
 			   for( var e in updateColumns ) { 
 			      var items = updateColumns[e];
 			      var proposeChar='';
@@ -153,16 +165,36 @@ start : function () {
 				} 
                               } 
 			      if(proposeChar=='') { 
-			        proposeChar = getCellOther(); 
+			        proposeChar = mapNoneCell(); 
 			      } 
 		  	      buffer+=proposeChar;
+			      xx++;
 			   } 
+                           yy++;
 			} 
  			var container=document.createElement('div');
                         var cName = 'container_'+Math.random();
                         container.setAttribute('id', cName);
                         document.body.appendChild(container);
-                        grid(buffer, cols, cName)
+
+			cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth)/cols);
+			var classProposal = 'inner'+parseInt(Math.random()*1000);
+                        grid(buffer, cols, cName, classProposal);
+			//$('.'+classProposal).attr("style",'width:'+cssWidth+'px;background-color:rgba(255,0,0,.3)');
+
+			var proposedHeight=0;
+			$('.'+classProposal).each(function() { 
+			 	if(charToElement['_'+$(this).attr('id')])  {	
+				 	var el = charToElement['_'+$(this).attr('id')];
+				 	$(this).html(el.descricao);
+					var deltaHeight = getHourEnds(el)-getHourBegins(el);
+				//	alert(el.inicio + ' and end is ' + el.fim + ' delta = ' + deltaHeight);
+					$(this).attr("style",'width:'+cssWidth+'px;height:'+deltaHeight+'px;background-color:rgba(255,0,0,.3)');
+				} else { 
+					$(this).html('');
+				} 
+			});
+
 		   }	
 		} 
    	} 
