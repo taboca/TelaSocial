@@ -157,9 +157,11 @@ start : function () {
                         document.body.appendChild(container);
 
 			cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth)/cols);
+
 			var classProposal = 'inner'+parseInt(Math.random()*1000);
                         grid(buffer, cols, cName, classProposal);
-			//$('.'+classProposal).attr("style",'width:'+cssWidth+'px;background-color:rgba(255,0,0,.3)');
+			$('.'+classProposal).addClass('inner');
+			//("style",'width:'+cssWidth+'px;background-color:rgba(255,0,0,.3)');
 
 			var proposedHeight=0;
 			$('.'+classProposal).each(function() { 
@@ -169,9 +171,10 @@ start : function () {
                                         var el = probeElement.value;
 				 	$(this).html(el.descricao);
 					var deltaHeight = getHourEnds(el)-getHourBegins(el);
-					$(this).attr("style",'width:'+cssWidth+'px;height:'+deltaHeight+'px;background-color:rgba(255,0,0,.3)');
+					$(this).attr("style",'width:'+cssWidth+'px;height:'+deltaHeight+'px;');
 				   } 
 				   else { 
+					$(this).attr("style",'width:'+cssWidth+'px;');
 					$(this).html('.');
 				   } 
 				} 
