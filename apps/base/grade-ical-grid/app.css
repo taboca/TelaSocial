@@ -1,0 +1,23 @@
+
+.gradeTable td {
+border:0px;
+border-bottom:1px solid rgba(0,0,0,.2);
+}
+
+.gradeContainer {
+color:black;font-size:20px;font-weight:bold;text-shadow: #888 2px 2px 5px;
+}
+
+.gradeContainer table { width:100% } 
+.gradeContainer h3 {
+color:#333;
+font-size:20px;
+text-shadow:none;
+}
+
+.gradeLocal {
+text-shadow: none;
+font-size:80%;
+color:rgba(0,0,0,.5);
+}
+

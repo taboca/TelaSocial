@@ -1,0 +1,54 @@
+Hey Araldi,
+
+This is FYI note on developments and progress this week. I am working on a new view for the calendar layout problem. The current scenario of the calendar is the following:
+
+8AM - ROOMA:topicX, ROOMB:topicY, ROOMC:topicZ
+
+A short to this spec can be :
+
+8AM A:1; 8AM B:2, 8PM C:3
+
+Meaning we have 3 rooms at 8AM named respectively A,B,C with topics, or session, being: 1,2,3 respectively
+
+So a real proposal, let's say, for an event, is the following:
+
+8AM = A1, B2, C3
+9AM = A4, B5, C3
+
+This means we have a "table" specification that has 3 columns , one for each room, and 2 lines = so far so good. However is worth noticing that the 3rd column has an event, 6, that starts at 8AM and ends at 10AM ( assuming it's a 1 hour slot ).
+
+Now, a new condition, or problem, is that we may need to "break" the table if we get a condition like this the following:
+
+* 10AM A7, C8
+
+So, in other words, at 10AM, there is nothing happening in the room B. Another way to see the picture, for this 10AM is the following:
+
+10AM A7, B=NONE, C8
+
+So if we are to generate "these tables" with a parsing algorithm, we will look for the break conditions, so in other words is when a table layout has to change. So in terms of a code design, an possible approach is to parse line by line, using a given collection of times, such as 8AM, 9AM, 10AM and so on. For each of these "lines", it will scan for all the rooms with valid sessions. A valid session means that a given room has a session in it at that given timezone. So, based in the above case, it is understood that
+
+8AM has events A:1,B:2,C:3
+
+This means our table "candidate" is a 3 column. So the generation code needs to schedule a table creation, a proposal, a so far one line with 3 columns. Then it moves to the second line. Notice the concept of "proposal". At the second line, 9AM, it finds events in same rooms A,B,C, so this means the table has now 2 lines since the rooms are the same.
+
+A way to look at this is:
+
+===
+TIME A,B,C ( table header)
+===
+ 8AM        1,2,3 ( row 1 )
+ 9AM        4,5,3 ( row 2 )
+
+The above can be used to generate a grid layout using a library such as Grid Type, for example using:
+
+3,klmjym  ( k=a, 2=l, 3=m, 4=j, 5=y, 3=m )
+
+But before we decide on this grid layout, and to generate it, it's important first to know when is the right time to actually generate this grid. So the actual condition, while in parsing the "lines = timezones" is to find out when the layout needs to change. If we continue to the next line, 10AM, we have
+
+10AM   7,NONE,8  ( row 3 )
+
+This suggests a new table layout, like this:
+
+2,op
+
+So while the rooms are the same, A,B,C, the events won't matter much as long as we have events in the rooms. It matters in the sense of "room ocupancy" that goes along times, for example, the above event 3. But aside from that, a proposal for a new grid is made when we a new number of columns.

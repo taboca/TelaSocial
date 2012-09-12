@@ -6,7 +6,6 @@
 */
 var dias = [10,11,12];
 var espacos = ['brasil','paraguai','uruguai','bolivia','chile','peru','equador'];
-var espacos = ['brasil','paraguai','uruguai','bolivia','chile'];
 var titleEspacos = ['Espaço Brasil','Espaco Paraguai','Espaço Uruguai','Espaço Bolívia','Espaço Chile','Espaço Peru','Espaço Equador'];
 
 var horarios = [10,11,12,13,14,15,16,17,18,19,20];
