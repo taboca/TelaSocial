@@ -13,27 +13,6 @@ function getHourEnds(item) {
         return parseInt(plainHour);
 } 
 
-function eventsBySortedHours(values) {
-
-   var array_with_keys = [];
-   for (var i = 0; i < values.length; i++) {
-       array_with_keys.push({ key: i, value: values[i] });
-   }
-
-   array_with_keys.sort(function(a, b) {
-      if (parseInt(a.value) < parseInt(b.value)) { return -1; }
-      if (parseInt(a.value) > parseInt(b.value)) { return  1; }
-      return 0;
-   });
-
-   var keys = [];
-   for (var i = 0; i < array_with_keys.length; i++) {
-       keys.push(array_with_keys[i].key);
-   }
-   return keys;
-
-}
-
 // returns unicode characters so we have a lot of possible table values
 var charToElement = new Array();
 var gridCharUsed=32000;
