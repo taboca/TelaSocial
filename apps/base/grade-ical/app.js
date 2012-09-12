@@ -39,7 +39,7 @@ var charToElement = new Array();
 var gridCharUsed=32000;
 function mapCell(storeElement) { 
   var proposalUTFChar = getUnicodeCharacter(gridCharUsed++);
-  charToElement['_'+proposalUTFChar]=storeElement;
+  charToElement[proposalUTFChar]=storeElement;
   return proposalUTFChar;
 } 
 
@@ -184,7 +184,7 @@ start : function () {
 
 			var proposedHeight=0;
 			$('.'+classProposal).each(function() { 
-				var probeElement = charToElement['_'+$(this).attr('id')];
+				var probeElement = charToElement[$(this).attr('id')];
 			 	if(probeElement)  {	
 				   if(probeElement.type=='event') { 
                                         var el = probeElement.value;
