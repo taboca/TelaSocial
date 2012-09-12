@@ -1,16 +1,12 @@
 
 function getHourBegins(item) { 
-	var currHour  = item.inicio; 
-	var splitHour = currHour.split(':');
- 	var plainHour = splitHour[0]+splitHour[1];
-        return parseInt(plainHour);
+	var currHour  = item.inicio.split(':'); 
+ 	return parseInt(currHour[0]+currHour[1]);
 } 
 
 function getHourEnds(item) { 
-	var currHour  = item.fim; 
-	var splitHour = currHour.split(':');
- 	var plainHour = splitHour[0]+splitHour[1];
-        return parseInt(plainHour);
+	var currHour  = item.fim.split(':');
+ 	return parseInt(currHour[0]+currHour[1]);
 } 
 
 // returns unicode characters so we have a lot of possible table values
@@ -62,8 +58,8 @@ start : function () {
 
 				// Event begins at...
 				var currHour = eventItem.inicio; 
-				var splitHour = currHour.split(':');
-			 	var plainHour = splitHour[0]+splitHour[1];
+				var currHour = currHour.split(':');
+			 	var plainHour = currHour[0]+currHour[1];
 
 				if(!eventBegins[plainHour]) { 
 					eventBegins[plainHour] = new Array();
@@ -73,9 +69,8 @@ start : function () {
 				listHourKeys.push(plainHour);
 
 				// Event ends at ...
-				var currHour = eventItem.fim; 
-				var splitHour = currHour.split(':');
-			 	var plainHour = splitHour[0]+splitHour[1];
+				var currHour = eventItem.fim.split(':');
+			 	var plainHour = currHour[0]+currHour[1];
 
 				if(!eventEnds[plainHour]) { 
 					eventEnds[plainHour] = new Array();
