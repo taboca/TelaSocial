@@ -22,12 +22,6 @@ function mapCell(storeElement) {
   return proposalUTFChar;
 } 
 
-var gridOther = [ 'Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'];
-var cellOtherNext=0;
-function mapNoneCell() { 
-  return gridOther[cellOtherNext++]; 
-} 
-
 var gridRoom = [ '1','2','3','4','5','6','7','8','9','0','_'];
 var gridRoomNext=0;
 function getRoomChar() { 
@@ -104,10 +98,15 @@ start : function () {
 
 			// We count, collect the columns
 			var updateColumns = new Array();
+                       
+			var slicesSequence = new Array();
+			var slicesCount=0;
 			for(var hour in hourSlices ) { 
+
+				slicesSequence[slicesCount++]=hour; // this is for later use, we simply counting 
+
 				for( var i in eventBegins[hour] ) { 
 					  var item = eventBegins[hour][i];
-					  //item.cellMap=getCellChar();
 					  item.cellMap=mapCell({'type':'event','value':item});
 					  if(!updateColumns[item.local]) { 
 						updateColumns[item.local]=new Array();
@@ -117,40 +116,42 @@ start : function () {
 			} 
 			var cols = 0;
 			for(var k in updateColumns) { cols++; } 
-			alert(cols);
 
-			var matrixOut = new Array();
 			var buffer = '';
-			var yy=0, xx=0;
+			var hourIndex=0, roomIndex=0;
 			var openElements = new Array();
 
 			for(var hour in hourSlices ) { 
 				
 			   for( var e in updateColumns ) { 
 			      var items = updateColumns[e];
-			      var proposeChar='';
+			      var keyChar='';
 			      for( var kk in items) { 
                                 var item = items[kk];
 				if(getHourBegins(item)==parseInt(hour)) { 
-				   proposeChar = item.cellMap;  
+				   keyChar = item.cellMap;  
 				   openElements[e]=item;
 				} 
 			      } 
-                              if(proposeChar=='') { 
+                              if(keyChar=='') { 
 			        if(openElements[e]) { 	
 		 		   if(getHourEnds(openElements[e])>parseInt(hour)) { 
-		  		       proposeChar = openElements[e].cellMap;
+		  		       keyChar = openElements[e].cellMap;
+				   } else { 
+				 	// we may consider killing open elements
 				   } 
 				} 
                               } 
-			      if(proposeChar=='') { 
-			        proposeChar = mapCell({'type':'none'}); 
+			      if(keyChar=='') { 
+				var delta = parseInt(slicesSequence[hourIndex+1]-slicesSequence[hourIndex]);
+			        keyChar = mapCell({'type':'none', 'value': delta}); 
 			      } 
-		  	      buffer+=proposeChar;
-			      xx++;
-			   } 
-                           yy++;
-			} 
+		  	      buffer+=keyChar;
+			      roomIndex++;
+			   } // columns = rooms  
+                         
+                           hourIndex++;
+			}  // hours = slices 
  			var container=document.createElement('div');
                         var cName = 'container_'+Math.random();
                         container.setAttribute('id', cName);
@@ -170,12 +171,13 @@ start : function () {
 				   if(probeElement.type=='event') { 
                                         var el = probeElement.value;
 				 	$(this).html(el.descricao);
-					var deltaHeight = getHourEnds(el)-getHourBegins(el);
-					$(this).attr("style",'width:'+cssWidth+'px;height:'+deltaHeight+'px;');
+					var delta = getHourEnds(el)-getHourBegins(el);
+					$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
 				   } 
 				   else { 
-					$(this).attr("style",'width:'+cssWidth+'px;');
-					$(this).html('.');
+                                        var delta = probeElement.value;
+					$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
+					$(this).html('');
 				   } 
 				} 
 			});
