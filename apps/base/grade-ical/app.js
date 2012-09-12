@@ -97,9 +97,7 @@ start : function () {
 			var slicesSequence = new Array();
 			var slicesCount=0;
 			for(var hour in hourSlices ) { 
-
 				slicesSequence[slicesCount++]=hour; // this is for later use, we simply counting 
-
 				for( var i in eventBegins[hour] ) { 
 					  var item = eventBegins[hour][i];
 					  item.cellMap=mapCell({'type':'event','value':item});
@@ -156,7 +154,6 @@ start : function () {
 
 			var classProposal = 'inner'+parseInt(Math.random()*1000);
                         grid(buffer, cols, cName, classProposal);
-			$('.'+classProposal).addClass('inner');
 			//("style",'width:'+cssWidth+'px;background-color:rgba(255,0,0,.3)');
 
 			var proposedHeight=0;
@@ -166,11 +163,13 @@ start : function () {
 				   if(probeElement.type=='event') { 
                                         var el = probeElement.value;
 				 	$(this).html(el.descricao);
+					$(this).addClass('inner');
 					var delta = getHourEnds(el)-getHourBegins(el);
 					$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
 				   } 
 				   else { 
                                         var delta = probeElement.value;
+					$(this).addClass('innerNone');
 					$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
 					$(this).html('');
 				   } 
