@@ -74,7 +74,7 @@ function createChilds(item) {
 } 
 
 var iframeTemplate = { 
-   data: '<iframe frameborder="no" style="height:100%;width:100%;overflow:hidden;" class="gv6"   src="" id="" ></iframe>'
+   data: '<iframe frameborder="no" style="height:100%;width:100%;overflow:hidden;" class="gv"   src="" id="" ></iframe>'
 } 
 
 var cc = { 

@@ -144,7 +144,7 @@ start : function () {
 				} 
                               } 
 			      if(proposeChar=='') { 
-			        proposeChar = mapNoneCell(); 
+			        proposeChar = mapCell({'type':'none'}); 
 			      } 
 		  	      buffer+=proposeChar;
 			      xx++;
@@ -171,8 +171,9 @@ start : function () {
 					var deltaHeight = getHourEnds(el)-getHourBegins(el);
 					$(this).attr("style",'width:'+cssWidth+'px;height:'+deltaHeight+'px;background-color:rgba(255,0,0,.3)');
 				   } 
-				} else { 
-					$(this).html('');
+				   else { 
+					$(this).html('.');
+				   } 
 				} 
 			});
 
