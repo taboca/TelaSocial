@@ -189,14 +189,19 @@ start : function () {
 				   if(probeElement.type == 'slices') { 
                                         var hour = probeElement.value;
                                         var delta = probeElement.height;
+					if(!delta) { 
+						delta=100;
+					} 
 					$(this).addClass('innerHour');
-					var localWidth=30;
-					$(this).attr("style",'width:'+localWidth+'px;height:'+delta+'px;');
+					var localWidth='40px';
+					$(this).attr("style",'width:'+localWidth+';height:'+delta+'px;');
 					var hourSliceId = 'hourSlice_'+Math.random(); 
-				 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:10px">'+hour+'</div>');
+				 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:0px"><div>'+hour+'</div></div>');
 					// This -20 is due to the padding and the 4 is for borders? 
-  					var elWidth = document.getElementById(hourSliceId).offsetWidth+4-20; 
-					document.getElementById(hourSliceId).setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:rotate(-90deg) translate(-"+elWidth+"px,6px); margin-right:0px;;");
+  					var elWidth = document.getElementById(hourSliceId).offsetWidth; 
+	
+					document.getElementById(hourSliceId).setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:rotate(-90deg) ");
+					document.getElementById(hourSliceId).firstChild.setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:translate(-"+parseInt(elWidth+10)+"px, 6px) ");
 				        	
 				   } 
 
@@ -208,10 +213,10 @@ start : function () {
 				   } 
 	
 				   if(probeElement.type == 'corner') { 
-					var localWidth=30;
+					var localWidth='40px';
                                         var room = probeElement.value;
-					$(this).attr("style",'width:'+localWidth+'px;');
-				 	$(this).html('<div class="innerInnerCorner"></div>');
+					$(this).attr("style",'width:'+localWidth+';');
+				 	$(this).html('<div class="innerInnerCorner" style="-moz-transform-orifin:0px 0px; -moz-transform:rotate(-90deg)"> </div>');
 				   } 
 
 				} 
