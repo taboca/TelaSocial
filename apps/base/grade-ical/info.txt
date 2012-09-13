@@ -1,5 +1,4 @@
-This has an url in the app itself — check this index.html for the URL 
-And it may depend on a local proxy server which you will need to serve this HTML 
-and also the calendar. 
 
+[x] Todo plain hrBegin - hdEnd does not work — needs to work in minutes with a correct convertion
 
+[x] wrap hours mode needs to cut events before current hour - 1 hour; 

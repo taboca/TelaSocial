@@ -146,8 +146,10 @@ start : function () {
 				} 
                               } 
 			      if(keyChar=='') { 
-				var delta = parseInt(slicesSequence[hourIndex+1]-slicesSequence[hourIndex]);
-			        keyChar = mapCell({'type':'none', 'value': delta}); 
+				var hEnd = slicesSequence[hourIndex+1];
+				var hBegin = slicesSequence[hourIndex];
+				var delta = parseInt(hEnd-hBegin);
+			        keyChar = mapCell({'type':'none', 'value': delta, 'begin':slicesSequence[hourIndex], 'end':slicesSequence[hourIndex+1]}); 
 			      } 
 		  	      buffer+=keyChar;
 			      roomIndex++;
@@ -163,12 +165,16 @@ start : function () {
 
 			cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth-40)/cols);
 
-			var classProposal = 'inner'+parseInt(Math.random()*1000);
-                        grid(buffer, cols+1, cName, classProposal);
-			//("style",'width:'+cssWidth+'px;background-color:rgba(255,0,0,.3)');
+			var uniqueClassName = 'inner'+parseInt(Math.random()*1000);
+			var counter=0; 
+			var buffer2 = '';
+                        for(var k in buffer) { 
+				
+			} 
+                        grid(buffer, cols+1, cName, uniqueClassName);
 
 			var proposedHeight=0;
-			$('.'+classProposal).each(function() { 
+			$('.'+uniqueClassName).each(function() { 
 				var probeElement = charToElement[$(this).attr('id')];
 			 	if(probeElement)  {	
 				   if(probeElement.type=='event') { 
