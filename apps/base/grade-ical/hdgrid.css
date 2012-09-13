@@ -8,7 +8,7 @@
 }
 
 .inner { 
-  background: -moz-linear-gradient( -45deg, gray, rgba(255,255,255,0));
+  background: -moz-linear-gradient( -45deg, white, rgba(255,255,255,0));
 } 
 
 .innerInnerCell { 
@@ -23,15 +23,19 @@
   border-bottom:1px solid white;
   background-color:rgba(255,255,255,.5);
   border-top-right-radius:20px;
+ 
 } 
  
 .innerInnerHour { 
-  padding:.5em;
-  -moz-transform-origin:0 0;
-  -moz-transform:rotate(-90deg);
+  border-right:1px solid white;
+  height:1070px;
 } 
 
 .innerInnerHeader { 
+  margin:.5em;
+} 
+
+.innerInnerCorner { 
   margin:.5em;
 } 
 

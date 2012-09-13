@@ -10,7 +10,9 @@ URL_GALERIA =  "http://api.flickr.com/services/feeds/photos_public.gne?id=983934
 URL_DESTAQUES = "http://www.eesc.usp.br/portal/index.php?option=com_ninjarsssyndicator&feed_id=13&format=raw";
 URL_DESTAQUES = "http://g1.globo.com/dynamo/economia/rss2.xml";
 URL_DESTAQUES = "http://blog.telasocial.com/rss.xml";
+URL_DESTAQUES = "/channel/destaques.xml";
 URL_TYPING = "http://g1.globo.com/dynamo/ciencia-e-saude/rss2.xml";
+URL_TYPING = "/channel/destaques.xml";
 URL_WEATHER = "http://weather.yahooapis.com/forecastrss?w=449704&u=c";
 URL_GRADE ="/channel-store/grade";
 

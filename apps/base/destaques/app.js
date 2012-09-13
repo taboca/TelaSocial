@@ -32,11 +32,20 @@ var app =  {
 		var k = document.createElement('div');
 		k.className = 'app_element';
 		//k.innerHTML = '<table height="200" width="100%" border="0"><tr><td valign="iddle"><div class="title">'+t+'</div><div class="description">'+d+'</div></td></tr></table>';
-		k.innerHTML = '<table height="200" width="100%" border="0"><tr><td valign="iddle"><div class="title">'+t+'</div></td></tr></table>';
+		k.innerHTML = '<table height="200" width="100%" border="0"><tr><td valign="iddle"><div id="inner" class="title">'+t+'</div></td></tr></table>';
 
+		
 		var old = this.element.firstChild;
 		this.element.insertBefore(k, this.element.firstChild);
 		this.element.removeChild(old);
+
+		$('#container').attr('style','-moz-transition-property: -moz-transform; -moz-transition-duration: 1s; -moz-transform:perspective(400px) rotateX(0deg);');
+		setTimeout(function () { 
+			$('#container').attr('style','-moz-transform-origin:50% 50%;-moz-transition-property: -moz-transform; -moz-transition-duration: 1s; -moz-transform:perspective(400px) rotateX(-90deg);');
+		}, 2000);
+		setTimeout(function () { 
+			$('#container').attr('style',' -moz-transform:perspective(400px) rotateX(90deg);');
+		}, 4000);
 		return true;
 	},
 

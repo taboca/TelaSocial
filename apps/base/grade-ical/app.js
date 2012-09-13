@@ -18,12 +18,6 @@ function mapCell(storeElement) {
   return proposalUTFChar;
 } 
 
-var gridRoom = [ '1','2','3','4','5','6','7','8','9','0','_'];
-var gridRoomNext=0;
-function getRoomChar() { 
-  return gridRoom[gridRoomNext++]; 
-}
-
 var app = {
 
 evento: null, 
@@ -198,7 +192,12 @@ start : function () {
 					$(this).addClass('innerHour');
 					var localWidth=30;
 					$(this).attr("style",'width:'+localWidth+'px;height:'+delta+'px;');
-				 	$(this).html('<div class="innerInnerHour">'+hour+'</div>');
+					var hourSliceId = 'hourSlice_'+Math.random(); 
+				 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:10px">'+hour+'</div>');
+					// This -20 is due to the padding and the 4 is for borders? 
+  					var elWidth = document.getElementById(hourSliceId).offsetWidth+4-20; 
+					document.getElementById(hourSliceId).setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:rotate(-90deg) translate(-"+elWidth+"px,6px); margin-right:0px;;");
+				        	
 				   } 
 
 				   if(probeElement.type == 'header') { 
@@ -212,7 +211,7 @@ start : function () {
 					var localWidth=30;
                                         var room = probeElement.value;
 					$(this).attr("style",'width:'+localWidth+'px;');
-				 	$(this).html('<div class="innerInnerHeader"></div>');
+				 	$(this).html('<div class="innerInnerCorner"></div>');
 				   } 
 
 				} 
