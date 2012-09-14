@@ -166,12 +166,19 @@ start : function () {
 			cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth-40)/cols);
 
 			var uniqueClassName = 'inner'+parseInt(Math.random()*1000);
-			var counter=0; 
 			var buffer2 = '';
-                        for(var k in buffer) { 
-				
+			
+			var cc=0,ll=0;
+
+                        for(var i=0;i<buffer.length;i++) { 
+				cc++;
+				if(cc==cols+1) { ll++; cc=1} 
+				if(ll!=1) { 
+					buffer2+=buffer[i];	
+alert(buffer2);
+				} 
 			} 
-                        grid(buffer, cols+1, cName, uniqueClassName);
+                        grid(buffer2, cols+1, cName, uniqueClassName);
 
 			var proposedHeight=0;
 			$('.'+uniqueClassName).each(function() { 
