@@ -94,7 +94,7 @@ start : function () {
 				slicesSequence[slicesCount++]=hour; // this is for later use, we simply counting 
 				for( var i in eventBegins[hour] ) { 
 					  var item = eventBegins[hour][i];
-					  item.cellMap=mapCell({'type':'event','value':item});
+					  item.cellMap=mapCell({'type':'event','value':item , 'begin': getHourBegins(item),'end': getHourEnds(item)});
 					  if(!updateColumns[item.local]) { 
 						updateColumns[item.local]=new Array();
 					  } 
@@ -124,7 +124,7 @@ start : function () {
 			   for( var e in updateColumns ) { 
 			      if(columnCount==0) { 
 				  var delta = parseInt(slicesSequence[hourIndex+1]-slicesSequence[hourIndex]);
-				  var roomChar = mapCell({'type':'slices', 'value': hour, 'height': delta });
+				  var roomChar = mapCell({'type':'slices', 'value': hour, 'height': delta , 'begin':slicesSequence[hourIndex], 'end':slicesSequence[hourIndex+1]});
 				  buffer+=roomChar;
 			      } 
 			      var items = updateColumns[e];
