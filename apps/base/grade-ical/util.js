@@ -37,3 +37,8 @@ function getUnicodeCharacter(cp) {
     }
 }
 
+function strToMins(item) { 
+	var currHour  = item.split(':'); 
+ 	return parseInt(currHour[0])*60+parseInt(currHour[1]);
+} 
+

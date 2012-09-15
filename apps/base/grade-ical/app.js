@@ -1,14 +1,4 @@
 
-function getHourBegins(item) { 
-	var currHour  = item.inicio.split(':'); 
- 	return parseInt(currHour[0])*60+parseInt(currHour[1]);
-} 
-
-function getHourEnds(item) { 
-	var currHour  = item.fim.split(':');
- 	return parseInt(currHour[0])*60+parseInt(currHour[1]);
-} 
-
 // returns unicode characters so we have a lot of possible table values
 var charToElement = new Array();
 var gridCharUsed=32000;
@@ -49,14 +39,14 @@ start : function () {
 
 			for(var k=currentDay.length-1;k>=0;k--) { 
 				var eventItem = currentDay[k];
-				var plainHour = getHourBegins(eventItem);
+				var plainHour = strToMins(eventItem.inicio);
 				if(!eventBegins[plainHour]) { 
 					eventBegins[plainHour] = new Array();
 				} 
 				eventBegins[plainHour].push(eventItem);
 				listHourKeys.push(plainHour);
 
-			 	var plainHour = getHourEnds(eventItem);
+			 	var plainHour = strToMins(eventItem.fim);
 				if(!eventEnds[plainHour]) { 
 					eventEnds[plainHour] = new Array();
 				} 
@@ -83,7 +73,7 @@ start : function () {
 				slicesSequence[slicesCount++]=hour; // this is for later use, we simply counting 
 				for( var i in eventBegins[hour] ) { 
 					  var item = eventBegins[hour][i];
-					  item.cellMap=mapCell({'type':'event','value':item , 'begin': getHourBegins(item),'end': getHourEnds(item)});
+					  item.cellMap=mapCell({'type':'event','value':item , 'begin': strToMins(item.inicio),'end': strToMins(item.fim)});
 					  if(!updateColumns[item.local]) { 
 						updateColumns[item.local]=new Array();
 					  } 
@@ -120,14 +110,14 @@ start : function () {
 			      var keyChar='';
 			      for( var kk in items) { 
                                 var item = items[kk];
-				if(getHourBegins(item)==parseInt(hour)) { 
+				if(strToMins(item.inicio)==parseInt(hour)) { 
 				   keyChar = item.cellMap;  
 				   openElements[e]=item;
 				} 
 			      } 
                               if(keyChar=='') { 
 			        if(openElements[e]) { 	
-		 		   if(getHourEnds(openElements[e])>parseInt(hour)) { 
+		 		   if(strToMins(openElements[e].fim)>parseInt(hour)) { 
 		  		       keyChar = openElements[e].cellMap;
 				   } else { 
 				 	// we may consider killing open elements
@@ -176,7 +166,7 @@ start : function () {
                                         var el = probeElement.value;
 				 	$(this).html('<div class="innerInnerCell">'+el.descricao+'</div>');
 					$(this).addClass('inner');
-					var delta = getHourEnds(el)-getHourBegins(el);
+					var delta = strToMins(el.fim)-strToMins(el.inicio);
 					$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
 				   } 
 
