@@ -243,7 +243,7 @@ tick : function () {
           var eventItem = currentDay[r];
 	  var hours =0;
 		hours = parseInt(eventItem.fim.split(":")[0])*60 + parseInt(eventItem.fim.split(":")[1]);
-		if(isNaN(hours)) hours=1440;
+		if(isNaN(hours)) hours=30;
 			if(k==this.day) { 
 				if( hours<actual ) {
 				  document.getElementById("rule_"+k+"_"+hours).style.display="none";
