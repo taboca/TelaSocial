@@ -191,8 +191,8 @@ start : function () {
 					// This -20 is due to the padding and the 4 is for borders? 
   					var elWidth = document.getElementById(hourSliceId).offsetWidth; 
 	
-					document.getElementById(hourSliceId).setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:rotate(-90deg) ");
-					document.getElementById(hourSliceId).firstChild.setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:translate(-"+parseInt(elWidth+10)+"px, 6px) ");
+					//document.getElementById(hourSliceId).setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:rotate(-90deg) ");
+					//document.getElementById(hourSliceId).firstChild.setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:translate(-"+parseInt(elWidth+10)+"px, 6px) ");
 				        	
 				   } 
 
