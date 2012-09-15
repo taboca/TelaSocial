@@ -175,10 +175,9 @@ start : function () {
 				if(cc==cols+1) { ll++; cc=1} 
 				if(ll!=1) { 
 					buffer2+=buffer[i];	
-alert(buffer2);
 				} 
 			} 
-                        grid(buffer2, cols+1, cName, uniqueClassName);
+                        grid(buffer, cols+1, cName, uniqueClassName);
 
 			var proposedHeight=0;
 			$('.'+uniqueClassName).each(function() { 
