@@ -45,7 +45,11 @@ var app = {
 			// have to show 8-9am line one. 
 
 			var currHourFlat = (new Date()).getHours()*60+(new Date()).getMinutes()-60;
-			this.bufferStrip(currHourFlat);
+	
+			if((new Date()).getDate==dday) { 
+				this.bufferStrip(currHourFlat);
+			} 
+
 			
 			// generateDivs are to use gridBuffer, cols 
 			// and the inner util function gridtype to make
