@@ -1,12 +1,12 @@
 
 function getHourBegins(item) { 
 	var currHour  = item.inicio.split(':'); 
- 	return parseInt(currHour[0]+currHour[1]);
+ 	return parseInt(currHour[0])*60+parseInt(currHour[1]);
 } 
 
 function getHourEnds(item) { 
 	var currHour  = item.fim.split(':');
- 	return parseInt(currHour[0]+currHour[1]);
+ 	return parseInt(currHour[0])*60+parseInt(currHour[1]);
 } 
 
 // returns unicode characters so we have a lot of possible table values
@@ -49,33 +49,22 @@ start : function () {
 
 			for(var k=currentDay.length-1;k>=0;k--) { 
 				var eventItem = currentDay[k];
-
-				// Event begins at...
-				var currHour = eventItem.inicio; 
-				var currHour = currHour.split(':');
-			 	var plainHour = currHour[0]+currHour[1];
-
+				var plainHour = getHourBegins(eventItem);
 				if(!eventBegins[plainHour]) { 
 					eventBegins[plainHour] = new Array();
 				} 
 				eventBegins[plainHour].push(eventItem);
-
 				listHourKeys.push(plainHour);
 
-				// Event ends at ...
-				var currHour = eventItem.fim.split(':');
-			 	var plainHour = currHour[0]+currHour[1];
-
+			 	var plainHour = getHourEnds(eventItem);
 				if(!eventEnds[plainHour]) { 
 					eventEnds[plainHour] = new Array();
 				} 
 				eventEnds[plainHour].push(eventItem);
-
 				listHourKeys.push(plainHour);
-
 			}
 
-			// We sort the list of proposed "hours" for begins and ends for sessions
+			// We sort 
 			var hoursKeys = eventsBySortedHours(listHourKeys);
 			var hourSlices = new Array();
 			for(var k in hoursKeys) { 
