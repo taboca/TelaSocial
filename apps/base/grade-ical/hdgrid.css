@@ -15,30 +15,30 @@
   margin:.3em;
   padding:.3em;
   height:100%;
- background: rgb(40,200,180);
-  background: -moz-linear-gradient( -45deg, rgba(50,200,200,.9), rgba(55,200,200,.5));
+  background: -moz-linear-gradient( -45deg, rgba(50,180,100,.5), rgba(50,180,100,.8));
 } 
 
 .innerNone { 
-  background: -moz-linear-gradient( 270deg, rgba(255,255,255,.4), rgba(255,255,255,0));
+  background: -moz-linear-gradient( 270deg, rgba(255,255,255,.5), rgba(255,255,255,0));
 } 
 
 .innerHour { 
   background: -moz-linear-gradient( -45deg, rgba(255,255,255,.7), rgba(255,255,255,0));
+  text-align:center;
 } 
 
 .innerInnerHour { 
-  height:1070px;
+  margin-top:4px;
 } 
 
 .innerHeader { 
 } 
  
 .innerInnerHeader { 
- padding:.5em;
- padding-left:1em;
-  background: -moz-linear-gradient( 0deg, rgba(50,200,200,.9), rgba(55,200,200,.1));
-  border-top-left-radius:2px;
+  padding:.5em;
+  padding-left:1em;
+  background: -moz-linear-gradient( 0deg, rgba(50,180,100,.9), rgba(55,180,100,.0));
+  border-top-left-radius:20px;
 } 
 
 .innerInnerCorner { 

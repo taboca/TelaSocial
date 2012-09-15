@@ -187,7 +187,11 @@ start : function () {
 					var localWidth='40px';
 					$(this).attr("style",'width:'+localWidth+';height:'+delta+'px;');
 					var hourSliceId = 'hourSlice_'+Math.random(); 
-				 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:0px"><div>'+hour+'</div></div>');
+					var strHH = ''+Math.floor(parseInt(hour)/60);
+					var strMM = ''+parseInt(hour)%60; 
+					if(strMM<10) { strMM+='0'; } 
+				 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:0px"><div>'+strHH+':'+strMM+'</div></div>');
+
 					// This -20 is due to the padding and the 4 is for borders? 
   					var elWidth = document.getElementById(hourSliceId).offsetWidth; 
 	
