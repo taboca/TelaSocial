@@ -16,12 +16,12 @@ body {
 
 
 #viewport { 
-  background: -moz-radial-gradient( 0% 0%, ellipse , rgba(255,255,255,0), rgba(255,255,255,0), #2c2) ;
+  background: -moz-radial-gradient( 0% 0%, ellipse , rgba(255,255,255,0), rgba(255,255,255,0), #2c7) ;
   background-size:1080px 1920px;
 } 
 
 #viewport2 { 
-  background: -moz-radial-gradient( 100% 100%, ellipse , rgba(255,255,255,0),  #8be ) ;
+  background: -moz-radial-gradient( 100% 100%, ellipse , rgba(255,255,255,0),  #2c7 ) ;
   background-size:1080px 1920px;
   
   width:1080px; height:1920px;
