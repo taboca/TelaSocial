@@ -1,6 +1,5 @@
 var app =  {
-	feedURL : URL_DESTAQUES,	
-	effect3d: false,
+	feedURL : URL_DESTAQUES,
 	feed    : null, 
 
 	start : function() {
@@ -40,15 +39,13 @@ var app =  {
 		this.element.insertBefore(k, this.element.firstChild);
 		this.element.removeChild(old);
 
-		if(this.effect3d) { 
-			$('#container').attr('style','-moz-transition-property: -moz-transform; -moz-transition-duration: 1s; -moz-transform:perspective(400px) rotateX(0deg);');
-			setTimeout(function () { 
-				$('#container').attr('style','-moz-transform-origin:50% 50%;-moz-transition-property: -moz-transform; -moz-transition-duration: 1s; -moz-transform:perspective(400px) rotateX(-90deg);');
-			}, 2000);
-			setTimeout(function () { 
-				$('#container').attr('style',' -moz-transform:perspective(400px) rotateX(90deg);');
-			}, 4000);
-		} 
+		$('#container').attr('style','-moz-transition-property: -moz-transform; -moz-transition-duration: 1s; -moz-transform:perspective(400px) rotateX(0deg);');
+		setTimeout(function () { 
+			$('#container').attr('style','-moz-transform-origin:50% 50%;-moz-transition-property: -moz-transform; -moz-transition-duration: 1s; -moz-transform:perspective(400px) rotateX(-90deg);');
+		}, 2000);
+		setTimeout(function () { 
+			$('#container').attr('style',' -moz-transform:perspective(400px) rotateX(90deg);');
+		}, 4000);
 		return true;
 	},
 
@@ -57,7 +54,7 @@ var app =  {
 		if (! this.popTweet()) {
 			this.feed.load( function (e) { self.__feedUpdated(e) } );
 		}
-		setTimeout( function(){self.updateFeed()},8000);
+		setTimeout( function(){self.updateFeed()},5000);
 	},
 
 	__feedUpdated : function(result) {
