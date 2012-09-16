@@ -237,7 +237,7 @@ var app = {
        		var cName = 'container_'+Math.random();
 		container.setAttribute('id', cName);
 		document.body.appendChild(container);
-		cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth-40)/cols);
+		cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth-50)/cols);
 		var uniqueClassName = 'inner'+parseInt(Math.random()*1000);
 
 		grid(buffer, cols+1, cName, uniqueClassName);
@@ -267,7 +267,7 @@ var app = {
 
 					if(!delta) { delta=100; } 
 					$(this).addClass('innerHour');
-					var localWidth='40px';
+					var localWidth='50px';
 					var hourSliceId = 'hourSlice_'+Math.random(); 
 					var strHH = ''+Math.floor(parseInt(hour)/60);
 					var strMM = ''+parseInt(hour)%60; 
@@ -292,7 +292,7 @@ var app = {
 			   } 
 
 			   if(probeElement.type == 'corner') { 
-				var localWidth='40px';
+				var localWidth='50px';
                                        var room = probeElement.value;
 				$(this).attr("style",'width:'+localWidth+';');
 			 	$(this).html('<div class="innerInnerCorner" style="-moz-transform-orifin:0px 0px; -moz-transform:rotate(-90deg)"> </div>');

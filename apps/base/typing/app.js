@@ -7,7 +7,7 @@ var app =  {
 		this.elementTable.innerHTML="<table><tr><td align='center' valign='middle' ><div id='icon' style='' ></div></td><td><table ><tr><td height='255' valign='middle'><div class='appPanel' id='appcontainer'></div></td></tr><tr><td></td></tr></table></td></tr></table>";
 
 		document.getElementById("main").appendChild(this.elementTable);
-		document.getElementById("icon").innerHTML= '<img src="../vendor/g1.png" style="margin:10px; " align="left" />';
+		//document.getElementById("icon").innerHTML= '<img src="../vendor/g1.png" style="margin:10px; " align="left" />';
 		this.tweetQueue = new Array();
 
 		var first = document.createElement("div");
