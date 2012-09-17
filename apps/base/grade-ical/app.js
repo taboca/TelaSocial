@@ -46,7 +46,8 @@ var app = {
 
 			var currHourFlat = (new Date()).getHours()*60+(new Date()).getMinutes()-60;
 	
-			if((new Date()).getDate==dday) { 
+
+			if((new Date()).getDate()==dday) { 
 				this.bufferStrip(currHourFlat);
 			} 
 
