@@ -12,6 +12,8 @@ var app = {
 
   evento: null, 
   descricao : new Array(),
+  gridCols: 0, 
+  gridBuffer: null, 
   local : new Array(),
 
   start : function (queryDays) {
@@ -22,12 +24,20 @@ var app = {
 		dday = queryDays[k];
 		var currentDay = this.evento[dday];
 		if(currentDay) { 
-			this.processDay(currentDay);
+
+			this.gridFillForDay(currentDay);
+			
+
+			// generateDivs are to use gridBuffer, cols 
+			// and the inner util function gridtype to make
+ 			// 4,abcd format into DIVs inline 
+
+			this.generateDivs();
 		}	
 	} 
   }, 
 
-  processDay: function (currentDay) { 
+  gridFillForDay: function (currentDay) { 
 
 		var innerAll = "";
 		// warning ( inverted ) 
@@ -135,6 +145,15 @@ var app = {
                      hourIndex++;
 		}  // hours = slices 
 
+		this.gridBuffer=buffer;
+		this.gridCols  =cols;
+
+	}, 
+
+  generateDivs: function () { 
+
+		var buffer = this.gridBuffer; 
+		var cols   = this.gridCols;
 		var container=document.createElement('div');
        		var cName = 'container_'+Math.random();
 		container.setAttribute('id', cName);
