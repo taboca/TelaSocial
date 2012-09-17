@@ -14,12 +14,12 @@ var app = {
   descricao : new Array(),
   local : new Array(),
 
-  start : function () {
+  start : function (queryDays) {
  	document.body.innerHTML='';
-	for(var k in this.evento) { 
-		var ddate = new Date();
-		dday = ddate.getDate();
-		dday = k;
+	for(var k in queryDays) { 
+		//var ddate = new Date();
+		//dday = ddate.getDate();
+		dday = queryDays[k];
 		var currentDay = this.evento[dday];
 		if(currentDay) { 
 			this.processDay(currentDay);
@@ -27,196 +27,194 @@ var app = {
 	} 
   }, 
 
-processDay: function (currentDay) { 
+  processDay: function (currentDay) { 
 
-			var innerAll = "";
-			// warning ( inverted ) 
-			var eventBegins = new Array();
-			var eventEnds = new Array();
-			var listHourKeys = new Array();
+		var innerAll = "";
+		// warning ( inverted ) 
+		var eventBegins = new Array();
+		var eventEnds = new Array();
+		var listHourKeys = new Array();
 
-			for(var k=currentDay.length-1;k>=0;k--) { 
-				var eventItem = currentDay[k];
-				var plainHour = strToMins(eventItem.inicio);
-				if(!eventBegins[plainHour]) { 
-					eventBegins[plainHour] = new Array();
-				} 
-				eventBegins[plainHour].push(eventItem);
-				listHourKeys.push(plainHour);
-
-			 	var plainHour = strToMins(eventItem.fim);
-				if(!eventEnds[plainHour]) { 
-					eventEnds[plainHour] = new Array();
-				} 
-				eventEnds[plainHour].push(eventItem);
-				listHourKeys.push(plainHour);
-			}
-
-			// We sort 
-			var hoursKeys = eventsBySortedHours(listHourKeys);
-			var hourSlices = new Array();
-			for(var k in hoursKeys) { 
-				var hourToCheck =  listHourKeys[hoursKeys[k]];
-				if(!hourSlices[hourToCheck]) { 
-					hourSlices[hourToCheck]=true;
-				} 
+		for(var k=currentDay.length-1;k>=0;k--) { 
+			var eventItem = currentDay[k];
+			var plainHour = strToMins(eventItem.inicio);
+			if(!eventBegins[plainHour]) { 
+				eventBegins[plainHour] = new Array();
 			} 
+			eventBegins[plainHour].push(eventItem);
+			listHourKeys.push(plainHour);
 
-			// We count, collect the columns
-			var updateColumns = new Array();
-                       
-			var slicesSequence = new Array();
-			var slicesCount=0;
-			for(var hour in hourSlices ) { 
-				slicesSequence[slicesCount++]=hour; // this is for later use, we simply counting 
-				for( var i in eventBegins[hour] ) { 
-					  var item = eventBegins[hour][i];
-					  item.cellMap=mapCell({'type':'event','value':item , 'begin': strToMins(item.inicio),'end': strToMins(item.fim)});
-					  if(!updateColumns[item.local]) { 
-						updateColumns[item.local]=new Array();
-					  } 
-					  updateColumns[item.local].push(item);
-				} 
+		 	var plainHour = strToMins(eventItem.fim);
+			if(!eventEnds[plainHour]) { 
+				eventEnds[plainHour] = new Array();
 			} 
-			var cols = 0;
-			for(var k in updateColumns) { cols++; } 
+			eventEnds[plainHour].push(eventItem);
+			listHourKeys.push(plainHour);
+		}
 
-			var buffer = '';
-			var hourIndex=0, roomIndex=0;
-			var openElements = new Array();
-			var dumpHeader=false;
-			var dumpHours=0;
+		// We sort 
+		var hoursKeys = eventsBySortedHours(listHourKeys);
+		var hourSlices = new Array();
+		for(var k in hoursKeys) { 
+			var hourToCheck =  listHourKeys[hoursKeys[k]];
+			if(!hourSlices[hourToCheck]) { 
+				hourSlices[hourToCheck]=true;
+			} 
+		} 
 
-			for(var hour in hourSlices ) { 
-				
-			   if(hourIndex==0&&!dumpHeader) { 
-				dumpHeader = true; 
-				buffer=mapCell({'type':'corner'});
-			        for( var e in updateColumns ) { 
-					var roomChar = mapCell({'type':'header', 'value': e});
-					buffer+=roomChar;
-				} 
-			   } 
-			   var columnCount=0;
-			   for( var e in updateColumns ) { 
-			      if(columnCount==0) { 
-				  var delta = parseInt(slicesSequence[hourIndex+1]-slicesSequence[hourIndex]);
-				  var roomChar = mapCell({'type':'slices', 'value': hour, 'height': delta , 'begin':slicesSequence[hourIndex], 'end':slicesSequence[hourIndex+1]});
-				  buffer+=roomChar;
-			      } 
-			      var items = updateColumns[e];
-			      var keyChar='';
-			      for( var kk in items) { 
-                                var item = items[kk];
+		// We count, collect the columns
+		var updateColumns = new Array();
+                      
+		var slicesSequence = new Array();
+		var slicesCount=0;
+		for(var hour in hourSlices ) { 
+			slicesSequence[slicesCount++]=hour; // this is for later use, we simply counting 
+			for( var i in eventBegins[hour] ) { 
+				  var item = eventBegins[hour][i];
+				  item.cellMap=mapCell({'type':'event','value':item , 'begin': strToMins(item.inicio),'end': strToMins(item.fim)});
+				  if(!updateColumns[item.local]) { 
+					updateColumns[item.local]=new Array();
+				  } 
+				  updateColumns[item.local].push(item);
+			} 
+		} 
+		var cols = 0;
+		for(var k in updateColumns) { cols++; } 
+
+		var buffer = '';
+		var hourIndex=0, roomIndex=0;
+		var openElements = new Array();
+		var dumpHeader=false;
+		var dumpHours=0;
+
+		for(var hour in hourSlices ) { 
+			
+		   if(hourIndex==0&&!dumpHeader) { 
+			dumpHeader = true; 
+			buffer=mapCell({'type':'corner'});
+		        for( var e in updateColumns ) { 
+				var roomChar = mapCell({'type':'header', 'value': e});
+				buffer+=roomChar;
+			} 
+		   } 
+		   var columnCount=0;
+		   for( var e in updateColumns ) { 
+			if(columnCount==0) { 
+			   var delta = parseInt(slicesSequence[hourIndex+1]-slicesSequence[hourIndex]);
+			   var roomChar = mapCell({'type':'slices', 'value': hour, 'height': delta , 'begin':slicesSequence[hourIndex], 'end':slicesSequence[hourIndex+1]});
+			   buffer+=roomChar;
+		        } 
+			var items = updateColumns[e];
+			var keyChar='';
+			for( var kk in items) { 
+				var item = items[kk];
 				if(strToMins(item.inicio)==parseInt(hour)) { 
-				   keyChar = item.cellMap;  
-				   openElements[e]=item;
+					keyChar = item.cellMap;  
+					openElements[e]=item;
 				} 
-			      } 
-                              if(keyChar=='') { 
-			        if(openElements[e]) { 	
-		 		   if(strToMins(openElements[e].fim)>parseInt(hour)) { 
-		  		       keyChar = openElements[e].cellMap;
-				   } else { 
-				 	// we may consider killing open elements
-				   } 
+			} 
+			if(keyChar=='') { 
+				if(openElements[e]) { 	
+					if(strToMins(openElements[e].fim)>parseInt(hour)) { 
+						keyChar = openElements[e].cellMap;
+					} else { 
+						// we may consider killing open elements
+					} 
 				} 
-                              } 
-			      if(keyChar=='') { 
+			} 
+			if(keyChar=='') { 
 				var hEnd = slicesSequence[hourIndex+1];
 				var hBegin = slicesSequence[hourIndex];
 				var delta = parseInt(hEnd-hBegin);
-			        keyChar = mapCell({'type':'none', 'value': delta, 'begin':slicesSequence[hourIndex], 'end':slicesSequence[hourIndex+1]}); 
-			      } 
-		  	      buffer+=keyChar;
-			      roomIndex++;
-			      columnCount++;
-			   } // columns = rooms  
-                         
-                           hourIndex++;
-			}  // hours = slices 
-
- 			var container=document.createElement('div');
-                        var cName = 'container_'+Math.random();
-                        container.setAttribute('id', cName);
-                        document.body.appendChild(container);
-
-			cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth-40)/cols);
-
-			var uniqueClassName = 'inner'+parseInt(Math.random()*1000);
-			var buffer2 = '';
-			
-			var cc=0,ll=0;
-
-                        for(var i=0;i<buffer.length;i++) { 
-				cc++;
-				if(cc==cols+1) { ll++; cc=1} 
-				if(ll!=1) { 
-					buffer2+=buffer[i];	
-				} 
+				keyChar = mapCell({'type':'none', 'value': delta, 'begin':slicesSequence[hourIndex], 'end':slicesSequence[hourIndex+1]}); 
 			} 
-                        grid(buffer, cols+1, cName, uniqueClassName);
+			buffer+=keyChar;
+			roomIndex++;
+			columnCount++;
+		     } // columns = rooms  
+                     hourIndex++;
+		}  // hours = slices 
 
-			var proposedHeight=0;
-			$('.'+uniqueClassName).each(function() { 
-				var probeElement = charToElement[$(this).attr('id')];
-			 	if(probeElement)  {	
-				   if(probeElement.type=='event') { 
-                                        var el = probeElement.value;
-				 	$(this).html('<div class="innerInnerCell">'+el.descricao+'</div>');
-					$(this).addClass('inner');
-					var delta = strToMins(el.fim)-strToMins(el.inicio);
-					$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
-				   } 
+		var container=document.createElement('div');
+       		var cName = 'container_'+Math.random();
+		container.setAttribute('id', cName);
+		document.body.appendChild(container);
+		cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth-40)/cols);
+		var uniqueClassName = 'inner'+parseInt(Math.random()*1000);
+		var buffer2 = '';
+		
+		var cc=0,ll=0;
 
-				   if(probeElement.type == 'none') { 
-                                        var delta = probeElement.value;
-					$(this).addClass('innerNone');
-					$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
-					$(this).html('');
-				   } 
+		for(var i=0;i<buffer.length;i++) { 
+			cc++;
+			if(cc==cols+1) { ll++; cc=1} 
+			if(ll!=1) { 
+				buffer2+=buffer[i];	
+			} 
+		} 
 
-				   if(probeElement.type == 'slices') { 
-                                        var hour = probeElement.value;
-                                        var delta = probeElement.height;
-					if(!delta) { 
-						delta=100;
-					} 
-					$(this).addClass('innerHour');
-					var localWidth='40px';
-					$(this).attr("style",'width:'+localWidth+';height:'+delta+'px;');
-					var hourSliceId = 'hourSlice_'+Math.random(); 
-					var strHH = ''+Math.floor(parseInt(hour)/60);
-					var strMM = ''+parseInt(hour)%60; 
-					if(strMM<10) { strMM+='0'; } 
-				 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:0px"><div>'+strHH+':'+strMM+'</div></div>');
+		grid(buffer, cols+1, cName, uniqueClassName);
 
-					// This -20 is due to the padding and the 4 is for borders? 
-  					var elWidth = document.getElementById(hourSliceId).offsetWidth; 
-	
-					//document.getElementById(hourSliceId).setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:rotate(-90deg) ");
-					//document.getElementById(hourSliceId).firstChild.setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:translate(-"+parseInt(elWidth+10)+"px, 6px) ");
-				        	
-				   } 
+		var proposedHeight=0;
+		$('.'+uniqueClassName).each(function() { 
+			var probeElement = charToElement[$(this).attr('id')];
+		 	if(probeElement)  {	
+			   if(probeElement.type=='event') { 
+                                       var el = probeElement.value;
+			 	$(this).html('<div class="innerInnerCell">'+el.descricao+'</div>');
+				$(this).addClass('inner');
+				var delta = strToMins(el.fim)-strToMins(el.inicio);
+				$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
+			   } 
 
-				   if(probeElement.type == 'header') { 
-                                        var room = probeElement.value;
-					$(this).addClass('innerHeader');
-					$(this).attr("style",'width:'+cssWidth+'px;');
-				 	$(this).html('<div class="innerInnerHeader">'+room+'</div>');
-				   } 
-	
-				   if(probeElement.type == 'corner') { 
-					var localWidth='40px';
-                                        var room = probeElement.value;
-					$(this).attr("style",'width:'+localWidth+';');
-				 	$(this).html('<div class="innerInnerCorner" style="-moz-transform-orifin:0px 0px; -moz-transform:rotate(-90deg)"> </div>');
-				   } 
+			   if(probeElement.type == 'none') { 
+                                       var delta = probeElement.value;
+				$(this).addClass('innerNone');
+				$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
+				$(this).html('');
+			   } 
 
+			   if(probeElement.type == 'slices') { 
+                                       var hour = probeElement.value;
+                                       var delta = probeElement.height;
+				if(!delta) { 
+					delta=100;
 				} 
-			});
+				$(this).addClass('innerHour');
+				var localWidth='40px';
+				$(this).attr("style",'width:'+localWidth+';height:'+delta+'px;');
+				var hourSliceId = 'hourSlice_'+Math.random(); 
+				var strHH = ''+Math.floor(parseInt(hour)/60);
+				var strMM = ''+parseInt(hour)%60; 
+				if(strMM<10) { strMM+='0'; } 
+			 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:0px"><div>'+strHH+':'+strMM+'</div></div>');
 
-} ,
+				// This -20 is due to the padding and the 4 is for borders? 
+  				var elWidth = document.getElementById(hourSliceId).offsetWidth; 
+
+				//document.getElementById(hourSliceId).setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:rotate(-90deg) ");
+				//document.getElementById(hourSliceId).firstChild.setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:translate(-"+parseInt(elWidth+10)+"px, 6px) ");
+			        	
+			   } 
+
+			   if(probeElement.type == 'header') { 
+                                       var room = probeElement.value;
+				$(this).addClass('innerHeader');
+				$(this).attr("style",'width:'+cssWidth+'px;');
+			 	$(this).html('<div class="innerInnerHeader">'+room+'</div>');
+			   } 
+
+			   if(probeElement.type == 'corner') { 
+				var localWidth='40px';
+                                       var room = probeElement.value;
+				$(this).attr("style",'width:'+localWidth+';');
+			 	$(this).html('<div class="innerInnerCorner" style="-moz-transform-orifin:0px 0px; -moz-transform:rotate(-90deg)"> </div>');
+			   } 
+
+			} 
+		});
+
+  },
 
   init : function (eventData) {
     this.evento=eventData;
