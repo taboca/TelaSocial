@@ -10,27 +10,25 @@ function mapCell(storeElement) {
 
 var app = {
 
-evento: null, 
-descricao : new Array(),
-local : new Array(),
+  evento: null, 
+  descricao : new Array(),
+  local : new Array(),
 
-start : function () {
-
-	document.body.innerHTML='';
-
+  start : function () {
+ 	document.body.innerHTML='';
 	for(var k in this.evento) { 
-
 		var ddate = new Date();
 		dday = ddate.getDate();
 		dday = k;
 		var currentDay = this.evento[dday];
-
 		if(currentDay) { 
+			this.processDay(currentDay);
+		}	
+	} 
+  }, 
 
-	 	   if(ddate.getDate()<=k) {
-			//this.descricao[dday] ;
-			//this.local[dday] 
-		
+processDay: function (currentDay) { 
+
 			var innerAll = "";
 			// warning ( inverted ) 
 			var eventBegins = new Array();
@@ -137,6 +135,7 @@ start : function () {
                          
                            hourIndex++;
 			}  // hours = slices 
+
  			var container=document.createElement('div');
                         var cName = 'container_'+Math.random();
                         container.setAttribute('id', cName);
@@ -217,66 +216,11 @@ start : function () {
 				} 
 			});
 
-		   }	
-		} 
-   	} 
-	this.tick();
 } ,
 
-tick : function () {
-	this.data = new Date();
-	this.month = this.data.getMonth() + 1;
-	this.day = this.data.getDate();
-	
-	this.hours = this.data.getHours();
-	this.minutes = this.data.getMinutes();
-        var ddate = new Date();
-        var currentDay = this.evento[ddate.getDate()];
-        var innerAll = "";
-	
-	var font=200;
-	var actual = this.hours * 60 + this.minutes;
-	for (var k in this.evento) { 
-        var currentDay = this.evento[k];
-        //for (key in currentDay) {
-	for(var r=currentDay.length-1;r>=0;r--) { 
-          var eventItem = currentDay[r];
-	  var hours =0;
-		hours = parseInt(eventItem.fim.split(":")[0])*60 + parseInt(eventItem.fim.split(":")[1]);
-		if(isNaN(hours)) hours=30;
-			if(k==this.day) { 
-				if( hours<actual ) {
-				  document.getElementById("rule_"+k+"_"+hours).style.display="none";
-				} else {
-				  if(k!=17) { 
-				  document.getElementById("rule_"+k+"_"+hours).style.fontSize=font+"%";
-				  font*=.9;
-				  } 
-				}
-			} 
-			if(k<this.day) { 
-		  	//	document.getElementById("rule_"+k+"_"+hours).style.display="none";
-		  	//	document.getElementById("rule_"+k+"_"+hours).setAttribute('id','');;
-				// this is because we have duplicated nodes.. with ids so we 
-				// want to eliminate the nodes so we can process more alike ( example 12:--) and
-				// 14:-- are = 1440
-			} 
-        }
-	}
-
-	var scopedThis = this;
-	//setTimeout( function () { scopedThis.tick() }, 5000);
-},
-
-init : function (eventData) {
-
-this.evento=eventData;
-this.descricao["30"] = "30 de Agosto";
-this.local["30"] = "";
-this.descricao["10"] = "10 de Agosto";
-this.local["10"] = "";
-
-} 
+  init : function (eventData) {
+    this.evento=eventData;
+  } 
 
 } // end of grade
 
