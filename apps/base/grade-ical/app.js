@@ -44,7 +44,7 @@ var app = {
 			// example, if current Time = 9:50am, we do not 
 			// have to show 8-9am line one. 
 
-			var currHourFlat = (new Date()).getHours()*60;
+			var currHourFlat = (new Date()).getHours()*60+(new Date()).getMinutes()-60;
 			this.bufferStrip(currHourFlat);
 			
 			// generateDivs are to use gridBuffer, cols 
@@ -271,7 +271,6 @@ var app = {
 
 					if(probeElement.flag) { 
 						strProposal='';
-						delta=100;
 					} 
 					$(this).attr("style",'width:'+localWidth+';height:'+delta+'px;');
 				 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:0px"><div>'+strProposal+'</div></div>');
