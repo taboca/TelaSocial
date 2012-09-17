@@ -72,6 +72,8 @@ var app = {
 	var buffer2 = '';
 	var collectBuffer = '';
 		var one= true;
+	var time_start=0; var time_end=0;
+ 
       for(var k = 0; k<this.gridBuffer.length; k++) { 
 	
 		var electChar = this.gridBuffer[k]; 
@@ -84,21 +86,30 @@ var app = {
 
 				if(currBegin<currHour) { 
 					cutChars=true;	
+					time_start = parseInt(charToElement[this.gridBuffer[k]].begin);
+					time_end = parseInt(charToElement[this.gridBuffer[k]].end);
 				} else { 
 					if(one==true && collectBuffer!='') { 
 						one=false;
 						var from = collectBuffer.length-this.gridCols-1;
 						collectBuffer = collectBuffer.substring(from,collectBuffer.length);
-						charToElement[collectBuffer[0]].flag=true;
+						for(var cB=0;cB<collectBuffer.length;cB++) { 
+							charToElement[collectBuffer[cB]].flag=true;
+						} 
 						buffer2+=collectBuffer;
-						
-						
 					} 		
-
 				}  
-
 			}
 			if(cutChars) { 
+				if(j>0) { 
+					var el = charToElement[this.gridBuffer[k]]; 
+					if(el.type=='event') { 
+						var original = el.begin;
+						var dT = parseInt(time_end)-parseInt(time_start);
+
+						charToElement[this.gridBuffer[k]].begin=parseInt(original)+dT;
+					} 
+				} 
 				if(j==this.gridCols) { 
 					cutChars=false;
 				} 
@@ -160,7 +171,7 @@ var app = {
 			slicesSequence[slicesCount++]=hour; // this is for later use, we simply counting 
 			for( var i in eventBegins[hour] ) { 
 				  var item = eventBegins[hour][i];
-				  item.cellMap=mapCell({'type':'event','value':item , 'begin': strToMins(item.inicio),'end': strToMins(item.fim)});
+				  item.cellMap=mapCell({'type':'event','value':item , 'begin': strToMins(item.inicio),'end': strToMins(item.fim), flag:false});
 				  if(!updateColumns[item.local]) { 
 					updateColumns[item.local]=new Array();
 				  } 
@@ -247,15 +258,24 @@ var app = {
 			var probeElement = charToElement[$(this).attr('id')];
 		 	if(probeElement)  {	
 			   if(probeElement.type=='event') { 
-                                       var el = probeElement.value;
+                                var el = probeElement.value;
 			 	$(this).html('<div class="innerInnerCell">'+el.descricao+'</div>');
 				$(this).addClass('inner');
-				var delta = strToMins(el.fim)-strToMins(el.inicio);
+				var delta = probeElement.end-probeElement.begin;
+	
+				if(probeElement.flag) { 
+					delta=delta+100;
+				} 
+				//if(delta==0) { delta=200 } 
 				$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
 			   } 
 
 			   if(probeElement.type == 'none') { 
                                        var delta = probeElement.value;
+				if(probeElement.flag) { 
+					delta=0+100;
+				} 
+	
 				$(this).addClass('innerNone');
 				$(this).attr("style",'width:'+cssWidth+'px;height:'+delta+'px;');
 				$(this).html('');
@@ -276,6 +296,7 @@ var app = {
 
 					if(probeElement.flag) { 
 						strProposal='';
+						delta=100;
 					} 
 					$(this).attr("style",'width:'+localWidth+';height:'+delta+'px;');
 				 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:0px"><div>'+strProposal+'</div></div>');
