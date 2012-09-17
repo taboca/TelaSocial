@@ -53,8 +53,10 @@ var transport =  {
 				var eye,emo,eda,eho,emi; 
 				var sum = '';
 				var dataLines = data.split('\n');
+				var cc = 0;
 				for(var i in dataLines) { 
 					var line = dataLines[i];
+					var line2 = dataLines[cc+1];
 					if(line.indexOf('DTSTART')>-1) { 
 						var dataValue = line.split('DTSTART:')[1];
 						if(typeof dataValue != 'undefined') { 
@@ -79,6 +81,13 @@ var transport =  {
 
 					if(line.indexOf('SUMMARY')>-1) { 
 						var dataValue = line.split('SUMMARY:')[1];
+/*
+						if(line2) { 
+							if(line2.indexOf("TRANSP")==-1) { 
+							alert(line2);
+							} 
+						} 	
+*/
 						sum = dataValue;
 					} 
 
@@ -91,6 +100,7 @@ var transport =  {
 				if(valid) { 
 			 		this.addEvento(ye,mo,da,ho,mi,sum,eye,emo,eda,eho,emi, local);
 				} 
+				cc++;
 			} 
 
 		} 
@@ -108,7 +118,7 @@ var transport =  {
 			ho-=3;
 			eho-=3;
 			this.dataOut[daStr].push( { 'inicio': ho+":"+mi, 'fim': eho+':'+emi, 'descricao': sub, 'sigla': "- ",'local': local,'apresentador': ""});
-		} catch (i) { alert(i) } 
+		} catch (i) { } 
 	} 
  
 }
