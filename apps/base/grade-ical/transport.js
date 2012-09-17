@@ -52,11 +52,11 @@ var transport =  {
 				var ye,mo,da,ho,mi; 
 				var eye,emo,eda,eho,emi; 
 				var sum = '';
-				var dataLines = data.split('\n');
+				var dataLines = data.split('\r\n');
 				var cc = 0;
-				for(var i in dataLines) { 
+				for(var i=0;i<dataLines.length;i++) { 
 					var line = dataLines[i];
-					var line2 = dataLines[cc+1];
+					var line2 = dataLines[parseInt(i+1)];
 					if(line.indexOf('DTSTART')>-1) { 
 						var dataValue = line.split('DTSTART:')[1];
 						if(typeof dataValue != 'undefined') { 
@@ -80,14 +80,12 @@ var transport =  {
 					} 
 
 					if(line.indexOf('SUMMARY')>-1) { 
-						var dataValue = line.split('SUMMARY:')[1];
-/*
+						var dataValue = line.split('SUMMARY:')[1].toString();
 						if(line2) { 
 							if(line2.indexOf("TRANSP")==-1) { 
-							alert(line2);
+							  dataValue+=line2.substring(1,line2.length);
 							} 
 						} 	
-*/
 						sum = dataValue;
 					} 
 
