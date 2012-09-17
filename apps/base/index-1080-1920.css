@@ -9,21 +9,21 @@ body {
 
 .overtwit { 
   position:relative;
-  background: -moz-linear-gradient( top , rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255,0), #aaa ) ;
+  background: -moz-linear-gradient( top , rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255,0), rgba(255,255,255,1)) ;
   width:100%; 
   height:100%;
 } 
 
 
 #viewport { 
-  background: -moz-radial-gradient( 0% 0%, ellipse , rgba(255,255,255,0), #0d4) ;
+  background: -moz-radial-gradient( 50% 30%, circle , #2c7, #fff ) ;
   background-size:1080px 1920px;
   width:1080px; height:1920px;
 } 
 
 #viewport2 { 
-  background: -moz-radial-gradient( 100% 100%, ellipse , rgba(255,255,255,0),  #0d4 ) ;
   background-size:1080px 1920px;
+  background: -moz-radial-gradient( 50% 50%, circle , rgba(255,255,255,0), rgba(255,255,255,0), #fff ) ;
   width:1080px; height:1920px;
 } 
 
