@@ -12,6 +12,8 @@ $(document).ready(function() {
    register("/main/topmiddle", "mid", "./destaques/index.html", iframeTemplate);
    register("/main/bottomsection", "grade", "./twitter/index.html", iframeTemplate);
    register("/main/climatempo", "clima", "./clima/index.html", iframeTemplate);
+   register("/main/hora", "hora", "./tempo/index.html", iframeTemplate);
+   register("/main/data", "data", "./tempo/date.html", iframeTemplate);
    compile();   
    setTimeout('startEngine()',5000);
 

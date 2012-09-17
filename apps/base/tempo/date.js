@@ -45,7 +45,7 @@ var tempoWidget =  {
 		document.body.appendChild(mainDiv);
 		this.elementClock   = document.createElement('div');
 		this.elementClock.setAttribute("id","clock");
-		this.elementClock.setAttribute("class","datetime");
+		this.elementClock.setAttribute("class","datedate");
 		mainDiv.appendChild(this.elementClock);
 		this.feed = $;
 		var self = this;
