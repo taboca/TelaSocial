@@ -25,9 +25,28 @@ var app = {
 		var currentDay = this.evento[dday];
 		if(currentDay) { 
 
+			// gridFill for day will take things like 
+			// event A = 8am - 10am, room a
+			// event B = 9am - 11am, room b
+			// event C = 10am - 12pm, room c 
 			this.gridFillForDay(currentDay);
-			
+			// into a specification for the grid type 
+			// str to divs inline API 
+			// which wants something like this 
+			// 8am:  a,_,_
+			// 9am:  a,b,_
+			// 10am: _,b,c
+			// 11am: _,_,c
+			// 12pm: _,_,_ 
 
+			// So, before we actually generate the divs we 	
+			// can cut based in a given interest area. For 
+			// example, if current Time = 9:50am, we do not 
+			// have to show 8-9am line one. 
+
+			var currHourFlat = (new Date()).getHours()*60;
+			this.bufferStrip(currHourFlat);
+			
 			// generateDivs are to use gridBuffer, cols 
 			// and the inner util function gridtype to make
  			// 4,abcd format into DIVs inline 
@@ -36,6 +55,61 @@ var app = {
 		}	
 	} 
   }, 
+ 
+  bufferStrip: function (currHour) { 
+
+	// Example, if cols = 3 we have in fact lines of 4 chars because 
+	// the prior algorithm adds a first column for the sake of hours 
+	// reference. 
+
+      var i=0,j=0;
+	var cutChars = false;
+	var buffer2 = '';
+	var collectBuffer = '';
+		var one= true;
+      for(var k = 0; k<this.gridBuffer.length; k++) { 
+	
+		var electChar = this.gridBuffer[k]; 
+
+		if(i>0) { // we think for lines not the header.. 
+			if(j==0) { 
+				var currEl = charToElement[this.gridBuffer[k]];
+				var currBegin = currEl.begin; // example 840 mins 
+				// currHour = 360 min  = 6AM 
+
+				if(currBegin<currHour) { 
+					cutChars=true;	
+				} else { 
+					if(one==true && collectBuffer!='') { 
+						one=false;
+						var from = collectBuffer.length-this.gridCols-1;
+						collectBuffer = collectBuffer.substring(from,collectBuffer.length);
+						charToElement[collectBuffer[0]].flag=true;
+						buffer2+=collectBuffer;
+						
+						
+					} 		
+
+				}  
+
+			}
+			if(cutChars) { 
+				if(j==this.gridCols) { 
+					cutChars=false;
+				} 
+				collectBuffer+=this.gridBuffer[k];
+				electChar='';
+			}  
+			
+		} 
+		
+		buffer2+=electChar;
+		j++;
+		if(j>this.gridCols) { i++; j=0; } 	
+      }  
+	this.gridBuffer=buffer2;	
+
+  },
 
   gridFillForDay: function (currentDay) { 
 
@@ -111,7 +185,7 @@ var app = {
 		   for( var e in updateColumns ) { 
 			if(columnCount==0) { 
 			   var delta = parseInt(slicesSequence[hourIndex+1]-slicesSequence[hourIndex]);
-			   var roomChar = mapCell({'type':'slices', 'value': hour, 'height': delta , 'begin':slicesSequence[hourIndex], 'end':slicesSequence[hourIndex+1]});
+			   var roomChar = mapCell({'type':'slices', 'value': hour, 'height': delta , 'begin':slicesSequence[hourIndex], 'end':slicesSequence[hourIndex+1], 'flag':false});
 			   buffer+=roomChar;
 		        } 
 			var items = updateColumns[e];
@@ -160,17 +234,6 @@ var app = {
 		document.body.appendChild(container);
 		cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth-40)/cols);
 		var uniqueClassName = 'inner'+parseInt(Math.random()*1000);
-		var buffer2 = '';
-		
-		var cc=0,ll=0;
-
-		for(var i=0;i<buffer.length;i++) { 
-			cc++;
-			if(cc==cols+1) { ll++; cc=1} 
-			if(ll!=1) { 
-				buffer2+=buffer[i];	
-			} 
-		} 
 
 		grid(buffer, cols+1, cName, uniqueClassName);
 
@@ -194,26 +257,27 @@ var app = {
 			   } 
 
 			   if(probeElement.type == 'slices') { 
-                                       var hour = probeElement.value;
-                                       var delta = probeElement.height;
-				if(!delta) { 
-					delta=100;
-				} 
-				$(this).addClass('innerHour');
-				var localWidth='40px';
-				$(this).attr("style",'width:'+localWidth+';height:'+delta+'px;');
-				var hourSliceId = 'hourSlice_'+Math.random(); 
-				var strHH = ''+Math.floor(parseInt(hour)/60);
-				var strMM = ''+parseInt(hour)%60; 
-				if(strMM<10) { strMM+='0'; } 
-			 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:0px"><div>'+strHH+':'+strMM+'</div></div>');
+                                var hour = probeElement.value;
+                                var delta = probeElement.height;
 
-				// This -20 is due to the padding and the 4 is for borders? 
-  				var elWidth = document.getElementById(hourSliceId).offsetWidth; 
+					if(!delta) { delta=100; } 
+					$(this).addClass('innerHour');
+					var localWidth='40px';
+					var hourSliceId = 'hourSlice_'+Math.random(); 
+					var strHH = ''+Math.floor(parseInt(hour)/60);
+					var strMM = ''+parseInt(hour)%60; 
+					if(strMM<10) { strMM+='0'; } 
+					var strProposal = strHH+':'+strMM;
 
-				//document.getElementById(hourSliceId).setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:rotate(-90deg) ");
-				//document.getElementById(hourSliceId).firstChild.setAttribute("style","-moz-transform-origin:0px 0px; -moz-transform:translate(-"+parseInt(elWidth+10)+"px, 6px) ");
-			        	
+					if(probeElement.flag) { 
+						strProposal='';
+						delta=100;
+					} 
+					$(this).attr("style",'width:'+localWidth+';height:'+delta+'px;');
+				 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:0px"><div>'+strProposal+'</div></div>');
+	
+					// This -20 is due to the padding and the 4 is for borders? 
+	  				var elWidth = document.getElementById(hourSliceId).offsetWidth; 
 			   } 
 
 			   if(probeElement.type == 'header') { 
