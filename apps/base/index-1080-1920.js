@@ -6,7 +6,7 @@ $(document).ready(function() {
    /* The exercise here is that we want to load the sub elements and internal 
       iframe pages are ready. */
 
-   register("/main/footer", "cabecalho", "./typing/index.html", iframeTemplate);
+   register("/main/footer", "cabecalho", "./patrocinadores/index.html", iframeTemplate);
    //register("/main/lado", "sidebar", "./twitter/index-340-900.html", iframeTemplate);
    register("/main/middle", "meio", "./grade-ical/index.html", iframeTemplate);
    register("/main/topmiddle", "mid", "./destaques/index.html", iframeTemplate);

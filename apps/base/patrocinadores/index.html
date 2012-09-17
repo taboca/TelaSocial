@@ -7,24 +7,52 @@
 <script src="../lib/choreographer.js"></script>
 <script src="../lib/tagvisor.js"></script>
 <script src="../const.js"></script>
+<head>
 <script>
 function animate() { 
   tv.add($('#animation li'));
   tv.play();
-  setTimeout("animate()", 16000);
+  setTimeout("animate()", 36000);
 } 
 </script>
-<head>
+<style>
+body { 
+} 
+h3 { font-weight:bold; color:gray } 
+.deck { 
+  text-align:center;
+  border:0px solid red;
+} 
+</style>
 </head>
 <body id='main' onload='animate()'>
 
 <ul id='animation'>
- <li data-target='t1' data-time="4s" data-effect="scalefit" data-duration="4s" />
- <li data-target='t2' data-time="8s" data-effect="scalefit" data-duration="4s" />
- <li data-target='t1' data-time="12s" data-effect="scalefit" data-duration="4s" />
+ <li data-target='t1' data-time="2s" data-effect="scalefit" data-duration="4s" />
+ <li data-target='t2' data-time="16s" data-effect="scalefit" data-duration="4s" />
+ <li data-target='t1' data-time="30s" data-effect="scalefit" data-duration="4s" />
 </ul>
 
-<img src='logo-tela.png' id='t1' width="200" style='margin-left:20px;margin-right:42px'/>
-<img src='logo-mozilla-power.png' id='t2' height='150' />
+<center>
+<div id='t1' style='width:450px;padding-top:00px' class='deck'>
+<h3>Diamante</h3>
+<img src='logo_araucaria.jpg' id='t1' width="240" style='margin-left:20px;margin-right:42px'/>
+<img src='logo_parana.png' id='' height='100' />
+</div>
+
+<div>
+</div>
+
+<div id='t2' style='width:550px;padding-top:00px' class='deck'>
+<h3>Ouro</h3>
+<img src='logo_cnpq.png' id='t1' width="200" style='margin-left:20px;margin-right:42px'/>
+<img src='logo_mcti.png' id='' height='80' />
+</div>
+
+<div>
+</div>
+
+</center>
+
 </body>
 </html>
