@@ -16,14 +16,13 @@ body {
 
 
 #viewport { 
-  background: -moz-radial-gradient( 50% 30%, circle , #2c7, #fff ) ;
+  background: -moz-radial-gradient( 50% 30%, circle , #0a7, #fff ) ;
   background-size:1080px 1920px;
   width:1080px; height:1920px;
 } 
 
 #viewport2 { 
   background-size:1080px 1920px;
-  background: -moz-radial-gradient( 50% 50%, circle , rgba(255,255,255,0), rgba(255,255,255,0), #fff ) ;
   width:1080px; height:1920px;
 } 
 
