@@ -24,7 +24,6 @@ var app = {
 		dday = queryDays[k];
 		var currentDay = this.evento[dday];
 		if(currentDay) { 
-
 			// gridFill for day will take things like 
 			// event A = 8am - 10am, room a
 			// event B = 9am - 11am, room b
@@ -45,17 +44,17 @@ var app = {
 			// have to show 8-9am line one. 
 
 			var currHourFlat = (new Date()).getHours()*60+(new Date()).getMinutes()-60;
-	
-
 			if((new Date()).getDate()==dday) { 
 				this.bufferStrip(currHourFlat);
-			} 
-
-			
+			} else { 
+				
+				var preHeaderElement= document.createElement("div");
+				preHeaderElement.innerHTML="<div style='clear:both'></div><h2>"+dday+" de "+( dateUtil.getPtBrMonth());
+				document.body.appendChild(preHeaderElement);
+			}  
 			// generateDivs are to use gridBuffer, cols 
 			// and the inner util function gridtype to make
  			// 4,abcd format into DIVs inline 
-
 			this.generateDivs();
 		}	
 	} 
@@ -251,7 +250,9 @@ var app = {
 		cssWidth = parseInt(parseInt(document.getElementById(cName).offsetWidth-50)/cols);
 		var uniqueClassName = 'inner'+parseInt(Math.random()*1000);
 
-		grid(buffer, cols+1, cName, uniqueClassName);
+		if(buffer.length>cols+1) { 
+			grid(buffer, cols+1, cName, uniqueClassName);
+		} 
 
 		var proposedHeight=0;
 		$('.'+uniqueClassName).each(function() { 
