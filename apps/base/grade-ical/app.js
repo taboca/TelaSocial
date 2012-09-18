@@ -23,6 +23,7 @@ var app = {
 		//dday = ddate.getDate();
 		dday = queryDays[k];
 		var currentDay = this.evento[dday];
+                if(parseInt(dday)>=(new Date()).getDate()) {
 		if(currentDay) { 
 			// gridFill for day will take things like 
 			// event A = 8am - 10am, room a
@@ -57,7 +58,7 @@ var app = {
 			// and the inner util function gridtype to make
  			// 4,abcd format into DIVs inline 
 			this.generateDivs();
-		}	
+		}}	
 	} 
   }, 
  
