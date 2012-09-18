@@ -114,8 +114,19 @@ var transport =  {
 		} 
 		try { 
 			ho-=3;
+			if(ho<0) { 
+				ho=24+ho;
+				var newD=parseInt(daStr-1);
+				daStr=newD;
+			} 
+	
 			eho-=3;
-			this.dataOut[daStr].push( { 'inicio': ho+":"+mi, 'fim': eho+':'+emi, 'descricao': sub, 'sigla': "- ",'local': local,'apresentador': ""});
+			if(eho<0) { 
+				eho=24+eho;
+			} 
+	
+
+		this.dataOut[daStr].push( { 'inicio': ho+":"+mi, 'fim': eho+':'+emi, 'descricao': sub, 'sigla': "- ",'local': local,'apresentador': ""});
 		} catch (i) { } 
 	} 
  
