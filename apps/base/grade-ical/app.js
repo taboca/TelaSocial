@@ -262,7 +262,12 @@ var app = {
 		 	if(probeElement)  {	
 			   if(probeElement.type=='event') { 
                                 var el = probeElement.value;
-			 	$(this).html('<div class="innerInnerCell">'+el.descricao+'</div>');
+
+				var addStyle='';
+				if(el.descricao.indexOf('mudou')>-1) { 
+					addStyle='background:red ! important';
+				} 
+			 	$(this).html('<div class="innerInnerCell" style="'+addStyle+'">'+el.descricao+'</div>');
 				$(this).addClass('inner');
 				var delta = probeElement.end-probeElement.begin;
 	
