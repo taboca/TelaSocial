@@ -16,11 +16,11 @@ h1 {
    font-weight:bold;
 }
 
-h2, h3, h4 { color: darkgreen } 
+h2, h3, h4 { color: darkblue } 
 
 .datedate, .datetime  { 
   font-size:160%;
-  color:green;
+  color:darkblue;
   font-weight:bold;
   padding: 4px 20px 4px 20px;
   text-align:left;
