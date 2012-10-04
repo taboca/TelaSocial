@@ -20,8 +20,9 @@ h2, h3, h4 { color: darkblue }
 
 .datedate, .datetime  { 
   font-size:160%;
-  color:darkblue;
+  color:white;
   font-weight:bold;
+  text-shadow: 2px 1px 1px black;
   padding: 4px 20px 4px 20px;
   text-align:left;
 } 

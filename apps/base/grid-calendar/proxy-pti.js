@@ -44,6 +44,7 @@ var transport =  {
 		this.dataOut = new Array();
 		if(result.error) { }; 
 		var text = result.xmlDocument; 
+alert(text);
 		var items = text.split('BEGIN:VEVENT');
 		for( var k in items) {
 			var data = items[k]; 
@@ -68,7 +69,6 @@ var transport =  {
 							valid=true;
 						}
 					} 
-
 					if(line.indexOf('DTEND')>-1) { 
 						var dataValue = line.split('DTEND:')[1];
 						if(typeof dataValue != 'undefined') { 
@@ -77,24 +77,6 @@ var transport =  {
 							eda = dataValue.substring(6,8);
 							eho = dataValue.substring(9,11);
 							emi = dataValue.substring(11,13);
-						}
-					} 
-
-					// http://tools.ietf.org/html/rfc5545
-					// P15DT5H0M20S is example for 
-					// 15 days 5 hours 20 seconds 
-					if(line.indexOf('DURATION')>-1) { 
-						var dataValue = line.split('DURATION:')[1];
-						if(typeof dataValue != 'undefined') { 
-							var calcDate = 	new Date(ye,mo,da,ho,mi,00,00);
-							var mili = calcDate.getTime();
-							var mins = durationToMinutes(dataValue); // in miliseconds
-							calcDate.setTime(calcDate.getTime()+(mins*60*1000));
-							eye = calcDate.getFullYear();
-							emo = calcDate.getMonth()+1;
-							eda = calcDate.getDate();
-							eho = calcDate.getHours();
-							emi = calcDate.getMinutes();
 						}
 					} 
 

@@ -16,8 +16,7 @@ body {
 
 
 #viewport { 
-  background: -moz-radial-gradient( 50% 30%, circle , rgb(120,180,00), #fff ) ;
-  background: -moz-radial-gradient( 50% 30%, circle , rgb(100,134,213), #fff ) ;
+  background: -moz-radial-gradient( 50% 50%, circle , white, rgb(100,150,250) ) ;
   background-size:1080px 1920px;
   width:1080px; height:1920px;
 } 

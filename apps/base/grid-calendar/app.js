@@ -279,7 +279,7 @@ var app = {
 				var delta = probeElement.end-probeElement.begin;
 	
 				if(probeElement.flag) { 
-					delta=delta+this.chunkHourSpace;
+					delta=delta+these.chunkHourSpace;
 				} 
 				//if(delta==0) { delta=200 } 
 				$(this).attr("style",'width:'+cssWidth+'px;height:'+these.fixScaleHeight(delta)+'px;');
@@ -288,7 +288,7 @@ var app = {
 			   if(probeElement.type == 'none') { 
                                        var delta = probeElement.value;
 				if(probeElement.flag) { 
-					delta=this.chunkHourSpace;
+					delta=these.chunkHourSpace;
 				} 
 	
 				$(this).addClass('innerNone');
@@ -300,7 +300,7 @@ var app = {
                                 var hour = probeElement.value;
                                 var delta = probeElement.height;
 								
-				if(!delta) { delta=this.chunkHourSpace; } 
+				if(!delta) { delta=these.chunkHourSpace; } 
 				$(this).addClass('innerHour');
 				var localWidth='50px';
 				var hourSliceId = 'hourSlice_'+Math.random(); 
@@ -311,7 +311,7 @@ var app = {
 
 				if(probeElement.flag) { 
 					strProposal='';
-					delta=this.chunkHourSpace;
+					delta=these.chunkHourSpace;
 				}	
 				$(this).attr("style",'width:'+localWidth+';height:'+these.fixScaleHeight(delta)+'px;');
 			 	$(this).html('<div id="'+hourSliceId+'" class="innerInnerHour" style="display:inline-block;padding:0px"><div>'+strProposal+'</div></div>');

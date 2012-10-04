@@ -17,9 +17,8 @@ body {
 
 .innerInnerCell { 
   margin-left:4px;
-  font-weight:bold;
-  color:white;
-  background: -moz-linear-gradient( -90deg, rgb(40,100,220), rgba(40,80,140,1));
+  color:black;
+  background: -moz-linear-gradient( -90deg, rgba(255,255,255,.5), rgba(255,255,255,.0));
   height:100%;
   padding:.3em;
   overflow: hidden;
@@ -27,11 +26,11 @@ body {
 } 
 
 .innerNone { 
-  background: -moz-linear-gradient( 270deg, rgba(5,5,5,.2), rgba(255,255,255,0), rgba(255,255,255,0));
+  background: -moz-linear-gradient( 270deg, rgba(5,5,5,.3), rgba(255,255,255,0), rgba(255,255,255,0));
 } 
 
 .innerHour { 
-  background: -moz-linear-gradient( 270deg, rgba(5,5,5,.2), rgba(255,255,255,0), rgba(255,255,255,0));
+  background: -moz-linear-gradient( 270deg, rgba(5,5,5,.3), rgba(255,255,255,0), rgba(255,255,255,0));
   text-align:center;
 } 
 
@@ -47,9 +46,12 @@ body {
   padding-left:1em;
   margin-left:4px;
   margin-bottom:2px;
-  background: -moz-linear-gradient( -45deg, rgba(50,140,220,1), rgba(50,140,220,1));
+  background: -moz-linear-gradient( -90deg, rgba(55,55,55,.0), rgba(55,55,55,.5));
   font-weight:bold;
-  color:white;
+  min-height:3em;
+  font-size:.9em;
+  color:black;
+  padding-right:2em;
   border-top-left-radius:20px;
 } 
 
