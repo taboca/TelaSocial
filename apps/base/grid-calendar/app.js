@@ -207,8 +207,14 @@ var app = {
 		   var columnCount=0;
 		   for( var e in updateColumns ) { 
 			if(columnCount==0) { 
-			   var delta = parseInt(slicesSequence[hourIndex+1]-slicesSequence[hourIndex]);
-			   var roomChar = mapCell({'type':'slices', 'value': hour, 'height': delta , 'begin':slicesSequence[hourIndex], 'end':slicesSequence[hourIndex+1], 'flag':false});
+                           var e2=null;
+			   if(typeof slicesSequence[hourIndex+1] != 'undefined') { 
+                              e2=slicesSequence[hourIndex+1];
+			   } else { 
+                              e2=parseInt(slicesSequence[hourIndex])+30;
+		 	   } 
+			   var delta = parseInt(e2-slicesSequence[hourIndex]);
+			   var roomChar = mapCell({'type':'slices', 'value': hour, 'height': delta , 'begin':slicesSequence[hourIndex], 'end':e2, 'flag':false});
 			   buffer+=roomChar;
 		        } 
 			var items = updateColumns[e];
@@ -336,6 +342,8 @@ var app = {
 
 			} 
 		});
+	
+	window.parent.parent.setHeight('middle',$('body').height());
 
   },
 

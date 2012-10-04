@@ -1,7 +1,23 @@
-html, body { margin:0; padding:0 } 
 
 h2 { clear:both; padding:.1em; padding-left:1em; margin:.2em } 
 
 .dayStamp { 
 	text-align:right;
 } 
+
+.mark { 
+  color:lightblue;
+} 
+ 
+.item { 
+
+  font-weight:normal;
+ padding-top:1em;
+
+} 
+ 
+.title { 
+  text-align:center;
+  padding:.6em;
+  line-height:1.5em;
+}

@@ -1,6 +1,33 @@
 /* Check data-time attribute in index2.html and also ./abas/barraAbas.html 
    to change animation timing */
  
+
+function setHeight(d,x) { 
+	
+ 	var accHeight = 0;	
+	var search = d;
+	var other='';
+	$('.flex').each( function () { 
+		var hh = $(this).height();
+		accHeight+=hh;	
+                var curr = ($(this).attr('data-flex'));
+		if(curr!=search) { 
+			other = curr;
+		} 
+	} );
+
+	$('.flex').each( function () { 
+		var curr = ($(this).attr('data-flex'));
+		if(curr==search) { 
+			$(this).css('height',x+'px');	
+		} 
+		if(curr==other) { 
+			$(this).css('height',((23*60)-x)+'px');	
+		} 
+	});
+
+} 
+
 function register(rule, id, src, template) { 
 	var obj = {rule:rule, id:id, src:src, template:template};
 	pending[rule] = obj;
