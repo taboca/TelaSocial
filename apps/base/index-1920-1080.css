@@ -8,7 +8,7 @@ html, body { margin:0; padding:0; color:white; overflow:hidden }
 
 body { 
   width:1920px; height:1080px;
-  background: -moz-radial-gradient( 50% 50%, circle , white, orange);
+  background: -moz-radial-gradient( 50% 50%, circle , white, rgb(150,180,200));
 } 
 
 .datetime  { 

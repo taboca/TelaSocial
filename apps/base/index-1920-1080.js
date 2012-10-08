@@ -1,5 +1,5 @@
 $(document).ready(function() {
-   register("/main/header", "cabecalho", "./cabecalho/index.html", iframeTemplate);
+   register("/main/topodireito", "cabecalho", "./cabecalho/index.html", iframeTemplate);
    register("/main/ladoesquerdo", "meio", "./abas-1920/index.html", iframeTemplate);
    register("/main/esquerdoemcima", "mid", "./destaques/index.html", iframeTemplate);
    register("/main/fundo", "clima", "./clima/index.html", iframeTemplate);

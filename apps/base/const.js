@@ -13,6 +13,7 @@ URL_DESTAQUES = "http://blog.telasocial.com/rss.xml";
 URL_DESTAQUES = "/channel/destaques.xml";
 URL_TYPING = "http://g1.globo.com/dynamo/ciencia-e-saude/rss2.xml";
 URL_TYPING = "/channel/destaques.xml";
+ACONTECE_URL = "/channel/destaques.xml";
 URL_WEATHER = "http://weather.yahooapis.com/forecastrss?w=449704&u=c";
 URL_GRADE ="/channel-store/grade";
 
