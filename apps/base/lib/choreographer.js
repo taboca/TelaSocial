@@ -19,10 +19,12 @@ function setHeight(d,x) {
 	$('.flex').each( function () { 
 		var curr = ($(this).attr('data-flex'));
 		if(curr==search) { 
-			$(this).css('height',x+'px');	
+			if($(this).innerHeight()>x) { 
+				$(this).css('height',x+'px');	
+			} 
 		} 
 		if(curr==other) { 
-			$(this).css('height',((23*60)-x)+'px');	
+			$(this).css('height',(accHeight-x)+'px');	
 		} 
 	});
 

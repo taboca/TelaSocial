@@ -342,7 +342,7 @@ var app = {
 
 			} 
 		});
-	
+  
 	window.parent.parent.setHeight('middle',$('body').height());
 
   },

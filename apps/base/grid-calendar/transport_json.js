@@ -43,12 +43,12 @@ var transport =  {
 		for( var k in objs) {
 			var fullTime = (objs[k].horario);
 			var fullDate = objs[k].data_reserva.split('/'); 
-			var ye = parseInt(fullDate[2]);
-			var mo = parseInt(fullDate[1]);
-			var da = parseInt(fullDate[0]);
-			var eye = parseInt(fullDate[2]);
-			var emo = parseInt(fullDate[1]);
-			var eda = parseInt(fullDate[0]);
+			var ye = parseFloat(fullDate[2]);
+			var mo = parseFloat(fullDate[1]);
+			var da = parseFloat(fullDate[0]);
+			var eye = parseFloat(fullDate[2]);
+			var emo = parseFloat(fullDate[1]);
+			var eda = parseFloat(fullDate[0]);
 			var hours = fullTime.split(' - ');
 			var h1 = hours[0].split(':');
 			var h2 = hours[1].split(':');
@@ -64,7 +64,9 @@ var transport =  {
 				sum='';
 			} 
 			
+//alert(ye+' - '+ mo +' - ' + da +' - ' + ho  +' - ' + mi  +' - ' +eye +' - ' +emo +' - ' +eda +' - ' +eho +' - ' +emi);
  			this.addEvento(ye,mo,da,ho,mi,'<div class="title">' + sum + '</div><div class="item"><span class="mark">Reservado por: </span>'+user+'</div><div class="item"><span class="mark">Reservado para: </span>'+para+'</div>',eye,emo,eda,eho,emi, local);
+ 			//this.addEvento(2012,10,9,14,00,'<div class="title">ddd</div><div class="item"><span class="mark">Reservado por: </span>Marcio</div><div class="item"><span class="mark">Reservado para: </span>marcio</div>',2012,10,9,17,00, 'baleia');
 		} 
 		this.callback(this.dataOut);
 		this.callAgain();
