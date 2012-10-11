@@ -1,3 +1,15 @@
+/* Design to the iframe replacements / mutation */
+
+/* 
+   Each iframe mutation goes to a choreographer history with a timestamp and all 
+   the necessary meta-data for the changes. This is so that we can, for example, 
+   know the size of iframes and what modifications we did to the document. 
+
+   We want to know the tree state and so that we have the expected scenario 
+   for ongoing mutations. 
+
+*/
+
 /* Check data-time attribute in index2.html and also ./abas/barraAbas.html 
    to change animation timing */
  

@@ -65,7 +65,7 @@ var transport =  {
 			} 
 			
 //alert(ye+' - '+ mo +' - ' + da +' - ' + ho  +' - ' + mi  +' - ' +eye +' - ' +emo +' - ' +eda +' - ' +eho +' - ' +emi);
- 			this.addEvento(ye,mo,da,ho,mi,'<div class="title">' + sum + '</div><div class="item"><span class="mark">Reservado por: </span>'+user+'</div><div class="item"><span class="mark">Reservado para: </span>'+para+'</div>',eye,emo,eda,eho,emi, local);
+ 			this.addEvento(ye,mo,da,ho,mi,'<div class="title">' + sum + '</div><div class="item"><span class="mark">Reservado para: </span>'+para+'</div>',eye,emo,eda,eho,emi, local);
  			//this.addEvento(2012,10,9,14,00,'<div class="title">ddd</div><div class="item"><span class="mark">Reservado por: </span>Marcio</div><div class="item"><span class="mark">Reservado para: </span>marcio</div>',2012,10,9,17,00, 'baleia');
 		} 
 		this.callback(this.dataOut);
