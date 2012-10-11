@@ -19,10 +19,12 @@ body {
   margin-left:4px;
   font-weight:bold;
   color:white;
+  font-size:18px;
   background: -moz-linear-gradient( -90deg, rgb(40,100,220), rgba(40,80,140,1));
   height:100%;
   padding:.5em;
   overflow: hidden;
+  
   text-overflow:ellipsis;
 } 
 

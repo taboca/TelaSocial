@@ -14,7 +14,7 @@
    to change animation timing */
  
 
-function setHeight(d,x) { 
+function informHeight(d,x) { 
 	
  	var accHeight = 0;	
 	var search = d;
