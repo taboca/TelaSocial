@@ -16,7 +16,7 @@
 
 function informHeight(d,x) { 
 	
- 	var accHeight = 1280;	
+ 	var accHeight = 1380;	
 	var search = d;
 	var other='';
 	$('.flex').each( function () { 
