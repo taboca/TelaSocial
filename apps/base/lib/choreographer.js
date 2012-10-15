@@ -16,12 +16,12 @@
 
 function informHeight(d,x) { 
 	
- 	var accHeight = 0;	
+ 	var accHeight = 1280;	
 	var search = d;
 	var other='';
 	$('.flex').each( function () { 
 		var hh = $(this).height();
-		accHeight+=hh;	
+//		accHeight+=hh;	
                 var curr = ($(this).attr('data-flex'));
 		if(curr!=search) { 
 			other = curr;
@@ -32,11 +32,11 @@ function informHeight(d,x) {
 		var curr = ($(this).attr('data-flex'));
 		if(curr==search) { 
 			if($(this).innerHeight()>x) { 
-//				$(this).css('height',x+'px');	
+				$(this).css('height',x+'px');	
 			} 
 		} 
 		if(curr==other) { 
-//			$(this).css('height',(accHeight-x)+'px');	
+			$(this).css('height',(accHeight-x)+'px');	
 		} 
 	});
 
