@@ -32,11 +32,11 @@ function informHeight(d,x) {
 		var curr = ($(this).attr('data-flex'));
 		if(curr==search) { 
 			if($(this).innerHeight()>x) { 
-				$(this).css('height',x+'px');	
+//				$(this).css('height',x+'px');	
 			} 
 		} 
 		if(curr==other) { 
-			$(this).css('height',(accHeight-x)+'px');	
+//			$(this).css('height',(accHeight-x)+'px');	
 		} 
 	});
 
