@@ -11,9 +11,9 @@
 
     <script src="../const.js" type="text/javascript"></script>
     <script src="data.js" type="text/javascript"></script>
-    <script src="transport_json.js" type="text/javascript"></script>
-<!--
     <script src="transport.js" type="text/javascript"></script>
+<!--
+    <script src="transport_json.js" type="text/javascript"></script>
 -->
     <script src="util.js" type="text/javascript"></script>
     <script src="app.js" type="text/javascript"></script>
@@ -35,8 +35,8 @@
 		tomorrow.setTime(today.getTime()+86400000);
 		qDates.push(''+ today.getDate());
 		qDates.push(''+ tomorrow.getDate());
-		app.start(qDates);
-		//app.start(['17','18','19','20','21','22']);
+		//app.start(qDates);
+		app.start(['17','18','19','20','21','22']);
 	}); 
 
      }); 

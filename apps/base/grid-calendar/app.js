@@ -8,11 +8,12 @@ function mapCell(storeElement) {
   return proposalUTFChar;
 } 
 
+  //ratioForHeight:1,
 var app = {
 
   evento: null, 
   chunkHourSpace:200,
-  ratioForHeight:1,
+  ratioForHeight:2,
   descricao : new Array(),
   gridCols: 0, 
   gridBuffer: null, 

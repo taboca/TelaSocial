@@ -16,6 +16,7 @@
 
 function informHeight(d,x) { 
 	
+return;
  	var accHeight = 1380;	
 	var search = d;
 	var other='';
