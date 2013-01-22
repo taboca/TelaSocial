@@ -1,5 +1,6 @@
 # Welcome to TelaSocial - Bem-vindo ao TelaSocial 
 
+
 Notice this repository brings the full history of the project so it may bring a lot of data that is not in place anymore if you are using HEAD. The new structure is: 
 
     TelaSocial 
@@ -8,6 +9,8 @@ Notice this repository brings the full history of the project so it may bring a 
           \_____builder ( an attempt to build a simple browser xulrunner app ) 
  
 ## Português 
+
+Visite as informações sobre o sistema para [Sinalização Digital interativa](http://www.telasocial.com) no site principal.
 
 2. [Novo - Instalador - Packager](https://github.com/taboca/TelaSocial/wiki/Packager-linux-pt-br)
 1. [Velho — Instalação XULRunner/Linux](https://github.com/taboca/TelaSocial/wiki/pt-BR---Instala%C3%A7%C3%A3o-Linux)
