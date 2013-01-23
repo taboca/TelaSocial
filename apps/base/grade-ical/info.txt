@@ -1,4 +1,0 @@
-
-[x] Todo plain hrBegin - hdEnd does not work — needs to work in minutes with a correct convertion
-
-[x] wrap hours mode needs to cut events before current hour - 1 hour; 
