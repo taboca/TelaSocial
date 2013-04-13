@@ -25,7 +25,7 @@ software = {
         }
     },
     "Linux_32bit": {
-        "url": "ftp://ftp.mozilla.org/pub/xulrunner/releases/16.0/runtimes/xulrunner-16.0.en-US.linux-i686.tar.bz2",
+        "url": "http://ftp.mozilla.org/pub/xulrunner/releases/16.0/runtimes/xulrunner-16.0.en-US.linux-i686.tar.bz2",
         "md5": "a2215d3c10ee20d112799b5f0e056b2b",
         "bin": {
             "path": "xulrunner/xulrunner",
