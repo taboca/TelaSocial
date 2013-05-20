@@ -25,11 +25,11 @@ software = {
         }
     },
     "Linux_32bit": {
-        "url": "http://ftp.mozilla.org/pub/xulrunner/releases/16.0/runtimes/xulrunner-16.0.en-US.linux-i686.tar.bz2",
-        "md5": "a2215d3c10ee20d112799b5f0e056b2b",
+        "url": "http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/21.0/runtimes/xulrunner-21.0.en-US.linux-i686.tar.bz2",
+        "md5": "7367e853dbc112d0e841d67b01a4b846",
         "bin": {
             "path": "xulrunner/xulrunner",
-            "sig": "6ceb6836fa1cce8b501844cee86f2fa0524e2ff5"
+            "sig": "37f6b529d84aa1bc950bf22a7f400e1c61227500"
         }
     }
 }
