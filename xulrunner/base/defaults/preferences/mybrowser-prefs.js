@@ -9,6 +9,7 @@ pref("extensions.tagvisor.resolution","960,560");
 
 pref("nglayout.debug.disable_xul_cache", true);
 pref("nglayout.debug.disable_xul_fastload", true);
+pref("layout.css.flexbox.enabled", true);
 
 
 // use this to see debug in the console
