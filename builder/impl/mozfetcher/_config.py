@@ -1,10 +1,10 @@
 software = {
     "Linux_64bit": {
-       "url": "ftp://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/6.0/runtimes/xulrunner-6.0.en-US.linux-x86_64.tar.bz2",
-       "md5": "fb13a15ad4626192d7044fee2b3d9157",
+        "url": "ftp://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/22.0/runtimes/xulrunner-22.0.en-US.linux-x86_64.tar.bz2",
+       "md5": "737c85b2f7d9befc3506348620917ed9",
        "bin": {
            "path": "xulrunner/xulrunner",
-           "sig": "c39ea6817a6171197358e988cdc721f2cd0488fa"
+           "sig": "0a225726b7ea8419e03867bf15ac20c6fff7689a"
        }
     },
     # for both 32 and 64 bit darwin we'll use 32 bit binaries
